@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MessageCircle, Menu, X } from "lucide-react";
+import { MessageCircle, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export function Navbar() {

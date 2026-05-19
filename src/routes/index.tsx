@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -50,64 +50,57 @@ function LotusLanding() {
 }
 
 /* ============================================================
-   HERO — editorial, minimal, architectural
+   HERO
    ============================================================ */
 function Hero() {
   return (
     <section className="relative bg-[oklch(0.97_0.015_82)]">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 pt-12 pb-16 sm:px-8 sm:pt-16 sm:pb-24 lg:grid-cols-12 lg:gap-12 lg:pt-20 lg:pb-32">
-        {/* Left — type */}
-        <div className="lg:col-span-5 lg:pt-10">
-          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-wood-600">
-            <span className="h-px w-8 bg-wood-400" />
-            Lotus — Wood Finishing
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 pt-14 pb-20 sm:px-10 sm:pt-20 sm:pb-28 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-36">
+        {/* Left — typography */}
+        <div className="lg:col-span-5 lg:pt-12">
+          <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+            Lotus Wood Finishing
           </div>
 
-          <h1 className="font-display mt-8 text-[2.6rem] font-light leading-[1.02] text-wood-900 sm:text-6xl lg:text-[4.25rem]">
-            Hoàn thiện gỗ,
-            <br />
-            <em className="italic font-normal text-wood-700">đúng chất.</em>
+          <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[4.5rem]">
+            <span className="block">Hoàn thiện gỗ,</span>
+            <span className="block italic font-normal text-wood-700">
+              đúng chất.
+            </span>
           </h1>
 
-          <p className="mt-8 max-w-md text-[15px] leading-relaxed text-wood-700/85">
-            Bốn quy trình sơn dành riêng cho từng loại bề mặt — giữ vân, phủ
-            màu, bảo vệ ngoài trời. Lotus tư vấn đúng hệ cho từng hạng mục.
+          <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
+            Bốn hướng hoàn thiện riêng cho từng bề mặt gỗ — giữ vân, lên màu,
+            bảo vệ ngoài trời. Lotus chọn đúng hệ cho từng hạng mục của bạn.
           </p>
 
-          <div className="mt-10 flex flex-col items-start gap-5">
+          <div className="mt-12 flex flex-col items-start gap-6">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 rounded-full bg-wood-900 px-7 py-4 text-sm font-medium tracking-wide text-background transition-all hover:bg-wood-800"
+              className="group inline-flex items-center gap-3 border-b border-wood-900 pb-2 text-[13px] uppercase tracking-[0.22em] text-wood-900 transition-colors hover:border-wood-600 hover:text-wood-700"
             >
-              <MessageCircle className="h-4 w-4" />
               Tư vấn qua Zalo
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
-              href={ZALO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-wood-700 underline decoration-wood-300 decoration-1 underline-offset-[6px] transition-colors hover:text-wood-900 hover:decoration-wood-600"
+              href="tel:0943966662"
+              className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900"
             >
-              hoặc gửi ảnh hạng mục của bạn →
+              hoặc gọi 0943 966 662
             </a>
           </div>
         </div>
 
         {/* Right — image */}
         <div className="lg:col-span-7">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-sm sm:aspect-[5/6] lg:aspect-[4/5]">
+          <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/6] lg:aspect-[4/5]">
             <img
               src={heroImg}
               alt="Bề mặt gỗ hoàn thiện Lotus"
               className="h-full w-full object-cover"
             />
-          </div>
-          <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-wood-600">
-            <span>Index 01 / Finishing</span>
-            <span>Est. 2014</span>
           </div>
         </div>
       </div>
@@ -116,87 +109,85 @@ function Hero() {
 }
 
 /* ============================================================
-   4 PROCESS EDITORIAL — the signature block
+   4 PROCESS DIRECTIONS — asymmetric editorial
    ============================================================ */
 const PROCESSES = [
   {
-    n: "01",
-    kicker: "Giữ vân — Lau",
+    n: "I",
+    kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Sơn lau giữ màu vân gỗ",
     body: "Lớp sơn thấm vào thớ gỗ, làm sâu vân và tôn cảm giác gỗ thật. Dành cho đồ gỗ tự nhiên cần giữ trọn vẻ mộc.",
     image: procLau,
   },
   {
-    n: "02",
-    kicker: "Giữ vân — Phun",
+    n: "II",
+    kicker: "Hệ phun · Nội & ngoại thất",
     title: "Sơn phun giữ vân, nội & ngoại thất",
     body: "Bề mặt đều, phẳng, vân gỗ vẫn hiện rõ. Hệ chia riêng cho trong nhà và ngoài trời để bền màu theo môi trường.",
     image: procPhun,
   },
   {
-    n: "03",
-    kicker: "Màu bệt — MDF",
+    n: "III",
+    kicker: "Màu bệt · MDF",
     title: "Sơn màu bệt cho gỗ MDF",
     body: "Che nền MDF, lên màu phẳng và đều — phù hợp tủ bếp, tủ áo và nội thất hiện đại theo bảng màu riêng.",
     image: procMdf,
   },
   {
-    n: "04",
-    kicker: "Bảo vệ — Ngoài trời",
+    n: "IV",
+    kicker: "Phủ bóng · Ngoài trời",
     title: "Sơn phủ bóng bảo vệ gỗ ngoài trời",
     body: "Lớp phủ chuyên dụng kháng UV, kháng ẩm và co giãn theo thời tiết — giữ bề mặt gỗ ngoài trời bền lâu.",
     image: procBong,
   },
 ];
 
+const PROCESS_LAYOUTS = [
+  // I — large portrait, text left-aligned right
+  { imgCol: "lg:col-span-7 lg:col-start-1", textCol: "lg:col-span-4 lg:col-start-9 lg:pt-16", aspect: "aspect-[4/5]" },
+  // II — wide landscape pushed right, text left
+  { imgCol: "lg:col-span-8 lg:col-start-5", textCol: "lg:col-span-4 lg:col-start-1 lg:pt-24", aspect: "aspect-[16/10]" },
+  // III — medium square-ish left, text right
+  { imgCol: "lg:col-span-6 lg:col-start-1", textCol: "lg:col-span-4 lg:col-start-8 lg:pt-12", aspect: "aspect-[5/4]" },
+  // IV — tall portrait right, text left
+  { imgCol: "lg:col-span-6 lg:col-start-7", textCol: "lg:col-span-4 lg:col-start-1 lg:pt-20", aspect: "aspect-[3/4]" },
+];
+
 function ProcessEditorial() {
   return (
-    <section id="quy-trinh" className="bg-background py-20 sm:py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="quy-trinh" className="bg-background py-24 sm:py-32 lg:py-40">
+      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
-        <div className="grid grid-cols-1 gap-8 border-t border-wood-200 pt-10 lg:grid-cols-12 lg:pt-14">
-          <div className="lg:col-span-5">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-wood-600">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
               Bốn hướng hoàn thiện
             </div>
-            <h2 className="font-display mt-6 text-4xl font-light leading-[1.05] text-wood-900 sm:text-5xl lg:text-[3.4rem]">
-              Mỗi bề mặt,
-              <br />
-              <em className="italic font-normal text-wood-700">
+            <h2 className="font-display mt-8 text-[2.25rem] font-light leading-[1.06] text-wood-900 sm:text-5xl lg:text-[3.5rem]">
+              <span className="block">Mỗi bề mặt,</span>
+              <span className="block italic font-normal text-wood-700">
                 một quy trình riêng.
-              </em>
+              </span>
             </h2>
           </div>
-          <p className="text-[15px] leading-relaxed text-wood-700/85 lg:col-span-5 lg:col-start-8 lg:pt-4">
+          <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
             Lotus không bán sơn theo can — Lotus chọn đúng hệ cho hạng mục bạn
-            đang làm. Bốn quy trình dưới đây bao quát phần lớn nhu cầu nội &
+            đang làm. Bốn hướng dưới đây bao quát phần lớn nhu cầu nội &amp;
             ngoại thất.
           </p>
         </div>
 
-        {/* 4 panels — asymmetric, alternating */}
-        <div className="mt-16 space-y-20 sm:mt-20 sm:space-y-28 lg:mt-28 lg:space-y-36">
+        {/* 4 panels — asymmetric grid placement */}
+        <div className="mt-24 space-y-28 sm:mt-32 sm:space-y-36 lg:mt-40 lg:space-y-48">
           {PROCESSES.map((p, i) => {
-            const reverse = i % 2 === 1;
+            const layout = PROCESS_LAYOUTS[i];
             return (
               <article
                 key={p.n}
-                className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16"
+                className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-10"
               >
-                <div
-                  className={`lg:col-span-7 ${reverse ? "lg:order-2" : ""}`}
-                >
-                  <div
-                    className={`relative overflow-hidden rounded-sm ${
-                      i === 0
-                        ? "aspect-[4/5]"
-                        : i === 1
-                          ? "aspect-[16/11]"
-                          : i === 2
-                            ? "aspect-[5/4]"
-                            : "aspect-[3/4]"
-                    }`}
-                  >
+                <div className={layout.imgCol}>
+                  <div className={`relative overflow-hidden ${layout.aspect}`}>
                     <img
                       src={p.image}
                       alt={p.title}
@@ -206,23 +197,20 @@ function ProcessEditorial() {
                   </div>
                 </div>
 
-                <div
-                  className={`lg:col-span-5 ${reverse ? "lg:order-1 lg:pr-6" : "lg:pl-6"}`}
-                >
-                  <div className="flex items-baseline gap-5">
-                    <span className="font-display text-5xl font-light text-wood-300">
+                <div className={layout.textCol}>
+                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-500">
+                    <span className="font-display text-base not-italic tracking-normal text-wood-400">
                       {p.n}
                     </span>
-                    <span className="text-[11px] uppercase tracking-[0.22em] text-wood-600">
-                      {p.kicker}
-                    </span>
+                    <span className="mx-3 text-wood-300">·</span>
+                    {p.kicker}
                   </div>
 
-                  <h3 className="font-display mt-6 text-3xl font-light leading-tight text-wood-900 sm:text-4xl">
+                  <h3 className="font-display mt-6 text-[1.7rem] font-light leading-[1.18] text-wood-900 sm:text-3xl lg:text-[2.1rem]">
                     {p.title}
                   </h3>
 
-                  <p className="mt-5 max-w-md text-[15px] leading-relaxed text-wood-700/85">
+                  <p className="mt-5 max-w-sm text-[14.5px] leading-[1.75] text-wood-700/85">
                     {p.body}
                   </p>
 
@@ -230,9 +218,9 @@ function ProcessEditorial() {
                     href={ZALO}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mt-8 inline-flex items-center gap-2 border-b border-wood-300 pb-1 text-sm tracking-wide text-wood-800 transition-colors hover:border-wood-700 hover:text-wood-900"
+                    className="group mt-8 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] text-wood-700 transition-colors hover:text-wood-900"
                   >
-                    Hỏi quy trình này qua Zalo
+                    Hỏi quy trình này
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </a>
                 </div>
@@ -246,94 +234,91 @@ function ProcessEditorial() {
 }
 
 /* ============================================================
-   LOOKBOOK — editorial curated gallery
+   LOOKBOOK — selected works
    ============================================================ */
-const LOOKS = [
-  { src: procLau, caption: "No. 01 — Giữ vân, hệ lau" },
-  { src: procPhun, caption: "No. 02 — Phun đều, nội thất" },
-  { src: procMdf, caption: "No. 03 — Màu bệt, MDF" },
-  { src: procBong, caption: "No. 04 — Phủ bóng, ngoài trời" },
-];
-
 function Lookbook() {
   return (
-    <section id="cong-trinh" className="bg-wood-50 py-20 sm:py-28 lg:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex items-end justify-between border-t border-wood-200 pt-10">
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-wood-600">
-              Lookbook
+    <section
+      id="cong-trinh"
+      className="bg-[oklch(0.96_0.018_82)] py-24 sm:py-32 lg:py-40"
+    >
+      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+              Selected works
             </div>
-            <h2 className="font-display mt-5 max-w-xl text-3xl font-light leading-tight text-wood-900 sm:text-4xl lg:text-[2.75rem]">
-              Một vài bề mặt
-              <br />
-              <em className="italic font-normal text-wood-700">
+            <h2 className="font-display mt-8 max-w-xl text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-4xl lg:text-[2.75rem]">
+              <span className="block">Một vài bề mặt</span>
+              <span className="block italic font-normal text-wood-700">
                 đã đi qua xưởng Lotus.
-              </em>
+              </span>
             </h2>
-          </div>
-          <div className="hidden text-right text-[11px] uppercase tracking-[0.22em] text-wood-500 sm:block">
-            04 / Selected
           </div>
         </div>
 
-        {/* Editorial asymmetric grid */}
-        <div className="mt-12 grid grid-cols-12 gap-3 sm:gap-5 lg:mt-16">
-          <figure className="col-span-12 lg:col-span-8">
-            <div className="aspect-[16/10] overflow-hidden rounded-sm">
-              <img
-                src={LOOKS[0].src}
-                alt={LOOKS[0].caption}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
+        {/* Editorial layout — 1 hero + 2 paired */}
+        <div className="mt-16 space-y-16 lg:mt-24 lg:space-y-24">
+          <figure className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-9">
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={procPhun}
+                  alt="Bề mặt sơn phun giữ vân"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
-            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-wood-600">
-              {LOOKS[0].caption}
+            <figcaption className="text-[12px] leading-[1.7] text-wood-700 lg:col-span-3 lg:flex lg:flex-col lg:justify-end lg:pb-2">
+              <span className="uppercase tracking-[0.22em] text-wood-500">
+                Phun giữ vân
+              </span>
+              <span className="mt-2 font-display text-base italic text-wood-700">
+                Nội thất căn hộ
+              </span>
             </figcaption>
           </figure>
 
-          <figure className="col-span-6 lg:col-span-4">
-            <div className="aspect-[3/4] overflow-hidden rounded-sm">
-              <img
-                src={LOOKS[1].src}
-                alt={LOOKS[1].caption}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-wood-600">
-              {LOOKS[1].caption}
-            </figcaption>
-          </figure>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-10">
+            <figure className="lg:col-span-5 lg:col-start-1">
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src={procLau}
+                  alt="Bề mặt sơn lau giữ vân"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 text-[12px] leading-[1.7] text-wood-700">
+                <span className="uppercase tracking-[0.22em] text-wood-500">
+                  Lau giữ vân
+                </span>
+                <span className="ml-3 font-display text-base italic text-wood-700">
+                  Bàn gỗ tự nhiên
+                </span>
+              </figcaption>
+            </figure>
 
-          <figure className="col-span-6 lg:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden rounded-sm">
-              <img
-                src={LOOKS[2].src}
-                alt={LOOKS[2].caption}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-wood-600">
-              {LOOKS[2].caption}
-            </figcaption>
-          </figure>
-
-          <figure className="col-span-12 lg:col-span-7">
-            <div className="aspect-[16/10] overflow-hidden rounded-sm">
-              <img
-                src={LOOKS[3].src}
-                alt={LOOKS[3].caption}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-[11px] uppercase tracking-[0.18em] text-wood-600">
-              {LOOKS[3].caption}
-            </figcaption>
-          </figure>
+            <figure className="lg:col-span-6 lg:col-start-7 lg:pt-24">
+              <div className="aspect-[5/4] overflow-hidden">
+                <img
+                  src={procBong}
+                  alt="Bề mặt phủ bóng ngoài trời"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 text-[12px] leading-[1.7] text-wood-700">
+                <span className="uppercase tracking-[0.22em] text-wood-500">
+                  Phủ bóng ngoài trời
+                </span>
+                <span className="ml-3 font-display text-base italic text-wood-700">
+                  Cửa &amp; lam gỗ sân vườn
+                </span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -341,46 +326,43 @@ function Lookbook() {
 }
 
 /* ============================================================
-   CONSULT — premium Zalo block
+   CONSULT — private design consultation
    ============================================================ */
 function ConsultBlock() {
   return (
-    <section className="bg-wood-900 py-20 text-background sm:py-28 lg:py-32">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-wood-400">
+    <section className="bg-wood-900 py-24 text-background sm:py-32 lg:py-40">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-400">
               Tư vấn riêng
             </div>
-            <h2 className="font-display mt-6 text-4xl font-light leading-[1.05] sm:text-5xl lg:text-[3.5rem]">
-              Gửi ảnh hạng mục.
-              <br />
-              <em className="italic font-normal text-wood-200">
+            <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3.25rem]">
+              <span className="block">Gửi ảnh hạng mục.</span>
+              <span className="block italic font-normal text-wood-200">
                 Lotus chọn đúng hệ cho bạn.
-              </em>
+              </span>
             </h2>
-            <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-wood-300">
-              Không cần thông tin kỹ thuật. Một vài tấm ảnh và vài dòng mô tả
-              là đủ để Lotus gợi ý quy trình hoàn thiện phù hợp nhất.
+            <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">
+              Không cần thông tin kỹ thuật. Vài tấm ảnh và mô tả ngắn là đủ
+              để Lotus gợi ý quy trình hoàn thiện phù hợp với loại gỗ, môi
+              trường và thẩm mỹ của bạn.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 lg:col-span-4 lg:items-end">
+          <div className="flex flex-col gap-6 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-between gap-3 rounded-full bg-background px-7 py-4 text-sm font-medium tracking-wide text-wood-900 transition-all hover:bg-wood-50 sm:w-auto"
+              className="group inline-flex items-center gap-3 border-b border-background pb-2 text-[13px] uppercase tracking-[0.22em] text-background transition-colors hover:border-wood-300 hover:text-wood-200"
             >
-              <span className="inline-flex items-center gap-2">
-                <MessageCircle className="h-4 w-4" />
-                Nhắn Zalo ngay
-              </span>
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              Nhắn Zalo
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
-              className="text-sm tracking-wide text-wood-300 transition-colors hover:text-background"
+              className="text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
             >
               hoặc gọi 0943 966 662
             </a>
@@ -392,7 +374,7 @@ function ConsultBlock() {
 }
 
 /* ============================================================
-   FAQ — concise, editorial
+   FAQ — quiet, editorial
    ============================================================ */
 const FAQS = [
   {
@@ -415,32 +397,33 @@ const FAQS = [
 
 function FAQ() {
   return (
-    <section id="faq" className="bg-background py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <div className="grid grid-cols-1 gap-10 border-t border-wood-200 pt-10 lg:grid-cols-12">
+    <section id="faq" className="bg-background py-24 sm:py-28 lg:py-36">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-wood-600">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
               Hỏi đáp
             </div>
-            <h2 className="font-display mt-5 text-3xl font-light leading-tight text-wood-900 sm:text-4xl">
-              Trước khi
-              <br />
-              <em className="italic font-normal text-wood-700">nhắn Zalo.</em>
+            <h2 className="font-display mt-8 text-[2rem] font-light leading-[1.1] text-wood-900 sm:text-[2.25rem]">
+              <span className="block">Trước khi</span>
+              <span className="block italic font-normal text-wood-700">
+                nhắn Zalo.
+              </span>
             </h2>
           </div>
 
           <div className="lg:col-span-8">
-            <Accordion type="single" collapsible className="divide-y divide-wood-200 border-y border-wood-200">
+            <Accordion type="single" collapsible className="divide-y divide-wood-200 border-t border-wood-200">
               {FAQS.map((f, i) => (
                 <AccordionItem
                   key={i}
                   value={`item-${i}`}
                   className="border-0"
                 >
-                  <AccordionTrigger className="py-5 text-left text-base font-medium text-wood-900 hover:no-underline sm:text-lg">
+                  <AccordionTrigger className="py-6 text-left font-display text-lg font-normal text-wood-900 hover:no-underline sm:text-xl">
                     {f.q}
                   </AccordionTrigger>
-                  <AccordionContent className="pb-6 text-[15px] leading-relaxed text-wood-700/85">
+                  <AccordionContent className="pb-7 text-[14.5px] leading-[1.75] text-wood-700/85">
                     {f.a}
                   </AccordionContent>
                 </AccordionItem>

@@ -413,19 +413,19 @@ function ConsultBlock() {
 const FAQS = [
   {
     q: "Tôi nên chọn sơn lau hay sơn phun?",
-    a: "Sơn lau cho cảm giác gỗ thật, vân chiều sâu rõ nét — hợp đồ gỗ tự nhiên. Sơn phun cho bề mặt đều, phẳng, dùng được cho cả trong nhà và ngoài trời. Gửi ảnh qua Zalo để Lotus chọn giúp.",
+    a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp.",
   },
   {
     q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",
-    a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu đều. Gỗ tự nhiên dùng hệ giữ vân. Dùng sai hệ sẽ làm bề mặt nhanh xuống cấp.",
+    a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu phẳng. Dùng sai hệ, bề mặt sẽ loang, bong và xuống cấp nhanh hơn nhiều so với tuổi thọ thật của vật liệu.",
   },
   {
     q: "Gỗ ngoài trời nên dùng lớp phủ nào?",
-    a: "Lớp phủ bóng chuyên dụng kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho ngoài trời.",
+    a: "Một lớp phủ chuyên ngoài trời: kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho hạng mục ngoài trời — đây là sai lầm tốn kém nhất chúng tôi thường gặp.",
   },
   {
     q: "Chưa biết quy trình phù hợp thì làm sao?",
-    a: "Cách nhanh nhất là gửi ảnh hạng mục qua Zalo. Lotus xem trực tiếp và gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
+    a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
   },
 ];
 

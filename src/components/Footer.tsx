@@ -8,7 +8,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <div className="h-7 w-7 rounded-md bg-wood-600" />
             <span className="text-base font-bold tracking-tight text-wood-800">
-              Sơn Gỗ Đẹp
+              Sơn Gỗ Lotus
             </span>
           </div>
 

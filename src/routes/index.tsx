@@ -424,6 +424,14 @@ const FAQS = [
     a: "Một lớp phủ chuyên ngoài trời: kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho hạng mục ngoài trời — đây là sai lầm tốn kém nhất chúng tôi thường gặp.",
   },
   {
+    q: "Tôi đang làm số lượng nhiều cho xưởng, nên ưu tiên hệ nào để bề mặt ổn định hơn?",
+    a: "Tùy vào loại gỗ, yêu cầu bề mặt và môi trường sử dụng, Lotus sẽ gợi ý hướng hoàn thiện phù hợp hơn cho sản xuất đồng đều và kiểm soát chất lượng tốt hơn.",
+  },
+  {
+    q: "Tôi có thể gửi ảnh mẫu hoặc ảnh hạng mục thực tế để Lotus tư vấn đúng quy trình không?",
+    a: "Có. Bạn chỉ cần gửi ảnh bề mặt, mô tả nhu cầu hoàn thiện và vị trí sử dụng, Lotus sẽ tư vấn hướng quy trình phù hợp hơn trước khi chọn hệ.",
+  },
+  {
     q: "Chưa biết quy trình phù hợp thì làm sao?",
     a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
   },

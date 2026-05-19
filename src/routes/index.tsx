@@ -63,15 +63,15 @@ function Hero() {
           </div>
 
           <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[4.5rem]">
-            <span className="block">Hoàn thiện gỗ,</span>
+            <span className="block">Gỗ, hoàn thiện</span>
             <span className="block italic font-normal text-wood-700">
-              đúng chất.
+              đúng chất liệu.
             </span>
           </h1>
 
           <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Bốn hướng hoàn thiện riêng cho từng bề mặt gỗ — giữ vân, lên màu,
-            bảo vệ ngoài trời. Lotus chọn đúng hệ cho từng hạng mục của bạn.
+            Lotus chọn đúng hệ hoàn thiện cho từng loại gỗ và từng vị trí lắp
+            đặt — để bề mặt giữ được vẻ đẹp ban đầu, lâu hơn dự kiến.
           </p>
 
           <div className="mt-12 flex flex-col items-start gap-6">

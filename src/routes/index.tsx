@@ -170,16 +170,8 @@ const PROCESSES = [
   },
 ];
 
-const PROCESS_LAYOUTS = [
-  // I — large portrait, text left-aligned right
-  { imgCol: "lg:col-span-7 lg:col-start-1", textCol: "lg:col-span-4 lg:col-start-9 lg:pt-16", aspect: "aspect-[4/5]" },
-  // II — wide landscape pushed right, text left
-  { imgCol: "lg:col-span-8 lg:col-start-5", textCol: "lg:col-span-4 lg:col-start-1 lg:pt-24", aspect: "aspect-[16/10]" },
-  // III — medium square-ish left, text right
-  { imgCol: "lg:col-span-6 lg:col-start-1", textCol: "lg:col-span-4 lg:col-start-8 lg:pt-12", aspect: "aspect-[5/4]" },
-  // IV — tall portrait right, text left
-  { imgCol: "lg:col-span-6 lg:col-start-7", textCol: "lg:col-span-4 lg:col-start-1 lg:pt-20", aspect: "aspect-[3/4]" },
-];
+
+
 
 function ProcessEditorial() {
   return (

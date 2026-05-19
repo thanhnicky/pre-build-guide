@@ -238,13 +238,13 @@ function ProcessEditorial() {
                     {p.title}
                   </h3>
 
-                  <div className="mt-5 max-w-sm space-y-3 text-[14.5px] leading-[1.75] text-wood-700/85">
+                  <div className="mt-6 max-w-md space-y-4 text-[15.5px] leading-[1.82] text-wood-700/85">
                     {p.body.map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}
                   </div>
 
-                  <p className="mt-6 text-[13px] italic leading-[1.7] text-wood-500">
+                  <p className="mt-7 text-[14px] italic leading-[1.7] text-wood-500">
                     {p.fitFor}
                   </p>
 
@@ -252,7 +252,7 @@ function ProcessEditorial() {
                     href={ZALO}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mt-7 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] text-wood-700 transition-colors hover:text-wood-900"
+                    className="group mt-8 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
                   >
                     {p.cta}
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -422,6 +422,14 @@ const FAQS = [
   {
     q: "Gỗ ngoài trời nên dùng lớp phủ nào?",
     a: "Một lớp phủ chuyên ngoài trời: kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho hạng mục ngoài trời — đây là sai lầm tốn kém nhất chúng tôi thường gặp.",
+  },
+  {
+    q: "Tôi đang làm số lượng nhiều cho xưởng, nên ưu tiên hệ nào để bề mặt ổn định hơn?",
+    a: "Tùy vào loại gỗ, yêu cầu bề mặt và môi trường sử dụng, Lotus sẽ gợi ý hướng hoàn thiện phù hợp hơn cho sản xuất đồng đều và kiểm soát chất lượng tốt hơn.",
+  },
+  {
+    q: "Tôi có thể gửi ảnh mẫu hoặc ảnh hạng mục thực tế để Lotus tư vấn đúng quy trình không?",
+    a: "Có. Bạn chỉ cần gửi ảnh bề mặt, mô tả nhu cầu hoàn thiện và vị trí sử dụng, Lotus sẽ tư vấn hướng quy trình phù hợp hơn trước khi chọn hệ.",
   },
   {
     q: "Chưa biết quy trình phù hợp thì làm sao?",

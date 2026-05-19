@@ -170,21 +170,13 @@ const PROCESSES = [
   },
 ];
 
-const PROCESS_LAYOUTS = [
-  // I — large portrait, text left-aligned right
-  { imgCol: "lg:col-span-7 lg:col-start-1", textCol: "lg:col-span-4 lg:col-start-9 lg:pt-16", aspect: "aspect-[4/5]" },
-  // II — wide landscape pushed right, text left
-  { imgCol: "lg:col-span-8 lg:col-start-5", textCol: "lg:col-span-4 lg:col-start-1 lg:pt-24", aspect: "aspect-[16/10]" },
-  // III — medium square-ish left, text right
-  { imgCol: "lg:col-span-6 lg:col-start-1", textCol: "lg:col-span-4 lg:col-start-8 lg:pt-12", aspect: "aspect-[5/4]" },
-  // IV — tall portrait right, text left
-  { imgCol: "lg:col-span-6 lg:col-start-7", textCol: "lg:col-span-4 lg:col-start-1 lg:pt-20", aspect: "aspect-[3/4]" },
-];
+
+
 
 function ProcessEditorial() {
   return (
     <section id="quy-trinh" className="bg-background py-24 sm:py-32 lg:py-40">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -205,17 +197,23 @@ function ProcessEditorial() {
           </p>
         </div>
 
-        {/* 4 panels — asymmetric grid placement */}
-        <div className="mt-24 space-y-28 sm:mt-32 sm:space-y-36 lg:mt-40 lg:space-y-48">
+        {/* 4 panels — unified 2-col system, alternating sides */}
+        <div className="mt-24 space-y-24 sm:mt-32 sm:space-y-28 lg:mt-40 lg:space-y-32">
           {PROCESSES.map((p, i) => {
-            const layout = PROCESS_LAYOUTS[i];
+            const imageLeft = i % 2 === 0;
             return (
               <article
                 key={p.n}
-                className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-10"
+                className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
               >
-                <div className={layout.imgCol}>
-                  <div className={`relative overflow-hidden ${layout.aspect}`}>
+                <div
+                  className={`order-1 ${
+                    imageLeft
+                      ? "lg:order-1 lg:col-span-7 lg:col-start-1"
+                      : "lg:order-2 lg:col-span-7 lg:col-start-6"
+                  }`}
+                >
+                  <div className="relative aspect-[4/5] overflow-hidden">
                     <img
                       src={p.image}
                       alt={p.title}
@@ -225,7 +223,13 @@ function ProcessEditorial() {
                   </div>
                 </div>
 
-                <div className={layout.textCol}>
+                <div
+                  className={`order-2 ${
+                    imageLeft
+                      ? "lg:order-2 lg:col-span-4 lg:col-start-9"
+                      : "lg:order-1 lg:col-span-4 lg:col-start-1"
+                  }`}
+                >
                   <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-500">
                     <span className="font-display text-base not-italic tracking-normal text-wood-400">
                       {p.n}
@@ -238,7 +242,7 @@ function ProcessEditorial() {
                     {p.title}
                   </h3>
 
-                  <div className="mt-6 max-w-md space-y-4 text-[15.5px] leading-[1.82] text-wood-700/85">
+                  <div className="mt-6 space-y-4 text-[15.5px] leading-[1.82] text-wood-700/85">
                     {p.body.map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}
@@ -266,6 +270,7 @@ function ProcessEditorial() {
     </section>
   );
 }
+
 
 /* ============================================================
    LOOKBOOK — selected works

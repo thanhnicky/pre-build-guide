@@ -72,14 +72,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Sơn Gỗ Đẹp — Chuyên gia sơn gỗ nội & ngoại thất" },
+      {
+        name: "description",
+        content:
+          "Dịch vụ sơn gỗ chuyên nghiệp: nội thất, ngoại thất, đánh dầu, phủ bóng, bảo dưỡng gỗ. Tư vấn & báo giá miễn phí qua Zalo 0943 966 662.",
+      },
+      { name: "author", content: "Sơn Gỗ Đẹp" },
+      {
+        property: "og:title",
+        content: "Sơn Gỗ Đẹp — Chuyên gia sơn gỗ nội & ngoại thất",
+      },
+      {
+        property: "og:description",
+        content:
+          "Dịch vụ sơn gỗ chuyên nghiệp. Tư vấn & báo giá miễn phí qua Zalo.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

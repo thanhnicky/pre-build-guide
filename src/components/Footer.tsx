@@ -8,7 +8,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <div className="h-7 w-7 rounded-md bg-wood-600" />
             <span className="text-base font-bold tracking-tight text-wood-800">
-              Sơn Gỗ Đẹp
+              Sơn Gỗ Lotus
             </span>
           </div>
 
@@ -34,8 +34,8 @@ export function Footer() {
         </div>
 
         <div className="mt-6 text-center text-xs text-muted-foreground sm:text-left">
-          &copy; {new Date().getFullYear()} Sơn Gỗ Đẹp. Tất cả các dịch vụ đều
-          có bảo hành.
+          &copy; {new Date().getFullYear()} Sơn Gỗ Lotus. Tư vấn quy trình
+          sơn gỗ đúng nhu cầu.
         </div>
       </div>
     </footer>

@@ -6,10 +6,10 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { label: "Trang chủ", href: "/" },
-    { label: "Dịch vụ", href: "/#dich-vu" },
-    { label: "Dự án", href: "/#du-an" },
-    { label: "Liên hệ", href: "/#lien-he" },
+    { label: "Quy trình", href: "#quy-trinh" },
+    { label: "Ứng dụng", href: "#ung-dung" },
+    { label: "Công trình", href: "#cong-trinh" },
+    { label: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -18,7 +18,7 @@ export function Navbar() {
         <Link to="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-md bg-wood-600" />
           <span className="text-lg font-bold tracking-tight text-wood-800">
-            Sơn Gỗ Đẹp
+            Sơn Gỗ Lotus
           </span>
         </Link>
 

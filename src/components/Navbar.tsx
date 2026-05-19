@@ -84,7 +84,7 @@ export function Navbar() {
                 href="tel:0943966662"
                 className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-100 px-3 py-2 text-sm font-medium text-wood-700"
               >
-                <Phone className="h-3.5 w-3.5" />
+                
                 0943 966 662
               </a>
               <a

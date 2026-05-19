@@ -63,15 +63,15 @@ function Hero() {
           </div>
 
           <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[4.5rem]">
-            <span className="block">Hoàn thiện gỗ,</span>
+            <span className="block">Gỗ, hoàn thiện</span>
             <span className="block italic font-normal text-wood-700">
-              đúng chất.
+              đúng chất liệu.
             </span>
           </h1>
 
           <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Bốn hướng hoàn thiện riêng cho từng bề mặt gỗ — giữ vân, lên màu,
-            bảo vệ ngoài trời. Lotus chọn đúng hệ cho từng hạng mục của bạn.
+            Lotus chọn đúng hệ hoàn thiện cho từng loại gỗ và từng vị trí lắp
+            đặt — để bề mặt giữ được vẻ đẹp ban đầu, lâu hơn dự kiến.
           </p>
 
           <div className="mt-12 flex flex-col items-start gap-6">
@@ -117,14 +117,13 @@ const PROCESSES = [
     kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Sơn lau giữ màu vân gỗ",
     body: [
-      "Lớp hoàn thiện thấm sâu vào thớ gỗ, tôn vinh từng đường vân tự nhiên thay vì che phủ nó.",
-      "Kết quả là bề mặt ấm, có chiều sâu, và vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
-      "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — phù hợp những món đồ mà vẻ đẹp của chất liệu chính là điểm nhấn.",
-      "Đây là hướng dành cho người hiểu rằng vân gỗ chính là thứ làm nên giá trị của sản phẩm.",
+      "Lớp hoàn thiện thấm sâu vào thớ gỗ, tôn vinh từng đường vân thay vì che phủ.",
+      "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
+      "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
     fitFor:
-      "Phù hợp khi: bạn làm đồ nội thất tự nhiên, bàn gỗ nguyên khối, hoặc không gian cần cảm giác mộc mạc và sang trọng từ chính vân gỗ.",
-    cta: "Chưa chắc đây là hướng phù hợp? Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác.",
+      "Phù hợp khi: đồ nội thất tự nhiên, bàn gỗ nguyên khối, không gian cần sự mộc mạc và sang trọng từ chính vân gỗ.",
+    cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
   },
   {
@@ -132,14 +131,13 @@ const PROCESSES = [
     kicker: "Hệ phun · Nội & ngoại thất",
     title: "Sơn phun giữ vân, nội & ngoại thất",
     body: [
-      "Hệ phun mang lại bề mặt phẳng, đều màu và kiểm soát cao — lý tưởng cho xưởng sản xuất và các dự án cần tính nhất quán.",
-      "Vân gỗ vẫn hiện rõ nhưng trong một lớp hoàn thiện ổn định hơn sơn lau, ít chịu ảnh hưởng từ kỹ năng thợ.",
-      "Lotus phân biệt hệ nội thất và ngoại thất riêng biệt: cùng vẻ ngoài đẹp nhưng khác về khả năng chống chịu môi trường.",
-      "Bạn không cần đánh đổi giữa thẩm mỹ và độ bền — chỉ cần chọn đúng hệ cho đúng vị trí lắp đặt.",
+      "Hệ phun cho bề mặt phẳng, đều màu, kiểm soát cao — lý tưởng cho sản xuất hàng loạt và dự án cần tính nhất quán.",
+      "Vân gỗ vẫn hiện rõ, nhưng trong một lớp hoàn thiện ổn định và ít phụ thuộc kỹ năng thợ.",
+      "Lotus tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
     fitFor:
-      "Phù hợp khi: bạn cần bề mặt đồng đều cho nhiều sản phẩm, hoặc hạng mục ngoài trời cần giữ vân nhưng phải bền màu theo thời tiết.",
-    cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun cho từng môi trường.",
+      "Phù hợp khi: cần đồng đều cho nhiều sản phẩm, hoặc hạng mục ngoài trời cần giữ vân nhưng phải bền theo thời tiết.",
+    cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
   },
   {
@@ -147,14 +145,13 @@ const PROCESSES = [
     kicker: "Màu bệt · MDF",
     title: "Sơn màu bệt cho gỗ MDF",
     body: [
-      "Màu bệt không cố gắng biến MDF thành gỗ tự nhiên. Thay vào đó, nó tạo nên một bề mặt màu phẳng, sạch, và hiện đại.",
-      "Lớp sơn che nền MDF đều, không loang, và giữ được độ bóng hoặc mờ nhất quán trên toàn bộ sản phẩm.",
-      "Khác với hệ giữ vân, màu bệt dành cho những concept nội thất đương đại, nơi màu sắc và form chiếm vai trò chính.",
-      "Đây là hướng khi bạn muốn bề mặt trung thực với chất liệu — đẹp theo cách riêng của MDF, không giả vờ là gỗ.",
+      "Màu bệt không cố biến MDF thành gỗ tự nhiên — nó tạo một bề mặt màu phẳng, sạch và hiện đại.",
+      "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
+      "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính — đẹp theo cách riêng của MDF.",
     ],
     fitFor:
-      "Phù hợp khi: tủ bếp, tủ âm tường, nội thất hiện đại, hoặc khi bạn cần lên màu theo bảng thiết kế riêng.",
-    cta: "Nhắn Zalo nếu bạn cần tư vấn màu bệt phù hợp với concept nội thất của mình.",
+      "Phù hợp khi: tủ bếp, tủ âm tường, nội thất hiện đại, hoặc lên màu theo bảng thiết kế riêng.",
+    cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
   },
   {
@@ -162,14 +159,13 @@ const PROCESSES = [
     kicker: "Phủ bóng · Ngoài trời",
     title: "Sơn phủ bóng chuyên dụng bảo vệ gỗ ngoài trời",
     body: [
-      "Gỗ ngoài trời không chỉ cần đẹp khi mới hoàn thiện — nó cần giữ vẻ đẹp đó qua năm tháng dưới nắng, mưa, và độ ẩm thay đổi.",
-      "Lớp phủ chuyên dụng của Lotus được xây dựng để co giãn cùng gỗ, chống tia UV, và chống thấm nước mà không bị nứt hay bong tróc.",
-      "Đây không phải là hệ nội thất mang ra ngoài. Đây là một hệ thống riêng biệt, được chọn dựa trên mức độ tiếp xúc thực tế của hạng mục.",
-      "Chọn sai lớp phủ cho ngoài trời là chấp nhận bề mặt xuống cấp nhanh hơn gấp nhiều lần — điều không ai muốn sau khi đã đầu tư.",
+      "Gỗ ngoài trời không chỉ cần đẹp khi mới — nó cần giữ vẻ đẹp đó qua nắng, mưa và độ ẩm thay đổi.",
+      "Lớp phủ chuyên dụng của Lotus co giãn cùng gỗ, kháng UV và chống thấm mà không nứt hay bong tróc.",
+      "Đây không phải hệ nội thất mang ra ngoài — mà là một hệ riêng, chọn theo mức tiếp xúc thực tế của hạng mục.",
     ],
     fitFor:
-      "Phù hợp khi: cửa gỗ ngoài trời, lam chắn nắng, pergola, sàn gỗ sân vườn, hoặc bất kỳ hạng mục nào chịu tác động thời tiết.",
-    cta: "Gửi ảnh và mô tả hạng mục qua Zalo để Lotus chọn đúng lớp phủ theo môi trường thực tế.",
+      "Phù hợp khi: cửa gỗ ngoài trời, lam chắn nắng, pergola, sàn sân vườn, hoặc bất kỳ hạng mục nào chịu thời tiết.",
+    cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
   },
 ];
@@ -373,18 +369,18 @@ function ConsultBlock() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-400">
-              Tư vấn riêng
+              Tư vấn riêng · 1:1
             </div>
             <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3.25rem]">
-              <span className="block">Gửi ảnh hạng mục.</span>
+              <span className="block">Gửi vài tấm ảnh.</span>
               <span className="block italic font-normal text-wood-200">
-                Lotus chọn đúng hệ cho bạn.
+                Nhận tư vấn từ xưởng Lotus.
               </span>
             </h2>
             <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">
-              Không cần thông tin kỹ thuật. Vài tấm ảnh và mô tả ngắn là đủ
-              để Lotus gợi ý quy trình hoàn thiện phù hợp với loại gỗ, môi
-              trường và thẩm mỹ của bạn.
+              Không form, không báo giá tự động. Bạn nhắn Zalo, Lotus xem
+              trực tiếp hạng mục và gợi ý quy trình hoàn thiện phù hợp với
+              loại gỗ, môi trường và thẩm mỹ của bạn.
             </p>
           </div>
 
@@ -395,14 +391,14 @@ function ConsultBlock() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 border-b border-background pb-2 text-[13px] uppercase tracking-[0.22em] text-background transition-colors hover:border-wood-300 hover:text-wood-200"
             >
-              Nhắn Zalo
+              Mở Zalo & gửi ảnh
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
               className="text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
             >
-              hoặc gọi 0943 966 662
+              hoặc gọi riêng 0943 966 662
             </a>
           </div>
         </div>
@@ -417,19 +413,19 @@ function ConsultBlock() {
 const FAQS = [
   {
     q: "Tôi nên chọn sơn lau hay sơn phun?",
-    a: "Sơn lau cho cảm giác gỗ thật, vân chiều sâu rõ nét — hợp đồ gỗ tự nhiên. Sơn phun cho bề mặt đều, phẳng, dùng được cho cả trong nhà và ngoài trời. Gửi ảnh qua Zalo để Lotus chọn giúp.",
+    a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp.",
   },
   {
     q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",
-    a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu đều. Gỗ tự nhiên dùng hệ giữ vân. Dùng sai hệ sẽ làm bề mặt nhanh xuống cấp.",
+    a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu phẳng. Dùng sai hệ, bề mặt sẽ loang, bong và xuống cấp nhanh hơn nhiều so với tuổi thọ thật của vật liệu.",
   },
   {
     q: "Gỗ ngoài trời nên dùng lớp phủ nào?",
-    a: "Lớp phủ bóng chuyên dụng kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho ngoài trời.",
+    a: "Một lớp phủ chuyên ngoài trời: kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho hạng mục ngoài trời — đây là sai lầm tốn kém nhất chúng tôi thường gặp.",
   },
   {
     q: "Chưa biết quy trình phù hợp thì làm sao?",
-    a: "Cách nhanh nhất là gửi ảnh hạng mục qua Zalo. Lotus xem trực tiếp và gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
+    a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
   },
 ];
 

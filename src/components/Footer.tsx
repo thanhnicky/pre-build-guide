@@ -34,8 +34,8 @@ export function Footer() {
         </div>
 
         <div className="mt-6 text-center text-xs text-muted-foreground sm:text-left">
-          &copy; {new Date().getFullYear()} Sơn Gỗ Đẹp. Tất cả các dịch vụ đều
-          có bảo hành.
+          &copy; {new Date().getFullYear()} Sơn Gỗ Lotus. Tư vấn quy trình
+          sơn gỗ đúng nhu cầu.
         </div>
       </div>
     </footer>

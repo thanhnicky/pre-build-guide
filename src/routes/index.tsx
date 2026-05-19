@@ -238,13 +238,13 @@ function ProcessEditorial() {
                     {p.title}
                   </h3>
 
-                  <div className="mt-5 max-w-sm space-y-3 text-[14.5px] leading-[1.75] text-wood-700/85">
+                  <div className="mt-6 max-w-md space-y-4 text-[15.5px] leading-[1.82] text-wood-700/85">
                     {p.body.map((line, idx) => (
                       <p key={idx}>{line}</p>
                     ))}
                   </div>
 
-                  <p className="mt-6 text-[13px] italic leading-[1.7] text-wood-500">
+                  <p className="mt-7 text-[14px] italic leading-[1.7] text-wood-500">
                     {p.fitFor}
                   </p>
 
@@ -252,7 +252,7 @@ function ProcessEditorial() {
                     href={ZALO}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mt-7 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] text-wood-700 transition-colors hover:text-wood-900"
+                    className="group mt-8 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
                   >
                     {p.cta}
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

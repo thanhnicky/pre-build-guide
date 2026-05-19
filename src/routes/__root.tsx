@@ -90,6 +90,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "Sơn Gỗ Đẹp — Chuyên gia sơn gỗ nội & ngoại thất" },
+      { name: "twitter:title", content: "Sơn Gỗ Đẹp — Chuyên gia sơn gỗ nội & ngoại thất" },
+      { name: "description", content: "Wood Design Studio creates custom landing pages for wood product businesses, focusing on interior or exterior applications." },
+      { property: "og:description", content: "Wood Design Studio creates custom landing pages for wood product businesses, focusing on interior or exterior applications." },
+      { name: "twitter:description", content: "Wood Design Studio creates custom landing pages for wood product businesses, focusing on interior or exterior applications." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
     ],
     links: [
       {

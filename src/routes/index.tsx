@@ -116,28 +116,60 @@ const PROCESSES = [
     n: "I",
     kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Sơn lau giữ màu vân gỗ",
-    body: "Lớp sơn thấm vào thớ gỗ, làm sâu vân và tôn cảm giác gỗ thật. Dành cho đồ gỗ tự nhiên cần giữ trọn vẻ mộc.",
+    body: [
+      "Lớp hoàn thiện thấm sâu vào thớ gỗ, tôn vinh từng đường vân tự nhiên thay vì che phủ nó.",
+      "Kết quả là bề mặt ấm, có chiều sâu, và vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
+      "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — phù hợp những món đồ mà vẻ đẹp của chất liệu chính là điểm nhấn.",
+      "Đây là hướng dành cho người hiểu rằng vân gỗ chính là thứ làm nên giá trị của sản phẩm.",
+    ],
+    fitFor:
+      "Phù hợp khi: bạn làm đồ nội thất tự nhiên, bàn gỗ nguyên khối, hoặc không gian cần cảm giác mộc mạc và sang trọng từ chính vân gỗ.",
+    cta: "Chưa chắc đây là hướng phù hợp? Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác.",
     image: procLau,
   },
   {
     n: "II",
     kicker: "Hệ phun · Nội & ngoại thất",
     title: "Sơn phun giữ vân, nội & ngoại thất",
-    body: "Bề mặt đều, phẳng, vân gỗ vẫn hiện rõ. Hệ chia riêng cho trong nhà và ngoài trời để bền màu theo môi trường.",
+    body: [
+      "Hệ phun mang lại bề mặt phẳng, đều màu và kiểm soát cao — lý tưởng cho xưởng sản xuất và các dự án cần tính nhất quán.",
+      "Vân gỗ vẫn hiện rõ nhưng trong một lớp hoàn thiện ổn định hơn sơn lau, ít chịu ảnh hưởng từ kỹ năng thợ.",
+      "Lotus phân biệt hệ nội thất và ngoại thất riêng biệt: cùng vẻ ngoài đẹp nhưng khác về khả năng chống chịu môi trường.",
+      "Bạn không cần đánh đổi giữa thẩm mỹ và độ bền — chỉ cần chọn đúng hệ cho đúng vị trí lắp đặt.",
+    ],
+    fitFor:
+      "Phù hợp khi: bạn cần bề mặt đồng đều cho nhiều sản phẩm, hoặc hạng mục ngoài trời cần giữ vân nhưng phải bền màu theo thời tiết.",
+    cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun cho từng môi trường.",
     image: procPhun,
   },
   {
     n: "III",
     kicker: "Màu bệt · MDF",
     title: "Sơn màu bệt cho gỗ MDF",
-    body: "Che nền MDF, lên màu phẳng và đều — phù hợp tủ bếp, tủ áo và nội thất hiện đại theo bảng màu riêng.",
+    body: [
+      "Màu bệt không cố gắng biến MDF thành gỗ tự nhiên. Thay vào đó, nó tạo nên một bề mặt màu phẳng, sạch, và hiện đại.",
+      "Lớp sơn che nền MDF đều, không loang, và giữ được độ bóng hoặc mờ nhất quán trên toàn bộ sản phẩm.",
+      "Khác với hệ giữ vân, màu bệt dành cho những concept nội thất đương đại, nơi màu sắc và form chiếm vai trò chính.",
+      "Đây là hướng khi bạn muốn bề mặt trung thực với chất liệu — đẹp theo cách riêng của MDF, không giả vờ là gỗ.",
+    ],
+    fitFor:
+      "Phù hợp khi: tủ bếp, tủ âm tường, nội thất hiện đại, hoặc khi bạn cần lên màu theo bảng thiết kế riêng.",
+    cta: "Nhắn Zalo nếu bạn cần tư vấn màu bệt phù hợp với concept nội thất của mình.",
     image: procMdf,
   },
   {
     n: "IV",
     kicker: "Phủ bóng · Ngoài trời",
-    title: "Sơn phủ bóng bảo vệ gỗ ngoài trời",
-    body: "Lớp phủ chuyên dụng kháng UV, kháng ẩm và co giãn theo thời tiết — giữ bề mặt gỗ ngoài trời bền lâu.",
+    title: "Sơn phủ bóng chuyên dụng bảo vệ gỗ ngoài trời",
+    body: [
+      "Gỗ ngoài trời không chỉ cần đẹp khi mới hoàn thiện — nó cần giữ vẻ đẹp đó qua năm tháng dưới nắng, mưa, và độ ẩm thay đổi.",
+      "Lớp phủ chuyên dụng của Lotus được xây dựng để co giãn cùng gỗ, chống tia UV, và chống thấm nước mà không bị nứt hay bong tróc.",
+      "Đây không phải là hệ nội thất mang ra ngoài. Đây là một hệ thống riêng biệt, được chọn dựa trên mức độ tiếp xúc thực tế của hạng mục.",
+      "Chọn sai lớp phủ cho ngoài trời là chấp nhận bề mặt xuống cấp nhanh hơn gấp nhiều lần — điều không ai muốn sau khi đã đầu tư.",
+    ],
+    fitFor:
+      "Phù hợp khi: cửa gỗ ngoài trời, lam chắn nắng, pergola, sàn gỗ sân vườn, hoặc bất kỳ hạng mục nào chịu tác động thời tiết.",
+    cta: "Gửi ảnh và mô tả hạng mục qua Zalo để Lotus chọn đúng lớp phủ theo môi trường thực tế.",
     image: procBong,
   },
 ];
@@ -210,17 +242,23 @@ function ProcessEditorial() {
                     {p.title}
                   </h3>
 
-                  <p className="mt-5 max-w-sm text-[14.5px] leading-[1.75] text-wood-700/85">
-                    {p.body}
+                  <div className="mt-5 max-w-sm space-y-3 text-[14.5px] leading-[1.75] text-wood-700/85">
+                    {p.body.map((line, idx) => (
+                      <p key={idx}>{line}</p>
+                    ))}
+                  </div>
+
+                  <p className="mt-6 text-[13px] italic leading-[1.7] text-wood-500">
+                    {p.fitFor}
                   </p>
 
                   <a
                     href={ZALO}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mt-8 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] text-wood-700 transition-colors hover:text-wood-900"
+                    className="group mt-7 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] text-wood-700 transition-colors hover:text-wood-900"
                   >
-                    Hỏi quy trình này
+                    {p.cta}
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </a>
                 </div>

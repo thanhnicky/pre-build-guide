@@ -369,18 +369,18 @@ function ConsultBlock() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-400">
-              Tư vấn riêng
+              Tư vấn riêng · 1:1
             </div>
             <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3.25rem]">
-              <span className="block">Gửi ảnh hạng mục.</span>
+              <span className="block">Gửi vài tấm ảnh.</span>
               <span className="block italic font-normal text-wood-200">
-                Lotus chọn đúng hệ cho bạn.
+                Nhận tư vấn từ xưởng Lotus.
               </span>
             </h2>
             <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">
-              Không cần thông tin kỹ thuật. Vài tấm ảnh và mô tả ngắn là đủ
-              để Lotus gợi ý quy trình hoàn thiện phù hợp với loại gỗ, môi
-              trường và thẩm mỹ của bạn.
+              Không form, không báo giá tự động. Bạn nhắn Zalo, Lotus xem
+              trực tiếp hạng mục và gợi ý quy trình hoàn thiện phù hợp với
+              loại gỗ, môi trường và thẩm mỹ của bạn.
             </p>
           </div>
 
@@ -391,14 +391,14 @@ function ConsultBlock() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 border-b border-background pb-2 text-[13px] uppercase tracking-[0.22em] text-background transition-colors hover:border-wood-300 hover:text-wood-200"
             >
-              Nhắn Zalo
+              Mở Zalo & gửi ảnh
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
               className="text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
             >
-              hoặc gọi 0943 966 662
+              hoặc gọi riêng 0943 966 662
             </a>
           </div>
         </div>

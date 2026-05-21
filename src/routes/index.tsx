@@ -93,7 +93,7 @@ function Hero() {
             LOTUS · GIẢI PHÁP HOÀN THIỆN GỖ CHUYÊN NGHIỆP
           </div>
 
-          <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[4.5rem]">
+          <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[2.5rem] lg:leading-[1.12]">
             <span className="block">Gỗ hoàn thiện đúng hệ —</span>
             <span className="block italic font-normal text-wood-700">
               bề mặt ổn định từ mẫu đầu đến lô cuối.

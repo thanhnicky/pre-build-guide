@@ -311,8 +311,6 @@ const PROCESSES = [
       "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
-    secondaryAlt: "Ảnh thực tế: tủ bếp hàng loạt đồng màu xuyên lô",
-    secondaryImage: "https://images.unsplash.com/photo-1597484661973-ee6cd0b6482c?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Phun lót — Lotus Wood Primer", note: "bịt lỗ, tăng bám dính" },
       { product: "Phun màu giữ vân — Lotus Wood Stain", note: "pha loãng, phun đều 1–2 lớp" },

@@ -385,7 +385,7 @@ const PROCESSES = [
   {
     n: "III",
     slug: "mau-bet-mdf",
-    tab: "​Sơn Lotus",
+    tab: "Màu Bệt MDF",
     kicker: "Màu bệt · MDF",
     title: "Sơn màu bệt cho gỗ MDF",
     body: [

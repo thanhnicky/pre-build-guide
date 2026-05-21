@@ -443,12 +443,6 @@ function ProcessEditorial() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <img
-                    src={p.secondaryImage}
-                    alt={p.secondaryAlt}
-                    loading="lazy"
-                    className="mt-4 aspect-video w-full rounded-md object-cover"
-                  />
                 </div>
 
                 <div

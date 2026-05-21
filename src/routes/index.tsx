@@ -263,7 +263,8 @@ function ProcessEditorial() {
             return (
               <article
                 key={p.n}
-                className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
+                id={p.slug}
+                className="scroll-mt-24 grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
               >
                 <div
                   className={`order-1 ${

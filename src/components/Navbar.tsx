@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/lotus-logo.jpg";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,13 +15,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-wood-200/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-display text-xl font-normal tracking-tight text-wood-900">
-            Lotus
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.22em] text-wood-500">
-            Wood Finishing
-          </span>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="Lotus Paint" className="h-9 w-auto object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

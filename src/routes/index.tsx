@@ -9,6 +9,7 @@ import {
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { StickyZalo } from "@/components/StickyZalo";
 
 import heroImg from "@/assets/lotus-hero.jpg";
 import procLau from "@/assets/proc-lau.jpg";
@@ -38,14 +39,45 @@ function LotusLanding() {
       <Navbar />
       <main className="pb-24 md:pb-0">
         <Hero />
+        <TrustBar />
         <ProcessEditorial />
         <Lookbook />
-        <ConsultBlock />
         <FAQ />
+        <ConsultBlock />
       </main>
       <Footer />
       <StickyMobileCTA />
+      <StickyZalo />
     </>
+  );
+}
+
+/* ============================================================
+   TRUST BAR
+   ============================================================ */
+function TrustBar() {
+  return (
+    <section className="border-y border-wood-200 bg-background py-10 sm:py-12">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
+          {[
+            { k: "10+", v: "năm kinh nghiệm hoàn thiện" },
+            { k: "500+", v: "hạng mục đã thực hiện" },
+            { k: "4", v: "hệ hoàn thiện chuyên biệt" },
+            { k: "1:1", v: "tư vấn trực tiếp từ xưởng" },
+          ].map((s) => (
+            <div key={s.k}>
+              <div className="font-display text-2xl font-light text-wood-900 sm:text-3xl">
+                {s.k}
+              </div>
+              <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-wood-600">
+                {s.v}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

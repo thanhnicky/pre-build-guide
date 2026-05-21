@@ -231,11 +231,29 @@ function ProcessEditorial() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Lotus không bán sơn theo can — Lotus chọn đúng hệ cho hạng mục bạn
-            đang làm. Bốn hướng dưới đây bao quát phần lớn nhu cầu nội &amp;
-            ngoại thất.
+            Mỗi hệ sơn được chọn theo loại gỗ, môi trường sử dụng và yêu cầu
+            bề mặt của xưởng — không phải theo can hay theo giá.
           </p>
         </div>
+
+        {/* Tab nav — anchor scroll */}
+        <nav
+          aria-label="Bốn hướng hoàn thiện"
+          className="mt-14 flex flex-wrap gap-x-2 gap-y-3 border-y border-wood-200 py-5 sm:mt-16"
+        >
+          {PROCESSES.map((p) => (
+            <a
+              key={p.slug}
+              href={`#${p.slug}`}
+              className="inline-flex items-center gap-2 rounded-full border border-wood-200 bg-background px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-wood-700 transition-colors hover:border-wood-700 hover:text-wood-900"
+            >
+              <span className="font-display text-[13px] tracking-normal text-wood-400">
+                {p.n}
+              </span>
+              <span className="text-wood-300">·</span>
+              {p.tab}
+            </a>
+          ))}
 
         {/* 4 panels — unified 2-col system, alternating sides */}
         <div className="mt-24 space-y-24 sm:mt-32 sm:space-y-28 lg:mt-40 lg:space-y-32">

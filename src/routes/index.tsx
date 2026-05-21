@@ -42,6 +42,7 @@ function LotusLanding() {
         <PartnersSection />
         <TrustBar />
         <CertificationsSection />
+        <WhyWaterSection />
         <ProcessEditorial />
         <Lookbook />
         <FAQ />

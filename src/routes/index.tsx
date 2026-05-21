@@ -362,6 +362,7 @@ const PROCESSES = [
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
     secondaryAlt: "Ảnh thực tế: lam và cửa ngoại thất kháng UV",
+    secondaryImage: "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Xử lý bề mặt", note: "vệ sinh, xả nhám P180, làm sạch bụi" },
       { product: "Lót kháng UV — Lotus Outdoor Primer", note: "chống thấm, tăng bám" },

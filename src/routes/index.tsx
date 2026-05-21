@@ -61,30 +61,77 @@ function LotusLanding() {
    ============================================================ */
 function PartnersSection() {
   const partners = [
-    "Novaland",
-    "APC An Phong",
-    "Masteries Homes",
-    "Sun&L Interior",
-    "Xưởng XK EU/Mỹ",
+    { src: "/logos/novaland.png", alt: "Novaland" },
+    { src: "/logos/apc-an-phong.png", alt: "APC An Phong" },
+    { src: "/logos/masteries-homes.png", alt: "Masteries Homes" },
+    { src: "/logos/sunl-interior.png", alt: "Sun&L Interior" },
+    { src: "/logos/xuong-xk-eu-my.png", alt: "Xưởng XK EU/Mỹ" },
+    { src: "/logos/partner-6.png", alt: "Đối tác 6" },
   ];
+
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [failed, setFailed] = useState<Record<string, boolean>>({});
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-logo-card]");
+    const step = card ? card.offsetWidth + 24 : 200;
+    el.scrollBy({ left: dir * step * 2, behavior: "smooth" });
+  };
 
   return (
     <section className="bg-[#F5F0EA] py-12">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center">
         <p className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-          Đã được tin dùng tại
+          ĐÃ ĐƯỢC TIN DÙNG TẠI
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-          {partners.map((name) => (
-            <div
-              key={name}
-              className="flex h-[50px] w-[120px] items-center justify-center rounded bg-wood-200/70 text-[11px] font-medium text-wood-600"
-              title={name}
-            >
-              <span className="px-2 text-center leading-tight">{name}</span>
-            </div>
-          ))}
+        <div className="relative mt-10">
+          <button
+            type="button"
+            onClick={() => scrollBy(-1)}
+            aria-label="Cuộn trái"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-10 w-10 items-center justify-center rounded-full bg-wood-700 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          <div
+            ref={scrollerRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth px-10 sm:px-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {partners.map((p) => (
+              <div
+                key={p.alt}
+                data-logo-card
+                className="snap-start shrink-0 flex h-[60px] w-[160px] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-4 basis-full sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]"
+                title={p.alt}
+              >
+                {failed[p.alt] ? (
+                  <span className="text-[11px] font-medium text-wood-600 text-center leading-tight">
+                    {p.alt}
+                  </span>
+                ) : (
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    className="max-h-full max-w-full object-contain"
+                    onError={() => setFailed((f) => ({ ...f, [p.alt]: true }))}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => scrollBy(1)}
+            aria-label="Cuộn phải"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-10 w-10 items-center justify-center rounded-full bg-wood-700 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85">

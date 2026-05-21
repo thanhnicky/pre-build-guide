@@ -447,9 +447,9 @@ function ConsultBlock() {
               Tư vấn riêng · 1:1
             </div>
             <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3.25rem]">
-              <span className="block">Gửi vài tấm ảnh.</span>
+              <span className="block">Gửi ảnh mẫu gỗ hoặc hạng mục.</span>
               <span className="block italic font-normal text-wood-200">
-                Nhận tư vấn từ xưởng Lotus.
+                Nhận tư vấn kỹ thuật từ Lotus.
               </span>
             </h2>
             <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">

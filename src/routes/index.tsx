@@ -102,11 +102,12 @@ function TrustBar() {
   return (
     <section className="border-y border-wood-200 bg-background py-10 sm:py-14">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-1 items-center gap-10 text-center sm:grid-cols-3">
+        <div className="grid grid-cols-1 items-center gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
           {[
             { k: "200+", v: "xưởng & nhà máy tin dùng" },
             { k: "5+", v: "năm kinh nghiệm" },
             { v: "TƯ VẤN KỸ THUẬT 1-1 MIỄN PHÍ" },
+            { k: "PHA MÀU THEO YÊU CẦU", v: "RAL · NCS · mã màu riêng" },
           ].map((s, i) => (
             <div key={i} className="flex h-full flex-col justify-center">
               {s.k ? (

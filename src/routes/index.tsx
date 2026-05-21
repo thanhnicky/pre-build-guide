@@ -289,6 +289,7 @@ const PROCESSES = [
       "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
+    secondaryAlt: "Ảnh thực tế: ghế gỗ nguyên khối handcraft xuất khẩu",
   },
   {
     n: "II",
@@ -305,6 +306,7 @@ const PROCESSES = [
       "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
+    secondaryAlt: "Ảnh thực tế: tủ bếp hàng loạt đồng màu xuyên lô",
   },
   {
     n: "III",
@@ -321,6 +323,7 @@ const PROCESSES = [
       "tủ bếp, tủ âm tường — đồng màu toàn lô, không loang, không chênh sắc.",
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
+    secondaryAlt: "Ảnh thực tế: tủ âm tường flat color hiện đại",
   },
   {
     n: "IV",
@@ -337,6 +340,7 @@ const PROCESSES = [
       "lam, cửa, pergola, sàn sân vườn — hệ riêng cho hạng mục chịu thời tiết.",
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
+    secondaryAlt: "Ảnh thực tế: lam và cửa ngoại thất kháng UV",
   },
 ];
 

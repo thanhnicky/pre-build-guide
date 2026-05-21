@@ -57,20 +57,19 @@ function LotusLanding() {
    ============================================================ */
 function TrustBar() {
   return (
-    <section className="border-y border-wood-200 bg-background py-10 sm:py-12">
+    <section className="border-y border-wood-200 bg-background py-10 sm:py-14">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 text-center sm:grid-cols-3">
           {[
-            { k: "10+", v: "năm kinh nghiệm hoàn thiện" },
-            { k: "500+", v: "hạng mục đã thực hiện" },
-            { k: "4", v: "hệ hoàn thiện chuyên biệt" },
-            { k: "1:1", v: "tư vấn trực tiếp từ xưởng" },
+            { k: "200+", v: "xưởng & nhà máy tin dùng" },
+            { k: "5+", v: "năm kinh nghiệm" },
+            { k: "1-1", v: "tư vấn kỹ thuật miễn phí" },
           ].map((s) => (
             <div key={s.k}>
-              <div className="font-display text-2xl font-light text-wood-900 sm:text-3xl">
+              <div className="font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]">
                 {s.k}
               </div>
-              <div className="mt-2 text-[11px] uppercase tracking-[0.18em] text-wood-600">
+              <div className="mt-2 text-[12px] font-medium uppercase tracking-[0.16em] text-wood-500">
                 {s.v}
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, ShieldCheck, Globe, Leaf } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Globe, Leaf, CheckCircle, Wind } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -140,18 +140,33 @@ function CertificationsSection() {
   const badges = [
     {
       icon: ShieldCheck,
-      title: "FDA Compliant",
-      subtitle: "An toàn thực phẩm & đồ chơi trẻ em",
+      code: "EN71-3: 2019 + A1:2021",
+      name: "An toàn đồ chơi trẻ em",
+      tag: "Châu Âu",
     },
     {
-      icon: Globe,
-      title: "Export Ready",
-      subtitle: "Đạt chuẩn xuất khẩu Mỹ · EU · Nhật",
+      icon: ShieldCheck,
+      code: "ASTM F963-17",
+      name: "An toàn đồ chơi trẻ em",
+      tag: "Hoa Kỳ",
+    },
+    {
+      icon: CheckCircle,
+      code: "FDA 21 CFR 178.3800",
+      name: "An toàn tiếp xúc thực phẩm",
+      tag: "Hoa Kỳ · FDA",
     },
     {
       icon: Leaf,
-      title: "Hệ nước — Zero VOC",
-      subtitle: "Không dung môi, nhẹ mùi, an toàn xưởng kín",
+      code: "RoHS Compliant",
+      name: "Giới hạn chất độc hại trong sản phẩm",
+      tag: "Châu Âu",
+    },
+    {
+      icon: Wind,
+      code: "Zero Formaldehyde · Low VOCs",
+      name: "Không Formaldehyde, VOCs thấp tiêu chuẩn quốc tế",
+      tag: "An toàn xưởng kín",
     },
   ];
 
@@ -162,50 +177,54 @@ function CertificationsSection() {
           {/* Left — text */}
           <div className="lg:col-span-5">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-              Tiêu chuẩn & chứng nhận
+              TIÊU CHUẨN & CHỨNG NHẬN
             </div>
             <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
-              An toàn kiểm chứng — phù hợp xuất khẩu
+              <span className="block">An toàn kiểm chứng —</span>
+              <span className="block italic font-normal text-wood-700">phù hợp xuất khẩu</span>
             </h2>
             <p className="mt-6 text-[15px] leading-[1.75] text-wood-700/85">
-              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không dung môi hữu cơ, không mùi nồng — đạt tiêu chuẩn an toàn cho xưởng kín và sản phẩm nội thất xuất khẩu sang Mỹ, EU, Nhật Bản.
+              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế — đạt chứng nhận an toàn cho xưởng kín, sản phẩm xuất khẩu sang Mỹ, EU và Nhật Bản.
             </p>
+
+            {/* CTA link */}
+            <div className="mt-10">
+              <a
+                href={ZALO}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-start gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+              >
+                <span>Cần hồ sơ chứng nhận cho đơn hàng xuất khẩu? → Nhắn Zalo để nhận tài liệu kỹ thuật</span>
+                <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+            </div>
           </div>
 
           {/* Right — badge cards */}
           <div className="lg:col-span-6 lg:col-start-7">
-            <div className="flex flex-col gap-4 lg:gap-5">
+            <div className="flex flex-col gap-4">
               {badges.map((b) => (
                 <div
-                  key={b.title}
-                  className="flex items-start gap-5 rounded bg-wood-100/70 p-6"
+                  key={b.code}
+                  className="flex items-start gap-5 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-5"
                 >
-                  <b.icon className="mt-0.5 h-6 w-6 shrink-0 text-wood-700" strokeWidth={1.5} />
-                  <div>
-                    <div className="font-display text-[15px] font-medium text-wood-900">
-                      {b.title}
+                  <b.icon className="mt-1 h-6 w-6 shrink-0 text-wood-700" strokeWidth={1.5} />
+                  <div className="flex-1">
+                    <div className="font-display text-[16px] font-semibold text-wood-900">
+                      {b.code}
                     </div>
-                    <div className="mt-1 text-[12.5px] leading-[1.6] text-wood-600">
-                      {b.subtitle}
+                    <div className="mt-1 text-[13.5px] leading-[1.55] text-wood-600">
+                      {b.name}
+                    </div>
+                    <div className="mt-3 inline-block rounded-full bg-wood-700 px-2.5 py-1 text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA]">
+                      {b.tag}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-
-        {/* CTA link */}
-        <div className="mt-14 lg:mt-20">
-          <a
-            href={ZALO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-          >
-            Cần TDS / MSDS cho đơn hàng xuất khẩu? → Nhắn Zalo để nhận tài liệu kỹ thuật
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
         </div>
       </div>
     </section>

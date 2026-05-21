@@ -146,6 +146,8 @@ function Hero() {
 const PROCESSES = [
   {
     n: "I",
+    slug: "he-lau",
+    tab: "Hệ Lau",
     kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Sơn lau giữ màu vân gỗ",
     body: [
@@ -154,12 +156,14 @@ const PROCESSES = [
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
     fitFor:
-      "Phù hợp khi: đồ nội thất tự nhiên, bàn gỗ nguyên khối, không gian cần sự mộc mạc và sang trọng từ chính vân gỗ.",
+      "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
   },
   {
     n: "II",
+    slug: "he-phun",
+    tab: "Hệ Phun",
     kicker: "Hệ phun · Nội & ngoại thất",
     title: "Sơn phun giữ vân, nội & ngoại thất",
     body: [
@@ -168,12 +172,14 @@ const PROCESSES = [
       "Lotus tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
     fitFor:
-      "Phù hợp khi: cần đồng đều cho nhiều sản phẩm, hoặc hạng mục ngoài trời cần giữ vân nhưng phải bền theo thời tiết.",
+      "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
   },
   {
     n: "III",
+    slug: "mau-bet-mdf",
+    tab: "Màu Bệt MDF",
     kicker: "Màu bệt · MDF",
     title: "Sơn màu bệt cho gỗ MDF",
     body: [
@@ -182,12 +188,14 @@ const PROCESSES = [
       "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính — đẹp theo cách riêng của MDF.",
     ],
     fitFor:
-      "Phù hợp khi: tủ bếp, tủ âm tường, nội thất hiện đại, hoặc lên màu theo bảng thiết kế riêng.",
+      "tủ bếp, tủ âm tường — đồng màu toàn lô, không loang, không chênh sắc.",
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
   },
   {
     n: "IV",
+    slug: "phu-bong-ngoai-troi",
+    tab: "Phủ Bóng Ngoài Trời",
     kicker: "Phủ bóng · Ngoài trời",
     title: "Sơn phủ bóng chuyên dụng bảo vệ gỗ ngoài trời",
     body: [
@@ -196,7 +204,7 @@ const PROCESSES = [
       "Đây không phải hệ nội thất mang ra ngoài — mà là một hệ riêng, chọn theo mức tiếp xúc thực tế của hạng mục.",
     ],
     fitFor:
-      "Phù hợp khi: cửa gỗ ngoài trời, lam chắn nắng, pergola, sàn sân vườn, hoặc bất kỳ hạng mục nào chịu thời tiết.",
+      "lam, cửa, pergola, sàn sân vườn — hệ riêng cho hạng mục chịu thời tiết.",
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
   },

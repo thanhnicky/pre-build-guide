@@ -338,6 +338,7 @@ const PROCESSES = [
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
     secondaryAlt: "Ảnh thực tế: tủ âm tường flat color hiện đại",
+    secondaryImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Lót che nền — Lotus MDF Primer", note: "che grain MDF, tăng bám" },
       { product: "Phun màu bệt — Lotus Topcoat", note: "màu đặc, phun 2 lớp" },

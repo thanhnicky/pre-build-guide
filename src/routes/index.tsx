@@ -132,6 +132,85 @@ function TrustBar() {
 }
 
 /* ============================================================
+   TIÊU CHUẨN & CHỨNG NHẬN
+   ============================================================ */
+function CertificationsSection() {
+  const badges = [
+    {
+      icon: ShieldCheck,
+      title: "FDA Compliant",
+      subtitle: "An toàn thực phẩm & đồ chơi trẻ em",
+    },
+    {
+      icon: Globe,
+      title: "Export Ready",
+      subtitle: "Đạt chuẩn xuất khẩu Mỹ · EU · Nhật",
+    },
+    {
+      icon: Leaf,
+      title: "Hệ nước — Zero VOC",
+      subtitle: "Không dung môi, nhẹ mùi, an toàn xưởng kín",
+    },
+  ];
+
+  return (
+    <section className="bg-background py-24 sm:py-32 lg:py-40">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Left — text */}
+          <div className="lg:col-span-5">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+              Tiêu chuẩn & chứng nhận
+            </div>
+            <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+              An toàn kiểm chứng — phù hợp xuất khẩu
+            </h2>
+            <p className="mt-6 text-[15px] leading-[1.75] text-wood-700/85">
+              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không dung môi hữu cơ, không mùi nồng — đạt tiêu chuẩn an toàn cho xưởng kín và sản phẩm nội thất xuất khẩu sang Mỹ, EU, Nhật Bản.
+            </p>
+          </div>
+
+          {/* Right — badge cards */}
+          <div className="lg:col-span-6 lg:col-start-7">
+            <div className="flex flex-col gap-4 lg:gap-5">
+              {badges.map((b) => (
+                <div
+                  key={b.title}
+                  className="flex items-start gap-5 rounded bg-wood-100/70 p-6"
+                >
+                  <b.icon className="mt-0.5 h-6 w-6 shrink-0 text-wood-700" strokeWidth={1.5} />
+                  <div>
+                    <div className="font-display text-[15px] font-medium text-wood-900">
+                      {b.title}
+                    </div>
+                    <div className="mt-1 text-[12.5px] leading-[1.6] text-wood-600">
+                      {b.subtitle}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA link */}
+        <div className="mt-14 lg:mt-20">
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+          >
+            Cần TDS / MSDS cho đơn hàng xuất khẩu? → Nhắn Zalo để nhận tài liệu kỹ thuật
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 function Hero() {

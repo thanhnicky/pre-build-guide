@@ -90,19 +90,20 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            Lotus Wood Finishing
+            LOTUS · GIẢI PHÁP HOÀN THIỆN GỖ CHUYÊN NGHIỆP
           </div>
 
           <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[4.5rem]">
-            <span className="block">Gỗ, hoàn thiện</span>
+            <span className="block">Gỗ hoàn thiện đúng hệ —</span>
             <span className="block italic font-normal text-wood-700">
-              đúng chất liệu.
+              bề mặt ổn định từ mẫu đầu đến lô cuối.
             </span>
           </h1>
 
           <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Lotus chọn đúng hệ hoàn thiện cho từng loại gỗ và từng vị trí lắp
-            đặt — để bề mặt giữ được vẻ đẹp ban đầu, lâu hơn dự kiến.
+            Lotus tư vấn đúng hệ hoàn thiện cho từng loại gỗ và từng môi trường
+            sử dụng — để bề mặt ổn định qua sản xuất hàng loạt, đạt tiêu chuẩn
+            bàn giao và xuất khẩu.
           </p>
 
           <div className="mt-12 flex flex-col items-start gap-6">

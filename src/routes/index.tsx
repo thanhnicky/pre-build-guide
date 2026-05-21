@@ -232,7 +232,7 @@ function CertificationsSection() {
               <span className="block italic font-normal text-wood-700">phù hợp xuất khẩu</span>
             </h2>
             <p className="mt-6 text-[15px] leading-[1.75] text-wood-700/85">
-              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế — đạt chứng nhận an toàn cho xưởng kín, sản phẩm xuất khẩu sang Mỹ, EU và Nhật Bản.
+              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế — đạt chứng nhận an toàn cho xưởng kín, đồ chơi trẻ em, bệnh viện, trường học và sản phẩm nội thất xuất khẩu sang Mỹ, EU và Nhật Bản.
             </p>
 
             {/* CTA link */}

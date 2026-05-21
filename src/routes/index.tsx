@@ -39,6 +39,7 @@ function LotusLanding() {
       <Navbar />
       <main className="pb-24 md:pb-0">
         <Hero />
+        <PartnersSection />
         <TrustBar />
         <ProcessEditorial />
         <Lookbook />
@@ -49,6 +50,47 @@ function LotusLanding() {
       <StickyMobileCTA />
       <StickyZalo />
     </>
+  );
+}
+
+/* ============================================================
+   PARTNERS
+   ============================================================ */
+function PartnersSection() {
+  const partners = [
+    "Novaland",
+    "APC An Phong",
+    "Masteries Homes",
+    "Sun&L Interior",
+    "Xưởng XK EU/Mỹ",
+  ];
+
+  return (
+    <section className="bg-[#F5F0EA] py-20 sm:py-24">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center">
+        <p className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+          Đã được tin dùng tại
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+          {partners.map((name) => (
+            <div
+              key={name}
+              className="flex h-[50px] w-[120px] items-center justify-center rounded bg-wood-200/70 text-[11px] font-medium text-wood-600"
+              title={name}
+            >
+              <span className="px-2 text-center leading-tight">{name}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85">
+          Sơn Lotus hiện là nhà cung cấp hệ sơn gỗ cho các xưởng nội thất xuất khẩu và chủ đầu tư dự án cao cấp tại TP.HCM.
+        </p>
+
+        <div className="mx-auto mt-16 w-16 border-b border-wood-300/40" />
+      </div>
+    </section>
   );
 }
 

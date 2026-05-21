@@ -219,7 +219,7 @@ function CertificationsSection() {
   ];
 
   return (
-    <section className="bg-background pt-12 pb-12 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-12">
+    <section id="tieu-chuan" className="bg-background pt-12 pb-12 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-12">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left — text */}
@@ -768,7 +768,7 @@ function Lookbook() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-wood-900 transition-colors hover:text-wood-700"
           >
-            Nhắn Zalo để nhận lookbook đầy đủ
+            NHẮN ZALO ĐỂ XEM THÊM CÔNG TRÌNH THỰC TẾ →
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>

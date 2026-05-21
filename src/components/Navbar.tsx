@@ -7,8 +7,9 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
+    { label: "An toàn", href: "#tieu-chuan" },
     { label: "Quy trình", href: "#quy-trinh" },
-    { label: "Lookbook", href: "#cong-trinh" },
+    { label: "Dự án", href: "#cong-trinh" },
     { label: "Hỏi đáp", href: "#faq" },
   ];
 

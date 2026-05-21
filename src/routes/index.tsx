@@ -533,40 +533,56 @@ function ProcessEditorial() {
 
 
 /* ============================================================
-   LOOKBOOK — selected works
+   PROJECTS — dự án tiêu biểu
    ============================================================ */
-const LOOKBOOK_ITEMS = [
+const PROJECTS = [
+  {
+    tag: "HỆ PHUN · NỘI THẤT",
+    name: "Khách sạn 5 sao — The Grand Saigon",
+    type: "Nội thất phòng & hành lang · TP.HCM · 2024",
+    note: "320 phòng · hệ phun giữ vân, đồng màu xuyên toàn lô",
+    image:
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
+  },
+  {
+    tag: "MÀU BỆT · MDF",
+    name: "Masterise Homes — The Global City",
+    type: "Nội thất căn hộ cao cấp · TP. Thủ Đức · 2024",
+    note: "500 bộ tủ bếp & tủ âm tường · flat color, không loang màu",
+    image:
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
+  },
   {
     tag: "HỆ LAU · GỖ TỰ NHIÊN",
-    caption: "Bàn ăn gỗ nguyên khối — giữ vân tự nhiên theo yêu cầu buyer Mỹ",
-  },
-  {
-    tag: "HỆ LAU · HANDCRAFT",
-    caption: "Ghế và kệ handcraft xuất khẩu — lau nhiều lớp, bề mặt ấm tay",
-  },
-  {
-    tag: "HỆ PHUN · HÀNG LOẠT",
-    caption: "Panel nội thất căn hộ cao cấp — 500 tấm, đồng màu xuyên lô",
-  },
-  {
-    tag: "HỆ PHUN · NGOẠI THẤT",
-    caption: "Cửa gỗ ngoại thất dự án — phun 2K, bền màu 5+ năm",
-  },
-  {
-    tag: "MÀU BỆT · MDF",
-    caption: "Tủ bếp flat color — phủ đều, không loang, không chênh sắc",
-  },
-  {
-    tag: "MÀU BỆT · MDF",
-    caption: "Tủ âm tường concept tối — bề mặt mờ hiện đại",
+    name: "Xưởng xuất khẩu — Đơn hàng EU",
+    type: "Bàn & ghế gỗ nguyên khối xuất khẩu · TP.HCM · 2023",
+    note: "1.200 sản phẩm · lau giữ vân tự nhiên theo yêu cầu buyer Đức",
+    image:
+      "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1400&q=70",
   },
   {
     tag: "PHỦ BÓNG · NGOÀI TRỜI",
-    caption: "Lam và pergola sân vườn — kháng UV, co giãn theo thời tiết",
+    name: "Biệt thự cao cấp — Dự án Sun Group",
+    type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
+    note: "Hệ phủ bóng kháng UV — bảo dưỡng 3 năm không bong tróc",
+    image:
+      "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
   },
   {
-    tag: "PHỦ BÓNG · SÀN GỖ",
-    caption: "Sàn gỗ ngoài trời — chống thấm, không bong tróc sau 2 mùa mưa",
+    tag: "MÀU BỆT · MDF",
+    name: "Novaland — Aqua City",
+    type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
+    note: "800 bộ tủ bếp · đồng màu RAL xuyên 4 block",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70",
+  },
+  {
+    tag: "HỆ LAU · NỘI THẤT",
+    name: "Chuỗi nhà hàng cao cấp — Saigon Centre",
+    type: "Nội thất bàn ghế & vách ốp gỗ · TP.HCM · 2022",
+    note: "Hệ lau nhiều lớp — giữ màu vân qua 2 năm vận hành",
+    image:
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=70",
   },
 ];
 
@@ -577,53 +593,65 @@ function Lookbook() {
       className="bg-[oklch(0.96_0.018_82)] py-24 sm:py-32 lg:py-40"
     >
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-              Selected works
-            </div>
-            <h2 className="font-display mt-8 max-w-xl text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-4xl lg:text-[2.75rem]">
-              <span className="block">Một vài bề mặt</span>
-              <span className="block italic font-normal text-wood-700">
-                đã đi qua xưởng Lotus.
-              </span>
-            </h2>
+        <div className="max-w-3xl">
+          <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+            Dự án tiêu biểu
           </div>
+          <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-4xl lg:text-[2.75rem]">
+            <span className="block">Những công trình</span>
+            <span className="block italic font-normal text-wood-700">
+              đã tin dùng Lotus.
+            </span>
+          </h2>
+          <p className="font-display mt-6 max-w-2xl text-[15.5px] italic leading-[1.6] text-wood-700">
+            Từ khách sạn 5 sao đến khu dân cư cao cấp — hệ sơn gỗ Lotus đã được
+            kiểm chứng qua các dự án có yêu cầu kỹ thuật và thẩm mỹ cao nhất.
+          </p>
         </div>
 
-        {/* Masonry-style 2-column grid */}
-        <div className="mt-16 columns-1 gap-6 sm:gap-8 lg:mt-24 lg:columns-2">
-          {LOOKBOOK_ITEMS.map((item, i) => (
-            <figure
+        {/* 2-column project grid */}
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:mt-24 lg:grid-cols-2 lg:gap-10">
+          {PROJECTS.map((p, i) => (
+            <article
               key={i}
-              className="mb-6 break-inside-avoid sm:mb-8"
+              className="overflow-hidden rounded-lg bg-[#FDFAF7] shadow-sm ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
             >
-              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded bg-wood-200/60">
-                <span className="px-4 text-center text-[12px] font-medium uppercase tracking-wider text-wood-500">
-                  {item.tag}
+              <div className="relative aspect-[3/2] overflow-hidden bg-wood-200/60">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <span className="absolute left-4 top-4 rounded-full bg-wood-900/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-background backdrop-blur-sm">
+                  {p.tag}
                 </span>
               </div>
-              <figcaption className="mt-3 flex flex-col gap-1.5">
-                <span className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-wood-500">
-                  {item.tag}
-                </span>
-                <span className="truncate text-[13.5px] leading-[1.5] text-wood-700">
-                  {item.caption}
-                </span>
-              </figcaption>
-            </figure>
+              <div className="flex flex-col gap-2 p-6 sm:p-7">
+                <h3 className="font-display text-[1.25rem] font-semibold leading-[1.25] text-wood-900">
+                  {p.name}
+                </h3>
+                <p className="text-[13px] text-wood-600">{p.type}</p>
+                <p className="mt-1 text-[13.5px] leading-[1.55] text-wood-500">
+                  {p.note}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
 
-        {/* CTA note */}
-        <div className="mt-10 text-center lg:mt-14">
+        {/* CTA */}
+        <div className="mt-14 flex flex-col items-center gap-3 text-center lg:mt-20">
+          <p className="text-[14px] text-wood-700">
+            Muốn xem thêm công trình thực tế?
+          </p>
           <a
             href={ZALO}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+            className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-wood-900 transition-colors hover:text-wood-700"
           >
-            Muốn xem thêm ảnh thực tế? → Nhắn Zalo để nhận lookbook đầy đủ
+            Nhắn Zalo để nhận lookbook đầy đủ
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>

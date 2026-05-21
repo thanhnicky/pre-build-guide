@@ -39,6 +39,7 @@ function LotusLanding() {
       <Navbar />
       <main className="pb-24 md:pb-0">
         <Hero />
+        <PartnersSection />
         <TrustBar />
         <ProcessEditorial />
         <Lookbook />

@@ -290,6 +290,12 @@ const PROCESSES = [
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
     secondaryAlt: "Ảnh thực tế: ghế gỗ nguyên khối handcraft xuất khẩu",
+    steps: [
+      { product: "Lau màu — Lotus Wood Stain", note: "tôn màu vân gỗ, thấm sâu" },
+      { product: "Lót mịn — Lotus Sanding Sealer", note: "trong suốt. Chờ khô 2h, xả nhám P320" },
+      { product: "Phủ bóng — Lotus Acrylic Lacquer", note: "chọn trong nhà hoặc ngoài trời theo môi trường sử dụng" },
+    ],
+    stepsNote: undefined as string | undefined,
   },
   {
     n: "II",
@@ -307,6 +313,12 @@ const PROCESSES = [
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
     secondaryAlt: "Ảnh thực tế: tủ bếp hàng loạt đồng màu xuyên lô",
+    steps: [
+      { product: "Phun lót — Lotus Wood Primer", note: "bịt lỗ, tăng bám dính" },
+      { product: "Phun màu giữ vân — Lotus Wood Stain", note: "pha loãng, phun đều 1–2 lớp" },
+      { product: "Phủ bóng — Lotus Acrylic Lacquer 2K", note: "(nội thất) hoặc PU ngoại thất (outdoor)" },
+    ],
+    stepsNote: "Tỷ lệ pha và súng phun phù hợp — nhắn Zalo để nhận hướng dẫn chi tiết",
   },
   {
     n: "III",
@@ -324,6 +336,12 @@ const PROCESSES = [
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
     secondaryAlt: "Ảnh thực tế: tủ âm tường flat color hiện đại",
+    steps: [
+      { product: "Lót che nền — Lotus MDF Primer", note: "che grain MDF, tăng bám" },
+      { product: "Phun màu bệt — Lotus Topcoat", note: "màu đặc, phun 2 lớp" },
+      { product: "Phủ hoàn thiện — Lotus Clear Coat", note: "chọn độ bóng: mờ / bán bóng / bóng cao" },
+    ],
+    stepsNote: "Có thể pha màu theo mã RAL / NCS — nhắn Zalo để kiểm tra màu",
   },
   {
     n: "IV",
@@ -341,6 +359,12 @@ const PROCESSES = [
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
     secondaryAlt: "Ảnh thực tế: lam và cửa ngoại thất kháng UV",
+    steps: [
+      { product: "Xử lý bề mặt", note: "vệ sinh, xả nhám P180, làm sạch bụi" },
+      { product: "Lót kháng UV — Lotus Outdoor Primer", note: "chống thấm, tăng bám" },
+      { product: "Phủ bóng ngoài trời — Lotus Outdoor Topcoat", note: "kháng UV, co giãn, 2–3 lớp" },
+    ],
+    stepsNote: "Số lớp và chu kỳ bảo dưỡng phụ thuộc mức độ tiếp xúc thời tiết — nhắn Zalo để xác nhận",
   },
 ];
 

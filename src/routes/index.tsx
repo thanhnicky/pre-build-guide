@@ -621,6 +621,14 @@ function ConsultBlock() {
    ============================================================ */
 const FAQS = [
   {
+    q: "Sơn Lotus có TDS và MSDS không? Tôi cần hồ sơ cho đơn hàng xuất khẩu.",
+    a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo số 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc.",
+  },
+  {
+    q: "Sơn Lotus đã được dùng tại những dự án hay xưởng xuất khẩu nào?",
+    a: "Lotus hiện cung cấp cho các xưởng nội thất xuất khẩu sang Mỹ, EU, Nhật và các dự án cao cấp của Novaland, Masteries Homes, Sun&L Interior. Gửi ảnh hoặc mô tả yêu cầu qua Zalo để được tư vấn hệ sơn phù hợp với tiêu chuẩn nhà mua hàng của bạn.",
+  },
+  {
     q: "Tôi nên chọn sơn lau hay sơn phun?",
     a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp.",
   },

@@ -376,7 +376,7 @@ function Lookbook() {
                 Phun giữ vân
               </span>
               <span className="mt-2 font-display text-base italic text-wood-700">
-                Nội thất căn hộ
+                Nội thất căn hộ cao cấp · Hàng loạt, đồng màu xuyên lô
               </span>
             </figcaption>
           </figure>
@@ -396,7 +396,7 @@ function Lookbook() {
                   Lau giữ vân
                 </span>
                 <span className="ml-3 font-display text-base italic text-wood-700">
-                  Bàn gỗ tự nhiên
+                  Bàn gỗ nguyên khối xuất khẩu · Giữ vân tự nhiên theo yêu cầu buyer
                 </span>
               </figcaption>
             </figure>
@@ -415,7 +415,7 @@ function Lookbook() {
                   Phủ bóng ngoài trời
                 </span>
                 <span className="ml-3 font-display text-base italic text-wood-700">
-                  Cửa &amp; lam gỗ sân vườn
+                  Cửa &amp; lam ngoại thất · Bền màu qua nắng mưa, không bong tróc
                 </span>
               </figcaption>
             </figure>
@@ -445,10 +445,22 @@ function ConsultBlock() {
               </span>
             </h2>
             <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">
-              Không form, không báo giá tự động. Bạn nhắn Zalo, Lotus xem
-              trực tiếp hạng mục và gợi ý quy trình hoàn thiện phù hợp với
-              loại gỗ, môi trường và thẩm mỹ của bạn.
+              Không form, không báo giá tự động. Gửi ảnh mẫu gỗ hoặc hạng mục qua Zalo — Lotus xem trực tiếp và tư vấn đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
             </p>
+            <ul className="mt-6 space-y-3 text-[14px] leading-[1.7] text-wood-400">
+              <li className="flex gap-3">
+                <span className="text-wood-500">·</span>
+                <span>Phản hồi trong giờ làm việc — không để xưởng chờ lâu</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-wood-500">·</span>
+                <span>Có thể gửi mẫu vật lý để Lotus kiểm tra trước khi tư vấn</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-wood-500">·</span>
+                <span>Tư vấn kỹ thuật miễn phí — không phát sinh chi phí trước khi chốt hệ</span>
+              </li>
+            </ul>
           </div>
 
           <div className="flex flex-col gap-6 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
@@ -501,6 +513,18 @@ const FAQS = [
   {
     q: "Chưa biết quy trình phù hợp thì làm sao?",
     a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
+  },
+  {
+    q: "Lotus có cung cấp TDS / MSDS không?",
+    a: "Có. Lotus cung cấp đầy đủ TDS và MSDS cho tất cả sản phẩm — phục vụ xưởng kiểm soát chất lượng và nhà máy xuất khẩu cần hồ sơ kỹ thuật. Nhắn Zalo để nhận tài liệu.",
+  },
+  {
+    q: "Thời gian khô giữa các lớp có ảnh hưởng đến dây chuyền không?",
+    a: "Tùy hệ và điều kiện xưởng. Lotus tư vấn cụ thể để không làm chậm dây chuyền của bạn. Nhắn Zalo gửi thông tin xưởng để được hỗ trợ.",
+  },
+  {
+    q: "Lotus có hỗ trợ thử nghiệm mẫu vật lý trước khi lên đơn lớn không?",
+    a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp.",
   },
 ];
 

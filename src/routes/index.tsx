@@ -289,8 +289,6 @@ const PROCESSES = [
       "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
-    secondaryAlt: "Ảnh thực tế: ghế gỗ nguyên khối handcraft xuất khẩu",
-    secondaryImage: "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Lau màu — Lotus Wood Stain", note: "tôn màu vân gỗ, thấm sâu" },
       { product: "Lót mịn — Lotus Sanding Sealer", note: "trong suốt. Chờ khô 2h, xả nhám P320" },

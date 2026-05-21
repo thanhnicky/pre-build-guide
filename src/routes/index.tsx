@@ -254,6 +254,7 @@ function ProcessEditorial() {
               {p.tab}
             </a>
           ))}
+        </nav>
 
         {/* 4 panels — unified 2-col system, alternating sides */}
         <div className="mt-24 space-y-24 sm:mt-32 sm:space-y-28 lg:mt-40 lg:space-y-32">

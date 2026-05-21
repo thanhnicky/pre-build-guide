@@ -289,8 +289,6 @@ const PROCESSES = [
       "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
-    secondaryAlt: "Ảnh thực tế: ghế gỗ nguyên khối handcraft xuất khẩu",
-    secondaryImage: "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Lau màu — Lotus Wood Stain", note: "tôn màu vân gỗ, thấm sâu" },
       { product: "Lót mịn — Lotus Sanding Sealer", note: "trong suốt. Chờ khô 2h, xả nhám P320" },
@@ -313,8 +311,6 @@ const PROCESSES = [
       "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
-    secondaryAlt: "Ảnh thực tế: tủ bếp hàng loạt đồng màu xuyên lô",
-    secondaryImage: "https://images.unsplash.com/photo-1597484661973-ee6cd0b6482c?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Phun lót — Lotus Wood Primer", note: "bịt lỗ, tăng bám dính" },
       { product: "Phun màu giữ vân — Lotus Wood Stain", note: "pha loãng, phun đều 1–2 lớp" },
@@ -337,8 +333,6 @@ const PROCESSES = [
       "tủ bếp, tủ âm tường — đồng màu toàn lô, không loang, không chênh sắc.",
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
-    secondaryAlt: "Ảnh thực tế: tủ âm tường flat color hiện đại",
-    secondaryImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Lót che nền — Lotus MDF Primer", note: "che grain MDF, tăng bám" },
       { product: "Phun màu bệt — Lotus Topcoat", note: "màu đặc, phun 2 lớp" },
@@ -361,8 +355,6 @@ const PROCESSES = [
       "lam, cửa, pergola, sàn sân vườn — hệ riêng cho hạng mục chịu thời tiết.",
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
-    secondaryAlt: "Ảnh thực tế: lam và cửa ngoại thất kháng UV",
-    secondaryImage: "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1600&q=70",
     steps: [
       { product: "Xử lý bề mặt", note: "vệ sinh, xả nhám P180, làm sạch bụi" },
       { product: "Lót kháng UV — Lotus Outdoor Primer", note: "chống thấm, tăng bám" },
@@ -443,12 +435,6 @@ function ProcessEditorial() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <img
-                    src={p.secondaryImage}
-                    alt={p.secondaryAlt}
-                    loading="lazy"
-                    className="mt-4 aspect-video w-full rounded-md object-cover"
-                  />
                 </div>
 
                 <div

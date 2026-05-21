@@ -465,8 +465,8 @@ function ProcessEditorial() {
               href={`#${p.slug}`}
               className="inline-flex items-center gap-2 rounded-full border border-wood-200 bg-background px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-wood-700 transition-colors hover:border-wood-700 hover:text-wood-900"
             >
-              <span className="font-display text-[13px] tracking-normal text-wood-400">
-                {p.n}
+              <span className="font-display text-[13px] tracking-normal text-wood-400 whitespace-pre-wrap text-center">
+                {p.n === "III" ? "III\n·\n​HỆ SƠN MÀU BỆT" : p.n}
               </span>
               <span className="text-wood-300">·</span>
               {p.tab}

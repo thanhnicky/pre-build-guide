@@ -213,6 +213,70 @@ function CertificationsSection() {
 }
 
 /* ============================================================
+   TẠI SAO HỆ NƯỚC?
+   ============================================================ */
+function WhyWaterSection() {
+  const cols = [
+    {
+      heading: "Chi phí thực tế",
+      body: "Không tốn dung môi pha thêm. Không cần đầu tư hệ thống thông gió đặc biệt. Tỷ lệ hao phí khi phun thấp hơn PU khi tính trên cùng diện tích bề mặt.",
+    },
+    {
+      heading: "Chuyển đổi không mất năng suất",
+      body: "Lotus hỗ trợ kỹ thuật trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách. Không để xưởng tự mò.",
+    },
+    {
+      heading: "Giảm rủi ro bàn giao",
+      body: "Dự án cao cấp ngày càng yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao — tránh phát sinh bảo hành.",
+    },
+  ];
+
+  return (
+    <section className="bg-[#F5F0EA] py-20">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+          TẠI SAO HỆ NƯỚC?
+        </div>
+        <h2 className="font-display mt-8 max-w-3xl text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+          <span className="block">PU vẫn sơn được.</span>
+          <span className="block italic font-normal text-wood-700">
+            Nhưng hệ nước giúp xưởng lợi hơn ở đâu?
+          </span>
+        </h2>
+
+        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3">
+          {cols.map((c) => (
+            <div key={c.heading}>
+              <h3 className="font-display text-[17px] font-medium text-wood-900">
+                {c.heading}
+              </h3>
+              <p className="mt-4 text-[15px] leading-[1.75] text-wood-700/85">
+                {c.body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-[15px] leading-[1.75] text-wood-700/85">
+            Muốn Lotus tính thử chi phí thực tế cho hạng mục của xưởng bạn?
+          </p>
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-5 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+          >
+            NHẮN ZALO ĐỂ TÍNH THỬ →
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 function Hero() {

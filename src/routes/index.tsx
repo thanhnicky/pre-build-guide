@@ -87,7 +87,7 @@ function PartnersSection() {
         <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85">
           Sơn Lotus hiện là nhà cung cấp hệ sơn gỗ cho các xưởng nội thất xuất khẩu và chủ đầu tư dự án cao cấp tại TP.HCM.
         </p>
-      </<div>
+      </div>
     </section>
   );
 }

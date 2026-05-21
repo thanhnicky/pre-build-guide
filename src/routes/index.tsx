@@ -472,6 +472,36 @@ function ProcessEditorial() {
                     <span className="italic">{p.fitFor}</span>
                   </p>
 
+                  <Accordion type="single" collapsible className="mt-7 border-t border-wood-200">
+                    <AccordionItem value="steps" className="border-b-0">
+                      <AccordionTrigger className="py-4 text-[11.5px] uppercase tracking-[0.18em] text-wood-700 hover:no-underline hover:text-wood-900">
+                        Xem quy trình 3 bước →
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-2">
+                        <ol className="space-y-4">
+                          {p.steps.map((s, idx) => (
+                            <li key={idx} className="flex gap-4 text-[14px] leading-[1.7] text-wood-700">
+                              <span className="font-display text-[13px] tracking-normal text-wood-400 pt-0.5">
+                                {String(idx + 1).padStart(2, "0")}
+                              </span>
+                              <span>
+                                <span className="font-medium text-wood-900">{s.product}</span>
+                                <span className="text-wood-600"> — {s.note}</span>
+                              </span>
+                            </li>
+                          ))}
+                        </ol>
+                        {p.stepsNote && (
+                          <p className="mt-5 text-[13px] italic leading-[1.7] text-wood-600">
+                            → {p.stepsNote}
+                          </p>
+                        )}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+
+
+
 
                   <a
                     href={ZALO}

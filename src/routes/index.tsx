@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, ShieldCheck, Globe, Leaf, CheckCircle, Wind } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowUpRight, ShieldCheck, Globe, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,

@@ -467,6 +467,41 @@ function ProcessEditorial() {
 /* ============================================================
    LOOKBOOK — selected works
    ============================================================ */
+const LOOKBOOK_ITEMS = [
+  {
+    tag: "HỆ LAU · GỖ TỰ NHIÊN",
+    caption: "Bàn ăn gỗ nguyên khối — giữ vân tự nhiên theo yêu cầu buyer Mỹ",
+  },
+  {
+    tag: "HỆ LAU · HANDCRAFT",
+    caption: "Ghế và kệ handcraft xuất khẩu — lau nhiều lớp, bề mặt ấm tay",
+  },
+  {
+    tag: "HỆ PHUN · HÀNG LOẠT",
+    caption: "Panel nội thất căn hộ cao cấp — 500 tấm, đồng màu xuyên lô",
+  },
+  {
+    tag: "HỆ PHUN · NGOẠI THẤT",
+    caption: "Cửa gỗ ngoại thất dự án — phun 2K, bền màu 5+ năm",
+  },
+  {
+    tag: "MÀU BỆT · MDF",
+    caption: "Tủ bếp flat color — phủ đều, không loang, không chênh sắc",
+  },
+  {
+    tag: "MÀU BỆT · MDF",
+    caption: "Tủ âm tường concept tối — bề mặt mờ hiện đại",
+  },
+  {
+    tag: "PHỦ BÓNG · NGOÀI TRỜI",
+    caption: "Lam và pergola sân vườn — kháng UV, co giãn theo thời tiết",
+  },
+  {
+    tag: "PHỦ BÓNG · SÀN GỖ",
+    caption: "Sàn gỗ ngoài trời — chống thấm, không bong tróc sau 2 mùa mưa",
+  },
+];
+
 function Lookbook() {
   return (
     <section
@@ -488,68 +523,41 @@ function Lookbook() {
           </div>
         </div>
 
-        {/* Editorial layout — 1 hero + 2 paired */}
-        <div className="mt-16 space-y-16 lg:mt-24 lg:space-y-24">
-          <figure className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-9">
-              <div className="aspect-[16/10] overflow-hidden">
-                <img
-                  src={procPhun}
-                  alt="Bề mặt sơn phun giữ vân"
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-            <figcaption className="text-[12px] leading-[1.7] text-wood-700 lg:col-span-3 lg:flex lg:flex-col lg:justify-end lg:pb-2">
-              <span className="uppercase tracking-[0.22em] text-wood-500">
-                Phun giữ vân
-              </span>
-              <span className="mt-2 font-display text-base italic text-wood-700">
-                Nội thất căn hộ cao cấp · Hàng loạt, đồng màu xuyên lô
-              </span>
-            </figcaption>
-          </figure>
-
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-10">
-            <figure className="lg:col-span-5 lg:col-start-1">
-              <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src={procLau}
-                  alt="Bề mặt sơn lau giữ vân"
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <figcaption className="mt-4 text-[12px] leading-[1.7] text-wood-700">
-                <span className="uppercase tracking-[0.22em] text-wood-500">
-                  Lau giữ vân
+        {/* Masonry-style 2-column grid */}
+        <div className="mt-16 columns-1 gap-6 sm:gap-8 lg:mt-24 lg:columns-2">
+          {LOOKBOOK_ITEMS.map((item, i) => (
+            <figure
+              key={i}
+              className="mb-6 break-inside-avoid sm:mb-8"
+            >
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded bg-wood-200/60">
+                <span className="px-4 text-center text-[12px] font-medium uppercase tracking-wider text-wood-500">
+                  {item.tag}
                 </span>
-                <span className="ml-3 font-display text-base italic text-wood-700">
-                  Bàn gỗ nguyên khối xuất khẩu · Giữ vân tự nhiên theo yêu cầu buyer
+              </div>
+              <figcaption className="mt-3 flex flex-col gap-1.5">
+                <span className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-wood-500">
+                  {item.tag}
+                </span>
+                <span className="truncate text-[13.5px] leading-[1.5] text-wood-700">
+                  {item.caption}
                 </span>
               </figcaption>
             </figure>
+          ))}
+        </div>
 
-            <figure className="lg:col-span-6 lg:col-start-7 lg:pt-24">
-              <div className="aspect-[5/4] overflow-hidden">
-                <img
-                  src={procBong}
-                  alt="Bề mặt phủ bóng ngoài trời"
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <figcaption className="mt-4 text-[12px] leading-[1.7] text-wood-700">
-                <span className="uppercase tracking-[0.22em] text-wood-500">
-                  Phủ bóng ngoài trời
-                </span>
-                <span className="ml-3 font-display text-base italic text-wood-700">
-                  Cửa &amp; lam ngoại thất · Bền màu qua nắng mưa, không bong tróc
-                </span>
-              </figcaption>
-            </figure>
-          </div>
+        {/* CTA note */}
+        <div className="mt-10 text-center lg:mt-14">
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+          >
+            Muốn xem thêm ảnh thực tế? → Nhắn Zalo để nhận lookbook đầy đủ
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
         </div>
       </div>
     </section>

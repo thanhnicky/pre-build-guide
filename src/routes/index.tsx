@@ -146,6 +146,8 @@ function Hero() {
 const PROCESSES = [
   {
     n: "I",
+    slug: "he-lau",
+    tab: "Hệ Lau",
     kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Sơn lau giữ màu vân gỗ",
     body: [
@@ -154,12 +156,14 @@ const PROCESSES = [
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
     fitFor:
-      "Phù hợp khi: đồ nội thất tự nhiên, bàn gỗ nguyên khối, không gian cần sự mộc mạc và sang trọng từ chính vân gỗ.",
+      "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
   },
   {
     n: "II",
+    slug: "he-phun",
+    tab: "Hệ Phun",
     kicker: "Hệ phun · Nội & ngoại thất",
     title: "Sơn phun giữ vân, nội & ngoại thất",
     body: [
@@ -168,12 +172,14 @@ const PROCESSES = [
       "Lotus tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
     fitFor:
-      "Phù hợp khi: cần đồng đều cho nhiều sản phẩm, hoặc hạng mục ngoài trời cần giữ vân nhưng phải bền theo thời tiết.",
+      "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
   },
   {
     n: "III",
+    slug: "mau-bet-mdf",
+    tab: "Màu Bệt MDF",
     kicker: "Màu bệt · MDF",
     title: "Sơn màu bệt cho gỗ MDF",
     body: [
@@ -182,12 +188,14 @@ const PROCESSES = [
       "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính — đẹp theo cách riêng của MDF.",
     ],
     fitFor:
-      "Phù hợp khi: tủ bếp, tủ âm tường, nội thất hiện đại, hoặc lên màu theo bảng thiết kế riêng.",
+      "tủ bếp, tủ âm tường — đồng màu toàn lô, không loang, không chênh sắc.",
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
   },
   {
     n: "IV",
+    slug: "phu-bong-ngoai-troi",
+    tab: "Phủ Bóng Ngoài Trời",
     kicker: "Phủ bóng · Ngoài trời",
     title: "Sơn phủ bóng chuyên dụng bảo vệ gỗ ngoài trời",
     body: [
@@ -196,7 +204,7 @@ const PROCESSES = [
       "Đây không phải hệ nội thất mang ra ngoài — mà là một hệ riêng, chọn theo mức tiếp xúc thực tế của hạng mục.",
     ],
     fitFor:
-      "Phù hợp khi: cửa gỗ ngoài trời, lam chắn nắng, pergola, sàn sân vườn, hoặc bất kỳ hạng mục nào chịu thời tiết.",
+      "lam, cửa, pergola, sàn sân vườn — hệ riêng cho hạng mục chịu thời tiết.",
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
   },
@@ -223,11 +231,30 @@ function ProcessEditorial() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Lotus không bán sơn theo can — Lotus chọn đúng hệ cho hạng mục bạn
-            đang làm. Bốn hướng dưới đây bao quát phần lớn nhu cầu nội &amp;
-            ngoại thất.
+            Mỗi hệ sơn được chọn theo loại gỗ, môi trường sử dụng và yêu cầu
+            bề mặt của xưởng — không phải theo can hay theo giá.
           </p>
         </div>
+
+        {/* Tab nav — anchor scroll */}
+        <nav
+          aria-label="Bốn hướng hoàn thiện"
+          className="mt-14 flex flex-wrap gap-x-2 gap-y-3 border-y border-wood-200 py-5 sm:mt-16"
+        >
+          {PROCESSES.map((p) => (
+            <a
+              key={p.slug}
+              href={`#${p.slug}`}
+              className="inline-flex items-center gap-2 rounded-full border border-wood-200 bg-background px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-wood-700 transition-colors hover:border-wood-700 hover:text-wood-900"
+            >
+              <span className="font-display text-[13px] tracking-normal text-wood-400">
+                {p.n}
+              </span>
+              <span className="text-wood-300">·</span>
+              {p.tab}
+            </a>
+          ))}
+        </nav>
 
         {/* 4 panels — unified 2-col system, alternating sides */}
         <div className="mt-24 space-y-24 sm:mt-32 sm:space-y-28 lg:mt-40 lg:space-y-32">
@@ -236,7 +263,8 @@ function ProcessEditorial() {
             return (
               <article
                 key={p.n}
-                className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
+                id={p.slug}
+                className="scroll-mt-24 grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
               >
                 <div
                   className={`order-1 ${
@@ -280,9 +308,11 @@ function ProcessEditorial() {
                     ))}
                   </div>
 
-                  <p className="mt-7 text-[14px] italic leading-[1.7] text-wood-500">
-                    {p.fitFor}
+                  <p className="mt-7 text-[14px] leading-[1.7] text-wood-600">
+                    <em className="not-italic font-medium uppercase tracking-[0.14em] text-wood-500 text-[11.5px]">Phù hợp cho xưởng:</em>{" "}
+                    <span className="italic">{p.fitFor}</span>
                   </p>
+
 
                   <a
                     href={ZALO}

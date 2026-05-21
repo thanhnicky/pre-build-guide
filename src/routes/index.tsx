@@ -156,7 +156,7 @@ function CertificationsSection() {
   ];
 
   return (
-    <section className="bg-background pt-24 pb-12 sm:pt-32 sm:pb-12 lg:pt-40 lg:pb-12">
+    <section className="bg-background pt-12 pb-12 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-12">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left — text */}
@@ -433,7 +433,7 @@ const PROCESSES = [
 
 function ProcessEditorial() {
   return (
-    <section id="quy-trinh" className="bg-background py-24 sm:py-32 lg:py-40">
+    <section id="quy-trinh" className="bg-background pt-12 pb-24 sm:pt-12 sm:pb-32 lg:pt-12 lg:pb-40">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">

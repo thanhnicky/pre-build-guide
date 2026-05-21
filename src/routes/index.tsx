@@ -232,9 +232,7 @@ function Hero() {
           </h1>
 
           <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Lotus tư vấn đúng hệ hoàn thiện cho từng loại gỗ và từng môi trường
-            sử dụng — để bề mặt ổn định qua sản xuất hàng loạt, đạt tiêu chuẩn
-            bàn giao và xuất khẩu.
+            Lotus tư vấn đúng hệ hoàn thiện cho xưởng thi công, nhà thầu dự án và đơn hàng xuất khẩu — sơn hệ nước, không mùi, pha màu theo yêu cầu.
           </p>
 
           <div className="mt-12 flex flex-col items-start gap-6">

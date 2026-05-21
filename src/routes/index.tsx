@@ -68,7 +68,7 @@ function PartnersSection() {
   ];
 
   return (
-    <section className="bg-[#F5F0EA] py-20 sm:py-24">
+    <section className="bg-[#F5F0EA] py-12">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center">
         <p className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
           Đã được tin dùng tại
@@ -101,7 +101,7 @@ function PartnersSection() {
    ============================================================ */
 function TrustBar() {
   return (
-    <section className="border-y border-wood-200 bg-background py-10 sm:py-14">
+    <section className="border-y border-wood-200 bg-background pt-12 pb-10 sm:pt-12 sm:pb-14">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 items-center gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -156,7 +156,7 @@ function CertificationsSection() {
   ];
 
   return (
-    <section className="bg-background py-24 sm:py-32 lg:py-40">
+    <section className="bg-background pt-24 pb-12 sm:pt-32 sm:pb-12 lg:pt-40 lg:pb-12">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left — text */}
@@ -232,7 +232,7 @@ function WhyWaterSection() {
   ];
 
   return (
-    <section className="bg-[#F5F0EA] py-20">
+    <section className="bg-[#F5F0EA] pt-[60px] pb-[60px]">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
           TẠI SAO HỆ NƯỚC?
@@ -282,7 +282,7 @@ function WhyWaterSection() {
 function Hero() {
   return (
     <section className="relative bg-[oklch(0.97_0.015_82)]">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 pt-14 pb-20 sm:px-10 sm:pt-20 sm:pb-28 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-36">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 pt-14 pb-10 sm:px-10 sm:pt-20 sm:pb-12 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-14">
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">

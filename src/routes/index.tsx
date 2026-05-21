@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Globe, Leaf } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -41,6 +41,7 @@ function LotusLanding() {
         <Hero />
         <PartnersSection />
         <TrustBar />
+        <CertificationsSection />
         <ProcessEditorial />
         <Lookbook />
         <FAQ />

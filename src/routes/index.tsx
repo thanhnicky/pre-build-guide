@@ -106,7 +106,7 @@ function TrustBar() {
         <div className="grid grid-cols-1 items-center gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
           {[
             { k: "200+", v: "xưởng & nhà máy tin dùng" },
-            { k: "5+", v: "năm kinh nghiệm" },
+            { k: "12+", v: "năm kinh nghiệm" },
             { v: "TƯ VẤN KỸ THUẬT 1-1 MIỄN PHÍ" },
             { k: "PHA MÀU THEO YÊU CẦU", v: "RAL · NCS · mã màu riêng" },
           ].map((s, i) => (

@@ -308,9 +308,11 @@ function ProcessEditorial() {
                     ))}
                   </div>
 
-                  <p className="mt-7 text-[14px] italic leading-[1.7] text-wood-500">
-                    {p.fitFor}
+                  <p className="mt-7 text-[14px] leading-[1.7] text-wood-600">
+                    <em className="not-italic font-medium uppercase tracking-[0.14em] text-wood-500 text-[11.5px]">Phù hợp cho xưởng:</em>{" "}
+                    <span className="italic">{p.fitFor}</span>
                   </p>
+
 
                   <a
                     href={ZALO}

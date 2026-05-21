@@ -874,10 +874,6 @@ const FAQS = [
     a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
   },
   {
-    q: "Lotus có cung cấp TDS / MSDS không?",
-    a: "Có. Lotus cung cấp đầy đủ TDS và MSDS cho tất cả sản phẩm — phục vụ xưởng kiểm soát chất lượng và nhà máy xuất khẩu cần hồ sơ kỹ thuật. Nhắn Zalo để nhận tài liệu.",
-  },
-  {
     q: "Thời gian khô giữa các lớp có ảnh hưởng đến dây chuyền không?",
     a: "Tùy hệ và điều kiện xưởng. Lotus tư vấn cụ thể để không làm chậm dây chuyền của bạn. Nhắn Zalo gửi thông tin xưởng để được hỗ trợ.",
   },

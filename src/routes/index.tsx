@@ -832,7 +832,7 @@ function FAQ() {
             <h2 className="font-display mt-8 text-[2rem] font-light leading-[1.1] text-wood-900 sm:text-[2.25rem]">
               <span className="block">Sơn Lotus</span>
               <span className="block italic font-normal text-wood-700">
-                nhắn Zalo.
+                giải đáp.
               </span>
             </h2>
           </div>

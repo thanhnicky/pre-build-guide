@@ -511,23 +511,24 @@ function WhyWaterSection() {
   const cols = [
     {
       n: "01",
-      heading: "Chi phí thực tế",
-      body: "Không tốn dung môi pha thêm, không cần hệ thống thông gió đặc biệt, hao phí khi phun thấp hơn PU trên cùng diện tích.",
-      punch: "Tổng chi phí vận hành thấp hơn PU.",
+      heading: "Chi phí vận hành thấp hơn",
+      body: "Không dung môi pha thêm, không cần đầu tư thông gió đặc biệt. Hao phí phun thấp hơn PU trên cùng diện tích.",
+      punch: "Tiết kiệm thực tế trên từng m².",
     },
     {
       n: "02",
-      heading: "Chuyển hệ không mất năng suất",
-      body: "Lotus hỗ trợ trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách.",
-      punch: "Xưởng không phải tự mò.",
+      heading: "Chuyển hệ không gián đoạn xưởng",
+      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn hoá tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
+      punch: "Không mất tuần đầu để dò.",
     },
     {
       n: "03",
-      heading: "Giảm rủi ro bàn giao",
-      body: "Dự án cao cấp yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao.",
-      punch: "Hạn chế phát sinh bảo hành.",
+      heading: "Đạt yêu cầu nghiệm thu & xuất khẩu",
+      body: "Không VOC sau bàn giao, có TDS / MSDS song ngữ — đáp ứng dự án cao cấp và buyer Mỹ, EU, Nhật.",
+      punch: "Qua nghiệm thu, không phát sinh bảo hành.",
     },
   ];
+
 
   return (
     <section className="bg-[#F5F0EA] py-20 sm:py-24">

@@ -77,11 +77,11 @@ function AudienceSection() {
       icon: Factory,
       kicker: "Nhóm 01",
       title: "Xưởng nội thất công trình",
-      lead: "Thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp.",
+      lead: "Thi công căn hộ, khách sạn, văn phòng cao cấp.",
       bullets: [
-        "Đồng màu xuyên lô — không chênh sắc giữa các đợt",
+        "Đồng màu giữa các lô — hạn chế chênh sắc khi giao theo đợt",
         "Hồ sơ kỹ thuật phục vụ nghiệm thu dự án",
-        "Không mùi, không VOC sau bàn giao",
+        "Mùi nhẹ, VOC thấp — phù hợp hạng mục bàn giao sớm",
       ],
       tags: ["Dự án cao cấp", "Nội thất công trình"],
     },
@@ -92,7 +92,7 @@ function AudienceSection() {
       lead: "Sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản.",
       bullets: [
         "TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer",
-        "Đạt EN71-3 · ASTM F963 · FDA · RoHS",
+        "Đáp ứng EN71-3 · ASTM F963 · FDA · RoHS",
         "Bề mặt ổn định trên sản lượng lớn, nhiều lô",
       ],
       tags: ["Xuất khẩu Mỹ · EU · Nhật", "Sản lượng lớn"],
@@ -182,31 +182,31 @@ function TechCollaborationSection() {
       icon: Camera,
       n: "01",
       title: "Gửi ảnh & mô tả hạng mục",
-      body: "Gửi ảnh bề mặt gỗ, loại vật liệu và môi trường sử dụng qua Zalo. Lotus xem trực tiếp, không qua form trung gian.",
+      body: "Ảnh bề mặt gỗ, loại vật liệu và môi trường sử dụng — qua Zalo, không qua form trung gian.",
     },
     {
       icon: FileText,
       n: "02",
-      title: "Đề xuất hệ + TDS / MSDS",
-      body: "Lotus đề xuất hệ sơn phù hợp, gửi kèm TDS, MSDS và hồ sơ chứng nhận cần cho nghiệm thu hoặc buyer xuất khẩu.",
+      title: "Đề xuất hệ + hồ sơ kỹ thuật",
+      body: "Lotus đề xuất hệ phù hợp, gửi kèm TDS, MSDS và chứng nhận cần cho nghiệm thu hoặc buyer xuất khẩu.",
     },
     {
       icon: FlaskConical,
       n: "03",
       title: "Thử mẫu trước khi vào lô",
-      body: "Khuyến khích thử trên mẫu thật của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn.",
+      body: "Thử trên mẫu thật của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn.",
     },
     {
       icon: Wrench,
       n: "04",
       title: "Hỗ trợ kỹ thuật tại xưởng",
-      body: "Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò.",
+      body: "Lần đầu chuyển hệ, kỹ sư Lotus xuống xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
     },
     {
       icon: Truck,
       n: "05",
       title: "Cung ứng & theo dõi lô",
-      body: "Giao hàng theo tiến độ sản xuất, theo dõi chất lượng giữa các lô, sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi.",
+      body: "Giao theo tiến độ sản xuất, theo dõi chất lượng giữa các lô và điều chỉnh khi điều kiện xưởng thay đổi.",
     },
   ];
 
@@ -402,32 +402,32 @@ function CertificationsSection() {
     {
       icon: ShieldCheck,
       code: "EN71-3: 2019 + A1:2021",
-      name: "An toàn đồ chơi trẻ em",
+      name: "An toàn đồ chơi trẻ em — giới hạn kim loại nặng",
       tag: "Châu Âu",
     },
     {
       icon: ShieldCheck,
       code: "ASTM F963-17",
-      name: "An toàn đồ chơi trẻ em",
+      name: "An toàn đồ chơi trẻ em theo tiêu chuẩn Hoa Kỳ",
       tag: "Hoa Kỳ",
     },
     {
       icon: CheckCircle,
       code: "FDA 21 CFR 178.3800",
-      name: "An toàn tiếp xúc thực phẩm",
+      name: "Phù hợp tiếp xúc gián tiếp với thực phẩm",
       tag: "Hoa Kỳ · FDA",
     },
     {
       icon: Leaf,
       code: "RoHS Compliant",
-      name: "Giới hạn chất độc hại trong sản phẩm",
+      name: "Đáp ứng giới hạn chất độc hại trong sản phẩm",
       tag: "Châu Âu",
     },
     {
       icon: Wind,
       code: "Zero Formaldehyde · Low VOCs",
-      name: "Không Formaldehyde, VOCs thấp tiêu chuẩn quốc tế",
-      tag: "An toàn xưởng kín",
+      name: "Không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế",
+      tag: "Phù hợp xưởng kín",
     },
   ];
 
@@ -446,9 +446,9 @@ function CertificationsSection() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Hệ nước, không Formaldehyde, VOCs thấp — đạt chứng nhận an toàn cho
-            đồ chơi trẻ em, bệnh viện, trường học và đơn hàng xuất khẩu Mỹ, EU,
-            Nhật Bản.
+            Hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế —
+            đáp ứng yêu cầu cho đồ chơi trẻ em, bệnh viện, trường học và đơn
+            hàng xuất khẩu Mỹ, EU, Nhật Bản.
           </p>
         </div>
 
@@ -511,21 +511,21 @@ function WhyWaterSection() {
   const cols = [
     {
       n: "01",
-      heading: "Chi phí vận hành thấp hơn",
-      body: "Không dung môi pha thêm, không cần đầu tư thông gió đặc biệt. Hao phí phun thấp hơn PU trên cùng diện tích.",
-      punch: "Tiết kiệm thực tế trên từng m².",
+      heading: "Vận hành gọn hơn",
+      body: "Không cần pha thêm dung môi, yêu cầu thông gió đơn giản hơn PU.",
+      punch: "Giảm chi phí phụ trợ trên mỗi m².",
     },
     {
       n: "02",
-      heading: "Chuyển hệ không gián đoạn xưởng",
-      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn hoá tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
-      punch: "Không mất tuần đầu để dò.",
+      heading: "Chuyển hệ có người đi cùng",
+      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
+      punch: "Rút ngắn thời gian dò hệ.",
     },
     {
       n: "03",
-      heading: "Đạt yêu cầu nghiệm thu & xuất khẩu",
-      body: "Không VOC sau bàn giao, có TDS / MSDS song ngữ — đáp ứng dự án cao cấp và buyer Mỹ, EU, Nhật.",
-      punch: "Qua nghiệm thu, không phát sinh bảo hành.",
+      heading: "Sẵn cho nghiệm thu & xuất khẩu",
+      body: "VOC thấp theo tiêu chuẩn quốc tế, có TDS / MSDS song ngữ — đáp ứng yêu cầu dự án cao cấp và buyer Mỹ, EU, Nhật.",
+      punch: "Hồ sơ sẵn — đi qua nghiệm thu nhẹ hơn.",
     },
   ];
 
@@ -603,23 +603,27 @@ function Hero() {
           </h1>
 
           <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
-            TDS / MSDS song ngữ, đạt EN71-3 · ASTM · FDA · RoHS, pha màu theo
-            RAL / NCS. Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng — bề mặt ổn định
-            từ mẫu đầu đến lô cuối.
+            Hồ sơ kỹ thuật song ngữ, pha màu RAL / NCS, kỹ sư Lotus hỗ trợ
+            trực tiếp tại xưởng — bề mặt ổn định từ mẫu đầu đến lô cuối.
           </p>
 
 
           {/* Trust strip — above the fold */}
-          <ul className="mt-7 flex flex-wrap gap-x-2 gap-y-2">
-            {trust.map((t) => (
-              <li
-                key={t}
-                className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-700"
-              >
-                {t}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-7">
+            <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-wood-500">
+              Hồ sơ & tiêu chuẩn
+            </div>
+            <ul className="mt-2.5 flex flex-wrap gap-x-2 gap-y-2">
+              {trust.map((t) => (
+                <li
+                  key={t}
+                  className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-wood-800"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
             <a
@@ -666,13 +670,13 @@ const PROCESSES = [
     kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Hệ lau — giữ vân gỗ tự nhiên",
     body: [
-      "Lớp hoàn thiện thấm sâu vào thớ gỗ, tôn vinh vân thật thay vì che phủ.",
+      "Lớp hoàn thiện thấm vào thớ gỗ, tôn vân thật thay vì che phủ.",
       "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
-    material: "Gỗ tự nhiên nguyên khối: sồi, óc chó, tần bì — đồ trưng bày, handcraft.",
-    surface: "Vân gỗ rõ, bề mặt ấm, có chiều sâu — cảm giác chạm gỗ thật.",
-    strength: "Phù hợp đơn xuất khẩu EU / Mỹ yêu cầu cảm giác tự nhiên.",
+    material: "Gỗ tự nhiên: sồi, óc chó, tần bì — đồ trưng bày, handcraft.",
+    surface: "Vân gỗ rõ, bề mặt ấm, có chiều sâu khi chạm.",
+    strength: "Phù hợp đơn xuất khẩu EU / Mỹ ưu tiên cảm giác tự nhiên.",
     cta: "Nhắn Zalo gửi ảnh hạng mục để chọn đúng hệ lau",
     image: procLau,
     steps: [
@@ -689,13 +693,13 @@ const PROCESSES = [
     kicker: "Hệ phun · Nội & ngoại thất",
     title: "Hệ phun — nội & ngoại thất sản lượng lớn",
     body: [
-      "Bề mặt phẳng, đều màu, kiểm soát cao — chuẩn cho sản xuất hàng loạt và dự án nhiều block.",
+      "Bề mặt phẳng, đều màu — chuẩn cho sản xuất hàng loạt và dự án nhiều block.",
       "Vân gỗ vẫn hiện rõ trong một lớp hoàn thiện ổn định, ít phụ thuộc kỹ năng thợ.",
       "Tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
     material: "Gỗ tự nhiên & ván dán — nội thất và ngoại thất, sản lượng lớn.",
-    surface: "Đều màu, phẳng, vẫn giữ vân — đồng nhất giữa các lô.",
-    strength: "Ít phụ thuộc tay thợ, kiểm soát chất lượng xuyên dây chuyền.",
+    surface: "Đều màu, phẳng, giữ vân — đồng nhất giữa các lô.",
+    strength: "Ít phụ thuộc tay thợ, dễ kiểm soát chất lượng theo dây chuyền.",
     cta: "Gửi ảnh hạng mục để tư vấn đúng hệ phun (nội / ngoại)",
     image: procPhun,
     steps: [
@@ -712,13 +716,13 @@ const PROCESSES = [
     kicker: "Màu bệt · MDF",
     title: "Màu bệt — hệ chuyên cho MDF",
     body: [
-      "Tạo bề mặt màu phẳng, sạch, hiện đại — không cố giả vân gỗ tự nhiên.",
+      "Bề mặt màu phẳng, sạch, hiện đại — không cố giả vân gỗ tự nhiên.",
       "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
       "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính.",
     ],
     material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách trang trí.",
-    surface: "Màu phẳng, đặc, đồng màu xuyên lô — chọn mờ / bán bóng / bóng cao.",
-    strength: "Pha theo RAL / NCS — đồng màu xuyên block, không chênh sắc.",
+    surface: "Màu phẳng, đặc — chọn mờ / bán bóng / bóng cao.",
+    strength: "Pha theo RAL / NCS — đồng màu giữa các block, hạn chế chênh sắc.",
     cta: "Nhắn Zalo gửi mã màu RAL / NCS để Lotus kiểm tra",
     image: procMdf,
     steps: [
@@ -735,13 +739,13 @@ const PROCESSES = [
     kicker: "Phủ bóng · Ngoài trời",
     title: "Phủ bóng ngoài trời — hệ chuyên cho thời tiết",
     body: [
-      "Lớp phủ chuyên dụng kháng UV và chống thấm — giữ vẻ đẹp gỗ qua nắng, mưa và độ ẩm.",
-      "Co giãn cùng gỗ, không nứt hay bong tróc theo chu kỳ thời tiết.",
+      "Lớp phủ kháng UV và chống thấm — giữ vẻ đẹp gỗ qua nắng, mưa và độ ẩm.",
+      "Co giãn cùng gỗ, hạn chế nứt và bong tróc theo chu kỳ thời tiết.",
       "Đây là một hệ riêng — không phải hệ nội thất mang ra ngoài.",
     ],
-    material: "Lam, cửa, pergola, sàn sân vườn — hạng mục outdoor chịu thời tiết.",
-    surface: "Lớp phủ co giãn cùng gỗ, kháng UV, chống thấm — không nứt, bong.",
-    strength: "Bền theo chu kỳ thời tiết, hạn chế bảo dưỡng định kỳ.",
+    material: "Lam, cửa, pergola, sàn sân vườn — hạng mục outdoor.",
+    surface: "Lớp phủ co giãn, kháng UV, chống thấm.",
+    strength: "Bền theo chu kỳ thời tiết, giảm tần suất bảo dưỡng.",
     cta: "Gửi ảnh hạng mục để chọn đúng lớp phủ theo môi trường",
     image: procBong,
     steps: [
@@ -764,18 +768,18 @@ function ProcessEditorial() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-              Bốn hướng hoàn thiện
+              Bốn hệ hoàn thiện cho xưởng
             </div>
             <h2 className="font-display mt-8 text-[2.25rem] font-light leading-[1.06] text-wood-900 sm:text-5xl lg:text-[3.5rem]">
               <span className="block">Mỗi bề mặt,</span>
               <span className="block italic font-normal text-wood-700">
-                một quy trình riêng.
+                một hệ sơn riêng.
               </span>
             </h2>
           </div>
           <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Mỗi hệ sơn được chọn theo loại gỗ, môi trường sử dụng và yêu cầu
-            bề mặt của xưởng — không phải theo can hay theo giá.
+            Hệ được chọn theo loại gỗ, môi trường sử dụng và yêu cầu bề mặt
+            của xưởng — không chọn theo can hay theo giá.
           </p>
         </div>
 
@@ -928,7 +932,7 @@ const PROJECTS = [
     tag: "HỆ PHUN · NỘI THẤT",
     name: "Khách sạn 5 sao — The Grand Saigon",
     type: "Nội thất phòng & hành lang · TP.HCM · 2024",
-    note: "320 phòng · đồng màu xuyên 12 lô giao · 0 phát sinh nghiệm thu.",
+    note: "320 phòng · đồng màu xuyên 12 lô giao · qua nghiệm thu đúng tiến độ.",
     image:
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
   },
@@ -936,7 +940,7 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Masterise Homes — The Global City",
     type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
-    note: "500 bộ · pha theo RAL · đồng màu xuyên 4 block, không loang.",
+    note: "500 bộ · pha theo RAL · đồng màu giữa 4 block, không loang.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
   },
@@ -952,7 +956,7 @@ const PROJECTS = [
     tag: "PHỦ BÓNG · OUTDOOR",
     name: "Biệt thự cao cấp — Dự án Sun Group",
     type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
-    note: "Phủ kháng UV · 3 năm vận hành, không nứt, không bong tróc.",
+    note: "Phủ kháng UV · 3 năm vận hành, bề mặt còn ổn định.",
     image:
       "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
   },
@@ -960,7 +964,7 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Novaland — Aqua City",
     type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
-    note: "800 bộ · đồng màu RAL xuyên 4 block.",
+    note: "800 bộ · đồng màu RAL giữa 4 block.",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70",
   },
@@ -1098,8 +1102,8 @@ function ConsultBlock() {
               </span>
             </h2>
             <p className="mt-7 max-w-md text-[15px] leading-[1.7] text-wood-300">
-              Không form, không báo giá tự động. Kỹ sư Lotus xem ảnh và tư vấn
-              đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
+              Không form, không báo giá tự động. Kỹ sư Lotus xem ảnh và đề xuất
+              hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
             </p>
             <ul className="mt-7 space-y-3 text-[14px] leading-[1.6] text-wood-300">
               <li className="flex gap-3">
@@ -1108,7 +1112,7 @@ function ConsultBlock() {
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
-                <span>Nhận mẫu vật lý nếu cần kiểm tra trước khi tư vấn.</span>
+                <span>Gửi mẫu vật lý khi cần kiểm tra trước khi vào lô.</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
@@ -1161,7 +1165,7 @@ const FAQS = [
   },
   {
     q: "Làm số lượng lớn, làm sao đảm bảo bề mặt ổn định giữa các lô?",
-    a: "Lotus kiểm soát đồng màu xuyên lô, theo dõi chất lượng giữa các đợt giao và sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi — đây là cam kết cho sản lượng lớn và đơn hàng xuất khẩu.",
+    a: "Lotus theo dõi đồng màu giữa các lô, kiểm tra chất lượng từng đợt giao và điều chỉnh khi điều kiện xưởng thay đổi — quy trình chuẩn cho sản lượng lớn và đơn xuất khẩu.",
   },
   {
     q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",

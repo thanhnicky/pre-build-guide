@@ -603,23 +603,27 @@ function Hero() {
           </h1>
 
           <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
-            TDS / MSDS song ngữ, đạt EN71-3 · ASTM · FDA · RoHS, pha màu theo
-            RAL / NCS. Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng — bề mặt ổn định
-            từ mẫu đầu đến lô cuối.
+            Hồ sơ kỹ thuật song ngữ, pha màu RAL / NCS, kỹ sư Lotus hỗ trợ
+            trực tiếp tại xưởng — bề mặt ổn định từ mẫu đầu đến lô cuối.
           </p>
 
 
           {/* Trust strip — above the fold */}
-          <ul className="mt-7 flex flex-wrap gap-x-2 gap-y-2">
-            {trust.map((t) => (
-              <li
-                key={t}
-                className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-700"
-              >
-                {t}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-7">
+            <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-wood-500">
+              Hồ sơ & tiêu chuẩn
+            </div>
+            <ul className="mt-2.5 flex flex-wrap gap-x-2 gap-y-2">
+              {trust.map((t) => (
+                <li
+                  key={t}
+                  className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-wood-800"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
             <a

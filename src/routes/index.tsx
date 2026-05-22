@@ -77,15 +77,25 @@ function AudienceSection() {
       icon: Factory,
       kicker: "Nhóm 01",
       title: "Xưởng nội thất công trình",
-      body: "Xưởng thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp — cần hệ sơn đồng màu xuyên lô, kiểm soát chất lượng nghiệm thu và không phát sinh mùi sau bàn giao.",
-      tags: ["Đồng màu xuyên lô", "Hồ sơ nghiệm thu", "Không VOC sau bàn giao"],
+      lead: "Thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp.",
+      bullets: [
+        "Đồng màu xuyên lô — không chênh sắc giữa các đợt",
+        "Hồ sơ kỹ thuật phục vụ nghiệm thu dự án",
+        "Không mùi, không VOC sau bàn giao",
+      ],
+      tags: ["Dự án cao cấp", "Nội thất công trình"],
     },
     {
       icon: Ship,
       kicker: "Nhóm 02",
       title: "Nhà máy & đơn hàng xuất khẩu",
-      body: "Nhà máy sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật — yêu cầu TDS/MSDS đầy đủ, đạt EN71-3, ASTM F963, FDA, RoHS và bề mặt ổn định trên sản lượng lớn.",
-      tags: ["TDS / MSDS song ngữ", "Đạt EN71-3 · ASTM · FDA", "Ổn định trên sản lượng lớn"],
+      lead: "Sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản.",
+      bullets: [
+        "TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer",
+        "Đạt EN71-3 · ASTM F963 · FDA · RoHS",
+        "Bề mặt ổn định trên sản lượng lớn, nhiều lô",
+      ],
+      tags: ["Xuất khẩu Mỹ · EU · Nhật", "Sản lượng lớn"],
     },
   ];
 
@@ -114,21 +124,38 @@ function AudienceSection() {
           {audiences.map((a) => (
             <div
               key={a.title}
-              className="flex flex-col gap-5 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-8"
+              className="flex flex-col gap-6 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-9"
             >
+              {/* Header */}
               <div className="flex items-center gap-3">
                 <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
                 <span className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
                   {a.kicker}
                 </span>
               </div>
-              <h3 className="font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]">
-                {a.title}
-              </h3>
-              <p className="text-[14.5px] leading-[1.75] text-wood-700/85">
-                {a.body}
-              </p>
-              <div className="mt-1 flex flex-wrap gap-2">
+
+              {/* Title + 1-line lead */}
+              <div>
+                <h3 className="font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]">
+                  {a.title}
+                </h3>
+                <p className="mt-3 text-[14.5px] leading-[1.6] text-wood-700/85">
+                  {a.lead}
+                </p>
+              </div>
+
+              {/* 3 scannable bullets */}
+              <ul className="space-y-2.5 border-t border-wood-300/40 pt-5">
+                {a.bullets.map((b) => (
+                  <li key={b} className="flex gap-3 text-[14px] leading-[1.55] text-wood-800">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-600" strokeWidth={1.75} />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Compact tag row */}
+              <div className="mt-auto flex flex-wrap gap-2 pt-2">
                 {a.tags.map((t) => (
                   <span
                     key={t}
@@ -405,60 +432,72 @@ function CertificationsSection() {
   ];
 
   return (
-    <section id="tieu-chuan" className="bg-background pt-12 pb-12 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-12">
+    <section id="tieu-chuan" className="bg-background py-20 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left — text */}
-          <div className="lg:col-span-5">
+        {/* Heading row */}
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
               TIÊU CHUẨN & CHỨNG NHẬN
             </div>
             <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
               <span className="block">An toàn kiểm chứng —</span>
-              <span className="block italic font-normal text-wood-700">phù hợp xuất khẩu</span>
+              <span className="block italic font-normal text-wood-700">phù hợp xuất khẩu.</span>
             </h2>
-            <p className="mt-6 text-[15px] leading-[1.75] text-wood-700/85">
-              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế — đạt chứng nhận an toàn cho xưởng kín, đồ chơi trẻ em, bệnh viện, trường học và sản phẩm nội thất xuất khẩu sang Mỹ, EU và Nhật Bản.
-            </p>
-
-            {/* CTA link */}
-            <div className="mt-10">
-              <a
-                href={ZALO}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-start gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-              >
-                <span>Cần hồ sơ chứng nhận cho đơn hàng xuất khẩu? → Nhắn Zalo để nhận tài liệu kỹ thuật</span>
-                <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </div>
           </div>
+          <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
+            Hệ nước, không Formaldehyde, VOCs thấp — đạt chứng nhận an toàn cho
+            đồ chơi trẻ em, bệnh viện, trường học và đơn hàng xuất khẩu Mỹ, EU,
+            Nhật Bản.
+          </p>
+        </div>
 
-          {/* Right — badge cards */}
-          <div className="lg:col-span-6 lg:col-start-7">
-            <div className="flex flex-col gap-4">
-              {badges.map((b) => (
-                <div
-                  key={b.code}
-                  className="flex items-start gap-5 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-5"
-                >
-                  <b.icon className="mt-1 h-6 w-6 shrink-0 text-wood-700" strokeWidth={1.5} />
-                  <div className="flex-1">
-                    <div className="font-display text-[16px] font-semibold text-wood-900">
-                      {b.code}
-                    </div>
-                    <div className="mt-1 text-[13.5px] leading-[1.55] text-wood-600">
-                      {b.name}
-                    </div>
-                    <div className="mt-3 inline-block rounded-full bg-wood-700 px-2.5 py-1 text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA]">
-                      {b.tag}
-                    </div>
-                  </div>
+        {/* Credential bar — quick-scan codes */}
+        <ul className="mt-10 flex flex-wrap gap-2">
+          {badges.map((b) => (
+            <li
+              key={`pill-${b.code}`}
+              className="rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-wood-800"
+            >
+              {b.code}
+            </li>
+          ))}
+        </ul>
+
+        {/* Badge grid — 2 columns, compact */}
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
+          {badges.map((b) => (
+            <div
+              key={b.code}
+              className="flex items-start gap-4 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-5"
+            >
+              <b.icon className="mt-0.5 h-5 w-5 shrink-0 text-wood-700" strokeWidth={1.5} />
+              <div className="flex-1">
+                <div className="font-display text-[14.5px] font-semibold leading-tight text-wood-900">
+                  {b.code}
                 </div>
-              ))}
+                <div className="mt-1 text-[13px] leading-[1.5] text-wood-600">
+                  {b.name}
+                </div>
+                <div className="mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA]">
+                  {b.tag}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+          >
+            NHẮN ZALO ĐỂ NHẬN HỒ SƠ KỸ THUẬT ĐẦY ĐỦ →
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
         </div>
       </div>
     </section>
@@ -471,21 +510,27 @@ function CertificationsSection() {
 function WhyWaterSection() {
   const cols = [
     {
+      n: "01",
       heading: "Chi phí thực tế",
-      body: "Không tốn dung môi pha thêm. Không cần đầu tư hệ thống thông gió đặc biệt. Tỷ lệ hao phí khi phun thấp hơn PU khi tính trên cùng diện tích bề mặt.",
+      body: "Không tốn dung môi pha thêm, không cần hệ thống thông gió đặc biệt, hao phí khi phun thấp hơn PU trên cùng diện tích.",
+      punch: "Tổng chi phí vận hành thấp hơn PU.",
     },
     {
-      heading: "Chuyển đổi không mất năng suất",
-      body: "Lotus hỗ trợ kỹ thuật trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách. Không để xưởng tự mò.",
+      n: "02",
+      heading: "Chuyển hệ không mất năng suất",
+      body: "Lotus hỗ trợ trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách.",
+      punch: "Xưởng không phải tự mò.",
     },
     {
+      n: "03",
       heading: "Giảm rủi ro bàn giao",
-      body: "Dự án cao cấp ngày càng yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao — tránh phát sinh bảo hành.",
+      body: "Dự án cao cấp yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao.",
+      punch: "Hạn chế phát sinh bảo hành.",
     },
   ];
 
   return (
-    <section className="bg-[#F5F0EA] pt-[60px] pb-[60px]">
+    <section className="bg-[#F5F0EA] py-20 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
           TẠI SAO HỆ NƯỚC?
@@ -497,30 +542,36 @@ function WhyWaterSection() {
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-5">
           {cols.map((c) => (
-            <div key={c.heading}>
-              <h3 className="font-display text-[17px] font-medium text-wood-900">
+            <div
+              key={c.heading}
+              className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7"
+            >
+              <div className="font-display text-[13px] tracking-normal text-wood-400">
+                {c.n}
+              </div>
+              <h3 className="font-display text-[18px] font-medium leading-[1.25] text-wood-900">
                 {c.heading}
               </h3>
-              <p className="mt-4 text-[15px] leading-[1.75] text-wood-700/85">
+              <p className="text-[14px] leading-[1.65] text-wood-700/85">
                 {c.body}
+              </p>
+              <p className="mt-auto border-t border-wood-200 pt-4 text-[13.5px] font-semibold uppercase tracking-[0.08em] text-wood-900">
+                → {c.punch}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-[15px] leading-[1.75] text-wood-700/85">
-            Muốn Lotus tính thử chi phí thực tế cho hạng mục của xưởng bạn?
-          </p>
+        <div className="mt-14 text-center">
           <a
             href={ZALO}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-5 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
           >
-            NHẮN ZALO ĐỂ TÍNH THỬ →
+            NHẮN ZALO ĐỂ TÍNH THỬ CHI PHÍ →
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>
@@ -533,6 +584,7 @@ function WhyWaterSection() {
    HERO
    ============================================================ */
 function Hero() {
+  const trust = ["TDS / MSDS", "EN71-3", "ASTM F963", "FDA", "RoHS"];
   return (
     <section className="relative bg-[oklch(0.97_0.015_82)]">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 pt-14 pb-10 sm:px-10 sm:pt-20 sm:pb-12 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-14">
@@ -542,34 +594,46 @@ function Hero() {
             SƠN GỖ HỆ NƯỚC · XƯỞNG NỘI THẤT & ĐƠN HÀNG XUẤT KHẨU
           </div>
 
-          <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[2.5rem] lg:leading-[1.12]">
+          <h1 className="font-display mt-8 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[3rem] lg:leading-[1.08]">
             <span className="block">Gỗ hoàn thiện đúng hệ —</span>
             <span className="block italic font-normal text-wood-700">
               bề mặt ổn định từ mẫu đầu đến lô cuối.
             </span>
           </h1>
 
-          <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Lotus là hệ sơn gỗ gốc nước phục vụ xưởng nội thất công trình và
-            nhà máy đơn hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại
-            xưởng, pha màu theo RAL / NCS.
+          <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
+            Hệ sơn gỗ gốc nước cho xưởng nội thất công trình và nhà máy đơn
+            hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại xưởng, pha
+            màu theo RAL / NCS.
           </p>
 
-          <div className="mt-12 flex flex-col items-start gap-6">
+          {/* Trust strip — above the fold */}
+          <ul className="mt-7 flex flex-wrap gap-x-2 gap-y-2">
+            {trust.map((t) => (
+              <li
+                key={t}
+                className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-700"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-wood-900 pb-2 text-[13px] uppercase tracking-[0.22em] text-wood-900 transition-colors hover:border-wood-600 hover:text-wood-700"
+              className="group inline-flex items-center gap-3 rounded-full bg-wood-900 px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-background shadow-sm transition-colors hover:bg-wood-700"
             >
               Gửi ảnh mẫu — nhận tư vấn kỹ thuật
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
-              className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900"
+              className="text-[13px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900"
             >
-              hoặc gọi kỹ thuật 0943 966 662
+              hoặc gọi kỹ thuật <span className="underline underline-offset-4">0943 966 662</span>
             </a>
           </div>
         </div>
@@ -604,8 +668,9 @@ const PROCESSES = [
       "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
-    fitFor:
-      "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
+    material: "Gỗ tự nhiên nguyên khối — sồi, óc chó, tần bì",
+    surface: "Bề mặt ấm, có chiều sâu — giữ nguyên vân và cảm giác chạm gỗ thật.",
+    strength: "Phù hợp đơn handcraft & hàng xuất khẩu yêu cầu cảm giác tự nhiên.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
     steps: [
@@ -626,8 +691,9 @@ const PROCESSES = [
       "Vân gỗ vẫn hiện rõ, nhưng trong một lớp hoàn thiện ổn định và ít phụ thuộc kỹ năng thợ.",
       "Lotus tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
-    fitFor:
-      "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
+    material: "Gỗ tự nhiên & ván dán cho nội & ngoại thất sản lượng lớn",
+    surface: "Bề mặt phẳng, đều màu, vẫn giữ vân — kiểm soát cao giữa các lô.",
+    strength: "Ít phụ thuộc kỹ năng thợ, lý tưởng cho dây chuyền sản xuất.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
     steps: [
@@ -648,8 +714,9 @@ const PROCESSES = [
       "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
       "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính — đẹp theo cách riêng của MDF.",
     ],
-    fitFor:
-      "tủ bếp, tủ âm tường — đồng màu toàn lô, không loang, không chênh sắc.",
+    material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách",
+    surface: "Lớp màu phẳng, sạch, hiện đại — không loang, đồng màu toàn lô.",
+    strength: "Pha màu theo RAL / NCS — đồng màu xuyên block dự án.",
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
     steps: [
@@ -670,8 +737,9 @@ const PROCESSES = [
       "Lớp phủ chuyên dụng của Lotus co giãn cùng gỗ, kháng UV và chống thấm mà không nứt hay bong tróc.",
       "Đây không phải hệ nội thất mang ra ngoài — mà là một hệ riêng, chọn theo mức tiếp xúc thực tế của hạng mục.",
     ],
-    fitFor:
-      "lam, cửa, pergola, sàn sân vườn — hệ riêng cho hạng mục chịu thời tiết.",
+    material: "Gỗ ngoài trời — lam, cửa, pergola, sàn sân vườn",
+    surface: "Lớp phủ co giãn cùng gỗ, kháng UV, chống thấm — không nứt, bong.",
+    strength: "Bền theo chu kỳ thời tiết, hạn chế bảo dưỡng định kỳ.",
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
     steps: [
@@ -775,16 +843,29 @@ function ProcessEditorial() {
                     {p.title}
                   </h3>
 
-                  <div className="mt-6 space-y-4 text-[15.5px] leading-[1.82] text-wood-700/85">
-                    {p.body.map((line, idx) => (
-                      <p key={idx}>{line}</p>
-                    ))}
-                  </div>
-
-                  <p className="mt-7 text-[14px] leading-[1.7] text-wood-600">
-                    <em className="not-italic font-medium uppercase tracking-[0.14em] text-wood-500 text-[11.5px]">Phù hợp cho xưởng:</em>{" "}
-                    <span className="italic">{p.fitFor}</span>
+                  {/* Single lead line — no long paragraph */}
+                  <p className="mt-5 text-[15px] leading-[1.7] text-wood-700/85">
+                    {p.body[0]}
                   </p>
+
+                  {/* Spec rows — scannable */}
+                  <dl className="mt-7 divide-y divide-wood-200 border-t border-wood-200">
+                    {[
+                      { label: "Phù hợp cho", value: p.material },
+                      { label: "Mục tiêu bề mặt", value: p.surface },
+                      { label: "Điểm mạnh vận hành", value: p.strength },
+                    ].map((row) => (
+                      <div key={row.label} className="grid grid-cols-1 gap-1 py-3.5 sm:grid-cols-[140px_1fr] sm:gap-4">
+                        <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                          {row.label}
+                        </dt>
+                        <dd className="text-[14px] leading-[1.55] text-wood-800">
+                          {row.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+
 
                   <Accordion type="single" collapsible className="mt-7 border-t border-wood-200">
                     <AccordionItem value="steps" className="border-b-0">
@@ -914,11 +995,11 @@ function Lookbook() {
           </p>
         </div>
 
-        {/* 2-column project grid */}
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:mt-24 lg:grid-cols-2 lg:gap-10">
-          {PROJECTS.map((p, i) => (
+        {/* Featured: 2 hero projects */}
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:mt-20 lg:grid-cols-2 lg:gap-10">
+          {PROJECTS.slice(0, 2).map((p, i) => (
             <article
-              key={i}
+              key={`feat-${i}`}
               className="overflow-hidden rounded-lg bg-[#FDFAF7] shadow-sm ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
             >
               <div className="relative aspect-[3/2] overflow-hidden bg-wood-200/60">
@@ -933,7 +1014,7 @@ function Lookbook() {
                 </span>
               </div>
               <div className="flex flex-col gap-2 p-6 sm:p-7">
-                <h3 className="font-display text-[1.25rem] font-semibold leading-[1.25] text-wood-900">
+                <h3 className="font-display text-[1.35rem] font-semibold leading-[1.25] text-wood-900">
                   {p.name}
                 </h3>
                 <p className="text-[13px] text-wood-600">{p.type}</p>
@@ -944,6 +1025,35 @@ function Lookbook() {
             </article>
           ))}
         </div>
+
+        {/* Smaller: remaining projects in a tighter grid */}
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4 lg:gap-6">
+          {PROJECTS.slice(2).map((p, i) => (
+            <article
+              key={`sm-${i}`}
+              className="overflow-hidden rounded-lg bg-[#FDFAF7] ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/60">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <span className="absolute left-3 top-3 rounded-full bg-wood-900/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-background backdrop-blur-sm">
+                  {p.tag}
+                </span>
+              </div>
+              <div className="flex flex-col gap-1 p-4">
+                <h3 className="font-display text-[14.5px] font-semibold leading-[1.25] text-wood-900">
+                  {p.name}
+                </h3>
+                <p className="text-[11.5px] text-wood-600">{p.type}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
 
         {/* CTA */}
         <div className="mt-14 flex flex-col items-center gap-3 text-center lg:mt-20">
@@ -1002,23 +1112,25 @@ function ConsultBlock() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-6 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-background pb-2 text-[13px] uppercase tracking-[0.22em] text-background transition-colors hover:border-wood-300 hover:text-wood-200"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto"
             >
-              Mở Zalo & gửi ảnh
+              <Camera className="h-4 w-4" strokeWidth={1.75} />
+              Gửi ảnh mẫu qua Zalo
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
-              className="text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
+              className="inline-flex items-center gap-2 text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
             >
-              hoặc gọi riêng 0943 966 662
+              hoặc gọi kỹ thuật <span className="font-semibold text-background underline underline-offset-4">0943 966 662</span>
             </a>
           </div>
+
         </div>
       </div>
     </section>
@@ -1031,45 +1143,30 @@ function ConsultBlock() {
 const FAQS = [
   {
     q: "Sơn Lotus có TDS và MSDS không? Tôi cần hồ sơ cho đơn hàng xuất khẩu.",
-    a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo số 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc.",
-  },
-  {
-    q: "Sơn Lotus đã được dùng tại những dự án hay xưởng xuất khẩu nào?",
-    a: "Lotus hiện cung cấp cho các xưởng nội thất xuất khẩu sang Mỹ, EU, Nhật và các dự án cao cấp của Novaland, Masteries Homes, Sun&L Interior. Gửi ảnh hoặc mô tả yêu cầu qua Zalo để được tư vấn hệ sơn phù hợp với tiêu chuẩn nhà mua hàng của bạn.",
+    a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc.",
   },
   {
     q: "Tôi nên chọn sơn lau hay sơn phun?",
     a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp.",
   },
   {
+    q: "Lotus có hỗ trợ thử mẫu vật lý trước khi lên đơn lớn không?",
+    a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp.",
+  },
+  {
+    q: "Làm số lượng lớn, làm sao đảm bảo bề mặt ổn định giữa các lô?",
+    a: "Lotus kiểm soát đồng màu xuyên lô, theo dõi chất lượng giữa các đợt giao và sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi — đây là cam kết cho sản lượng lớn và đơn hàng xuất khẩu.",
+  },
+  {
     q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",
     a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu phẳng. Dùng sai hệ, bề mặt sẽ loang, bong và xuống cấp nhanh hơn nhiều so với tuổi thọ thật của vật liệu.",
   },
   {
-    q: "Gỗ ngoài trời nên dùng lớp phủ nào?",
-    a: "Một lớp phủ chuyên ngoài trời: kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho hạng mục ngoài trời — đây là sai lầm tốn kém nhất chúng tôi thường gặp.",
-  },
-  {
-    q: "Tôi đang làm số lượng nhiều cho xưởng, nên ưu tiên hệ nào để bề mặt ổn định hơn?",
-    a: "Tùy vào loại gỗ, yêu cầu bề mặt và môi trường sử dụng, Lotus sẽ gợi ý hướng hoàn thiện phù hợp hơn cho sản xuất đồng đều và kiểm soát chất lượng tốt hơn.",
-  },
-  {
-    q: "Tôi có thể gửi ảnh mẫu hoặc ảnh hạng mục thực tế để Lotus tư vấn đúng quy trình không?",
-    a: "Có. Bạn chỉ cần gửi ảnh bề mặt, mô tả nhu cầu hoàn thiện và vị trí sử dụng, Lotus sẽ tư vấn hướng quy trình phù hợp hơn trước khi chọn hệ.",
-  },
-  {
-    q: "Chưa biết quy trình phù hợp thì làm sao?",
-    a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
-  },
-  {
-    q: "Thời gian khô giữa các lớp có ảnh hưởng đến dây chuyền không?",
-    a: "Tùy hệ và điều kiện xưởng. Lotus tư vấn cụ thể để không làm chậm dây chuyền của bạn. Nhắn Zalo gửi thông tin xưởng để được hỗ trợ.",
-  },
-  {
-    q: "Lotus có hỗ trợ thử nghiệm mẫu vật lý trước khi lên đơn lớn không?",
-    a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp.",
+    q: "Lotus có hỗ trợ kỹ thuật tại xưởng khi chuyển sang hệ nước không?",
+    a: "Có. Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò.",
   },
 ];
+
 
 function FAQ() {
   return (

@@ -511,21 +511,21 @@ function WhyWaterSection() {
   const cols = [
     {
       n: "01",
-      heading: "Chi phí vận hành thấp hơn",
-      body: "Không dung môi pha thêm, không cần đầu tư thông gió đặc biệt. Hao phí phun thấp hơn PU trên cùng diện tích.",
-      punch: "Tiết kiệm thực tế trên từng m².",
+      heading: "Vận hành gọn hơn",
+      body: "Không cần pha thêm dung môi, yêu cầu thông gió đơn giản hơn PU.",
+      punch: "Giảm chi phí phụ trợ trên mỗi m².",
     },
     {
       n: "02",
-      heading: "Chuyển hệ không gián đoạn xưởng",
-      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn hoá tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
-      punch: "Không mất tuần đầu để dò.",
+      heading: "Chuyển hệ có người đi cùng",
+      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
+      punch: "Rút ngắn thời gian dò hệ.",
     },
     {
       n: "03",
-      heading: "Đạt yêu cầu nghiệm thu & xuất khẩu",
-      body: "Không VOC sau bàn giao, có TDS / MSDS song ngữ — đáp ứng dự án cao cấp và buyer Mỹ, EU, Nhật.",
-      punch: "Qua nghiệm thu, không phát sinh bảo hành.",
+      heading: "Sẵn cho nghiệm thu & xuất khẩu",
+      body: "VOC thấp theo tiêu chuẩn quốc tế, có TDS / MSDS song ngữ — đáp ứng yêu cầu dự án cao cấp và buyer Mỹ, EU, Nhật.",
+      punch: "Hồ sơ sẵn — đi qua nghiệm thu nhẹ hơn.",
     },
   ];
 

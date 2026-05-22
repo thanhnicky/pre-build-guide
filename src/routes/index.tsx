@@ -1112,23 +1112,25 @@ function ConsultBlock() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-6 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-background pb-2 text-[13px] uppercase tracking-[0.22em] text-background transition-colors hover:border-wood-300 hover:text-wood-200"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto"
             >
-              Mở Zalo & gửi ảnh
+              <Camera className="h-4 w-4" strokeWidth={1.75} />
+              Gửi ảnh mẫu qua Zalo
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
-              className="text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
+              className="inline-flex items-center gap-2 text-[13px] tracking-wide text-wood-300 transition-colors hover:text-background"
             >
-              hoặc gọi riêng 0943 966 662
+              hoặc gọi kỹ thuật <span className="font-semibold text-background underline underline-offset-4">0943 966 662</span>
             </a>
           </div>
+
         </div>
       </div>
     </section>

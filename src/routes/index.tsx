@@ -995,11 +995,11 @@ function Lookbook() {
           </p>
         </div>
 
-        {/* 2-column project grid */}
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:mt-24 lg:grid-cols-2 lg:gap-10">
-          {PROJECTS.map((p, i) => (
+        {/* Featured: 2 hero projects */}
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:mt-20 lg:grid-cols-2 lg:gap-10">
+          {PROJECTS.slice(0, 2).map((p, i) => (
             <article
-              key={i}
+              key={`feat-${i}`}
               className="overflow-hidden rounded-lg bg-[#FDFAF7] shadow-sm ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
             >
               <div className="relative aspect-[3/2] overflow-hidden bg-wood-200/60">
@@ -1014,7 +1014,7 @@ function Lookbook() {
                 </span>
               </div>
               <div className="flex flex-col gap-2 p-6 sm:p-7">
-                <h3 className="font-display text-[1.25rem] font-semibold leading-[1.25] text-wood-900">
+                <h3 className="font-display text-[1.35rem] font-semibold leading-[1.25] text-wood-900">
                   {p.name}
                 </h3>
                 <p className="text-[13px] text-wood-600">{p.type}</p>
@@ -1025,6 +1025,35 @@ function Lookbook() {
             </article>
           ))}
         </div>
+
+        {/* Smaller: remaining projects in a tighter grid */}
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4 lg:gap-6">
+          {PROJECTS.slice(2).map((p, i) => (
+            <article
+              key={`sm-${i}`}
+              className="overflow-hidden rounded-lg bg-[#FDFAF7] ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/60">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+                <span className="absolute left-3 top-3 rounded-full bg-wood-900/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-background backdrop-blur-sm">
+                  {p.tag}
+                </span>
+              </div>
+              <div className="flex flex-col gap-1 p-4">
+                <h3 className="font-display text-[14.5px] font-semibold leading-[1.25] text-wood-900">
+                  {p.name}
+                </h3>
+                <p className="text-[11.5px] text-wood-600">{p.type}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
 
         {/* CTA */}
         <div className="mt-14 flex flex-col items-center gap-3 text-center lg:mt-20">

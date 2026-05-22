@@ -533,6 +533,7 @@ function WhyWaterSection() {
    HERO
    ============================================================ */
 function Hero() {
+  const trust = ["TDS / MSDS", "EN71-3", "ASTM F963", "FDA", "RoHS"];
   return (
     <section className="relative bg-[oklch(0.97_0.015_82)]">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 pt-14 pb-10 sm:px-10 sm:pt-20 sm:pb-12 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-14">
@@ -542,34 +543,46 @@ function Hero() {
             SƠN GỖ HỆ NƯỚC · XƯỞNG NỘI THẤT & ĐƠN HÀNG XUẤT KHẨU
           </div>
 
-          <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[2.5rem] lg:leading-[1.12]">
+          <h1 className="font-display mt-8 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[3rem] lg:leading-[1.08]">
             <span className="block">Gỗ hoàn thiện đúng hệ —</span>
             <span className="block italic font-normal text-wood-700">
               bề mặt ổn định từ mẫu đầu đến lô cuối.
             </span>
           </h1>
 
-          <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Lotus là hệ sơn gỗ gốc nước phục vụ xưởng nội thất công trình và
-            nhà máy đơn hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại
-            xưởng, pha màu theo RAL / NCS.
+          <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
+            Hệ sơn gỗ gốc nước cho xưởng nội thất công trình và nhà máy đơn
+            hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại xưởng, pha
+            màu theo RAL / NCS.
           </p>
 
-          <div className="mt-12 flex flex-col items-start gap-6">
+          {/* Trust strip — above the fold */}
+          <ul className="mt-7 flex flex-wrap gap-x-2 gap-y-2">
+            {trust.map((t) => (
+              <li
+                key={t}
+                className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-700"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-wood-900 pb-2 text-[13px] uppercase tracking-[0.22em] text-wood-900 transition-colors hover:border-wood-600 hover:text-wood-700"
+              className="group inline-flex items-center gap-3 rounded-full bg-wood-900 px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-background shadow-sm transition-colors hover:bg-wood-700"
             >
               Gửi ảnh mẫu — nhận tư vấn kỹ thuật
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
-              className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900"
+              className="text-[13px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900"
             >
-              hoặc gọi kỹ thuật 0943 966 662
+              hoặc gọi kỹ thuật <span className="underline underline-offset-4">0943 966 662</span>
             </a>
           </div>
         </div>

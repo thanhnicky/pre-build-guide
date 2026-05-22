@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
-import { ArrowUpRight, ShieldCheck, Globe, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck } from "lucide-react";
 import {
   Accordion,
   AccordionContent,

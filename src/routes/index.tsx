@@ -1141,45 +1141,30 @@ function ConsultBlock() {
 const FAQS = [
   {
     q: "Sơn Lotus có TDS và MSDS không? Tôi cần hồ sơ cho đơn hàng xuất khẩu.",
-    a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo số 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc.",
-  },
-  {
-    q: "Sơn Lotus đã được dùng tại những dự án hay xưởng xuất khẩu nào?",
-    a: "Lotus hiện cung cấp cho các xưởng nội thất xuất khẩu sang Mỹ, EU, Nhật và các dự án cao cấp của Novaland, Masteries Homes, Sun&L Interior. Gửi ảnh hoặc mô tả yêu cầu qua Zalo để được tư vấn hệ sơn phù hợp với tiêu chuẩn nhà mua hàng của bạn.",
+    a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc.",
   },
   {
     q: "Tôi nên chọn sơn lau hay sơn phun?",
     a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp.",
   },
   {
+    q: "Lotus có hỗ trợ thử mẫu vật lý trước khi lên đơn lớn không?",
+    a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp.",
+  },
+  {
+    q: "Làm số lượng lớn, làm sao đảm bảo bề mặt ổn định giữa các lô?",
+    a: "Lotus kiểm soát đồng màu xuyên lô, theo dõi chất lượng giữa các đợt giao và sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi — đây là cam kết cho sản lượng lớn và đơn hàng xuất khẩu.",
+  },
+  {
     q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",
     a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu phẳng. Dùng sai hệ, bề mặt sẽ loang, bong và xuống cấp nhanh hơn nhiều so với tuổi thọ thật của vật liệu.",
   },
   {
-    q: "Gỗ ngoài trời nên dùng lớp phủ nào?",
-    a: "Một lớp phủ chuyên ngoài trời: kháng UV, kháng ẩm và co giãn theo thời tiết. Tuyệt đối không dùng hệ nội thất cho hạng mục ngoài trời — đây là sai lầm tốn kém nhất chúng tôi thường gặp.",
-  },
-  {
-    q: "Tôi đang làm số lượng nhiều cho xưởng, nên ưu tiên hệ nào để bề mặt ổn định hơn?",
-    a: "Tùy vào loại gỗ, yêu cầu bề mặt và môi trường sử dụng, Lotus sẽ gợi ý hướng hoàn thiện phù hợp hơn cho sản xuất đồng đều và kiểm soát chất lượng tốt hơn.",
-  },
-  {
-    q: "Tôi có thể gửi ảnh mẫu hoặc ảnh hạng mục thực tế để Lotus tư vấn đúng quy trình không?",
-    a: "Có. Bạn chỉ cần gửi ảnh bề mặt, mô tả nhu cầu hoàn thiện và vị trí sử dụng, Lotus sẽ tư vấn hướng quy trình phù hợp hơn trước khi chọn hệ.",
-  },
-  {
-    q: "Chưa biết quy trình phù hợp thì làm sao?",
-    a: "Bạn không cần tự chọn. Gửi vài tấm ảnh hạng mục qua Zalo, mô tả ngắn vị trí lắp đặt — Lotus sẽ gợi ý đúng hệ theo loại gỗ, môi trường và mong muốn thẩm mỹ.",
-  },
-  {
-    q: "Thời gian khô giữa các lớp có ảnh hưởng đến dây chuyền không?",
-    a: "Tùy hệ và điều kiện xưởng. Lotus tư vấn cụ thể để không làm chậm dây chuyền của bạn. Nhắn Zalo gửi thông tin xưởng để được hỗ trợ.",
-  },
-  {
-    q: "Lotus có hỗ trợ thử nghiệm mẫu vật lý trước khi lên đơn lớn không?",
-    a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp.",
+    q: "Lotus có hỗ trợ kỹ thuật tại xưởng khi chuyển sang hệ nước không?",
+    a: "Có. Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò.",
   },
 ];
+
 
 function FAQ() {
   return (

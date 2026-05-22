@@ -498,21 +498,27 @@ function CertificationsSection() {
 function WhyWaterSection() {
   const cols = [
     {
+      n: "01",
       heading: "Chi phí thực tế",
-      body: "Không tốn dung môi pha thêm. Không cần đầu tư hệ thống thông gió đặc biệt. Tỷ lệ hao phí khi phun thấp hơn PU khi tính trên cùng diện tích bề mặt.",
+      body: "Không tốn dung môi pha thêm, không cần hệ thống thông gió đặc biệt, hao phí khi phun thấp hơn PU trên cùng diện tích.",
+      punch: "Tổng chi phí vận hành thấp hơn PU.",
     },
     {
-      heading: "Chuyển đổi không mất năng suất",
-      body: "Lotus hỗ trợ kỹ thuật trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách. Không để xưởng tự mò.",
+      n: "02",
+      heading: "Chuyển hệ không mất năng suất",
+      body: "Lotus hỗ trợ trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách.",
+      punch: "Xưởng không phải tự mò.",
     },
     {
+      n: "03",
       heading: "Giảm rủi ro bàn giao",
-      body: "Dự án cao cấp ngày càng yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao — tránh phát sinh bảo hành.",
+      body: "Dự án cao cấp yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao.",
+      punch: "Hạn chế phát sinh bảo hành.",
     },
   ];
 
   return (
-    <section className="bg-[#F5F0EA] pt-[60px] pb-[60px]">
+    <section className="bg-[#F5F0EA] py-20 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
           TẠI SAO HỆ NƯỚC?
@@ -524,30 +530,36 @@ function WhyWaterSection() {
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-5">
           {cols.map((c) => (
-            <div key={c.heading}>
-              <h3 className="font-display text-[17px] font-medium text-wood-900">
+            <div
+              key={c.heading}
+              className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7"
+            >
+              <div className="font-display text-[13px] tracking-normal text-wood-400">
+                {c.n}
+              </div>
+              <h3 className="font-display text-[18px] font-medium leading-[1.25] text-wood-900">
                 {c.heading}
               </h3>
-              <p className="mt-4 text-[15px] leading-[1.75] text-wood-700/85">
+              <p className="text-[14px] leading-[1.65] text-wood-700/85">
                 {c.body}
+              </p>
+              <p className="mt-auto border-t border-wood-200 pt-4 text-[13.5px] font-semibold uppercase tracking-[0.08em] text-wood-900">
+                → {c.punch}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-[15px] leading-[1.75] text-wood-700/85">
-            Muốn Lotus tính thử chi phí thực tế cho hạng mục của xưởng bạn?
-          </p>
+        <div className="mt-14 text-center">
           <a
             href={ZALO}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-5 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
           >
-            NHẮN ZALO ĐỂ TÍNH THỬ →
+            NHẮN ZALO ĐỂ TÍNH THỬ CHI PHÍ →
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>

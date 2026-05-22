@@ -182,31 +182,31 @@ function TechCollaborationSection() {
       icon: Camera,
       n: "01",
       title: "Gửi ảnh & mô tả hạng mục",
-      body: "Gửi ảnh bề mặt gỗ, loại vật liệu và môi trường sử dụng qua Zalo. Lotus xem trực tiếp, không qua form trung gian.",
+      body: "Ảnh bề mặt gỗ, loại vật liệu và môi trường sử dụng — qua Zalo, không qua form trung gian.",
     },
     {
       icon: FileText,
       n: "02",
-      title: "Đề xuất hệ + TDS / MSDS",
-      body: "Lotus đề xuất hệ sơn phù hợp, gửi kèm TDS, MSDS và hồ sơ chứng nhận cần cho nghiệm thu hoặc buyer xuất khẩu.",
+      title: "Đề xuất hệ + hồ sơ kỹ thuật",
+      body: "Lotus đề xuất hệ phù hợp, gửi kèm TDS, MSDS và chứng nhận cần cho nghiệm thu hoặc buyer xuất khẩu.",
     },
     {
       icon: FlaskConical,
       n: "03",
       title: "Thử mẫu trước khi vào lô",
-      body: "Khuyến khích thử trên mẫu thật của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn.",
+      body: "Thử trên mẫu thật của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn.",
     },
     {
       icon: Wrench,
       n: "04",
       title: "Hỗ trợ kỹ thuật tại xưởng",
-      body: "Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò.",
+      body: "Lần đầu chuyển hệ, kỹ sư Lotus xuống xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
     },
     {
       icon: Truck,
       n: "05",
       title: "Cung ứng & theo dõi lô",
-      body: "Giao hàng theo tiến độ sản xuất, theo dõi chất lượng giữa các lô, sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi.",
+      body: "Giao theo tiến độ sản xuất, theo dõi chất lượng giữa các lô và điều chỉnh khi điều kiện xưởng thay đổi.",
     },
   ];
 

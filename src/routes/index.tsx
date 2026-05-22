@@ -1089,31 +1089,33 @@ function ConsultBlock() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-400">
-              Tư vấn riêng · 1:1
+              Tư vấn kỹ thuật · 1:1
             </div>
-            <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3.25rem]">
-              <span className="block">Gửi ảnh mẫu gỗ hoặc hạng mục.</span>
+            <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3rem]">
+              <span className="block">Gửi ảnh hạng mục.</span>
               <span className="block italic font-normal text-wood-200">
-                Nhận tư vấn kỹ thuật từ Lotus.
+                Nhận đề xuất hệ trong ngày.
               </span>
             </h2>
-            <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">
-              Không form, không báo giá tự động. Gửi ảnh mẫu gỗ hoặc hạng mục qua Zalo — Lotus xem trực tiếp và tư vấn đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
+            <p className="mt-7 max-w-md text-[15px] leading-[1.7] text-wood-300">
+              Không form, không báo giá tự động. Kỹ sư Lotus xem ảnh và tư vấn
+              đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
             </p>
-            <ul className="mt-6 space-y-3 text-[14px] leading-[1.7] text-wood-400">
+            <ul className="mt-7 space-y-3 text-[14px] leading-[1.6] text-wood-300">
               <li className="flex gap-3">
-                <span className="text-wood-500">·</span>
-                <span>Phản hồi trong giờ làm việc — không để xưởng chờ lâu</span>
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <span>Phản hồi trong giờ làm việc — không để xưởng chờ.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-wood-500">·</span>
-                <span>Có thể gửi mẫu vật lý để Lotus kiểm tra trước khi tư vấn</span>
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <span>Nhận mẫu vật lý nếu cần kiểm tra trước khi tư vấn.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-wood-500">·</span>
-                <span>Tư vấn kỹ thuật miễn phí — không phát sinh chi phí trước khi chốt hệ</span>
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <span>Tư vấn kỹ thuật miễn phí — không phát sinh chi phí trước khi chốt hệ.</span>
               </li>
             </ul>
+
           </div>
 
           <div className="flex flex-col gap-5 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">

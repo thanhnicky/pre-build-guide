@@ -831,16 +831,29 @@ function ProcessEditorial() {
                     {p.title}
                   </h3>
 
-                  <div className="mt-6 space-y-4 text-[15.5px] leading-[1.82] text-wood-700/85">
-                    {p.body.map((line, idx) => (
-                      <p key={idx}>{line}</p>
-                    ))}
-                  </div>
-
-                  <p className="mt-7 text-[14px] leading-[1.7] text-wood-600">
-                    <em className="not-italic font-medium uppercase tracking-[0.14em] text-wood-500 text-[11.5px]">Phù hợp cho xưởng:</em>{" "}
-                    <span className="italic">{p.fitFor}</span>
+                  {/* Single lead line — no long paragraph */}
+                  <p className="mt-5 text-[15px] leading-[1.7] text-wood-700/85">
+                    {p.body[0]}
                   </p>
+
+                  {/* Spec rows — scannable */}
+                  <dl className="mt-7 divide-y divide-wood-200 border-t border-wood-200">
+                    {[
+                      { label: "Phù hợp cho", value: p.material },
+                      { label: "Mục tiêu bề mặt", value: p.surface },
+                      { label: "Điểm mạnh vận hành", value: p.strength },
+                    ].map((row) => (
+                      <div key={row.label} className="grid grid-cols-1 gap-1 py-3.5 sm:grid-cols-[140px_1fr] sm:gap-4">
+                        <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                          {row.label}
+                        </dt>
+                        <dd className="text-[14px] leading-[1.55] text-wood-800">
+                          {row.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+
 
                   <Accordion type="single" collapsible className="mt-7 border-t border-wood-200">
                     <AccordionItem value="steps" className="border-b-0">

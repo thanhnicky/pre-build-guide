@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
-import { ArrowUpRight, ShieldCheck, Globe, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -39,20 +39,206 @@ function LotusLanding() {
     <>
       <Navbar />
       <main className="pb-24 md:pb-0">
+        {/* 1. Hero */}
         <Hero />
+        {/* 2. Trust bar / social proof */}
         <PartnersSection />
         <TrustBar />
-        <CertificationsSection />
+        {/* 3. Lotus phù hợp với ai */}
+        <AudienceSection />
+        {/* 4. Vì sao chọn hệ nước Lotus */}
         <WhyWaterSection />
+        {/* 5. Các hệ hoàn thiện chính */}
         <ProcessEditorial />
+        {/* 6. Quy trình phối hợp kỹ thuật */}
+        <TechCollaborationSection />
+        {/* 7. Chứng nhận & hồ sơ kỹ thuật */}
+        <CertificationsSection />
+        {/* 8. Dự án / ứng dụng thực tế */}
         <Lookbook />
+        {/* 9. FAQ */}
         <FAQ />
+        {/* 10. CTA cuối / liên hệ kỹ thuật */}
         <ConsultBlock />
       </main>
       <Footer />
       <StickyMobileCTA />
       <StickyZalo />
     </>
+  );
+}
+
+/* ============================================================
+   AUDIENCE — Lotus phù hợp với ai (2 nhóm B2B chính)
+   ============================================================ */
+function AudienceSection() {
+  const audiences = [
+    {
+      icon: Factory,
+      kicker: "Nhóm 01",
+      title: "Xưởng nội thất công trình",
+      body: "Xưởng thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp — cần hệ sơn đồng màu xuyên lô, kiểm soát chất lượng nghiệm thu và không phát sinh mùi sau bàn giao.",
+      tags: ["Đồng màu xuyên lô", "Hồ sơ nghiệm thu", "Không VOC sau bàn giao"],
+    },
+    {
+      icon: Ship,
+      kicker: "Nhóm 02",
+      title: "Nhà máy & đơn hàng xuất khẩu",
+      body: "Nhà máy sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật — yêu cầu TDS/MSDS đầy đủ, đạt EN71-3, ASTM F963, FDA, RoHS và bề mặt ổn định trên sản lượng lớn.",
+      tags: ["TDS / MSDS song ngữ", "Đạt EN71-3 · ASTM · FDA", "Ổn định trên sản lượng lớn"],
+    },
+  ];
+
+  return (
+    <section id="phu-hop" className="bg-background py-20 sm:py-28">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+              LOTUS PHÙ HỢP VỚI AI
+            </div>
+            <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+              <span className="block">Một hệ sơn —</span>
+              <span className="block italic font-normal text-wood-700">
+                hai nhóm khách hàng B2B chính.
+              </span>
+            </h2>
+          </div>
+          <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
+            Sản phẩm và quy trình kỹ thuật giống nhau — Lotus chỉ điều chỉnh
+            hồ sơ và mức hỗ trợ theo đặc thù của từng nhóm.
+          </p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:mt-16 lg:grid-cols-2 lg:gap-8">
+          {audiences.map((a) => (
+            <div
+              key={a.title}
+              className="flex flex-col gap-5 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-8"
+            >
+              <div className="flex items-center gap-3">
+                <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
+                <span className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+                  {a.kicker}
+                </span>
+              </div>
+              <h3 className="font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]">
+                {a.title}
+              </h3>
+              <p className="text-[14.5px] leading-[1.75] text-wood-700/85">
+                {a.body}
+              </p>
+              <div className="mt-1 flex flex-wrap gap-2">
+                {a.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-wood-700 px-2.5 py-1 text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA]"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   TECH COLLABORATION — Quy trình phối hợp kỹ thuật B2B
+   ============================================================ */
+function TechCollaborationSection() {
+  const steps = [
+    {
+      icon: Camera,
+      n: "01",
+      title: "Gửi ảnh & mô tả hạng mục",
+      body: "Gửi ảnh bề mặt gỗ, loại vật liệu và môi trường sử dụng qua Zalo. Lotus xem trực tiếp, không qua form trung gian.",
+    },
+    {
+      icon: FileText,
+      n: "02",
+      title: "Đề xuất hệ + TDS / MSDS",
+      body: "Lotus đề xuất hệ sơn phù hợp, gửi kèm TDS, MSDS và hồ sơ chứng nhận cần cho nghiệm thu hoặc buyer xuất khẩu.",
+    },
+    {
+      icon: FlaskConical,
+      n: "03",
+      title: "Thử mẫu trước khi vào lô",
+      body: "Khuyến khích thử trên mẫu thật của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn.",
+    },
+    {
+      icon: Wrench,
+      n: "04",
+      title: "Hỗ trợ kỹ thuật tại xưởng",
+      body: "Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò.",
+    },
+    {
+      icon: Truck,
+      n: "05",
+      title: "Cung ứng & theo dõi lô",
+      body: "Giao hàng theo tiến độ sản xuất, theo dõi chất lượng giữa các lô, sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi.",
+    },
+  ];
+
+  return (
+    <section id="phoi-hop" className="bg-[#F5F0EA] py-20 sm:py-28">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+              QUY TRÌNH PHỐI HỢP KỸ THUẬT
+            </div>
+            <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+              <span className="block">Từ ảnh mẫu đầu tiên —</span>
+              <span className="block italic font-normal text-wood-700">
+                đến lô hàng cuối cùng.
+              </span>
+            </h2>
+          </div>
+          <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
+            Lotus đồng hành như một bộ phận kỹ thuật mở rộng của xưởng —
+            không chỉ bán sơn, mà cùng kiểm soát chất lượng đến lô cuối.
+          </p>
+        </div>
+
+        <ol className="mt-14 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
+          {steps.map((s) => (
+            <li
+              key={s.n}
+              className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6"
+            >
+              <div className="flex items-center justify-between">
+                <s.icon className="h-5 w-5 text-wood-700" strokeWidth={1.5} />
+                <span className="font-display text-[13px] tracking-normal text-wood-400">
+                  {s.n}
+                </span>
+              </div>
+              <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900">
+                {s.title}
+              </h3>
+              <p className="text-[13.5px] leading-[1.65] text-wood-700/85">
+                {s.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-14 text-center">
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+          >
+            NHẮN ZALO ĐỂ BẮT ĐẦU PHỐI HỢP KỸ THUẬT →
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -353,7 +539,7 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            LOTUS · GIẢI PHÁP HOÀN THIỆN GỖ CHUYÊN NGHIỆP
+            SƠN GỖ HỆ NƯỚC · XƯỞNG NỘI THẤT & ĐƠN HÀNG XUẤT KHẨU
           </div>
 
           <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[2.5rem] lg:leading-[1.12]">
@@ -364,7 +550,9 @@ function Hero() {
           </h1>
 
           <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Lotus tư vấn đúng hệ hoàn thiện cho xưởng thi công, nhà thầu dự án và đơn hàng xuất khẩu — sơn hệ nước, không mùi, pha màu theo yêu cầu.
+            Lotus là hệ sơn gỗ gốc nước phục vụ xưởng nội thất công trình và
+            nhà máy đơn hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại
+            xưởng, pha màu theo RAL / NCS.
           </p>
 
           <div className="mt-12 flex flex-col items-start gap-6">
@@ -374,14 +562,14 @@ function Hero() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 border-b border-wood-900 pb-2 text-[13px] uppercase tracking-[0.22em] text-wood-900 transition-colors hover:border-wood-600 hover:text-wood-700"
             >
-              Tư vấn qua Zalo
+              Gửi ảnh mẫu — nhận tư vấn kỹ thuật
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
               className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900"
             >
-              hoặc gọi 0943 966 662
+              hoặc gọi kỹ thuật 0943 966 662
             </a>
           </div>
         </div>

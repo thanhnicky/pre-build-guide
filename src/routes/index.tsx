@@ -77,11 +77,11 @@ function AudienceSection() {
       icon: Factory,
       kicker: "Nhóm 01",
       title: "Xưởng nội thất công trình",
-      lead: "Thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp.",
+      lead: "Thi công căn hộ, khách sạn, văn phòng cao cấp.",
       bullets: [
-        "Đồng màu xuyên lô — không chênh sắc giữa các đợt",
+        "Đồng màu giữa các lô — hạn chế chênh sắc khi giao theo đợt",
         "Hồ sơ kỹ thuật phục vụ nghiệm thu dự án",
-        "Không mùi, không VOC sau bàn giao",
+        "Mùi nhẹ, VOC thấp — phù hợp hạng mục bàn giao sớm",
       ],
       tags: ["Dự án cao cấp", "Nội thất công trình"],
     },
@@ -92,7 +92,7 @@ function AudienceSection() {
       lead: "Sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản.",
       bullets: [
         "TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer",
-        "Đạt EN71-3 · ASTM F963 · FDA · RoHS",
+        "Đáp ứng EN71-3 · ASTM F963 · FDA · RoHS",
         "Bề mặt ổn định trên sản lượng lớn, nhiều lô",
       ],
       tags: ["Xuất khẩu Mỹ · EU · Nhật", "Sản lượng lớn"],

@@ -432,60 +432,72 @@ function CertificationsSection() {
   ];
 
   return (
-    <section id="tieu-chuan" className="bg-background pt-12 pb-12 sm:pt-12 sm:pb-12 lg:pt-12 lg:pb-12">
+    <section id="tieu-chuan" className="bg-background py-20 sm:py-24">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left — text */}
-          <div className="lg:col-span-5">
+        {/* Heading row */}
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
               TIÊU CHUẨN & CHỨNG NHẬN
             </div>
             <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
               <span className="block">An toàn kiểm chứng —</span>
-              <span className="block italic font-normal text-wood-700">phù hợp xuất khẩu</span>
+              <span className="block italic font-normal text-wood-700">phù hợp xuất khẩu.</span>
             </h2>
-            <p className="mt-6 text-[15px] leading-[1.75] text-wood-700/85">
-              Toàn bộ sản phẩm sơn gỗ Lotus là hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế — đạt chứng nhận an toàn cho xưởng kín, đồ chơi trẻ em, bệnh viện, trường học và sản phẩm nội thất xuất khẩu sang Mỹ, EU và Nhật Bản.
-            </p>
-
-            {/* CTA link */}
-            <div className="mt-10">
-              <a
-                href={ZALO}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-start gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-              >
-                <span>Cần hồ sơ chứng nhận cho đơn hàng xuất khẩu? → Nhắn Zalo để nhận tài liệu kỹ thuật</span>
-                <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-            </div>
           </div>
+          <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
+            Hệ nước, không Formaldehyde, VOCs thấp — đạt chứng nhận an toàn cho
+            đồ chơi trẻ em, bệnh viện, trường học và đơn hàng xuất khẩu Mỹ, EU,
+            Nhật Bản.
+          </p>
+        </div>
 
-          {/* Right — badge cards */}
-          <div className="lg:col-span-6 lg:col-start-7">
-            <div className="flex flex-col gap-4">
-              {badges.map((b) => (
-                <div
-                  key={b.code}
-                  className="flex items-start gap-5 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-5"
-                >
-                  <b.icon className="mt-1 h-6 w-6 shrink-0 text-wood-700" strokeWidth={1.5} />
-                  <div className="flex-1">
-                    <div className="font-display text-[16px] font-semibold text-wood-900">
-                      {b.code}
-                    </div>
-                    <div className="mt-1 text-[13.5px] leading-[1.55] text-wood-600">
-                      {b.name}
-                    </div>
-                    <div className="mt-3 inline-block rounded-full bg-wood-700 px-2.5 py-1 text-[10.5px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA]">
-                      {b.tag}
-                    </div>
-                  </div>
+        {/* Credential bar — quick-scan codes */}
+        <ul className="mt-10 flex flex-wrap gap-2">
+          {badges.map((b) => (
+            <li
+              key={`pill-${b.code}`}
+              className="rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-wood-800"
+            >
+              {b.code}
+            </li>
+          ))}
+        </ul>
+
+        {/* Badge grid — 2 columns, compact */}
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
+          {badges.map((b) => (
+            <div
+              key={b.code}
+              className="flex items-start gap-4 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-5"
+            >
+              <b.icon className="mt-0.5 h-5 w-5 shrink-0 text-wood-700" strokeWidth={1.5} />
+              <div className="flex-1">
+                <div className="font-display text-[14.5px] font-semibold leading-tight text-wood-900">
+                  {b.code}
                 </div>
-              ))}
+                <div className="mt-1 text-[13px] leading-[1.5] text-wood-600">
+                  {b.name}
+                </div>
+                <div className="mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA]">
+                  {b.tag}
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+          >
+            NHẮN ZALO ĐỂ NHẬN HỒ SƠ KỸ THUẬT ĐẦY ĐỦ →
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
         </div>
       </div>
     </section>

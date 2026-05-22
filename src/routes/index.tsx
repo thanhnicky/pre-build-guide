@@ -511,23 +511,24 @@ function WhyWaterSection() {
   const cols = [
     {
       n: "01",
-      heading: "Chi phí thực tế",
-      body: "Không tốn dung môi pha thêm, không cần hệ thống thông gió đặc biệt, hao phí khi phun thấp hơn PU trên cùng diện tích.",
-      punch: "Tổng chi phí vận hành thấp hơn PU.",
+      heading: "Chi phí vận hành thấp hơn",
+      body: "Không dung môi pha thêm, không cần đầu tư thông gió đặc biệt. Hao phí phun thấp hơn PU trên cùng diện tích.",
+      punch: "Tiết kiệm thực tế trên từng m².",
     },
     {
       n: "02",
-      heading: "Chuyển hệ không mất năng suất",
-      body: "Lotus hỗ trợ trực tiếp tại xưởng lần đầu — hướng dẫn thợ pha tỷ lệ và chỉnh súng đúng cách.",
-      punch: "Xưởng không phải tự mò.",
+      heading: "Chuyển hệ không gián đoạn xưởng",
+      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn hoá tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
+      punch: "Không mất tuần đầu để dò.",
     },
     {
       n: "03",
-      heading: "Giảm rủi ro bàn giao",
-      body: "Dự án cao cấp yêu cầu sơn không VOC trong hồ sơ nghiệm thu. Hệ nước không để lại mùi sau bàn giao.",
-      punch: "Hạn chế phát sinh bảo hành.",
+      heading: "Đạt yêu cầu nghiệm thu & xuất khẩu",
+      body: "Không VOC sau bàn giao, có TDS / MSDS song ngữ — đáp ứng dự án cao cấp và buyer Mỹ, EU, Nhật.",
+      punch: "Qua nghiệm thu, không phát sinh bảo hành.",
     },
   ];
+
 
   return (
     <section className="bg-[#F5F0EA] py-20 sm:py-24">
@@ -591,21 +592,22 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            SƠN GỖ HỆ NƯỚC · XƯỞNG NỘI THẤT & ĐƠN HÀNG XUẤT KHẨU
+            SƠN GỖ HỆ NƯỚC · CHO XƯỞNG B2B
           </div>
 
           <h1 className="font-display mt-8 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[3rem] lg:leading-[1.08]">
-            <span className="block">Gỗ hoàn thiện đúng hệ —</span>
+            <span className="block">Sơn gỗ hệ nước cho</span>
             <span className="block italic font-normal text-wood-700">
-              bề mặt ổn định từ mẫu đầu đến lô cuối.
+              xưởng nội thất công trình &amp; đơn hàng xuất khẩu.
             </span>
           </h1>
 
           <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
-            Hệ sơn gỗ gốc nước cho xưởng nội thất công trình và nhà máy đơn
-            hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại xưởng, pha
-            màu theo RAL / NCS.
+            TDS / MSDS song ngữ, đạt EN71-3 · ASTM · FDA · RoHS, pha màu theo
+            RAL / NCS. Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng — bề mặt ổn định
+            từ mẫu đầu đến lô cuối.
           </p>
+
 
           {/* Trust strip — above the fold */}
           <ul className="mt-7 flex flex-wrap gap-x-2 gap-y-2">
@@ -662,16 +664,16 @@ const PROCESSES = [
     slug: "he-lau",
     tab: "Hệ Lau",
     kicker: "Hệ lau · Gỗ tự nhiên",
-    title: "Sơn lau giữ màu vân gỗ",
+    title: "Hệ lau — giữ vân gỗ tự nhiên",
     body: [
-      "Lớp hoàn thiện thấm sâu vào thớ gỗ, tôn vinh từng đường vân thay vì che phủ.",
+      "Lớp hoàn thiện thấm sâu vào thớ gỗ, tôn vinh vân thật thay vì che phủ.",
       "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
-    material: "Gỗ tự nhiên nguyên khối — sồi, óc chó, tần bì",
-    surface: "Bề mặt ấm, có chiều sâu — giữ nguyên vân và cảm giác chạm gỗ thật.",
-    strength: "Phù hợp đơn handcraft & hàng xuất khẩu yêu cầu cảm giác tự nhiên.",
-    cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
+    material: "Gỗ tự nhiên nguyên khối: sồi, óc chó, tần bì — đồ trưng bày, handcraft.",
+    surface: "Vân gỗ rõ, bề mặt ấm, có chiều sâu — cảm giác chạm gỗ thật.",
+    strength: "Phù hợp đơn xuất khẩu EU / Mỹ yêu cầu cảm giác tự nhiên.",
+    cta: "Nhắn Zalo gửi ảnh hạng mục để chọn đúng hệ lau",
     image: procLau,
     steps: [
       { product: "Lau màu — Lotus Wood Stain", note: "tôn màu vân gỗ, thấm sâu" },
@@ -685,16 +687,16 @@ const PROCESSES = [
     slug: "he-phun",
     tab: "Hệ Phun",
     kicker: "Hệ phun · Nội & ngoại thất",
-    title: "Sơn phun giữ vân, nội & ngoại thất",
+    title: "Hệ phun — nội & ngoại thất sản lượng lớn",
     body: [
-      "Hệ phun cho bề mặt phẳng, đều màu, kiểm soát cao — lý tưởng cho sản xuất hàng loạt và dự án cần tính nhất quán.",
-      "Vân gỗ vẫn hiện rõ, nhưng trong một lớp hoàn thiện ổn định và ít phụ thuộc kỹ năng thợ.",
-      "Lotus tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
+      "Bề mặt phẳng, đều màu, kiểm soát cao — chuẩn cho sản xuất hàng loạt và dự án nhiều block.",
+      "Vân gỗ vẫn hiện rõ trong một lớp hoàn thiện ổn định, ít phụ thuộc kỹ năng thợ.",
+      "Tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
-    material: "Gỗ tự nhiên & ván dán cho nội & ngoại thất sản lượng lớn",
-    surface: "Bề mặt phẳng, đều màu, vẫn giữ vân — kiểm soát cao giữa các lô.",
-    strength: "Ít phụ thuộc kỹ năng thợ, lý tưởng cho dây chuyền sản xuất.",
-    cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
+    material: "Gỗ tự nhiên & ván dán — nội thất và ngoại thất, sản lượng lớn.",
+    surface: "Đều màu, phẳng, vẫn giữ vân — đồng nhất giữa các lô.",
+    strength: "Ít phụ thuộc tay thợ, kiểm soát chất lượng xuyên dây chuyền.",
+    cta: "Gửi ảnh hạng mục để tư vấn đúng hệ phun (nội / ngoại)",
     image: procPhun,
     steps: [
       { product: "Phun lót — Lotus Wood Primer", note: "bịt lỗ, tăng bám dính" },
@@ -708,16 +710,16 @@ const PROCESSES = [
     slug: "mau-bet-mdf",
     tab: "Màu Bệt MDF",
     kicker: "Màu bệt · MDF",
-    title: "Sơn màu bệt cho gỗ MDF",
+    title: "Màu bệt — hệ chuyên cho MDF",
     body: [
-      "Màu bệt không cố biến MDF thành gỗ tự nhiên — nó tạo một bề mặt màu phẳng, sạch và hiện đại.",
+      "Tạo bề mặt màu phẳng, sạch, hiện đại — không cố giả vân gỗ tự nhiên.",
       "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
-      "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính — đẹp theo cách riêng của MDF.",
+      "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính.",
     ],
-    material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách",
-    surface: "Lớp màu phẳng, sạch, hiện đại — không loang, đồng màu toàn lô.",
-    strength: "Pha màu theo RAL / NCS — đồng màu xuyên block dự án.",
-    cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
+    material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách trang trí.",
+    surface: "Màu phẳng, đặc, đồng màu xuyên lô — chọn mờ / bán bóng / bóng cao.",
+    strength: "Pha theo RAL / NCS — đồng màu xuyên block, không chênh sắc.",
+    cta: "Nhắn Zalo gửi mã màu RAL / NCS để Lotus kiểm tra",
     image: procMdf,
     steps: [
       { product: "Lót che nền — Lotus MDF Primer", note: "che grain MDF, tăng bám" },
@@ -731,16 +733,16 @@ const PROCESSES = [
     slug: "phu-bong-ngoai-troi",
     tab: "Phủ Bóng Ngoài Trời",
     kicker: "Phủ bóng · Ngoài trời",
-    title: "Sơn phủ bóng chuyên dụng bảo vệ gỗ ngoài trời",
+    title: "Phủ bóng ngoài trời — hệ chuyên cho thời tiết",
     body: [
-      "Gỗ ngoài trời không chỉ cần đẹp khi mới — nó cần giữ vẻ đẹp đó qua nắng, mưa và độ ẩm thay đổi.",
-      "Lớp phủ chuyên dụng của Lotus co giãn cùng gỗ, kháng UV và chống thấm mà không nứt hay bong tróc.",
-      "Đây không phải hệ nội thất mang ra ngoài — mà là một hệ riêng, chọn theo mức tiếp xúc thực tế của hạng mục.",
+      "Lớp phủ chuyên dụng kháng UV và chống thấm — giữ vẻ đẹp gỗ qua nắng, mưa và độ ẩm.",
+      "Co giãn cùng gỗ, không nứt hay bong tróc theo chu kỳ thời tiết.",
+      "Đây là một hệ riêng — không phải hệ nội thất mang ra ngoài.",
     ],
-    material: "Gỗ ngoài trời — lam, cửa, pergola, sàn sân vườn",
+    material: "Lam, cửa, pergola, sàn sân vườn — hạng mục outdoor chịu thời tiết.",
     surface: "Lớp phủ co giãn cùng gỗ, kháng UV, chống thấm — không nứt, bong.",
     strength: "Bền theo chu kỳ thời tiết, hạn chế bảo dưỡng định kỳ.",
-    cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
+    cta: "Gửi ảnh hạng mục để chọn đúng lớp phủ theo môi trường",
     image: procBong,
     steps: [
       { product: "Xử lý bề mặt", note: "vệ sinh, xả nhám P180, làm sạch bụi" },
@@ -926,31 +928,31 @@ const PROJECTS = [
     tag: "HỆ PHUN · NỘI THẤT",
     name: "Khách sạn 5 sao — The Grand Saigon",
     type: "Nội thất phòng & hành lang · TP.HCM · 2024",
-    note: "320 phòng · hệ phun giữ vân, đồng màu xuyên toàn lô",
+    note: "320 phòng · đồng màu xuyên 12 lô giao · 0 phát sinh nghiệm thu.",
     image:
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
   },
   {
     tag: "MÀU BỆT · MDF",
     name: "Masterise Homes — The Global City",
-    type: "Nội thất căn hộ cao cấp · TP. Thủ Đức · 2024",
-    note: "500 bộ tủ bếp & tủ âm tường · flat color, không loang màu",
+    type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
+    note: "500 bộ · pha theo RAL · đồng màu xuyên 4 block, không loang.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
   },
   {
-    tag: "HỆ LAU · GỖ TỰ NHIÊN",
-    name: "Xưởng xuất khẩu — Đơn hàng EU",
-    type: "Bàn & ghế gỗ nguyên khối xuất khẩu · TP.HCM · 2023",
-    note: "1.200 sản phẩm · lau giữ vân tự nhiên theo yêu cầu buyer Đức",
+    tag: "HỆ LAU · XUẤT KHẨU EU",
+    name: "Xưởng XK Đức — Đơn hàng nội thất nguyên khối",
+    type: "Bàn & ghế gỗ tự nhiên · TP.HCM · 2023",
+    note: "1.200 sản phẩm · TDS/MSDS song ngữ · qua kiểm buyer Đức lần 1.",
     image:
       "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1400&q=70",
   },
   {
-    tag: "PHỦ BÓNG · NGOÀI TRỜI",
+    tag: "PHỦ BÓNG · OUTDOOR",
     name: "Biệt thự cao cấp — Dự án Sun Group",
     type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
-    note: "Hệ phủ bóng kháng UV — bảo dưỡng 3 năm không bong tróc",
+    note: "Phủ kháng UV · 3 năm vận hành, không nứt, không bong tróc.",
     image:
       "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
   },
@@ -958,15 +960,15 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Novaland — Aqua City",
     type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
-    note: "800 bộ tủ bếp · đồng màu RAL xuyên 4 block",
+    note: "800 bộ · đồng màu RAL xuyên 4 block.",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70",
   },
   {
     tag: "HỆ LAU · NỘI THẤT",
-    name: "Chuỗi nhà hàng cao cấp — Saigon Centre",
-    type: "Nội thất bàn ghế & vách ốp gỗ · TP.HCM · 2022",
-    note: "Hệ lau nhiều lớp — giữ màu vân qua 2 năm vận hành",
+    name: "Chuỗi nhà hàng — Saigon Centre",
+    type: "Bàn ghế & vách ốp gỗ · TP.HCM · 2022",
+    note: "Giữ màu vân qua 2 năm vận hành cường độ cao.",
     image:
       "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=70",
   },
@@ -1044,12 +1046,14 @@ function Lookbook() {
                   {p.tag}
                 </span>
               </div>
-              <div className="flex flex-col gap-1 p-4">
+              <div className="flex flex-col gap-1.5 p-4">
                 <h3 className="font-display text-[14.5px] font-semibold leading-[1.25] text-wood-900">
                   {p.name}
                 </h3>
                 <p className="text-[11.5px] text-wood-600">{p.type}</p>
+                <p className="mt-1 text-[12px] leading-[1.5] text-wood-500">{p.note}</p>
               </div>
+
             </article>
           ))}
         </div>
@@ -1085,31 +1089,33 @@ function ConsultBlock() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-400">
-              Tư vấn riêng · 1:1
+              Tư vấn kỹ thuật · 1:1
             </div>
-            <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3.25rem]">
-              <span className="block">Gửi ảnh mẫu gỗ hoặc hạng mục.</span>
+            <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3rem]">
+              <span className="block">Gửi ảnh hạng mục.</span>
               <span className="block italic font-normal text-wood-200">
-                Nhận tư vấn kỹ thuật từ Lotus.
+                Nhận đề xuất hệ trong ngày.
               </span>
             </h2>
-            <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-wood-300">
-              Không form, không báo giá tự động. Gửi ảnh mẫu gỗ hoặc hạng mục qua Zalo — Lotus xem trực tiếp và tư vấn đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
+            <p className="mt-7 max-w-md text-[15px] leading-[1.7] text-wood-300">
+              Không form, không báo giá tự động. Kỹ sư Lotus xem ảnh và tư vấn
+              đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
             </p>
-            <ul className="mt-6 space-y-3 text-[14px] leading-[1.7] text-wood-400">
+            <ul className="mt-7 space-y-3 text-[14px] leading-[1.6] text-wood-300">
               <li className="flex gap-3">
-                <span className="text-wood-500">·</span>
-                <span>Phản hồi trong giờ làm việc — không để xưởng chờ lâu</span>
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <span>Phản hồi trong giờ làm việc — không để xưởng chờ.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-wood-500">·</span>
-                <span>Có thể gửi mẫu vật lý để Lotus kiểm tra trước khi tư vấn</span>
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <span>Nhận mẫu vật lý nếu cần kiểm tra trước khi tư vấn.</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-wood-500">·</span>
-                <span>Tư vấn kỹ thuật miễn phí — không phát sinh chi phí trước khi chốt hệ</span>
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <span>Tư vấn kỹ thuật miễn phí — không phát sinh chi phí trước khi chốt hệ.</span>
               </li>
             </ul>
+
           </div>
 
           <div className="flex flex-col gap-5 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">

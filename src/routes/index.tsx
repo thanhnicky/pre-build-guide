@@ -656,8 +656,9 @@ const PROCESSES = [
       "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],
-    fitFor:
-      "nội thất cao cấp gỗ nguyên khối, hàng xuất khẩu yêu cầu cảm giác tự nhiên, đơn handcraft số lượng nhỏ.",
+    material: "Gỗ tự nhiên nguyên khối — sồi, óc chó, tần bì",
+    surface: "Bề mặt ấm, có chiều sâu — giữ nguyên vân và cảm giác chạm gỗ thật.",
+    strength: "Phù hợp đơn handcraft & hàng xuất khẩu yêu cầu cảm giác tự nhiên.",
     cta: "Nhắn Zalo để Lotus xem hạng mục và gợi ý chính xác",
     image: procLau,
     steps: [
@@ -678,8 +679,9 @@ const PROCESSES = [
       "Vân gỗ vẫn hiện rõ, nhưng trong một lớp hoàn thiện ổn định và ít phụ thuộc kỹ năng thợ.",
       "Lotus tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
-    fitFor:
-      "sản xuất hàng loạt cần bề mặt đồng đều, hạng mục outdoor bền thời tiết, dự án cần kiểm soát chất lượng xuyên suốt.",
+    material: "Gỗ tự nhiên & ván dán cho nội & ngoại thất sản lượng lớn",
+    surface: "Bề mặt phẳng, đều màu, vẫn giữ vân — kiểm soát cao giữa các lô.",
+    strength: "Ít phụ thuộc kỹ năng thợ, lý tưởng cho dây chuyền sản xuất.",
     cta: "Gửi ảnh hạng mục để Lotus tư vấn đúng hệ phun",
     image: procPhun,
     steps: [
@@ -700,8 +702,9 @@ const PROCESSES = [
       "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
       "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính — đẹp theo cách riêng của MDF.",
     ],
-    fitFor:
-      "tủ bếp, tủ âm tường — đồng màu toàn lô, không loang, không chênh sắc.",
+    material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách",
+    surface: "Lớp màu phẳng, sạch, hiện đại — không loang, đồng màu toàn lô.",
+    strength: "Pha màu theo RAL / NCS — đồng màu xuyên block dự án.",
     cta: "Nhắn Zalo để chọn màu bệt phù hợp với concept của bạn",
     image: procMdf,
     steps: [
@@ -722,8 +725,9 @@ const PROCESSES = [
       "Lớp phủ chuyên dụng của Lotus co giãn cùng gỗ, kháng UV và chống thấm mà không nứt hay bong tróc.",
       "Đây không phải hệ nội thất mang ra ngoài — mà là một hệ riêng, chọn theo mức tiếp xúc thực tế của hạng mục.",
     ],
-    fitFor:
-      "lam, cửa, pergola, sàn sân vườn — hệ riêng cho hạng mục chịu thời tiết.",
+    material: "Gỗ ngoài trời — lam, cửa, pergola, sàn sân vườn",
+    surface: "Lớp phủ co giãn cùng gỗ, kháng UV, chống thấm — không nứt, bong.",
+    strength: "Bền theo chu kỳ thời tiết, hạn chế bảo dưỡng định kỳ.",
     cta: "Gửi ảnh qua Zalo để Lotus chọn đúng lớp phủ theo môi trường",
     image: procBong,
     steps: [

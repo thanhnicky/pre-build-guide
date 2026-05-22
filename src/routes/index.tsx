@@ -1165,7 +1165,7 @@ const FAQS = [
   },
   {
     q: "Làm số lượng lớn, làm sao đảm bảo bề mặt ổn định giữa các lô?",
-    a: "Lotus kiểm soát đồng màu xuyên lô, theo dõi chất lượng giữa các đợt giao và sẵn sàng điều chỉnh khi điều kiện xưởng thay đổi — đây là cam kết cho sản lượng lớn và đơn hàng xuất khẩu.",
+    a: "Lotus theo dõi đồng màu giữa các lô, kiểm tra chất lượng từng đợt giao và điều chỉnh khi điều kiện xưởng thay đổi — quy trình chuẩn cho sản lượng lớn và đơn xuất khẩu.",
   },
   {
     q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",

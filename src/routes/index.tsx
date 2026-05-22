@@ -928,31 +928,31 @@ const PROJECTS = [
     tag: "HỆ PHUN · NỘI THẤT",
     name: "Khách sạn 5 sao — The Grand Saigon",
     type: "Nội thất phòng & hành lang · TP.HCM · 2024",
-    note: "320 phòng · hệ phun giữ vân, đồng màu xuyên toàn lô",
+    note: "320 phòng · đồng màu xuyên 12 lô giao · 0 phát sinh nghiệm thu.",
     image:
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
   },
   {
     tag: "MÀU BỆT · MDF",
     name: "Masterise Homes — The Global City",
-    type: "Nội thất căn hộ cao cấp · TP. Thủ Đức · 2024",
-    note: "500 bộ tủ bếp & tủ âm tường · flat color, không loang màu",
+    type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
+    note: "500 bộ · pha theo RAL · đồng màu xuyên 4 block, không loang.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
   },
   {
-    tag: "HỆ LAU · GỖ TỰ NHIÊN",
-    name: "Xưởng xuất khẩu — Đơn hàng EU",
-    type: "Bàn & ghế gỗ nguyên khối xuất khẩu · TP.HCM · 2023",
-    note: "1.200 sản phẩm · lau giữ vân tự nhiên theo yêu cầu buyer Đức",
+    tag: "HỆ LAU · XUẤT KHẨU EU",
+    name: "Xưởng XK Đức — Đơn hàng nội thất nguyên khối",
+    type: "Bàn & ghế gỗ tự nhiên · TP.HCM · 2023",
+    note: "1.200 sản phẩm · TDS/MSDS song ngữ · qua kiểm buyer Đức lần 1.",
     image:
       "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1400&q=70",
   },
   {
-    tag: "PHỦ BÓNG · NGOÀI TRỜI",
+    tag: "PHỦ BÓNG · OUTDOOR",
     name: "Biệt thự cao cấp — Dự án Sun Group",
     type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
-    note: "Hệ phủ bóng kháng UV — bảo dưỡng 3 năm không bong tróc",
+    note: "Phủ kháng UV · 3 năm vận hành, không nứt, không bong tróc.",
     image:
       "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
   },
@@ -960,15 +960,15 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Novaland — Aqua City",
     type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
-    note: "800 bộ tủ bếp · đồng màu RAL xuyên 4 block",
+    note: "800 bộ · đồng màu RAL xuyên 4 block.",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70",
   },
   {
     tag: "HỆ LAU · NỘI THẤT",
-    name: "Chuỗi nhà hàng cao cấp — Saigon Centre",
-    type: "Nội thất bàn ghế & vách ốp gỗ · TP.HCM · 2022",
-    note: "Hệ lau nhiều lớp — giữ màu vân qua 2 năm vận hành",
+    name: "Chuỗi nhà hàng — Saigon Centre",
+    type: "Bàn ghế & vách ốp gỗ · TP.HCM · 2022",
+    note: "Giữ màu vân qua 2 năm vận hành cường độ cao.",
     image:
       "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=70",
   },

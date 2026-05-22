@@ -539,7 +539,7 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            LOTUS · GIẢI PHÁP HOÀN THIỆN GỖ CHUYÊN NGHIỆP
+            SƠN GỖ HỆ NƯỚC · XƯỞNG NỘI THẤT & ĐƠN HÀNG XUẤT KHẨU
           </div>
 
           <h1 className="font-display mt-10 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[2.5rem] lg:leading-[1.12]">
@@ -550,7 +550,9 @@ function Hero() {
           </h1>
 
           <p className="mt-10 max-w-sm text-[15px] leading-[1.75] text-wood-700/85">
-            Lotus tư vấn đúng hệ hoàn thiện cho xưởng thi công, nhà thầu dự án và đơn hàng xuất khẩu — sơn hệ nước, không mùi, pha màu theo yêu cầu.
+            Lotus là hệ sơn gỗ gốc nước phục vụ xưởng nội thất công trình và
+            nhà máy đơn hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại
+            xưởng, pha màu theo RAL / NCS.
           </p>
 
           <div className="mt-12 flex flex-col items-start gap-6">
@@ -560,14 +562,14 @@ function Hero() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 border-b border-wood-900 pb-2 text-[13px] uppercase tracking-[0.22em] text-wood-900 transition-colors hover:border-wood-600 hover:text-wood-700"
             >
-              Tư vấn qua Zalo
+              Gửi ảnh mẫu — nhận tư vấn kỹ thuật
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
               className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900"
             >
-              hoặc gọi 0943 966 662
+              hoặc gọi kỹ thuật 0943 966 662
             </a>
           </div>
         </div>

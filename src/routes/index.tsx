@@ -77,15 +77,25 @@ function AudienceSection() {
       icon: Factory,
       kicker: "Nhóm 01",
       title: "Xưởng nội thất công trình",
-      body: "Xưởng thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp — cần hệ sơn đồng màu xuyên lô, kiểm soát chất lượng nghiệm thu và không phát sinh mùi sau bàn giao.",
-      tags: ["Đồng màu xuyên lô", "Hồ sơ nghiệm thu", "Không VOC sau bàn giao"],
+      lead: "Thi công cho dự án căn hộ, khách sạn, văn phòng cao cấp.",
+      bullets: [
+        "Đồng màu xuyên lô — không chênh sắc giữa các đợt",
+        "Hồ sơ kỹ thuật phục vụ nghiệm thu dự án",
+        "Không mùi, không VOC sau bàn giao",
+      ],
+      tags: ["Dự án cao cấp", "Nội thất công trình"],
     },
     {
       icon: Ship,
       kicker: "Nhóm 02",
       title: "Nhà máy & đơn hàng xuất khẩu",
-      body: "Nhà máy sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật — yêu cầu TDS/MSDS đầy đủ, đạt EN71-3, ASTM F963, FDA, RoHS và bề mặt ổn định trên sản lượng lớn.",
-      tags: ["TDS / MSDS song ngữ", "Đạt EN71-3 · ASTM · FDA", "Ổn định trên sản lượng lớn"],
+      lead: "Sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản.",
+      bullets: [
+        "TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer",
+        "Đạt EN71-3 · ASTM F963 · FDA · RoHS",
+        "Bề mặt ổn định trên sản lượng lớn, nhiều lô",
+      ],
+      tags: ["Xuất khẩu Mỹ · EU · Nhật", "Sản lượng lớn"],
     },
   ];
 
@@ -114,21 +124,38 @@ function AudienceSection() {
           {audiences.map((a) => (
             <div
               key={a.title}
-              className="flex flex-col gap-5 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-8"
+              className="flex flex-col gap-6 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-9"
             >
+              {/* Header */}
               <div className="flex items-center gap-3">
                 <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
                 <span className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
                   {a.kicker}
                 </span>
               </div>
-              <h3 className="font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]">
-                {a.title}
-              </h3>
-              <p className="text-[14.5px] leading-[1.75] text-wood-700/85">
-                {a.body}
-              </p>
-              <div className="mt-1 flex flex-wrap gap-2">
+
+              {/* Title + 1-line lead */}
+              <div>
+                <h3 className="font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]">
+                  {a.title}
+                </h3>
+                <p className="mt-3 text-[14.5px] leading-[1.6] text-wood-700/85">
+                  {a.lead}
+                </p>
+              </div>
+
+              {/* 3 scannable bullets */}
+              <ul className="space-y-2.5 border-t border-wood-300/40 pt-5">
+                {a.bullets.map((b) => (
+                  <li key={b} className="flex gap-3 text-[14px] leading-[1.55] text-wood-800">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-600" strokeWidth={1.75} />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Compact tag row */}
+              <div className="mt-auto flex flex-wrap gap-2 pt-2">
                 {a.tags.map((t) => (
                   <span
                     key={t}

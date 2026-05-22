@@ -1046,12 +1046,14 @@ function Lookbook() {
                   {p.tag}
                 </span>
               </div>
-              <div className="flex flex-col gap-1 p-4">
+              <div className="flex flex-col gap-1.5 p-4">
                 <h3 className="font-display text-[14.5px] font-semibold leading-[1.25] text-wood-900">
                   {p.name}
                 </h3>
                 <p className="text-[11.5px] text-wood-600">{p.type}</p>
+                <p className="mt-1 text-[12px] leading-[1.5] text-wood-500">{p.note}</p>
               </div>
+
             </article>
           ))}
         </div>

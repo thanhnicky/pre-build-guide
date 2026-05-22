@@ -932,7 +932,7 @@ const PROJECTS = [
     tag: "HỆ PHUN · NỘI THẤT",
     name: "Khách sạn 5 sao — The Grand Saigon",
     type: "Nội thất phòng & hành lang · TP.HCM · 2024",
-    note: "320 phòng · đồng màu xuyên 12 lô giao · 0 phát sinh nghiệm thu.",
+    note: "320 phòng · đồng màu xuyên 12 lô giao · qua nghiệm thu đúng tiến độ.",
     image:
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
   },
@@ -940,7 +940,7 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Masterise Homes — The Global City",
     type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
-    note: "500 bộ · pha theo RAL · đồng màu xuyên 4 block, không loang.",
+    note: "500 bộ · pha theo RAL · đồng màu giữa 4 block, không loang.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
   },
@@ -956,7 +956,7 @@ const PROJECTS = [
     tag: "PHỦ BÓNG · OUTDOOR",
     name: "Biệt thự cao cấp — Dự án Sun Group",
     type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
-    note: "Phủ kháng UV · 3 năm vận hành, không nứt, không bong tróc.",
+    note: "Phủ kháng UV · 3 năm vận hành, bề mặt còn ổn định.",
     image:
       "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
   },
@@ -964,7 +964,7 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Novaland — Aqua City",
     type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
-    note: "800 bộ · đồng màu RAL xuyên 4 block.",
+    note: "800 bộ · đồng màu RAL giữa 4 block.",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70",
   },

@@ -1102,8 +1102,8 @@ function ConsultBlock() {
               </span>
             </h2>
             <p className="mt-7 max-w-md text-[15px] leading-[1.7] text-wood-300">
-              Không form, không báo giá tự động. Kỹ sư Lotus xem ảnh và tư vấn
-              đúng hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
+              Không form, không báo giá tự động. Kỹ sư Lotus xem ảnh và đề xuất
+              hệ theo loại gỗ, môi trường và yêu cầu kỹ thuật của xưởng bạn.
             </p>
             <ul className="mt-7 space-y-3 text-[14px] leading-[1.6] text-wood-300">
               <li className="flex gap-3">
@@ -1112,7 +1112,7 @@ function ConsultBlock() {
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
-                <span>Nhận mẫu vật lý nếu cần kiểm tra trước khi tư vấn.</span>
+                <span>Gửi mẫu vật lý khi cần kiểm tra trước khi vào lô.</span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />

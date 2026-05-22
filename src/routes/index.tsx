@@ -402,32 +402,32 @@ function CertificationsSection() {
     {
       icon: ShieldCheck,
       code: "EN71-3: 2019 + A1:2021",
-      name: "An toàn đồ chơi trẻ em",
+      name: "An toàn đồ chơi trẻ em — giới hạn kim loại nặng",
       tag: "Châu Âu",
     },
     {
       icon: ShieldCheck,
       code: "ASTM F963-17",
-      name: "An toàn đồ chơi trẻ em",
+      name: "An toàn đồ chơi trẻ em theo tiêu chuẩn Hoa Kỳ",
       tag: "Hoa Kỳ",
     },
     {
       icon: CheckCircle,
       code: "FDA 21 CFR 178.3800",
-      name: "An toàn tiếp xúc thực phẩm",
+      name: "Phù hợp tiếp xúc gián tiếp với thực phẩm",
       tag: "Hoa Kỳ · FDA",
     },
     {
       icon: Leaf,
       code: "RoHS Compliant",
-      name: "Giới hạn chất độc hại trong sản phẩm",
+      name: "Đáp ứng giới hạn chất độc hại trong sản phẩm",
       tag: "Châu Âu",
     },
     {
       icon: Wind,
       code: "Zero Formaldehyde · Low VOCs",
-      name: "Không Formaldehyde, VOCs thấp tiêu chuẩn quốc tế",
-      tag: "An toàn xưởng kín",
+      name: "Không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế",
+      tag: "Phù hợp xưởng kín",
     },
   ];
 
@@ -446,9 +446,9 @@ function CertificationsSection() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Hệ nước, không Formaldehyde, VOCs thấp — đạt chứng nhận an toàn cho
-            đồ chơi trẻ em, bệnh viện, trường học và đơn hàng xuất khẩu Mỹ, EU,
-            Nhật Bản.
+            Hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế —
+            đáp ứng yêu cầu cho đồ chơi trẻ em, bệnh viện, trường học và đơn
+            hàng xuất khẩu Mỹ, EU, Nhật Bản.
           </p>
         </div>
 

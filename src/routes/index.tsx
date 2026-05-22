@@ -591,21 +591,22 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            SƠN GỖ HỆ NƯỚC · XƯỞNG NỘI THẤT & ĐƠN HÀNG XUẤT KHẨU
+            SƠN GỖ HỆ NƯỚC · CHO XƯỞNG B2B
           </div>
 
           <h1 className="font-display mt-8 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[3rem] lg:leading-[1.08]">
-            <span className="block">Gỗ hoàn thiện đúng hệ —</span>
+            <span className="block">Sơn gỗ hệ nước cho</span>
             <span className="block italic font-normal text-wood-700">
-              bề mặt ổn định từ mẫu đầu đến lô cuối.
+              xưởng nội thất công trình &amp; đơn hàng xuất khẩu.
             </span>
           </h1>
 
           <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
-            Hệ sơn gỗ gốc nước cho xưởng nội thất công trình và nhà máy đơn
-            hàng xuất khẩu — TDS/MSDS đầy đủ, hỗ trợ kỹ thuật tại xưởng, pha
-            màu theo RAL / NCS.
+            TDS / MSDS song ngữ, đạt EN71-3 · ASTM · FDA · RoHS, pha màu theo
+            RAL / NCS. Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng — bề mặt ổn định
+            từ mẫu đầu đến lô cuối.
           </p>
+
 
           {/* Trust strip — above the fold */}
           <ul className="mt-7 flex flex-wrap gap-x-2 gap-y-2">

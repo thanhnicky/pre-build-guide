@@ -762,7 +762,7 @@ const PROCESSES = [
 
 function ProcessEditorial() {
   return (
-    <section id="quy-trinh" className="bg-background pt-12 pb-24 sm:pt-12 sm:pb-32 lg:pt-12 lg:pb-40">
+    <section id="quy-trinh" className="bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">

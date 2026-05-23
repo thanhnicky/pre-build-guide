@@ -1196,17 +1196,26 @@ function FAQ() {
           </div>
 
           <div className="lg:col-span-8">
-            <Accordion type="single" collapsible className="divide-y divide-wood-200 border-t border-wood-200">
+            <Accordion type="single" collapsible className="divide-y divide-wood-200 border-t border-b border-wood-200">
               {FAQS.map((f, i) => (
                 <AccordionItem
                   key={i}
                   value={`item-${i}`}
-                  className="border-0"
+                  className="border-0 group/faq"
                 >
-                  <AccordionTrigger className="py-6 text-left font-display text-lg font-normal text-wood-900 hover:no-underline sm:text-xl">
-                    {f.q}
+                  <AccordionTrigger className="py-6 text-left font-display text-lg font-normal text-wood-900 hover:no-underline hover:text-wood-700 sm:text-xl [&>svg]:hidden [&[data-state=open]_.faq-preview]:hidden [&[data-state=open]_.faq-icon-plus]:hidden [&:not([data-state=open])_.faq-icon-minus]:hidden">
+                    <span className="flex flex-1 flex-col gap-2 pr-6">
+                      <span>{f.q}</span>
+                      <span className="faq-preview line-clamp-1 text-[13px] font-sans font-normal text-wood-500">
+                        {f.a}
+                      </span>
+                    </span>
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-wood-300 text-wood-700 transition-colors group-hover/faq:border-wood-700 group-hover/faq:text-wood-900">
+                      <span aria-hidden className="faq-icon-plus text-[15px] leading-none">+</span>
+                      <span aria-hidden className="faq-icon-minus text-[15px] leading-none">−</span>
+                    </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-7 text-[14.5px] leading-[1.75] text-wood-700/85">
+                  <AccordionContent className="pb-7 pr-12 text-[14.5px] leading-[1.75] text-wood-700/85">
                     {f.a}
                   </AccordionContent>
                 </AccordionItem>

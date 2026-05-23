@@ -670,7 +670,7 @@ const PROCESSES = [
     kicker: "Hệ lau · Gỗ tự nhiên",
     title: "Hệ lau — giữ vân gỗ tự nhiên",
     body: [
-      "Lớp hoàn thiện thấm vào thớ gỗ, tôn vân thật thay vì che phủ.",
+      "Thấm vào thớ gỗ, tôn vân thật thay vì che phủ — bề mặt ấm, có chiều sâu.",
       "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
       "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
     ],

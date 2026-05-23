@@ -739,7 +739,7 @@ const PROCESSES = [
     kicker: "Phủ bóng · Ngoài trời",
     title: "Phủ bóng ngoài trời — hệ chuyên cho thời tiết",
     body: [
-      "Lớp phủ kháng UV và chống thấm — giữ vẻ đẹp gỗ qua nắng, mưa và độ ẩm.",
+      "Kháng UV và chống thấm, co giãn cùng gỗ — bền theo chu kỳ nắng, mưa, độ ẩm.",
       "Co giãn cùng gỗ, hạn chế nứt và bong tróc theo chu kỳ thời tiết.",
       "Đây là một hệ riêng — không phải hệ nội thất mang ra ngoài.",
     ],

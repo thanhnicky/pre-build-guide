@@ -804,7 +804,7 @@ function ProcessEditorial() {
         </nav>
 
         {/* 4 panels — unified 2-col system, alternating sides */}
-        <div className="mt-24 space-y-24 sm:mt-32 sm:space-y-28 lg:mt-40 lg:space-y-32">
+        <div className="mt-16 space-y-20 sm:mt-20 sm:space-y-24 lg:mt-24 lg:space-y-24">
           {PROCESSES.map((p, i) => {
             const imageLeft = i % 2 === 0;
             return (

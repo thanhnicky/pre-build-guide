@@ -873,6 +873,19 @@ function ProcessEditorial() {
             );
           })}
         </div>
+
+        {/* Section CTA */}
+        <div className="mt-14 text-center sm:mt-16">
+          <a
+            href={ZALO}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-wood-900 transition-colors hover:text-wood-700"
+          >
+            NHẮN ZALO ĐỂ NHẬN ĐỀ XUẤT HỆ PHÙ HỢP →
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
       </div>
     </section>
   );

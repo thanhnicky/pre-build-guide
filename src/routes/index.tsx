@@ -251,17 +251,6 @@ function TechCollaborationSection() {
           ))}
         </ol>
 
-        <div className="mt-14 text-center">
-          <a
-            href={ZALO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-          >
-            NHẮN ZALO ĐỂ BẮT ĐẦU PHỐI HỢP KỸ THUẬT →
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -485,18 +474,6 @@ function CertificationsSection() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <a
-            href={ZALO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-          >
-            NHẮN ZALO ĐỂ NHẬN HỒ SƠ KỸ THUẬT ĐẦY ĐỦ →
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -563,17 +540,6 @@ function WhyWaterSection() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <a
-            href={ZALO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-          >
-            NHẮN ZALO ĐỂ TÍNH THỬ CHI PHÍ →
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -902,15 +868,6 @@ function ProcessEditorial() {
 
 
 
-                  <a
-                    href={ZALO}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group mt-8 inline-flex items-center gap-2 text-[13px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-                  >
-                    {p.cta}
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </a>
                 </div>
               </article>
             );
@@ -1013,17 +970,6 @@ function ProductsSection() {
                     {p.rep}
                   </span>
                 </div>
-              </div>
-              <div className="mt-auto px-5 pb-5">
-                <a
-                  href={ZALO}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
-                >
-                  Nhận tư vấn hệ phù hợp
-                  <ArrowUpRight className="h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
               </div>
             </div>
           ))}
@@ -1172,21 +1118,9 @@ function Lookbook() {
         </div>
 
 
-        {/* CTA */}
-        <div className="mt-14 flex flex-col items-center gap-3 text-center lg:mt-20">
-          <p className="text-[14px] text-wood-700">
-            Muốn xem thêm công trình thực tế?
-          </p>
-          <a
-            href={ZALO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-wood-900 transition-colors hover:text-wood-700"
-          >
-            NHẮN ZALO ĐỂ XEM THÊM CÔNG TRÌNH THỰC TẾ →
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-        </div>
+        <p className="mx-auto mt-14 max-w-xl text-center text-[13.5px] leading-[1.65] text-wood-600 lg:mt-20">
+          Cần xem thêm công trình thực tế hoặc tư vấn hệ sơn phù hợp — liên hệ kỹ thuật qua Zalo hoặc gọi trực tiếp.
+        </p>
       </div>
     </section>
   );

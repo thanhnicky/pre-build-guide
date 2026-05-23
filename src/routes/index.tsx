@@ -588,36 +588,35 @@ function Hero() {
   const trust = ["TDS / MSDS", "EN71-3", "ASTM F963", "FDA", "RoHS"];
   return (
     <section className="relative bg-[oklch(0.97_0.015_82)]">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 pt-14 pb-10 sm:px-10 sm:pt-20 sm:pb-12 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-14">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 pt-12 pb-10 sm:px-10 sm:pt-20 sm:pb-14 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-16">
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
             SƠN GỖ HỆ NƯỚC · CHO XƯỞNG B2B
           </div>
 
-          <h1 className="font-display mt-8 text-[2.75rem] font-light leading-[1.04] text-wood-900 sm:text-[3.75rem] lg:text-[3rem] lg:leading-[1.08]">
+          <h1 className="font-display mt-6 text-[2.5rem] font-light leading-[1.05] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]">
             <span className="block">Sơn gỗ hệ nước cho</span>
             <span className="block italic font-normal text-wood-700">
               xưởng nội thất công trình &amp; đơn hàng xuất khẩu.
             </span>
           </h1>
 
-          <p className="mt-7 max-w-md text-[15.5px] leading-[1.7] text-wood-700/85">
+          <p className="mt-5 max-w-md text-[15.5px] leading-[1.65] text-wood-700/85">
             Hồ sơ kỹ thuật song ngữ, pha màu RAL / NCS, kỹ sư Lotus hỗ trợ
             trực tiếp tại xưởng — bề mặt ổn định từ mẫu đầu đến lô cuối.
           </p>
 
-
-          {/* Trust strip — above the fold */}
-          <div className="mt-7">
+          {/* Trust strip */}
+          <div className="mt-6">
             <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-wood-500">
-              Hồ sơ & tiêu chuẩn
+              Hồ sơ &amp; tiêu chuẩn
             </div>
-            <ul className="mt-2.5 flex flex-wrap gap-x-2 gap-y-2">
+            <ul className="mt-2.5 flex flex-wrap gap-1.5">
               {trust.map((t) => (
                 <li
                   key={t}
-                  className="rounded-full border border-wood-300/70 bg-background/60 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-wood-800"
+                  className="rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-wood-800"
                 >
                   {t}
                 </li>
@@ -625,14 +624,15 @@ function Hero() {
             </ul>
           </div>
 
-          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-5">
+          <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 rounded-full bg-wood-900 px-6 py-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-background shadow-sm transition-colors hover:bg-wood-700"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-wood-900 px-7 py-4 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto"
             >
-              Gửi ảnh mẫu — nhận tư vấn kỹ thuật
+              <Camera className="h-4 w-4" strokeWidth={1.75} />
+              Gửi ảnh mẫu — nhận tư vấn
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a

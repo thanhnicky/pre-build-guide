@@ -956,7 +956,7 @@ const PROJECTS = [
     tag: "PHỦ BÓNG · OUTDOOR",
     name: "Biệt thự cao cấp — Dự án Sun Group",
     type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
-    note: "Phủ kháng UV · 3 năm vận hành, bề mặt còn ổn định.",
+    note: "Phủ kháng UV · bề mặt giữ ổn định sau 3 mùa vận hành ngoài trời.",
     image:
       "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
   },

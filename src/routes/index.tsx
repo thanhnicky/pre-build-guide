@@ -51,6 +51,8 @@ function LotusLanding() {
         <WhyWaterSection />
         {/* 5. Các hệ hoàn thiện chính */}
         <ProcessEditorial />
+        {/* 5b. Các dòng sản phẩm chính trong hệ */}
+        <ProductsSection />
         {/* 6. Quy trình phối hợp kỹ thuật */}
         <TechCollaborationSection />
         {/* 7. Chứng nhận & hồ sơ kỹ thuật */}

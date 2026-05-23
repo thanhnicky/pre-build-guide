@@ -13,6 +13,7 @@ import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { StickyZalo } from "@/components/StickyZalo";
 
 import heroImg from "@/assets/lotus-hero.jpg";
+import heroWood from "@/assets/hero-wood.jpg";
 import procLau from "@/assets/proc-lau.jpg";
 import procPhun from "@/assets/proc-phun.jpg";
 import procMdf from "@/assets/proc-mdf.jpg";
@@ -50,6 +51,8 @@ function LotusLanding() {
         <WhyWaterSection />
         {/* 5. Các hệ hoàn thiện chính */}
         <ProcessEditorial />
+        {/* 5b. Các dòng sản phẩm chính trong hệ */}
+        <ProductsSection />
         {/* 6. Quy trình phối hợp kỹ thuật */}
         <TechCollaborationSection />
         {/* 7. Chứng nhận & hồ sơ kỹ thuật */}
@@ -918,6 +921,117 @@ function ProcessEditorial() {
   );
 }
 
+/* ============================================================
+   PRODUCTS — các dòng sản phẩm chính trong hệ sơn
+   ============================================================ */
+const PRODUCTS = [
+  {
+    image: heroWood,
+    name: "Keo trám trét",
+    role: "Xử lý khuyết điểm bề mặt trước khi lên sơn",
+    app: "Trám vết nứt, lỗ nhỏ trên gỗ tự nhiên và MDF",
+    rep: "Lotus Wood Filler",
+  },
+  {
+    image: procPhun,
+    name: "Sơn lót",
+    role: "Tăng bám dính và bịt lỗ trước lớp phủ",
+    app: "Lót cho hệ lau, phun và màu bệt",
+    rep: "Lotus Wood / MDF Primer",
+  },
+  {
+    image: procLau,
+    name: "Sơn lau giữ vân",
+    role: "Tôn màu vân gỗ tự nhiên, thấm sâu",
+    app: "Đồ gỗ tự nhiên, đơn hàng xuất khẩu EU/Mỹ",
+    rep: "Lotus Wood Stain",
+  },
+  {
+    image: procMdf,
+    name: "Sơn phủ màu bệt",
+    role: "Lên màu đặc, phẳng, che nền đều",
+    app: "MDF, tủ bếp, vách trang trí theo RAL/NCS",
+    rep: "Lotus Topcoat / Clear Coat",
+  },
+  {
+    image: procBong,
+    name: "Sơn phủ bảo vệ ngoài trời",
+    role: "Kháng UV, chống thấm, co giãn cùng gỗ",
+    app: "Lam, sàn deck, cửa, pergola ngoài trời",
+    rep: "Lotus Outdoor Topcoat",
+  },
+];
+
+function ProductsSection() {
+  return (
+    <section id="san-pham" className="bg-[#F5F0EA] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
+              CÁC DÒNG SẢN PHẨM CHÍNH
+            </div>
+            <h2 className="font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.5rem]">
+              <span className="block">Từ lớp nền</span>
+              <span className="block italic font-normal text-wood-700">
+                đến lớp phủ hoàn thiện.
+              </span>
+            </h2>
+          </div>
+          <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
+            Mỗi nhóm sản phẩm đóng vai trò riêng trong hệ — được phối theo loại gỗ, môi trường và yêu cầu bề mặt của xưởng.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+          {PRODUCTS.map((p) => (
+            <div
+              key={p.name}
+              className="flex flex-col overflow-hidden rounded-lg border border-wood-200/60 bg-background"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/60">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col gap-2 p-5">
+                <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900">
+                  {p.name}
+                </h3>
+                <p className="text-[13px] leading-[1.55] text-wood-700/85">
+                  {p.role}
+                </p>
+                <p className="text-[12.5px] leading-[1.5] text-wood-500">
+                  {p.app}
+                </p>
+                <div className="mt-1 flex flex-wrap items-center gap-x-1.5 gap-y-1">
+                  <span className="text-[11px] text-wood-400">Sản phẩm đại diện:</span>
+                  <span className="text-[11px] font-medium text-wood-700">
+                    {p.rep}
+                  </span>
+                </div>
+              </div>
+              <div className="mt-auto px-5 pb-5">
+                <a
+                  href={ZALO}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.14em] text-wood-700 transition-colors hover:text-wood-900"
+                >
+                  Nhận tư vấn hệ phù hợp
+                  <ArrowUpRight className="h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ============================================================
    PROJECTS — dự án tiêu biểu

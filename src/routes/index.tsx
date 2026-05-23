@@ -446,9 +446,9 @@ function CertificationsSection() {
             </h2>
           </div>
           <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Hệ nước, không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế —
-            đáp ứng yêu cầu cho đồ chơi trẻ em, bệnh viện, trường học và đơn
-            hàng xuất khẩu Mỹ, EU, Nhật Bản.
+            Hệ nước, VOCs thấp, không thêm Formaldehyde trong công thức — phù
+            hợp hạng mục trong nhà cho trẻ em, bệnh viện, trường học và đơn
+            hàng xuất khẩu sang Mỹ, EU, Nhật Bản.
           </p>
         </div>
 

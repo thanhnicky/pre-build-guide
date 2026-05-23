@@ -716,13 +716,13 @@ const PROCESSES = [
     kicker: "Màu bệt · MDF",
     title: "Màu bệt — hệ chuyên cho MDF",
     body: [
-      "Bề mặt màu phẳng, sạch, hiện đại — không cố giả vân gỗ tự nhiên.",
+      "Màu phẳng, sạch, hiện đại — không giả vân gỗ, giữ độ bóng nhất quán toàn sản phẩm.",
       "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
       "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính.",
     ],
     material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách trang trí.",
     surface: "Màu phẳng, đặc — chọn mờ / bán bóng / bóng cao.",
-    strength: "Pha theo RAL / NCS — đồng màu giữa các block, hạn chế chênh sắc.",
+    strength: "Pha theo RAL / NCS — đồng màu giữa các block.",
     cta: "Nhắn Zalo gửi mã màu RAL / NCS để Lotus kiểm tra",
     image: procMdf,
     steps: [

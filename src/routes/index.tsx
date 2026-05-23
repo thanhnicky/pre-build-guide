@@ -169,7 +169,7 @@ function AudienceSection() {
 }
 
 /* ============================================================
-   TECH COLLABORATION — Quy trình phối hợp kỹ thuật B2B
+   TECH COLLABORATION — Quy trình phối hợp kỹ thuật
    ============================================================ */
 function TechCollaborationSection() {
   const steps = [
@@ -587,7 +587,7 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            SƠN GỖ HỆ NƯỚC · CHO XƯỞNG B2B
+            SƠN GỖ HỆ NƯỚC · CHO XƯỞNG NỘI THẤT & NHÀ MÁY SẢN XUẤT
           </div>
 
           <h1 className="font-display mt-6 text-[2.5rem] font-light leading-[1.05] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]">
@@ -740,7 +740,7 @@ const PROCESSES = [
     ],
     material: "Lam, cửa, pergola, sàn sân vườn — hạng mục outdoor.",
     surface: "Lớp phủ co giãn, kháng UV, chống thấm.",
-    strength: "Bền theo chu kỳ thời tiết, giảm tần suất bảo dưỡng.",
+    strength: "Ổn định theo chu kỳ thời tiết, giảm tần suất bảo dưỡng.",
     cta: "Gửi ảnh hạng mục để chọn đúng lớp phủ theo môi trường",
     image: procBong,
     steps: [
@@ -927,7 +927,7 @@ const PROJECTS = [
     tag: "HỆ PHUN · NỘI THẤT",
     name: "Khách sạn 5 sao — The Grand Saigon",
     type: "Nội thất phòng & hành lang · TP.HCM · 2024",
-    note: "320 phòng · đồng màu xuyên 12 lô giao · qua nghiệm thu đúng tiến độ.",
+    note: "320 phòng · đồng màu giữa các lô giao · bàn giao theo tiến độ dự án.",
     image:
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
   },
@@ -935,7 +935,7 @@ const PROJECTS = [
     tag: "MÀU BỆT · MDF",
     name: "Masterise Homes — The Global City",
     type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
-    note: "500 bộ · pha theo RAL · đồng màu giữa 4 block, không loang.",
+    note: "500 bộ · pha theo RAL · đồng màu ổn định giữa 4 block.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
   },
@@ -943,7 +943,7 @@ const PROJECTS = [
     tag: "HỆ LAU · XUẤT KHẨU EU",
     name: "Xưởng XK Đức — Đơn hàng nội thất nguyên khối",
     type: "Bàn & ghế gỗ tự nhiên · TP.HCM · 2023",
-    note: "1.200 sản phẩm · TDS/MSDS song ngữ · qua kiểm buyer Đức lần 1.",
+    note: "1.200 sản phẩm · hồ sơ TDS/MSDS song ngữ phục vụ kiểm hàng buyer Đức.",
     image:
       "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1400&q=70",
   },
@@ -967,7 +967,7 @@ const PROJECTS = [
     tag: "HỆ LAU · NỘI THẤT",
     name: "Chuỗi nhà hàng — Saigon Centre",
     type: "Bàn ghế & vách ốp gỗ · TP.HCM · 2022",
-    note: "Giữ màu vân qua 2 năm vận hành cường độ cao.",
+    note: "Bề mặt giữ ổn định sau 2 năm vận hành cường độ cao.",
     image:
       "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=70",
   },

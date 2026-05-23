@@ -697,9 +697,9 @@ const PROCESSES = [
       "Vân gỗ vẫn hiện rõ trong một lớp hoàn thiện ổn định, ít phụ thuộc kỹ năng thợ.",
       "Tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
     ],
-    material: "Gỗ tự nhiên & ván dán — nội thất và ngoại thất, sản lượng lớn.",
+    material: "Gỗ tự nhiên & ván dán — nội & ngoại thất, sản lượng lớn.",
     surface: "Đều màu, phẳng, giữ vân — đồng nhất giữa các lô.",
-    strength: "Ít phụ thuộc tay thợ, dễ kiểm soát chất lượng theo dây chuyền.",
+    strength: "Ít phụ thuộc tay thợ, dễ kiểm soát theo dây chuyền.",
     cta: "Gửi ảnh hạng mục để tư vấn đúng hệ phun (nội / ngoại)",
     image: procPhun,
     steps: [

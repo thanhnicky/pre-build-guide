@@ -513,7 +513,7 @@ function WhyWaterSection() {
       n: "01",
       heading: "Vận hành gọn hơn",
       body: "Không cần pha thêm dung môi, yêu cầu thông gió đơn giản hơn PU.",
-      punch: "Giảm chi phí phụ trợ trên mỗi m².",
+      punch: "Giảm tải chi phí phụ trợ trong xưởng.",
     },
     {
       n: "02",
@@ -524,8 +524,8 @@ function WhyWaterSection() {
     {
       n: "03",
       heading: "Sẵn cho nghiệm thu & xuất khẩu",
-      body: "VOC thấp theo tiêu chuẩn quốc tế, có TDS / MSDS song ngữ — đáp ứng yêu cầu dự án cao cấp và buyer Mỹ, EU, Nhật.",
-      punch: "Hồ sơ sẵn — đi qua nghiệm thu nhẹ hơn.",
+      body: "VOCs thấp theo tiêu chuẩn quốc tế, có TDS / MSDS song ngữ — phù hợp dự án cao cấp và buyer Mỹ, EU, Nhật.",
+      punch: "Hồ sơ đầy đủ — giảm vướng khi nghiệm thu.",
     },
   ];
 

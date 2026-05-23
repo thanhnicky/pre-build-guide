@@ -425,8 +425,8 @@ function CertificationsSection() {
     },
     {
       icon: Wind,
-      code: "Zero Formaldehyde · Low VOCs",
-      name: "Không Formaldehyde, VOCs thấp theo tiêu chuẩn quốc tế",
+      code: "Low VOCs · Không Formaldehyde bổ sung",
+      name: "VOCs thấp theo tiêu chuẩn quốc tế, không thêm Formaldehyde trong công thức",
       tag: "Phù hợp xưởng kín",
     },
   ];

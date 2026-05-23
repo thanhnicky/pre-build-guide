@@ -768,7 +768,7 @@ function ProcessEditorial() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-              Bốn hệ hoàn thiện cho xưởng
+              Các hệ hoàn thiện chính cho xưởng
             </div>
             <h2 className="font-display mt-8 text-[2.25rem] font-light leading-[1.06] text-wood-900 sm:text-5xl lg:text-[3.5rem]">
               <span className="block">Mỗi bề mặt,</span>
@@ -777,9 +777,9 @@ function ProcessEditorial() {
               </span>
             </h2>
           </div>
-          <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Hệ được chọn theo loại gỗ, môi trường sử dụng và yêu cầu bề mặt
-            của xưởng — không chọn theo can hay theo giá.
+          <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
+            Hệ được chọn theo loại gỗ, môi trường sử dụng và yêu cầu bề mặt —
+            không chọn theo can hay theo giá.
           </p>
         </div>
 

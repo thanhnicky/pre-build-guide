@@ -13,6 +13,7 @@ import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { StickyZalo } from "@/components/StickyZalo";
 
 import heroImg from "@/assets/lotus-hero.jpg";
+import heroWood from "@/assets/hero-wood.jpg";
 import procLau from "@/assets/proc-lau.jpg";
 import procPhun from "@/assets/proc-phun.jpg";
 import procMdf from "@/assets/proc-mdf.jpg";

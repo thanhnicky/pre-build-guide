@@ -69,13 +69,12 @@ function LotusLanding() {
 }
 
 /* ============================================================
-   AUDIENCE — Lotus phù hợp với ai (2 nhóm B2B chính)
+   AUDIENCE — Lotus phù hợp với ai
    ============================================================ */
 function AudienceSection() {
   const audiences = [
     {
       icon: Factory,
-      kicker: "Nhóm 01",
       title: "Xưởng nội thất công trình",
       lead: "Thi công căn hộ, khách sạn, văn phòng cao cấp.",
       bullets: [
@@ -87,8 +86,7 @@ function AudienceSection() {
     },
     {
       icon: Ship,
-      kicker: "Nhóm 02",
-      title: "Nhà máy & đơn hàng xuất khẩu",
+      title: "Nhà máy / đơn hàng xuất khẩu",
       lead: "Sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản.",
       bullets: [
         "TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer",
@@ -110,13 +108,13 @@ function AudienceSection() {
             <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
               <span className="block">Một hệ sơn —</span>
               <span className="block italic font-normal text-wood-700">
-                hai nhóm khách hàng B2B chính.
+                hai nhu cầu sản xuất chính.
               </span>
             </h2>
           </div>
           <p className="text-[15px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Sản phẩm và quy trình kỹ thuật giống nhau — Lotus chỉ điều chỉnh
-            hồ sơ và mức hỗ trợ theo đặc thù của từng nhóm.
+            Cùng quy trình và công thức sơn — Lotus điều chỉnh hồ sơ kỹ thuật
+            và hỗ trợ phù hợp theo từng loại hình xưởng.
           </p>
         </div>
 
@@ -129,9 +127,6 @@ function AudienceSection() {
               {/* Header */}
               <div className="flex items-center gap-3">
                 <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
-                <span className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-                  {a.kicker}
-                </span>
               </div>
 
               {/* Title + 1-line lead */}

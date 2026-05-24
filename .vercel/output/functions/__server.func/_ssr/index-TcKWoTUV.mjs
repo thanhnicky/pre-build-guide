@@ -517,18 +517,18 @@ function WhyWaterSection() {
   const cols = [{
     n: "01",
     heading: "Vận hành gọn hơn",
-    body: "Không cần pha thêm dung môi, yêu cầu thông gió đơn giản hơn PU.",
-    punch: "Giảm tải chi phí phụ trợ trong xưởng."
+    body: "Không phải pha thêm nhiều dung môi, mùi trong xưởng nhẹ hơn và khâu xử lý cũng đơn giản hơn.",
+    punch: "GIẢM ÁP LỰC VẬN HÀNH KHI CHẠY HÀNG MỖI NGÀY."
   }, {
     n: "02",
     heading: "Chuyển hệ có người đi cùng",
-    body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
-    punch: "Rút ngắn thời gian dò hệ."
+    body: "Khi xưởng chuyển sang hệ nước, kỹ sư Lotus hỗ trợ tỷ lệ pha, chỉnh súng phun và xử lý lỗi bề mặt ngay từ lần chạy đầu.",
+    punch: "RÚT NGẮN THỜI GIAN DÒ HỆ — ĐỠ MẤT HÀNG, MẤT CÔNG."
   }, {
     n: "03",
-    heading: "Sẵn cho nghiệm thu & xuất khẩu",
-    body: "VOCs thấp theo tiêu chuẩn quốc tế, có TDS / MSDS song ngữ — phù hợp dự án cao cấp và buyer Mỹ, EU, Nhật.",
-    punch: "Hồ sơ đầy đủ — giảm vướng khi nghiệm thu."
+    heading: "Sẵn cho nghiệm thu công trình",
+    body: "VOCs thấp, mùi nhẹ và có hồ sơ kỹ thuật khi cần — phù hợp các hạng mục nội thất cần bàn giao gọn và làm việc rõ với đội giám sát.",
+    punch: "GIẢM VƯỚNG KHI NGHIỆM THU VÀ BÀN GIAO."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-20 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10.5px] uppercase tracking-[0.32em] text-wood-600", children: "TẠI SAO HỆ NƯỚC?" }),
@@ -556,7 +556,7 @@ function Hero() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: "Sơn gỗ hệ nước cho" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: "xưởng nội thất công trình & đơn hàng xuất khẩu." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-md text-[15.5px] leading-[1.65] text-wood-700/85", children: "Hồ sơ kỹ thuật song ngữ, pha màu RAL / NCS, kỹ sư Lotus hỗ trợ trực tiếp tại xưởng — bề mặt ổn định từ mẫu đầu đến lô cuối." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-md text-[15.5px] leading-[1.65] text-wood-700/85", children: "Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, có hồ sơ kỹ thuật khi cần — để bề mặt ổn định từ mẫu đầu đến lô cuối." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-medium uppercase tracking-[0.2em] text-wood-500", children: "Hồ sơ & tiêu chuẩn" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-2.5 flex flex-wrap gap-1.5", children: trust.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-wood-800", children: t }, t)) })
@@ -972,23 +972,29 @@ function ConsultBlock() {
   ] }) }) });
 }
 const FAQS = [{
-  q: "Sơn Lotus có TDS và MSDS không? Tôi cần hồ sơ cho đơn hàng xuất khẩu.",
-  a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc."
+  q: "Lotus có hỗ trợ chọn đúng hệ theo từng hạng mục không?",
+  a: "Có. Chỉ cần gửi ảnh bề mặt, loại gỗ, môi trường sử dụng và yêu cầu hoàn thiện, Lotus sẽ đề xuất hệ phù hợp cho từng hạng mục thay vì để xưởng tự dò từ đầu."
 }, {
-  q: "Tôi nên chọn sơn lau hay sơn phun?",
-  a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp."
+  q: "Xưởng của tôi làm nội thất công trình. Lotus có hồ sơ kỹ thuật để phục vụ nghiệm thu không?",
+  a: "Có. Khi công trình cần làm việc với đội giám sát hoặc chuẩn bị hồ sơ kỹ thuật, Lotus cung cấp TDS, MSDS và các tài liệu liên quan theo từng hệ sơn."
 }, {
-  q: "Lotus có hỗ trợ thử mẫu vật lý trước khi lên đơn lớn không?",
-  a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp."
+  q: "Lotus có hỗ trợ thử mẫu trước khi vào lô lớn không?",
+  a: "Có. Lotus luôn khuyến khích xưởng thử trên mẫu thật để chốt màu, độ bóng, độ bám và cảm giác bề mặt trước khi chạy số lượng lớn."
 }, {
-  q: "Làm số lượng lớn, làm sao đảm bảo bề mặt ổn định giữa các lô?",
-  a: "Lotus theo dõi đồng màu giữa các lô, kiểm tra chất lượng từng đợt giao và điều chỉnh khi điều kiện xưởng thay đổi — quy trình chuẩn cho sản lượng lớn và đơn xuất khẩu."
+  q: "Lần đầu chuyển sang hệ nước, xưởng có được hỗ trợ trực tiếp không?",
+  a: "Có. Kỹ sư Lotus hỗ trợ tại xưởng ở lần triển khai đầu: từ tỷ lệ pha, chỉnh súng phun đến xử lý lỗi bề mặt trong quá trình chạy thử."
 }, {
-  q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",
-  a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu phẳng. Dùng sai hệ, bề mặt sẽ loang, bong và xuống cấp nhanh hơn nhiều so với tuổi thọ thật của vật liệu."
+  q: "Làm nhiều lô cho công trình, làm sao giữ bề mặt ổn định giữa các đợt giao?",
+  a: "Lotus theo dõi đồng màu, kiểm soát chất lượng giữa các lô và cùng xưởng điều chỉnh khi vật liệu, thời tiết hoặc điều kiện thi công thay đổi. Đây là phần rất quan trọng với các công trình giao theo nhiều đợt."
 }, {
-  q: "Lotus có hỗ trợ kỹ thuật tại xưởng khi chuyển sang hệ nước không?",
-  a: "Có. Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò."
+  q: "MDF và gỗ tự nhiên có dùng cùng một hệ sơn không?",
+  a: "Không. MDF, veneer và gỗ tự nhiên có đặc tính bề mặt khác nhau nên cần chọn hệ lót, lớp màu và lớp phủ phù hợp cho từng vật liệu để tránh loang màu, giảm bám dính hoặc xuống bề mặt sau thi công."
+}, {
+  q: "Lotus có hỗ trợ cho đơn hàng xuất khẩu không?",
+  a: "Có. Với các đơn hàng cần hồ sơ kỹ thuật hoặc tiêu chuẩn liên quan đến buyer, Lotus chuẩn bị TDS, MSDS và các chứng nhận phù hợp theo yêu cầu của từng đơn hàng."
+}, {
+  q: "Tôi nên liên hệ Lotus như thế nào để được tư vấn nhanh nhất?",
+  a: "Gửi ảnh hạng mục qua Zalo kèm mô tả ngắn về loại gỗ, môi trường sử dụng và yêu cầu bề mặt. Đội kỹ thuật sẽ nhìn đúng case trước rồi mới đề xuất hệ phù hợp."
 }];
 function FAQ() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "faq", className: "bg-background py-24 sm:py-28 lg:py-36", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16", children: [

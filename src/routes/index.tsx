@@ -910,8 +910,8 @@ function FinishFinder() {
               {!result ? (
                 <div className="flex h-full min-h-[320px] items-center justify-center p-10 text-center">
                   <p className="max-w-[260px] text-[14px] leading-[1.7] text-wood-600">
-                    Hoàn thành các bước bên {`{`}cạnh / trên{`}`} để xem hệ sơn
-                    Lotus phù hợp với hạng mục của anh / chị.
+                    Hoàn thành các bước để xem hệ sơn Lotus phù hợp với hạng
+                    mục của anh / chị.
                   </p>
                 </div>
               ) : (

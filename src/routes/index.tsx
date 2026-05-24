@@ -50,7 +50,7 @@ function LotusLanding() {
         {/* 4. Vì sao chọn hệ nước Lotus */}
         <WhyWaterSection />
         {/* 5. Các hệ hoàn thiện chính */}
-        <ProcessEditorial />
+        <FinishFinder />
         {/* 5b. Các dòng sản phẩm chính trong hệ */}
         <ProductsSection />
         {/* 6. Quy trình phối hợp kỹ thuật */}

@@ -624,109 +624,167 @@ function Hero() {
 }
 
 /* ============================================================
-   4 PROCESS DIRECTIONS — asymmetric editorial
+   FINISH FINDER — bộ lọc tư vấn hệ sơn phù hợp
    ============================================================ */
-const PROCESSES = [
-  {
-    n: "I",
-    slug: "he-lau",
-    tab: "Hệ Lau",
-    kicker: "Hệ lau · Gỗ tự nhiên",
-    title: "Hệ lau — giữ vân gỗ tự nhiên",
-    body: [
-      "Thấm vào thớ gỗ, tôn vân thật thay vì che phủ — bề mặt ấm, có chiều sâu.",
-      "Bề mặt ấm, có chiều sâu, vẫn giữ nguyên cảm giác chạm vào gỗ thật.",
-      "Khác với hệ phun tạo lớp kín đều, sơn lau để gỗ 'sống' — nơi chính chất liệu là điểm nhấn.",
-    ],
-    material: "Gỗ tự nhiên: sồi, óc chó, tần bì — đồ trưng bày, handcraft.",
-    surface: "Vân gỗ rõ, bề mặt ấm, có chiều sâu khi chạm.",
-    strength: "Phù hợp đơn xuất khẩu EU / Mỹ ưu tiên cảm giác tự nhiên.",
-    cta: "Nhắn Zalo gửi ảnh hạng mục để chọn đúng hệ lau",
-    image: procLau,
-    steps: [
-      { product: "Lau màu — Lotus Wood Stain", note: "tôn màu vân gỗ, thấm sâu" },
-      { product: "Lót mịn — Lotus Sanding Sealer", note: "trong suốt. Chờ khô 2h, xả nhám P320" },
-      { product: "Phủ bóng — Lotus Acrylic Lacquer", note: "chọn trong nhà hoặc ngoài trời theo môi trường sử dụng" },
-    ],
-    stepsNote: undefined as string | undefined,
-  },
-  {
-    n: "II",
-    slug: "he-phun",
-    tab: "Hệ Phun",
-    kicker: "Hệ phun · Nội & ngoại thất",
-    title: "Hệ phun — nội & ngoại thất sản lượng lớn",
-    body: [
-      "Bề mặt phẳng, đều màu — chuẩn cho sản xuất hàng loạt và dự án nhiều block.",
-      "Vân gỗ vẫn hiện rõ trong một lớp hoàn thiện ổn định, ít phụ thuộc kỹ năng thợ.",
-      "Tách riêng hệ nội thất và ngoại thất: cùng vẻ ngoài, khác về khả năng chống chịu môi trường.",
-    ],
-    material: "Gỗ tự nhiên & ván dán — nội & ngoại thất, sản lượng lớn.",
-    surface: "Đều màu, phẳng, giữ vân — đồng nhất giữa các lô.",
-    strength: "Ít phụ thuộc tay thợ, dễ kiểm soát theo dây chuyền.",
-    cta: "Gửi ảnh hạng mục để tư vấn đúng hệ phun (nội / ngoại)",
-    image: procPhun,
-    steps: [
-      { product: "Phun lót — Lotus Wood Primer", note: "bịt lỗ, tăng bám dính" },
-      { product: "Phun màu giữ vân — Lotus Wood Stain", note: "pha loãng, phun đều 1–2 lớp" },
-      { product: "Phủ bóng — Lotus Acrylic Lacquer 2K", note: "(nội thất) hoặc PU ngoại thất (outdoor)" },
-    ],
-    stepsNote: "Tỷ lệ pha và súng phun phù hợp — nhắn Zalo để nhận hướng dẫn chi tiết",
-  },
-  {
-    n: "III",
-    slug: "mau-bet-mdf",
-    tab: "Màu Bệt MDF",
-    kicker: "Màu bệt · MDF",
-    title: "Màu bệt — hệ chuyên cho MDF",
-    body: [
-      "Màu phẳng, sạch, hiện đại — không giả vân gỗ, giữ độ bóng nhất quán toàn sản phẩm.",
-      "Lớp sơn che nền đều, không loang, giữ độ bóng hoặc mờ nhất quán trên toàn sản phẩm.",
-      "Hướng dành cho concept đương đại, nơi màu sắc và form chiếm vai trò chính.",
-    ],
-    material: "MDF — tủ bếp, tủ âm tường, cánh cửa, vách trang trí.",
-    surface: "Màu phẳng, đặc — chọn mờ / bán bóng / bóng cao.",
-    strength: "Pha theo RAL / NCS — đồng màu giữa các block.",
-    cta: "Nhắn Zalo gửi mã màu RAL / NCS để Lotus kiểm tra",
-    image: procMdf,
-    steps: [
-      { product: "Lót che nền — Lotus MDF Primer", note: "che grain MDF, tăng bám" },
-      { product: "Phun màu bệt — Lotus Topcoat", note: "màu đặc, phun 2 lớp" },
-      { product: "Phủ hoàn thiện — Lotus Clear Coat", note: "chọn độ bóng: mờ / bán bóng / bóng cao" },
-    ],
-    stepsNote: "Có thể pha màu theo mã RAL / NCS — nhắn Zalo để kiểm tra màu",
-  },
-  {
-    n: "IV",
-    slug: "phu-bong-ngoai-troi",
-    tab: "Phủ Bóng Ngoài Trời",
-    kicker: "Phủ bóng · Ngoài trời",
-    title: "Phủ bóng ngoài trời — hệ chuyên cho thời tiết",
-    body: [
-      "Kháng UV và chống thấm, co giãn cùng gỗ — bền theo chu kỳ nắng, mưa, độ ẩm.",
-      "Co giãn cùng gỗ, hạn chế nứt và bong tróc theo chu kỳ thời tiết.",
-      "Đây là một hệ riêng — không phải hệ nội thất mang ra ngoài.",
-    ],
-    material: "Lam, cửa, pergola, sàn sân vườn — hạng mục outdoor.",
-    surface: "Lớp phủ co giãn, kháng UV, chống thấm.",
-    strength: "Ổn định theo chu kỳ thời tiết, giảm tần suất bảo dưỡng.",
-    cta: "Gửi ảnh hạng mục để chọn đúng lớp phủ theo môi trường",
+type Surface = "natural" | "mdf";
+type Location = "indoor" | "outdoor";
+type NaturalFinish = "grain" | "solid";
+
+type FinishResult = {
+  name: string;
+  tag: string;
+  desc: string;
+  suitable: string;
+  spec: string;
+  products: string[];
+  image: string;
+};
+
+function resolveFinish(
+  surface: Surface,
+  location: Location,
+  naturalFinish: NaturalFinish | null,
+): FinishResult {
+  if (surface === "natural") {
+    if (location === "indoor" && naturalFinish === "grain") {
+      return {
+        name: "Hệ lau giữ vân — nội thất gỗ tự nhiên",
+        tag: "Hệ 1K · gốc nước · giữ vân thật",
+        desc:
+          "Lớp màu thấm sâu vào thớ gỗ, tôn vân thật thay vì che phủ. Bề mặt ấm, có chiều sâu, vẫn giữ cảm giác chạm vào gỗ.",
+        suitable:
+          "Sồi, óc chó, tần bì — đồ trưng bày, handcraft, nội thất cao cấp, đơn xuất khẩu EU / Mỹ.",
+        spec: "Stain lau màu → Sanding Sealer → Acrylic Lacquer trong nhà.",
+        products: ["Lotus Wood Stain", "Lotus Sanding Sealer", "Lotus Acrylic Lacquer"],
+        image: procLau,
+      };
+    }
+    if (location === "indoor" && naturalFinish === "solid") {
+      return {
+        name: "Hệ phun phủ màu — nội thất gỗ tự nhiên",
+        tag: "Hệ 2K · phun · đều màu giữa các lô",
+        desc:
+          "Lớp hoàn thiện che phủ đồng đều, ít phụ thuộc kỹ năng thợ. Phù hợp sản xuất hàng loạt, dự án nhiều block cần đồng màu.",
+        suitable:
+          "Gỗ tự nhiên & ván dán — nội thất khách sạn, căn hộ, cửa, tủ sản lượng lớn.",
+        spec: "Wood Primer → Topcoat pha màu → Clear Coat 2K nội thất.",
+        products: ["Lotus Wood Primer", "Lotus Topcoat", "Lotus Clear Coat 2K"],
+        image: procPhun,
+      };
+    }
+    if (location === "outdoor" && naturalFinish === "grain") {
+      return {
+        name: "Hệ phun giữ vân — ngoài trời",
+        tag: "Hệ 2K outdoor · kháng UV · co giãn",
+        desc:
+          "Giữ được vân gỗ tự nhiên trong điều kiện nắng mưa. Lớp phủ co giãn cùng gỗ, hạn chế nứt và bong tróc theo chu kỳ thời tiết.",
+        suitable: "Lam, cửa ngoài, pergola, mặt dựng gỗ tự nhiên ngoài trời.",
+        spec: "Outdoor Primer kháng UV → Wood Stain ngoại thất → Outdoor Topcoat.",
+        products: ["Lotus Outdoor Primer", "Lotus Outdoor Stain", "Lotus Outdoor Topcoat"],
+        image: procBong,
+      };
+    }
+    // natural + outdoor + solid
+    return {
+      name: "Hệ phủ bóng ngoài trời — màu phủ",
+      tag: "Hệ 2K outdoor · phủ kín · kháng UV",
+      desc:
+        "Lớp phủ đặc, kín, bền theo chu kỳ nắng mưa. Co giãn cùng gỗ, hạn chế nứt và bong tróc, giảm tần suất bảo dưỡng.",
+      suitable: "Cửa, lam, sàn sân vườn, hạng mục outdoor cần che phủ hoàn toàn.",
+      spec: "Outdoor Primer → Topcoat pha màu → Outdoor Clear Coat kháng UV.",
+      products: ["Lotus Outdoor Primer", "Lotus Outdoor Topcoat", "Lotus Outdoor Clear"],
+      image: procBong,
+    };
+  }
+  // surface === "mdf"
+  if (location === "indoor") {
+    return {
+      name: "Hệ màu bệt MDF — nội thất",
+      tag: "Hệ 2K · phun · pha theo RAL / NCS",
+      desc:
+        "Màu phẳng, sạch, hiện đại — không giả vân gỗ, giữ độ bóng nhất quán trên toàn sản phẩm. Pha theo mã màu, đồng đều giữa các block.",
+      suitable:
+        "Tủ bếp, tủ âm tường, cánh cửa, vách trang trí MDF — concept đương đại.",
+      spec: "MDF Primer che grain → Topcoat màu bệt → Clear Coat (mờ / bán bóng / bóng cao).",
+      products: ["Lotus MDF Primer", "Lotus Topcoat", "Lotus Clear Coat"],
+      image: procMdf,
+    };
+  }
+  // mdf + outdoor — không khuyến nghị tiêu chuẩn
+  return {
+    name: "MDF ngoài trời — cần tư vấn riêng",
+    tag: "Hạng mục không tiêu chuẩn",
+    desc:
+      "MDF tiêu chuẩn không khuyến nghị đặt trực tiếp ngoài trời. Lotus cần xem ảnh hạng mục và điều kiện che chắn để đề xuất hướng xử lý phù hợp (HMR / WBP / chuyển vật liệu).",
+    suitable: "Hạng mục bán ngoài trời, có mái che, hoặc cần thay vật liệu nền.",
+    spec: "Phương án tùy theo mức độ tiếp xúc thời tiết — xác nhận với kỹ thuật.",
+    products: ["Tư vấn theo hạng mục cụ thể"],
     image: procBong,
-    steps: [
-      { product: "Xử lý bề mặt", note: "vệ sinh, xả nhám P180, làm sạch bụi" },
-      { product: "Lót kháng UV — Lotus Outdoor Primer", note: "chống thấm, tăng bám" },
-      { product: "Phủ bóng ngoài trời — Lotus Outdoor Topcoat", note: "kháng UV, co giãn, 2–3 lớp" },
-    ],
-    stepsNote: "Số lớp và chu kỳ bảo dưỡng phụ thuộc mức độ tiếp xúc thời tiết — nhắn Zalo để xác nhận",
-  },
-];
+  };
+}
 
+function FinishFinder() {
+  const [surface, setSurface] = useState<Surface | null>(null);
+  const [location, setLocation] = useState<Location | null>(null);
+  const [naturalFinish, setNaturalFinish] = useState<NaturalFinish | null>(null);
 
+  const needsFinishStep = surface === "natural";
+  const ready =
+    surface !== null &&
+    location !== null &&
+    (!needsFinishStep || naturalFinish !== null);
 
+  const result = ready ? resolveFinish(surface!, location!, naturalFinish) : null;
 
-function ProcessEditorial() {
+  const reset = () => {
+    setSurface(null);
+    setLocation(null);
+    setNaturalFinish(null);
+  };
+
+  const StepLabel = ({ n, text }: { n: string; text: string }) => (
+    <div className="text-[10.5px] uppercase tracking-[0.28em] text-wood-500">
+      <span className="font-display text-[13px] tracking-normal text-wood-400">{n}</span>
+      <span className="mx-2.5 text-wood-300">·</span>
+      {text}
+    </div>
+  );
+
+  const Choice = ({
+    active,
+    onClick,
+    children,
+  }: {
+    active: boolean;
+    onClick: () => void;
+    children: React.ReactNode;
+  }) => (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`group flex w-full items-center justify-between gap-4 border px-5 py-4 text-left text-[14px] leading-[1.4] transition-colors sm:px-6 sm:py-5 sm:text-[15px] ${
+        active
+          ? "border-wood-900 bg-wood-900 text-background"
+          : "border-wood-200 bg-background text-wood-800 hover:border-wood-700 hover:text-wood-900"
+      }`}
+      aria-pressed={active}
+    >
+      <span>{children}</span>
+      <span
+        className={`text-[18px] leading-none transition-transform ${
+          active ? "text-background" : "text-wood-400 group-hover:translate-x-0.5"
+        }`}
+      >
+        →
+      </span>
+    </button>
+  );
+
   return (
-    <section id="quy-trinh" className="bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28">
+    <section
+      id="quy-trinh"
+      className="bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28"
+    >
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
@@ -735,156 +793,189 @@ function ProcessEditorial() {
               Các hệ hoàn thiện chính cho xưởng
             </div>
             <h2 className="font-display mt-8 text-[2.25rem] font-light leading-[1.06] text-wood-900 sm:text-5xl lg:text-[3.5rem]">
-              <span className="block">Mỗi bề mặt,</span>
+              <span className="block">Chọn đúng hệ sơn</span>
               <span className="block italic font-normal text-wood-700">
-                một hệ sơn riêng.
+                trong vài bước.
               </span>
             </h2>
           </div>
           <p className="text-[15px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6">
-            Hệ được chọn theo loại gỗ, môi trường sử dụng và yêu cầu bề mặt —
-            không chọn theo can hay theo giá.
+            Cho Lotus biết bề mặt và môi trường sử dụng — hệ phù hợp sẽ hiện ra
+            ngay, kèm cấu hình kỹ thuật và sản phẩm đại diện.
           </p>
         </div>
 
-        {/* Tab nav — anchor scroll */}
-        <nav
-          aria-label="Bốn hướng hoàn thiện"
-          className="mt-14 flex flex-wrap gap-x-2 gap-y-3 border-y border-wood-200 py-5 sm:mt-16"
-        >
-          {PROCESSES.map((p) => (
-            <a
-              key={p.slug}
-              href={`#${p.slug}`}
-              className="inline-flex items-center gap-2 rounded-full border border-wood-200 bg-background px-4 py-2 text-[12px] uppercase tracking-[0.18em] text-wood-700 transition-colors hover:border-wood-700 hover:text-wood-900"
-            >
-              <span className="font-display text-[13px] tracking-normal text-wood-400 whitespace-pre-wrap text-center">
-                {p.n}
-              </span>
-              <span className="text-wood-300">·</span>
-              {p.tab}
-            </a>
-          ))}
-        </nav>
+        {/* Finder card */}
+        <div className="mt-14 border border-wood-200 bg-[#FAF7F2] sm:mt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            {/* Steps */}
+            <div className="lg:col-span-7 lg:border-r lg:border-wood-200">
+              <div className="space-y-10 p-6 sm:p-10 lg:p-12">
+                {/* Step 1 */}
+                <div>
+                  <StepLabel n="01" text="Bề mặt thi công" />
+                  <h3 className="font-display mt-3 text-[1.25rem] font-light leading-[1.3] text-wood-900 sm:text-[1.4rem]">
+                    Anh / chị đang thi công trên bề mặt nào?
+                  </h3>
+                  <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <Choice
+                      active={surface === "natural"}
+                      onClick={() => {
+                        setSurface("natural");
+                        setNaturalFinish(null);
+                      }}
+                    >
+                      Gỗ tự nhiên / Veneer
+                    </Choice>
+                    <Choice
+                      active={surface === "mdf"}
+                      onClick={() => {
+                        setSurface("mdf");
+                        setNaturalFinish(null);
+                      }}
+                    >
+                      MDF / HDF / Gỗ công nghiệp
+                    </Choice>
+                  </div>
+                </div>
 
-        {/* 4 panels — unified 2-col system, alternating sides */}
-        <div className="mt-16 space-y-20 sm:mt-20 sm:space-y-24 lg:mt-24 lg:space-y-24">
-          {PROCESSES.map((p, i) => {
-            const imageLeft = i % 2 === 0;
-            return (
-              <article
-                key={p.n}
-                id={p.slug}
-                className="scroll-mt-24 grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
-              >
+                {/* Step 2 */}
                 <div
-                  className={`order-1 ${
-                    imageLeft
-                      ? "lg:order-1 lg:col-span-7 lg:col-start-1"
-                      : "lg:order-2 lg:col-span-7 lg:col-start-6"
+                  className={`transition-opacity ${
+                    surface ? "opacity-100" : "pointer-events-none opacity-40"
                   }`}
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <StepLabel n="02" text="Môi trường sử dụng" />
+                  <h3 className="font-display mt-3 text-[1.25rem] font-light leading-[1.3] text-wood-900 sm:text-[1.4rem]">
+                    Sản phẩm sẽ đặt ở đâu?
+                  </h3>
+                  <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <Choice
+                      active={location === "indoor"}
+                      onClick={() => surface && setLocation("indoor")}
+                    >
+                      Trong nhà
+                    </Choice>
+                    <Choice
+                      active={location === "outdoor"}
+                      onClick={() => surface && setLocation("outdoor")}
+                    >
+                      Ngoài trời
+                    </Choice>
+                  </div>
+                </div>
+
+                {/* Step 3 — chỉ hiện cho gỗ tự nhiên */}
+                {needsFinishStep && (
+                  <div
+                    className={`transition-opacity ${
+                      location ? "opacity-100" : "pointer-events-none opacity-40"
+                    }`}
+                  >
+                    <StepLabel n="03" text="Cảm giác bề mặt mong muốn" />
+                    <h3 className="font-display mt-3 text-[1.25rem] font-light leading-[1.3] text-wood-900 sm:text-[1.4rem]">
+                      Anh / chị muốn giữ vân gỗ hay phủ màu kín?
+                    </h3>
+                    <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <Choice
+                        active={naturalFinish === "grain"}
+                        onClick={() => location && setNaturalFinish("grain")}
+                      >
+                        Giữ vân tự nhiên
+                      </Choice>
+                      <Choice
+                        active={naturalFinish === "solid"}
+                        onClick={() => location && setNaturalFinish("solid")}
+                      >
+                        Phủ màu / che phủ
+                      </Choice>
+                    </div>
+                  </div>
+                )}
+
+                {ready && (
+                  <button
+                    type="button"
+                    onClick={reset}
+                    className="text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900"
+                  >
+                    ← Chọn lại từ đầu
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Result */}
+            <div className="lg:col-span-5">
+              {!result ? (
+                <div className="flex h-full min-h-[320px] items-center justify-center p-10 text-center">
+                  <p className="max-w-[260px] text-[14px] leading-[1.7] text-wood-600">
+                    Hoàn thành các bước bên {`{`}cạnh / trên{`}`} để xem hệ sơn
+                    Lotus phù hợp với hạng mục của anh / chị.
+                  </p>
+                </div>
+              ) : (
+                <article className="flex h-full flex-col">
+                  <div className="relative aspect-[5/4] overflow-hidden">
                     <img
-                      src={p.image}
-                      alt={p.title}
-                      loading="lazy"
+                      src={result.image}
+                      alt={result.name}
                       className="h-full w-full object-cover"
                     />
                   </div>
-                </div>
-
-                <div
-                  className={`order-2 ${
-                    imageLeft
-                      ? "lg:order-2 lg:col-span-4 lg:col-start-9"
-                      : "lg:order-1 lg:col-span-4 lg:col-start-1"
-                  }`}
-                >
-                  <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-500">
-                    <span className="font-display text-base not-italic tracking-normal text-wood-400">
-                      {p.n}
-                    </span>
-                    <span className="mx-3 text-wood-300">·</span>
-                    {p.kicker}
-                  </div>
-
-                  <h3 className="font-display mt-6 text-[1.7rem] font-light leading-[1.18] text-wood-900 sm:text-3xl lg:text-[2.1rem]">
-                    {p.title}
-                  </h3>
-
-                  {/* Single lead line — no long paragraph */}
-                  <p className="mt-5 text-[15px] leading-[1.7] text-wood-700/85">
-                    {p.body[0]}
-                  </p>
-
-                  {/* Spec rows — scannable */}
-                  <dl className="mt-7 divide-y divide-wood-200 border-t border-wood-200">
-                    {[
-                      { label: "Phù hợp cho", value: p.material },
-                      { label: "Mục tiêu bề mặt", value: p.surface },
-                      { label: "Điểm mạnh vận hành", value: p.strength },
-                    ].map((row) => (
-                      <div key={row.label} className="grid grid-cols-1 gap-1 py-3.5 sm:grid-cols-[140px_1fr] sm:gap-4">
-                        <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
-                          {row.label}
-                        </dt>
-                        <dd className="text-[14px] leading-[1.55] text-wood-800">
-                          {row.value}
-                        </dd>
+                  <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
+                    <div>
+                      <div className="text-[10.5px] uppercase tracking-[0.22em] text-wood-600">
+                        Hệ phù hợp
                       </div>
-                    ))}
-                  </dl>
+                      <h3 className="font-display mt-3 text-[1.35rem] font-light leading-[1.25] text-wood-900 sm:text-[1.55rem]">
+                        {result.name}
+                      </h3>
+                      <div className="mt-3 inline-flex items-center border border-wood-300 px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-wood-700">
+                        {result.tag}
+                      </div>
+                    </div>
 
+                    <p className="text-[14px] leading-[1.7] text-wood-700/85">
+                      {result.desc}
+                    </p>
 
-                  <Accordion type="single" collapsible className="mt-7 border-t border-wood-200">
-                    <AccordionItem value="steps" className="border-b-0">
-                      <AccordionTrigger className="py-4 text-[11.5px] uppercase tracking-[0.18em] text-wood-700 hover:no-underline hover:text-wood-900">
-                        Xem quy trình 3 bước →
-                      </AccordionTrigger>
-                      <AccordionContent className="pt-2">
-                        <ol className="space-y-4">
-                          {p.steps.map((s, idx) => (
-                            <li key={idx} className="flex gap-4 text-[14px] leading-[1.7] text-wood-700">
-                              <span className="font-display text-[13px] tracking-normal text-wood-400 pt-0.5">
-                                {String(idx + 1).padStart(2, "0")}
-                              </span>
-                              <span>
-                                <span className="font-medium text-wood-900">{s.product}</span>
-                                <span className="text-wood-600"> — {s.note}</span>
-                              </span>
-                            </li>
-                          ))}
-                        </ol>
-                        {p.stepsNote && (
-                          <p className="mt-5 text-[13px] italic leading-[1.7] text-wood-600">
-                            → {p.stepsNote}
-                          </p>
-                        )}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
+                    <dl className="divide-y divide-wood-200 border-t border-wood-200">
+                      {[
+                        { label: "Phù hợp cho", value: result.suitable },
+                        { label: "Cấu hình kỹ thuật", value: result.spec },
+                        { label: "Sản phẩm đại diện", value: result.products.join(" · ") },
+                      ].map((row) => (
+                        <div
+                          key={row.label}
+                          className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4"
+                        >
+                          <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                            {row.label}
+                          </dt>
+                          <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                            {row.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
 
-
-
-
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        {/* Section CTA */}
-        <div className="mt-14 text-center sm:mt-16">
-          <a
-            href={ZALO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.16em] text-wood-900 transition-colors hover:text-wood-700"
-          >
-            NHẮN ZALO ĐỂ NHẬN ĐỀ XUẤT HỆ PHÙ HỢP →
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
+                    <div className="mt-auto pt-2">
+                      <a
+                        href={ZALO}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 border-b border-wood-900 pb-1 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-wood-900 transition-colors hover:text-wood-700"
+                      >
+                        Nhắn Zalo để tư vấn hệ này
+                        <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck } from "lucide-react";
 import {
   Accordion,
@@ -36,6 +36,8 @@ export const Route = createFileRoute("/")({
 });
 
 function LotusLanding() {
+  const [isSelectorInteracting, setIsSelectorInteracting] = useState(false);
+
   return (
     <>
       <Navbar />
@@ -50,7 +52,7 @@ function LotusLanding() {
         {/* 4. Vì sao chọn hệ nước Lotus */}
         <WhyWaterSection />
         {/* 5. Các hệ hoàn thiện chính */}
-        <FinishFinder />
+        <FinishFinder onInteractionChange={setIsSelectorInteracting} />
         {/* 5b. Các dòng sản phẩm chính trong hệ */}
         <ProductsSection />
         {/* 6. Quy trình phối hợp kỹ thuật */}
@@ -65,7 +67,7 @@ function LotusLanding() {
         <ConsultBlock />
       </main>
       <Footer />
-      <StickyMobileCTA />
+      <StickyMobileCTA reducedDominance={isSelectorInteracting} />
       <StickyZalo />
     </>
   );
@@ -180,31 +182,31 @@ function TechCollaborationSection() {
       icon: Camera,
       n: "01",
       title: "Gửi ảnh & mô tả hạng mục",
-      body: "Ảnh bề mặt gỗ, loại vật liệu và môi trường sử dụng — qua Zalo, không qua form trung gian.",
+      body: "Gửi ảnh bề mặt, loại gỗ, môi trường sử dụng và yêu cầu hoàn thiện qua Zalo. Lotus nhìn đúng hạng mục trước, rồi mới đề xuất đúng hệ.",
     },
     {
       icon: FileText,
       n: "02",
       title: "Đề xuất hệ + hồ sơ kỹ thuật",
-      body: "Lotus đề xuất hệ phù hợp, gửi kèm TDS, MSDS và chứng nhận cần cho nghiệm thu hoặc buyer xuất khẩu.",
+      body: "Lotus đề xuất hệ phù hợp theo loại gỗ, môi trường sử dụng và yêu cầu bề mặt của từng hạng mục. Với công trình cần nghiệm thu hoặc đơn hàng cần hồ sơ kỹ thuật, đội ngũ gửi kèm TDS, MSDS và các chứng nhận liên quan.",
     },
     {
       icon: FlaskConical,
       n: "03",
       title: "Thử mẫu trước khi vào lô",
-      body: "Thử trên mẫu thật của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn.",
+      body: "Xưởng thử trực tiếp trên mẫu thật để chốt màu, độ bóng, độ bám và cảm giác bề mặt trước khi chạy số lượng lớn. Làm rõ từ đầu sẽ giảm lỗi khi vào lô và đỡ phát sinh lúc bàn giao.",
     },
     {
       icon: Wrench,
       n: "04",
       title: "Hỗ trợ kỹ thuật tại xưởng",
-      body: "Lần đầu chuyển hệ, kỹ sư Lotus xuống xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
+      body: "Ở lần triển khai đầu, kỹ sư Lotus hỗ trợ tỷ lệ pha, chỉnh súng phun và xử lý lỗi bề mặt ngay tại xưởng. Xưởng không phải tự dò hệ một mình khi chuyển sang hệ nước.",
     },
     {
       icon: Truck,
       n: "05",
-      title: "Cung ứng & theo dõi lô",
-      body: "Giao theo tiến độ sản xuất, theo dõi chất lượng giữa các lô và điều chỉnh khi điều kiện xưởng thay đổi.",
+      title: "Cung ứng & theo dõi theo tiến độ",
+      body: "Lotus giao hàng theo tiến độ sản xuất, theo dõi độ ổn định giữa các đợt và cùng xưởng điều chỉnh khi vật liệu, thời tiết hoặc điều kiện thi công thay đổi.",
     },
   ];
 
@@ -487,20 +489,20 @@ function WhyWaterSection() {
     {
       n: "01",
       heading: "Vận hành gọn hơn",
-      body: "Không cần pha thêm dung môi, yêu cầu thông gió đơn giản hơn PU.",
-      punch: "Giảm tải chi phí phụ trợ trong xưởng.",
+      body: "Không phải pha thêm nhiều dung môi, mùi trong xưởng nhẹ hơn và khâu xử lý cũng đơn giản hơn.",
+      punch: "GIẢM ÁP LỰC VẬN HÀNH KHI CHẠY HÀNG MỖI NGÀY.",
     },
     {
       n: "02",
       heading: "Chuyển hệ có người đi cùng",
-      body: "Kỹ sư Lotus xuống xưởng lần đầu: chuẩn tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt.",
-      punch: "Rút ngắn thời gian dò hệ.",
+      body: "Khi xưởng chuyển sang hệ nước, kỹ sư Lotus hỗ trợ tỷ lệ pha, chỉnh súng phun và xử lý lỗi bề mặt ngay từ lần chạy đầu.",
+      punch: "RÚT NGẮN THỜI GIAN DÒ HỆ — ĐỠ MẤT HÀNG, MẤT CÔNG.",
     },
     {
       n: "03",
-      heading: "Sẵn cho nghiệm thu & xuất khẩu",
-      body: "VOCs thấp theo tiêu chuẩn quốc tế, có TDS / MSDS song ngữ — phù hợp dự án cao cấp và buyer Mỹ, EU, Nhật.",
-      punch: "Hồ sơ đầy đủ — giảm vướng khi nghiệm thu.",
+      heading: "Sẵn cho nghiệm thu công trình",
+      body: "VOCs thấp, mùi nhẹ và có hồ sơ kỹ thuật khi cần — phù hợp các hạng mục nội thất cần bàn giao gọn và làm việc rõ với đội giám sát.",
+      punch: "GIẢM VƯỚNG KHI NGHIỆM THU VÀ BÀN GIAO.",
     },
   ];
 
@@ -567,8 +569,7 @@ function Hero() {
           </h1>
 
           <p className="mt-5 max-w-md text-[15.5px] leading-[1.65] text-wood-700/85">
-            Hồ sơ kỹ thuật song ngữ, pha màu RAL / NCS, kỹ sư Lotus hỗ trợ
-            trực tiếp tại xưởng — bề mặt ổn định từ mẫu đầu đến lô cuối.
+            Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, có hồ sơ kỹ thuật khi cần — để bề mặt ổn định từ mẫu đầu đến lô cuối.
           </p>
 
           {/* Trust strip */}
@@ -723,10 +724,16 @@ function resolveFinish(
   };
 }
 
-function FinishFinder() {
+function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacting: boolean) => void }) {
   const [surface, setSurface] = useState<Surface | null>(null);
   const [location, setLocation] = useState<Location | null>(null);
   const [naturalFinish, setNaturalFinish] = useState<NaturalFinish | null>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
+
+  const step1Ref = useRef<HTMLDivElement>(null);
+  const step2Ref = useRef<HTMLDivElement>(null);
+  const step3Ref = useRef<HTMLDivElement>(null);
+  const resultRef = useRef<HTMLDivElement>(null);
 
   const needsFinishStep = surface === "natural";
   const ready =
@@ -740,7 +747,73 @@ function FinishFinder() {
     setSurface(null);
     setLocation(null);
     setNaturalFinish(null);
+    setIsInteracting(false);
+    onInteractionChange(false);
+    // Scroll back to step 1 on reset
+    if (step1Ref.current && typeof window !== 'undefined' && window.innerWidth < 768) {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      step1Ref.current.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    }
   };
+
+  // Smooth scroll to next step on mobile after selection
+  useEffect(() => {
+    if (typeof window === 'undefined' || window.innerWidth >= 768) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const scrollToElement = (element: HTMLElement | null, offset = 80) => {
+      if (!element) return;
+      const elementRect = element.getBoundingClientRect();
+      const isVisible = elementRect.top >= offset && elementRect.bottom <= window.innerHeight;
+      
+      if (!isVisible) {
+        const targetPosition = elementRect.top + window.pageYOffset - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      }
+    };
+
+    // Scroll to step 2 after step 1 is selected
+    if (surface && !location && step2Ref.current) {
+      setIsInteracting(true);
+      onInteractionChange(true);
+      const timer = setTimeout(() => {
+        scrollToElement(step2Ref.current);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+
+    // Scroll to step 3 after step 2 is selected (if needed)
+    if (surface && location && needsFinishStep && !naturalFinish && step3Ref.current) {
+      const timer = setTimeout(() => {
+        scrollToElement(step3Ref.current);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+
+    // Scroll to result after final selection
+    if (ready && resultRef.current) {
+      setIsInteracting(false);
+      onInteractionChange(false);
+      const timer = setTimeout(() => {
+        scrollToElement(resultRef.current, 100);
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+
+    // Reset interaction state when not in selector
+    if (!surface) {
+      setIsInteracting(false);
+      onInteractionChange(false);
+    }
+  }, [surface, location, naturalFinish, needsFinishStep, ready, onInteractionChange]);
 
   const StepLabel = ({ n, text }: { n: string; text: string }) => (
     <div className="text-[10.5px] uppercase tracking-[0.28em] text-wood-500">
@@ -812,7 +885,7 @@ function FinishFinder() {
             <div className="lg:col-span-7 lg:border-r lg:border-wood-200">
               <div className="space-y-10 p-6 sm:p-10 lg:p-12">
                 {/* Step 1 */}
-                <div>
+                <div ref={step1Ref} className="transition-all duration-500 ease-out">
                   <StepLabel n="01" text="Bề mặt thi công" />
                   <h3 className="font-display mt-3 text-[1.25rem] font-light leading-[1.3] text-wood-900 sm:text-[1.4rem]">
                     Anh / chị đang thi công trên bề mặt nào?
@@ -841,8 +914,9 @@ function FinishFinder() {
 
                 {/* Step 2 */}
                 <div
-                  className={`transition-opacity ${
-                    surface ? "opacity-100" : "pointer-events-none opacity-40"
+                  ref={step2Ref}
+                  className={`transition-all duration-500 ease-out ${
+                    surface ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"
                   }`}
                 >
                   <StepLabel n="02" text="Môi trường sử dụng" />
@@ -868,8 +942,9 @@ function FinishFinder() {
                 {/* Step 3 — chỉ hiện cho gỗ tự nhiên */}
                 {needsFinishStep && (
                   <div
-                    className={`transition-opacity ${
-                      location ? "opacity-100" : "pointer-events-none opacity-40"
+                    ref={step3Ref}
+                    className={`transition-all duration-500 ease-out ${
+                      location ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"
                     }`}
                   >
                     <StepLabel n="03" text="Cảm giác bề mặt mong muốn" />
@@ -906,7 +981,7 @@ function FinishFinder() {
             </div>
 
             {/* Result */}
-            <div className="lg:col-span-5">
+            <div ref={resultRef} className="lg:col-span-5">
               {!result ? (
                 <div className="flex h-full min-h-[320px] items-center justify-center p-10 text-center">
                   <p className="max-w-[260px] text-[14px] leading-[1.7] text-wood-600">
@@ -915,7 +990,7 @@ function FinishFinder() {
                   </p>
                 </div>
               ) : (
-                <article className="flex h-full flex-col">
+                <article className="flex h-full flex-col transition-all duration-500 ease-out">
                   <div className="relative aspect-[5/4] overflow-hidden">
                     <img
                       src={result.image}
@@ -1299,28 +1374,36 @@ function ConsultBlock() {
    ============================================================ */
 const FAQS = [
   {
-    q: "Sơn Lotus có TDS và MSDS không? Tôi cần hồ sơ cho đơn hàng xuất khẩu.",
-    a: "Có. Toàn bộ sản phẩm đều có TDS (Technical Data Sheet) và MSDS (Material Safety Data Sheet) bằng tiếng Anh và tiếng Việt. Nhắn Zalo 0943 966 662 — chúng tôi gửi tài liệu trong giờ làm việc.",
+    q: "Lotus có hỗ trợ chọn đúng hệ theo từng hạng mục không?",
+    a: "Có. Chỉ cần gửi ảnh bề mặt, loại gỗ, môi trường sử dụng và yêu cầu hoàn thiện, Lotus sẽ đề xuất hệ phù hợp cho từng hạng mục thay vì để xưởng tự dò từ đầu.",
   },
   {
-    q: "Tôi nên chọn sơn lau hay sơn phun?",
-    a: "Sơn lau cho cảm giác gỗ thật, vân có chiều sâu — hợp đồ gỗ tự nhiên trưng bày. Sơn phun cho bề mặt đều, ổn định và dùng được cho cả nội lẫn ngoại thất. Nếu phân vân, gửi ảnh — Lotus chọn giúp.",
+    q: "Xưởng của tôi làm nội thất công trình. Lotus có hồ sơ kỹ thuật để phục vụ nghiệm thu không?",
+    a: "Có. Khi công trình cần làm việc với đội giám sát hoặc chuẩn bị hồ sơ kỹ thuật, Lotus cung cấp TDS, MSDS và các tài liệu liên quan theo từng hệ sơn.",
   },
   {
-    q: "Lotus có hỗ trợ thử mẫu vật lý trước khi lên đơn lớn không?",
-    a: "Có. Lotus khuyến khích xưởng thử trên mẫu thực tế của xưởng để xác nhận màu, độ bóng và độ bám trước khi chốt số lượng lớn. Nhắn Zalo để sắp xếp.",
+    q: "Lotus có hỗ trợ thử mẫu trước khi vào lô lớn không?",
+    a: "Có. Lotus luôn khuyến khích xưởng thử trên mẫu thật để chốt màu, độ bóng, độ bám và cảm giác bề mặt trước khi chạy số lượng lớn.",
   },
   {
-    q: "Làm số lượng lớn, làm sao đảm bảo bề mặt ổn định giữa các lô?",
-    a: "Lotus theo dõi đồng màu giữa các lô, kiểm tra chất lượng từng đợt giao và điều chỉnh khi điều kiện xưởng thay đổi — quy trình chuẩn cho sản lượng lớn và đơn xuất khẩu.",
+    q: "Lần đầu chuyển sang hệ nước, xưởng có được hỗ trợ trực tiếp không?",
+    a: "Có. Kỹ sư Lotus hỗ trợ tại xưởng ở lần triển khai đầu: từ tỷ lệ pha, chỉnh súng phun đến xử lý lỗi bề mặt trong quá trình chạy thử.",
   },
   {
-    q: "MDF có dùng cùng hệ với gỗ tự nhiên không?",
-    a: "Không. MDF cần hệ màu bệt riêng để che nền và lên màu phẳng. Dùng sai hệ, bề mặt sẽ loang, bong và xuống cấp nhanh hơn nhiều so với tuổi thọ thật của vật liệu.",
+    q: "Làm nhiều lô cho công trình, làm sao giữ bề mặt ổn định giữa các đợt giao?",
+    a: "Lotus theo dõi đồng màu, kiểm soát chất lượng giữa các lô và cùng xưởng điều chỉnh khi vật liệu, thời tiết hoặc điều kiện thi công thay đổi. Đây là phần rất quan trọng với các công trình giao theo nhiều đợt.",
   },
   {
-    q: "Lotus có hỗ trợ kỹ thuật tại xưởng khi chuyển sang hệ nước không?",
-    a: "Có. Lần đầu chuyển hệ, Lotus hỗ trợ trực tiếp tại xưởng: tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt — không để xưởng tự mò.",
+    q: "MDF và gỗ tự nhiên có dùng cùng một hệ sơn không?",
+    a: "Không. MDF, veneer và gỗ tự nhiên có đặc tính bề mặt khác nhau nên cần chọn hệ lót, lớp màu và lớp phủ phù hợp cho từng vật liệu để tránh loang màu, giảm bám dính hoặc xuống bề mặt sau thi công.",
+  },
+  {
+    q: "Lotus có hỗ trợ cho đơn hàng xuất khẩu không?",
+    a: "Có. Với các đơn hàng cần hồ sơ kỹ thuật hoặc tiêu chuẩn liên quan đến buyer, Lotus chuẩn bị TDS, MSDS và các chứng nhận phù hợp theo yêu cầu của từng đơn hàng.",
+  },
+  {
+    q: "Tôi nên liên hệ Lotus như thế nào để được tư vấn nhanh nhất?",
+    a: "Gửi ảnh hạng mục qua Zalo kèm mô tả ngắn về loại gỗ, môi trường sử dụng và yêu cầu bề mặt. Đội kỹ thuật sẽ nhìn đúng case trước rồi mới đề xuất hệ phù hợp.",
   },
 ];
 

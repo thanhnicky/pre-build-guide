@@ -28,6 +28,13 @@ import sonPhunWeb from "@/assets/son-phun-lotus-web.webp";
 import sonLauWeb from "@/assets/son-lau-lotus-web.jpg";
 import mauBetGoTuNhien from "@/assets/mau-bet-go-tu-nhien.jpg";
 import sonBetMdfLotus from "@/assets/son-bet-mdf-lotus.jpg";
+import pullmanPhuQuoc from "@/assets/pullman-phu-quoc-lt.jpg";
+import masteriseHn from "@/assets/masterise-hn-lt.webp";
+import grandMarinaSaigon from "@/assets/grand-marina-saigon-lt.webp";
+import nhaMayCasta from "@/assets/nha-may-casta.png";
+import pacificFur from "@/assets/pacific-fur.jpg";
+import aeonLongan from "@/assets/aeon-longan.webp";
+import aeonTanAn from "@/assets/aeon-tan-an.jpg";
 
 const ZALO = "https://zalo.me/0943966662";
 
@@ -1486,51 +1493,45 @@ function ProductsSection() {
 const PROJECTS = [
   {
     tag: "HỆ PHUN · NỘI THẤT",
-    name: "Khách sạn 5 sao — The Grand Saigon",
+    name: "Grand Marina Saigon",
     type: "Nội thất phòng & hành lang · TP.HCM · 2024",
     note: "320 phòng · đồng màu giữa các lô giao · bàn giao theo tiến độ dự án.",
-    image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1400&q=70",
+    image: grandMarinaSaigon,
   },
   {
     tag: "MÀU BỆT · MDF",
-    name: "Masterise Homes — The Global City",
+    name: "Masterise Hàng Bài - Hà Nội",
     type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
     note: "500 bộ · pha theo RAL · đồng màu ổn định giữa 4 block.",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=70",
+    image: masteriseHn,
   },
   {
     tag: "HỆ LAU · XUẤT KHẨU EU",
-    name: "Xưởng XK Đức — Đơn hàng nội thất nguyên khối",
+    name: "Khách sạn Pullman Phú Quốc",
     type: "Bàn & ghế gỗ tự nhiên · TP.HCM · 2023",
     note: "1.200 sản phẩm · hồ sơ TDS/MSDS song ngữ phục vụ kiểm hàng buyer Đức.",
-    image:
-      "https://images.unsplash.com/photo-1611021061285-870b3b39de92?auto=format&fit=crop&w=1400&q=70",
+    image: pullmanPhuQuoc,
   },
   {
     tag: "PHỦ BÓNG · OUTDOOR",
-    name: "Biệt thự cao cấp — Dự án Sun Group",
+    name: "Nhà Máy Casta - Long Khánh",
     type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
     note: "Phủ kháng UV · bề mặt giữ ổn định sau 3 mùa vận hành ngoài trời.",
-    image:
-      "https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?auto=format&fit=crop&w=1400&q=70",
+    image: nhaMayCasta,
   },
   {
     tag: "MÀU BỆT · MDF",
-    name: "Novaland — Aqua City",
+    name: "Nhà Máy Pacific Furniture",
     type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
     note: "800 bộ · đồng màu RAL giữa 4 block.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70",
+    image: pacificFur,
   },
   {
     tag: "HỆ LAU · NỘI THẤT",
-    name: "Chuỗi nhà hàng — Saigon Centre",
+    name: "AEON Tân An - Long An",
     type: "Bàn ghế & vách ốp gỗ · TP.HCM · 2022",
     note: "Bề mặt giữ ổn định sau 2 năm vận hành cường độ cao.",
-    image:
-      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=70",
+    image: aeonTanAn,
   },
 ];
 

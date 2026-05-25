@@ -7,8 +7,10 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { label: "An toàn", href: "#tieu-chuan" },
-    { label: "Quy trình", href: "#quy-trinh" },
+    { label: "Chọn hệ sơn", href: "#chon-he-son" },
+    { label: "Sản phẩm", href: "#san-pham" },
+    { label: "Quy trình", href: "#phoi-hop" },
+    { label: "Chứng nhận", href: "#tieu-chuan" },
     { label: "Dự án", href: "#cong-trinh" },
     { label: "Hỏi đáp", href: "#faq" },
   ];
@@ -20,12 +22,12 @@ export function Navbar() {
           <img src={logo} alt="Lotus Paint" className="h-9 w-auto object-contain" />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-[13px] tracking-wide text-wood-700 transition-colors hover:text-wood-900"
+              className="text-[12.5px] tracking-wide text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -35,7 +37,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="tel:0943966662"
-            className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900"
+            className="text-[12px] tracking-wide text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap"
           >
             0943 966 662
           </a>
@@ -43,7 +45,7 @@ export function Navbar() {
             href="https://zalo.me/0943966662"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-wood-900 px-4 py-2 text-[13px] font-medium tracking-wide text-background transition-colors hover:bg-wood-800"
+            className="inline-flex items-center gap-1.5 rounded-full bg-wood-900 px-3.5 py-2 text-[12.5px] font-medium tracking-wide text-background transition-colors hover:bg-wood-800"
           >
             <MessageCircle className="h-3.5 w-3.5" />
             Zalo

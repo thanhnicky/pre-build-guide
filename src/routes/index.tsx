@@ -18,6 +18,12 @@ import procLau from "@/assets/proc-lau.jpg";
 import procPhun from "@/assets/proc-phun.jpg";
 import procMdf from "@/assets/proc-mdf.jpg";
 import procBong from "@/assets/proc-bong.jpg";
+import keoTramTret from "@/assets/keo-tram-tret-go-lotus-wood-filler.png";
+import sonLot from "@/assets/son-lot-lap-tim-va-lam-phang-go-lotus-sanding-sealer.png";
+import heGiVan from "@/assets/son-tao-mau-go-va-hoan-thien-go-noi-that-lotus-woodstain-finish-interior.png";
+import heMauBet from "@/assets/son-phu-mau-go-noi-that-lotus-wood-paint-indoor.png";
+import heBaoVeNgoaiThat from "@/assets/son-phu-acrylic-lacquer-ngoai-that-lotus-lacquer-exterior.png";
+import heSon2K from "@/assets/2k- lacquer 2k72 out door-1.png";
 
 const ZALO = "https://zalo.me/0943966662";
 
@@ -233,21 +239,32 @@ function TechCollaborationSection() {
         </div>
 
         <ol className="mt-14 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
-          {steps.map((s) => (
+          {steps.map((s, index) => (
             <li
               key={s.n}
-              className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6"
+              className="relative flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6"
             >
-              <div className="flex items-center justify-between">
-                <s.icon className="h-5 w-5 text-wood-700" strokeWidth={1.5} />
-                <span className="font-display text-[13px] tracking-normal text-wood-400">
-                  {s.n}
-                </span>
+              {/* Desktop arrow connector */}
+              {index < steps.length - 1 && (
+                <div className="absolute -right-2.5 top-8 hidden lg:block z-10">
+                  <ChevronRight className="h-5 w-5 text-wood-300" strokeWidth={1.5} />
+                </div>
+              )}
+              
+              {/* Prominent step number */}
+              <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">
+                {s.n}
               </div>
-              <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900">
-                {s.title}
-              </h3>
-              <p className="text-[13.5px] leading-[1.65] text-wood-700/85">
+              
+              {/* Icon and title */}
+              <div className="flex items-start gap-3 -mt-2">
+                <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
+                <h3 className="font-display text-[15px] font-semibold leading-[1.3] text-wood-900 sm:text-[16px]">
+                  {s.title}
+                </h3>
+              </div>
+              
+              <p className="text-[13px] leading-[1.65] text-wood-700/85 sm:text-[13.5px]">
                 {s.body}
               </p>
             </li>
@@ -561,13 +578,13 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            SƠN GỖ HỆ NƯỚC CHO XƯỞNG NỘI THẤT
+            SƠN GỖ HỆ NƯỚC
           </div>
 
           <h1 className="font-display mt-6 text-[2.25rem] font-light leading-[1.08] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]">
             <span className="block">Sơn gỗ hệ nước cho</span>
             <span className="block italic font-normal text-wood-700">
-              xưởng nội thất công trình.
+              xưởng nội thất công trình và nội thất xuất khẩu.
             </span>
           </h1>
 
@@ -605,7 +622,7 @@ function Hero() {
             </a>
             <a
               href="tel:0943966662"
-              className="text-[13px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900"
+              className="text-[12.5px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap"
             >
               Hoặc gọi kỹ thuật <span className="underline underline-offset-4">0943 966 662</span>
             </a>
@@ -614,11 +631,11 @@ function Hero() {
 
         {/* Right — image */}
         <div className="lg:col-span-7">
-          <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/6] lg:aspect-[4/5]">
+          <div className="relative aspect-[4/5] overflow-hidden bg-wood-200/40 sm:aspect-[5/6] lg:aspect-[4/5]">
             <img
               src={heroImg}
               alt="Bề mặt gỗ hoàn thiện Lotus"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-center"
             />
           </div>
         </div>
@@ -1117,7 +1134,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                     </div>
                   )}
 
-                  <div className="relative aspect-[5/4] overflow-hidden">
+                  <div className="relative aspect-[5/4] overflow-hidden bg-wood-200/40">
                     <img
                       src={
                         coatingSystem.methodType === "dual"
@@ -1127,7 +1144,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                           : coatingSystem.singleMethod?.image
                       }
                       alt={coatingSystem.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-center"
                     />
                   </div>
 
@@ -1266,35 +1283,42 @@ const PRODUCT_GROUPS = [
     description: "Chuẩn bị bề mặt gỗ trước khi sơn, xử lý khuyết điểm và tăng độ bám dính",
     usage: "Trám vết nứt, lỗ nhỏ trên gỗ tự nhiên và MDF trước khi lót và phủ",
     products: ["Lotus Wood Filler", "Lotus Putty"],
-    image: heroWood,
+    image: keoTramTret,
   },
   {
     title: "Sơn lót",
     description: "Lớp nền tăng bám dính, bịt lỗ và chuẩn bị bề mặt cho lớp phủ",
     usage: "Lót cho hệ lau, phun và màu bệt trên gỗ tự nhiên và MDF",
     products: ["Lotus Wood Primer", "Lotus MDF Primer"],
-    image: procPhun,
+    image: sonLot,
   },
   {
     title: "Hệ giữ vân",
     description: "Tôn màu vân gỗ tự nhiên, thấm sâu và bảo vệ độ đẹp của gỗ",
     usage: "Đồ gỗ trưng bày, handcraft, nội thất cao cấp giữ vân thật",
     products: ["Lotus Wood Stain", "Lotus Sanding Sealer", "Lotus Clear Coat"],
-    image: procLau,
+    image: heGiVan,
   },
   {
     title: "Hệ màu bệt",
     description: "Lên màu đặc, phẳng, che nền đều theo mã màu RAL/NCS",
     usage: "MDF, tủ bếp, tủ âm tường, vách trang trí theo concept đương đại",
     products: ["Lotus Topcoat", "Lotus Wood Paint"],
-    image: procMdf,
+    image: heMauBet,
   },
   {
     title: "Hệ bảo vệ ngoài trời",
     description: "Kháng UV, chống thấm, co giãn cùng gỗ cho hạng mục outdoor",
     usage: "Lam, sàn deck, cửa, pergola, mặt dựng gỗ ngoài trời",
     products: ["Lotus Outdoor Primer", "Lotus Outdoor Topcoat", "Lotus PUD EX"],
-    image: procBong,
+    image: heBaoVeNgoaiThat,
+  },
+  {
+    title: "Hệ sơn 2K",
+    description: "Tăng độ cứng, độ bền bề mặt và khả năng chịu va chạm cho hạng mục sử dụng thường xuyên",
+    usage: "Bề mặt bàn, tủ bếp, tủ áo, cửa và các chi tiết cần độ bền cao trong quá trình sử dụng",
+    products: ["Lotus 2K Topcoat", "Lotus 2K Clear Coat"],
+    image: heSon2K,
   },
 ];
 
@@ -1328,12 +1352,11 @@ function ProductsSection() {
               key={index}
               className="flex flex-col overflow-hidden rounded-lg border border-wood-200/60 bg-background"
             >
-              <div className="relative aspect-[16/9] overflow-hidden bg-wood-200/60">
+              <div className="product-image-frame">
                 <img
                   src={group.image}
                   alt={group.title}
                   loading="lazy"
-                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="flex flex-col gap-4 p-6">
@@ -1387,12 +1410,12 @@ function ProductsSection() {
                 onClick={() => setExpandedGroup(expandedGroup === index ? null : index)}
                 className="flex w-full items-start gap-4 p-4 text-left"
               >
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded bg-wood-200/60">
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded bg-wood-200/40 flex items-end justify-center">
                   <img
                     src={group.image}
                     alt={group.title}
                     loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain object-bottom p-2 pt-0"
                   />
                 </div>
                 <div className="flex flex-1 flex-col">
@@ -1530,12 +1553,12 @@ function Lookbook() {
               key={`feat-${i}`}
               className="overflow-hidden rounded-lg bg-[#FDFAF7] shadow-sm ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
             >
-              <div className="relative aspect-[3/2] overflow-hidden bg-wood-200/60">
+              <div className="relative aspect-[3/2] overflow-hidden bg-wood-200/40">
                 <img
                   src={p.image}
                   alt={p.name}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-center"
                 />
                 <span className="absolute left-4 top-4 rounded-full bg-wood-900/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-background backdrop-blur-sm">
                   {p.tag}
@@ -1561,12 +1584,12 @@ function Lookbook() {
               key={`sm-${i}`}
               className="overflow-hidden rounded-lg bg-[#FDFAF7] ring-1 ring-wood-200/60 transition-shadow hover:shadow-md"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/60">
+              <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/40">
                 <img
                   src={p.image}
                   alt={p.name}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-center"
                 />
                 <span className="absolute left-3 top-3 rounded-full bg-wood-900/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-background backdrop-blur-sm">
                   {p.tag}

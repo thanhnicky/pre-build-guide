@@ -642,88 +642,167 @@ type FinishResult = {
   spec: string;
   products: string[];
   image: string;
-};
+}
 
-function resolveFinish(
+// New data structure for coating systems
+type CoatingMethod = "lau" | "phun" | "single";
+
+interface CoatingSystem {
+  title: string;
+  badge: string;
+  suitableFor: string;
+  notes?: string;
+  methodType: "single" | "dual" | "special";
+  singleMethod?: {
+    process: string;
+    representativeProducts: string[];
+    image: string;
+    notes?: string;
+  };
+  methodLau?: {
+    process: string;
+    representativeProducts: string[];
+    image: string;
+    notes?: string;
+  };
+  methodPhun?: {
+    process: string;
+    representativeProducts: string[];
+    image: string;
+    notes?: string;
+  };
+  specialCase?: {
+    advisory: string;
+    needsConsultation: boolean;
+  };
+  image?: string; // Fallback image for special cases
+}
+
+function resolveCoatingSystem(
   surface: Surface,
   location: Location,
   naturalFinish: NaturalFinish | null,
-): FinishResult {
-  if (surface === "natural") {
-    if (location === "indoor" && naturalFinish === "grain") {
+): CoatingSystem {
+  // Dual-method cases: Gỗ tự nhiên/Veneer + Giữ vân
+  if (surface === "natural" && naturalFinish === "grain") {
+    if (location === "indoor") {
       return {
-        name: "Hệ lau giữ vân — nội thất gỗ tự nhiên",
-        tag: "Hệ 1K · gốc nước · giữ vân thật",
-        desc:
-          "Lớp màu thấm sâu vào thớ gỗ, tôn vân thật thay vì che phủ. Bề mặt ấm, có chiều sâu, vẫn giữ cảm giác chạm vào gỗ.",
-        suitable:
-          "Sồi, óc chó, tần bì — đồ trưng bày, handcraft, nội thất cao cấp, đơn xuất khẩu EU / Mỹ.",
-        spec: "Stain lau màu → Sanding Sealer → Acrylic Lacquer trong nhà.",
-        products: ["Lotus Wood Stain", "Lotus Sanding Sealer", "Lotus Acrylic Lacquer"],
-        image: procLau,
+        title: "Hệ hoàn thiện gỗ tự nhiên — giữ vân",
+        badge: "Hệ 1K · gốc nước · giữ vân thật",
+        suitableFor: "Sồi, óc chó, tần bì — đồ trưng bày, handcraft, nội thất cao cấp.",
+        methodType: "dual",
+        methodLau: {
+          process: "Stain lau màu → Sanding Sealer → Acrylic Lacquer trong nhà.",
+          representativeProducts: ["Lotus Wood Stain", "Lotus Sanding Sealer", "Lotus Acrylic Lacquer"],
+          image: procLau,
+          notes: "Lau màu cần kỹ thuật tốt, phù hợp xưởng có tay nghề cao. Đảm bảo sấy khô đủ giữa các lớp.",
+        },
+        methodPhun: {
+          process: "Wood Primer → Wood Stain ngoại thất → Clear Coat 2K.",
+          representativeProducts: ["Lotus Wood Primer", "Lotus Wood Stain", "Lotus Clear Coat 2K"],
+          image: procPhun,
+          notes: "Phun cho độ đồng đều cao, phù hợp sản xuất hàng loạt. Cần kiểm soát độ ẩm và nhiệt độ sấy.",
+        },
       };
     }
-    if (location === "indoor" && naturalFinish === "solid") {
+    if (location === "outdoor") {
       return {
-        name: "Hệ phun phủ màu — nội thất gỗ tự nhiên",
-        tag: "Hệ 2K · phun · đều màu giữa các lô",
-        desc:
-          "Lớp hoàn thiện che phủ đồng đều, ít phụ thuộc kỹ năng thợ. Phù hợp sản xuất hàng loạt, dự án nhiều block cần đồng màu.",
-        suitable:
-          "Gỗ tự nhiên & ván dán — nội thất khách sạn, căn hộ, cửa, tủ sản lượng lớn.",
-        spec: "Wood Primer → Topcoat pha màu → Clear Coat 2K nội thất.",
-        products: ["Lotus Wood Primer", "Lotus Topcoat", "Lotus Clear Coat 2K"],
-        image: procPhun,
+        title: "Hệ hoàn thiện gỗ tự nhiên — giữ vân ngoài trời",
+        badge: "Hệ 2K outdoor · kháng UV · co giãn",
+        suitableFor: "Lam, cửa ngoài, pergola, mặt dựng gỗ tự nhiên ngoài trời.",
+        methodType: "dual",
+        methodLau: {
+          process: "Outdoor Primer kháng UV → Wood Stain ngoại thất → Outdoor Topcoat.",
+          representativeProducts: ["Lotus Outdoor Primer", "Lotus Outdoor Stain", "Lotus Outdoor Topcoat"],
+          image: procBong,
+          notes: "Lau màu ngoài trời cần bảo quản kỹ, tránh mưa trong quá trình thi công. Kiểm tra độ ẩm gỗ trước khi bôi.",
+        },
+        methodPhun: {
+          process: "Outdoor Primer kháng UV → Wood Stain ngoại thất → Outdoor Topcoat 2K.",
+          representativeProducts: ["Lotus Outdoor Primer", "Lotus Outdoor Stain", "Lotus Outdoor Topcoat 2K"],
+          image: procBong,
+          notes: "Phun ngoài trời cần điều kiện thời tiết ổn định. Tránh phun khi độ ẩm cao hoặc có gió mạnh.",
+        },
       };
     }
-    if (location === "outdoor" && naturalFinish === "grain") {
+  }
+
+  // Single-method cases
+  if (surface === "natural" && naturalFinish === "solid") {
+    if (location === "indoor") {
       return {
-        name: "Hệ phun giữ vân — ngoài trời",
-        tag: "Hệ 2K outdoor · kháng UV · co giãn",
-        desc:
-          "Giữ được vân gỗ tự nhiên trong điều kiện nắng mưa. Lớp phủ co giãn cùng gỗ, hạn chế nứt và bong tróc theo chu kỳ thời tiết.",
-        suitable: "Lam, cửa ngoài, pergola, mặt dựng gỗ tự nhiên ngoài trời.",
-        spec: "Outdoor Primer kháng UV → Wood Stain ngoại thất → Outdoor Topcoat.",
-        products: ["Lotus Outdoor Primer", "Lotus Outdoor Stain", "Lotus Outdoor Topcoat"],
+        title: "Hệ phun phủ màu — nội thất gỗ tự nhiên",
+        badge: "Hệ 2K · phun · đều màu giữa các lô",
+        suitableFor: "Gỗ tự nhiên & ván dán — nội thất khách sạn, căn hộ, cửa, tủ sản lượng lớn.",
+        methodType: "single",
+        singleMethod: {
+          process: "Wood Primer → Topcoat pha màu → Clear Coat 2K nội thất.",
+          representativeProducts: ["Lotus Wood Primer", "Lotus Topcoat", "Lotus Clear Coat 2K"],
+          image: procPhun,
+          notes: "Pha màu theo RAL/NCS, cần test mẫu trước khi sản xuất hàng loạt. Đảm bảo sấy khô đủ giữa các lớp.",
+        },
+      };
+    }
+    if (location === "outdoor") {
+      return {
+        title: "Hệ phủ bóng ngoài trời — màu phủ",
+        badge: "Hệ 2K outdoor · phủ kín · kháng UV",
+        suitableFor: "Cửa, lam, sàn sân vườn, hạng mục outdoor cần che phủ hoàn toàn.",
+        methodType: "single",
+        singleMethod: {
+          process: "Outdoor Primer → Topcoat pha màu → Outdoor Clear Coat kháng UV.",
+          representativeProducts: ["Lotus Outdoor Primer", "Lotus Outdoor Topcoat", "Lotus Outdoor Clear"],
+          image: procBong,
+          notes: "Hệ outdoor cần thi công trong điều kiện thời tiết ổn định. Bảo dưỡng định kỳ 6-12 tháng tùy điều kiện.",
+        },
+      };
+    }
+  }
+
+  // MDF cases
+  if (surface === "mdf") {
+    if (location === "indoor") {
+      return {
+        title: "Hệ màu bệt MDF — nội thất",
+        badge: "Hệ 2K · phun · pha theo RAL / NCS",
+        suitableFor: "Tủ bếp, tủ âm tường, cánh cửa, vách trang trí MDF — concept đương đại.",
+        methodType: "single",
+        singleMethod: {
+          process: "MDF Primer che grain → Topcoat màu bệt → Clear Coat (mờ / bán bóng / bóng cao).",
+          representativeProducts: ["Lotus MDF Primer", "Lotus Topcoat", "Lotus Clear Coat"],
+          image: procMdf,
+          notes: "MDF cần xử lý bề mặt kỹ trước khi sơn. Sử dụng MDF Primer để che grain và tăng độ bám dính.",
+        },
+      };
+    }
+    if (location === "outdoor") {
+      // Special case: MDF outdoor
+      return {
+        title: "MDF ngoài trời — cần tư vấn riêng",
+        badge: "Hạng mục cần tư vấn",
+        suitableFor: "Hạng mục bán ngoài trời, có mái che, hoặc cần thay vật liệu nền.",
+        methodType: "special",
+        specialCase: {
+          advisory: "MDF tiêu chuẩn không khuyến nghị đặt trực tiếp ngoài trời. Lotus cần xem ảnh hạng mục và điều kiện che chắn để đề xuất hướng xử lý phù hợp (HMR / WBP / chuyển vật liệu).",
+          needsConsultation: true,
+        },
+        notes: "Liên hệ kỹ thuật Lotus để được tư vấn giải pháp phù hợp cho hạng mục bán ngoài trời.",
         image: procBong,
       };
     }
-    // natural + outdoor + solid
-    return {
-      name: "Hệ phủ bóng ngoài trời — màu phủ",
-      tag: "Hệ 2K outdoor · phủ kín · kháng UV",
-      desc:
-        "Lớp phủ đặc, kín, bền theo chu kỳ nắng mưa. Co giãn cùng gỗ, hạn chế nứt và bong tróc, giảm tần suất bảo dưỡng.",
-      suitable: "Cửa, lam, sàn sân vườn, hạng mục outdoor cần che phủ hoàn toàn.",
-      spec: "Outdoor Primer → Topcoat pha màu → Outdoor Clear Coat kháng UV.",
-      products: ["Lotus Outdoor Primer", "Lotus Outdoor Topcoat", "Lotus Outdoor Clear"],
-      image: procBong,
-    };
   }
-  // surface === "mdf"
-  if (location === "indoor") {
-    return {
-      name: "Hệ màu bệt MDF — nội thất",
-      tag: "Hệ 2K · phun · pha theo RAL / NCS",
-      desc:
-        "Màu phẳng, sạch, hiện đại — không giả vân gỗ, giữ độ bóng nhất quán trên toàn sản phẩm. Pha theo mã màu, đồng đều giữa các block.",
-      suitable:
-        "Tủ bếp, tủ âm tường, cánh cửa, vách trang trí MDF — concept đương đại.",
-      spec: "MDF Primer che grain → Topcoat màu bệt → Clear Coat (mờ / bán bóng / bóng cao).",
-      products: ["Lotus MDF Primer", "Lotus Topcoat", "Lotus Clear Coat"],
-      image: procMdf,
-    };
-  }
-  // mdf + outdoor — không khuyến nghị tiêu chuẩn
+
+  // Fallback
   return {
-    name: "MDF ngoài trời — cần tư vấn riêng",
-    tag: "Hạng mục không tiêu chuẩn",
-    desc:
-      "MDF tiêu chuẩn không khuyến nghị đặt trực tiếp ngoài trời. Lotus cần xem ảnh hạng mục và điều kiện che chắn để đề xuất hướng xử lý phù hợp (HMR / WBP / chuyển vật liệu).",
-    suitable: "Hạng mục bán ngoài trời, có mái che, hoặc cần thay vật liệu nền.",
-    spec: "Phương án tùy theo mức độ tiếp xúc thời tiết — xác nhận với kỹ thuật.",
-    products: ["Tư vấn theo hạng mục cụ thể"],
-    image: procBong,
+    title: "Hệ hoàn thiện gỗ",
+    badge: "Tùy chọn",
+    suitableFor: "Liên hệ kỹ thuật để được tư vấn chi tiết.",
+    methodType: "single",
+    singleMethod: {
+      process: "Tùy theo hạng mục cụ thể.",
+      representativeProducts: ["Tư vấn theo hạng mục"],
+      image: procLau,
+    },
   };
 }
 
@@ -733,6 +812,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   const [naturalFinish, setNaturalFinish] = useState<NaturalFinish | null>(null);
   const [isInteracting, setIsInteracting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedMethod, setSelectedMethod] = useState<"lau" | "phun">("lau");
 
   const step1Ref = useRef<HTMLDivElement>(null);
   const step2Ref = useRef<HTMLDivElement>(null);
@@ -746,7 +826,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
     location !== null &&
     (!needsFinishStep || naturalFinish !== null);
 
-  const result = ready ? resolveFinish(surface!, location!, naturalFinish) : null;
+  const coatingSystem = ready ? resolveCoatingSystem(surface!, location!, naturalFinish) : null;
 
   const reset = () => {
     setSurface(null);
@@ -846,6 +926,13 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
     return () => observer.disconnect();
   }, []);
+
+  // Reset method selection when coating system changes
+  useEffect(() => {
+    if (coatingSystem) {
+      setSelectedMethod("lau");
+    }
+  }, [coatingSystem?.title, coatingSystem?.badge]);
 
   const StepLabel = ({ n, text }: { n: string; text: string }) => (
     <div className="text-[10.5px] uppercase tracking-[0.28em] text-wood-500">
@@ -1021,7 +1108,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
             {/* Result */}
             <div ref={resultRef} className="lg:col-span-5">
-              {!result ? (
+              {!coatingSystem ? (
                 <div className="flex h-full min-h-[320px] items-center justify-center p-10 text-center">
                   <p className="max-w-[260px] text-[14px] leading-[1.7] text-wood-600">
                     Hoàn thành các bước để xem hệ sơn Lotus phù hợp với hạng
@@ -1030,49 +1117,176 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                 </div>
               ) : (
                 <article className="flex h-full flex-col transition-all duration-500 ease-out">
+                  {/* Special case advisory */}
+                  {coatingSystem.methodType === "special" && coatingSystem.specialCase && (
+                    <div className="bg-wood-50 border-b border-wood-200 p-4 sm:p-5">
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-wood-200 flex items-center justify-center">
+                          <span className="text-[11px] font-semibold text-wood-700">!</span>
+                        </div>
+                        <p className="text-[13px] leading-[1.6] text-wood-700">
+                          {coatingSystem.specialCase.advisory}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Dual method tabs */}
+                  {coatingSystem.methodType === "dual" && (
+                    <div className="flex border-b border-wood-200 bg-wood-50/50">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedMethod("lau")}
+                        className={`flex-1 px-4 py-3 text-[12.5px] font-medium uppercase tracking-[0.14em] transition-colors ${
+                          selectedMethod === "lau"
+                            ? "border-b-2 border-wood-900 text-wood-900"
+                            : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"
+                        }`}
+                      >
+                        Lau
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedMethod("phun")}
+                        className={`flex-1 px-4 py-3 text-[12.5px] font-medium uppercase tracking-[0.14em] transition-colors ${
+                          selectedMethod === "phun"
+                            ? "border-b-2 border-wood-900 text-wood-900"
+                            : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"
+                        }`}
+                      >
+                        Phun
+                      </button>
+                    </div>
+                  )}
+
                   <div className="relative aspect-[5/4] overflow-hidden">
                     <img
-                      src={result.image}
-                      alt={result.name}
+                      src={
+                        coatingSystem.methodType === "dual"
+                          ? selectedMethod === "lau"
+                            ? coatingSystem.methodLau?.image
+                            : coatingSystem.methodPhun?.image
+                          : coatingSystem.methodType === "single"
+                          ? coatingSystem.singleMethod?.image
+                          : coatingSystem.image
+                      }
+                      alt={coatingSystem.title}
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
+
+                  <div className="flex flex-1 flex-col gap-6 p-6 sm:p-8">
                     <div>
                       <div className="text-[10.5px] uppercase tracking-[0.22em] text-wood-600">
                         Hệ phù hợp
                       </div>
                       <h3 className="font-display mt-3 text-[1.35rem] font-light leading-[1.25] text-wood-900 sm:text-[1.55rem]">
-                        {result.name}
+                        {coatingSystem.title}
                       </h3>
                       <div className="mt-3 inline-flex items-center border border-wood-300 px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-wood-700">
-                        {result.tag}
+                        {coatingSystem.badge}
                       </div>
                     </div>
 
-                    <p className="text-[14px] leading-[1.7] text-wood-700/85">
-                      {result.desc}
-                    </p>
+                    {coatingSystem.notes && (
+                      <p className="text-[13px] leading-[1.6] text-wood-600/80 italic">
+                        {coatingSystem.notes}
+                      </p>
+                    )}
 
                     <dl className="divide-y divide-wood-200 border-t border-wood-200">
-                      {[
-                        { label: "Phù hợp cho", value: result.suitable },
-                        { label: "Cấu hình kỹ thuật", value: result.spec },
-                        { label: "Sản phẩm đại diện", value: result.products.join(" · ") },
-                      ].map((row) => (
-                        <div
-                          key={row.label}
-                          className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4"
-                        >
-                          <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
-                            {row.label}
-                          </dt>
-                          <dd className="text-[13.5px] leading-[1.55] text-wood-800">
-                            {row.value}
-                          </dd>
-                        </div>
-                      ))}
+                      <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                        <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                          Phù hợp cho
+                        </dt>
+                        <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                          {coatingSystem.suitableFor}
+                        </dd>
+                      </div>
+
+                      {/* Show method-specific content */}
+                      {coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && (
+                        <>
+                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                            <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                              Cấu hình kỹ thuật (Lau)
+                            </dt>
+                            <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                              {coatingSystem.methodLau.process}
+                            </dd>
+                          </div>
+                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                            <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                              Sản phẩm đại diện (Lau)
+                            </dt>
+                            <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                              {coatingSystem.methodLau.representativeProducts.join(" · ")}
+                            </dd>
+                          </div>
+                        </>
+                      )}
+
+                      {coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && (
+                        <>
+                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                            <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                              Cấu hình kỹ thuật (Phun)
+                            </dt>
+                            <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                              {coatingSystem.methodPhun.process}
+                            </dd>
+                          </div>
+                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                            <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                              Sản phẩm đại diện (Phun)
+                            </dt>
+                            <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                              {coatingSystem.methodPhun.representativeProducts.join(" · ")}
+                            </dd>
+                          </div>
+                        </>
+                      )}
+
+                      {coatingSystem.methodType === "single" && coatingSystem.singleMethod && (
+                        <>
+                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                            <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                              Cấu hình kỹ thuật
+                            </dt>
+                            <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                              {coatingSystem.singleMethod.process}
+                            </dd>
+                          </div>
+                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                            <dt className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5">
+                              Sản phẩm đại diện
+                            </dt>
+                            <dd className="text-[13.5px] leading-[1.55] text-wood-800">
+                              {coatingSystem.singleMethod.representativeProducts.join(" · ")}
+                            </dd>
+                          </div>
+                        </>
+                      )}
                     </dl>
+
+                    {/* Notes section */}
+                    {((coatingSystem.methodType === "single" && coatingSystem.singleMethod?.notes) ||
+                      (coatingSystem.methodType === "dual" &&
+                        (selectedMethod === "lau" ? coatingSystem.methodLau?.notes : coatingSystem.methodPhun?.notes)) ||
+                      coatingSystem.notes) && (
+                      <div className="mt-4 rounded-lg bg-wood-50/50 p-4">
+                        <div className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-600">
+                          GHI CHÚ / LƯU Ý THI CÔNG
+                        </div>
+                        <p className="mt-2 text-[13px] leading-[1.6] text-wood-700">
+                          {coatingSystem.methodType === "dual"
+                            ? selectedMethod === "lau"
+                              ? coatingSystem.methodLau?.notes || coatingSystem.notes
+                              : coatingSystem.methodPhun?.notes || coatingSystem.notes
+                            : coatingSystem.singleMethod?.notes || coatingSystem.notes}
+                        </p>
+                      </div>
+                    )}
 
                     <div className="mt-auto pt-2">
                       <a

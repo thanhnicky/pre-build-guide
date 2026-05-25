@@ -148,11 +148,29 @@ const __iconNode$d = [
 ];
 const Globe = createLucideIcon("globe", __iconNode$d);
 const __iconNode$c = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+  [
+    "path",
+    {
+      d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
+      key: "zw3jo"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
+      key: "1wduqc"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
+      key: "kqbvx6"
+    }
+  ]
 ];
-const Image = createLucideIcon("image", __iconNode$c);
+const Layers = createLucideIcon("layers", __iconNode$c);
 const __iconNode$b = [
   [
     "path",
@@ -277,8 +295,7 @@ export {
   Camera as C,
   Factory as F,
   Globe as G,
-  Image as I,
-  Leaf as L,
+  Layers as L,
   Mail as M,
   Phone as P,
   ShieldCheck as S,
@@ -291,9 +308,10 @@ export {
   CircleCheckBig as d,
   FileText as e,
   FlaskConical as f,
-  MapPin as g,
-  Menu as h,
-  MessageCircle as i,
-  Ship as j,
-  Wrench as k
+  Leaf as g,
+  MapPin as h,
+  Menu as i,
+  MessageCircle as j,
+  Ship as k,
+  Wrench as l
 };

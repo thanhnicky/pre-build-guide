@@ -3,7 +3,7 @@ import { R as Root2, I as Item, H as Header, T as Trigger2, C as Content2 } from
 import { c as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { i as MessageCircle, X, h as Menu, C as Camera, A as ArrowUpRight, b as ChevronLeft, c as ChevronRight, F as Factory, j as Ship, d as CircleCheckBig, e as FileText, f as FlaskConical, k as Wrench, T as Truck, S as ShieldCheck, L as Leaf, W as Wind, g as MapPin, M as Mail, G as Globe, P as Phone, I as Image, a as ChevronDown } from "../_libs/lucide-react.mjs";
+import { j as MessageCircle, X, i as Menu, C as Camera, A as ArrowUpRight, F as Factory, k as Ship, d as CircleCheckBig, e as FileText, f as FlaskConical, l as Wrench, T as Truck, S as ShieldCheck, g as Leaf, W as Wind, b as ChevronLeft, c as ChevronRight, h as MapPin, M as Mail, G as Globe, P as Phone, L as Layers, a as ChevronDown } from "../_libs/lucide-react.mjs";
 import "../_libs/radix-ui__react-context.mjs";
 import "../_libs/radix-ui__react-collection.mjs";
 import "../_libs/radix-ui__react-compose-refs.mjs";
@@ -233,6 +233,24 @@ function Footer() {
 }
 const ZALO$2 = "https://zalo.me/0943966662";
 function StickyMobileCTA({ reducedDominance = false }) {
+  const handleScrollToSelector = () => {
+    const selectorSection = document.getElementById("chon-he-son");
+    if (selectorSection) {
+      const headerOffset = 60;
+      const elementPosition = selectorSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      setTimeout(() => {
+        selectorSection.classList.add("ring-2", "ring-wood-400", "ring-offset-2");
+        setTimeout(() => {
+          selectorSection.classList.remove("ring-2", "ring-wood-400", "ring-offset-2");
+        }, 1500);
+      }, 500);
+    }
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
     {
@@ -252,15 +270,13 @@ function StickyMobileCTA({ reducedDominance = false }) {
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "a",
+          "button",
           {
-            href: ZALO$2,
-            target: "_blank",
-            rel: "noopener noreferrer",
+            onClick: handleScrollToSelector,
             className: `inline-flex items-center justify-center gap-1.5 rounded-full border border-wood-300 bg-background text-sm font-semibold text-wood-800 transition-colors hover:bg-wood-100 ${reducedDominance ? "px-3 py-2 text-xs" : "px-4 py-3"}`,
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "h-4 w-4" }),
-              "Gửi ảnh"
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { className: "h-4 w-4" }),
+              "Chọn hệ sơn"
             ]
           }
         )
@@ -297,7 +313,6 @@ function LotusLanding() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Navbar, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "pb-24 md:pb-0", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(PartnersSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TrustBar, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AudienceSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(WhyWaterSection, {}),
@@ -306,6 +321,7 @@ function LotusLanding() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(TechCollaborationSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CertificationsSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Lookbook, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(PartnersSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(FAQ, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ConsultBlock, {})
     ] }),
@@ -428,22 +444,23 @@ function PartnersSection() {
     if (!el) return;
     const card = el.querySelector("[data-logo-card]");
     const step = card ? card.offsetWidth + 24 : 200;
+    const multiplier = window.innerWidth < 640 ? 3 : 2;
     el.scrollBy({
-      left: dir * step * 2,
+      left: dir * step * multiplier,
       behavior: "smooth"
     });
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-12", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10.5px] uppercase tracking-[0.32em] text-wood-600", children: "ĐÃ ĐƯỢC TIN DÙNG TẠI" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mt-10", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => scrollBy(-1), "aria-label": "Cuộn trái", className: "absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-10 w-10 items-center justify-center rounded-full bg-wood-700 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "h-5 w-5" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: scrollerRef, className: "flex gap-6 overflow-x-auto scroll-smooth px-10 sm:px-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden", children: partners.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "data-logo-card": true, className: "snap-start shrink-0 flex h-[60px] w-[160px] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-4 basis-full sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]", title: p.alt, children: failed[p.alt] ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-wood-600 text-center leading-tight", children: p.alt }) : /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "max-h-full max-w-full object-contain", onError: () => setFailed((f) => ({
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => scrollBy(-1), "aria-label": "Cuộn trái", className: "absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/80 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900 sm:h-10 sm:w-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "h-4 w-4 sm:h-5 sm:w-5" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: scrollerRef, className: "flex gap-4 overflow-x-auto scroll-smooth px-8 sm:px-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden", children: partners.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { "data-logo-card": true, className: "snap-start shrink-0 flex h-[50px] w-[calc((100%-1rem)/3)] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-3 sm:h-[60px] sm:w-[160px] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]", title: p.alt, children: failed[p.alt] ? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-medium text-wood-600 text-center leading-tight sm:text-[11px]", children: p.alt }) : /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "max-h-full max-w-full object-contain", onError: () => setFailed((f) => ({
         ...f,
         [p.alt]: true
       })) }) }, p.alt)) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => scrollBy(1), "aria-label": "Cuộn phải", className: "absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-10 w-10 items-center justify-center rounded-full bg-wood-700 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-5 w-5" }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => scrollBy(1), "aria-label": "Cuộn phải", className: "absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/80 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900 sm:h-10 sm:w-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-4 w-4 sm:h-5 sm:w-5" }) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85", children: "Sơn Lotus hiện là nhà cung cấp hệ sơn gỗ cho các xưởng nội thất xuất khẩu và chủ đầu tư dự án cao cấp tại TP.HCM." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85", children: "Lotus đang đồng hành cùng xưởng nội thất công trình, nhà thầu hoàn thiện và các đơn vị sản xuất đồ gỗ theo dự án trong nước." }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto mt-16 w-16 border-b border-wood-300/40" })
   ] }) });
 }
@@ -551,24 +568,24 @@ function Hero() {
   const trust = ["TDS / MSDS", "EN71-3", "ASTM F963", "FDA", "RoHS"];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative bg-[oklch(0.97_0.015_82)]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 pt-12 pb-10 sm:px-10 sm:pt-20 sm:pb-14 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-5 lg:pt-12", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10.5px] uppercase tracking-[0.32em] text-wood-600", children: "SƠN GỖ HỆ NƯỚC · CHO XƯỞNG NỘI THẤT & NHÀ MÁY SẢN XUẤT" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display mt-6 text-[2.5rem] font-light leading-[1.05] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10.5px] uppercase tracking-[0.32em] text-wood-600", children: "SƠN GỖ HỆ NƯỚC CHO XƯỞNG NỘI THẤT" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display mt-6 text-[2.25rem] font-light leading-[1.08] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: "Sơn gỗ hệ nước cho" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: "xưởng nội thất công trình & đơn hàng xuất khẩu." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: "xưởng nội thất công trình." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 max-w-md text-[15.5px] leading-[1.65] text-wood-700/85", children: "Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, có hồ sơ kỹ thuật khi cần — để bề mặt ổn định từ mẫu đầu đến lô cuối." }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-[15px] leading-[1.7] text-wood-700/85 sm:mt-5 sm:text-[15.5px]", children: "Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, giúp chọn đúng hệ và giữ bề mặt ổn định từ mẫu thử đến lô giao thực tế." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 hidden sm:block", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-medium uppercase tracking-[0.2em] text-wood-500", children: "Hồ sơ & tiêu chuẩn" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-2.5 flex flex-wrap gap-1.5", children: trust.map((t) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-wood-800", children: t }, t)) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center sm:gap-5", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "group inline-flex w-full items-center justify-center gap-3 rounded-full bg-wood-900 px-7 py-4 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-4 w-4", strokeWidth: 1.75 }),
-          "Gửi ảnh mẫu — nhận tư vấn",
+          "Gửi ảnh hạng mục — nhận tư vấn",
           /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "tel:0943966662", className: "text-[13px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900", children: [
-          "hoặc gọi kỹ thuật ",
+          "Hoặc gọi kỹ thuật ",
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "underline underline-offset-4", children: "0943 966 662" })
         ] })
       ] })
@@ -729,7 +746,7 @@ function FinishFinder({
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-[18px] leading-none transition-transform ${active ? "text-background" : "text-wood-400 group-hover:translate-x-0.5"}`, children: "→" })
   ] });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "quy-trinh", className: "bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "chon-he-son", className: "bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10.5px] uppercase tracking-[0.32em] text-wood-600", children: "Các hệ hoàn thiện chính cho xưởng" }),

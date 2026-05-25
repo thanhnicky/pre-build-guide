@@ -44,8 +44,7 @@ function LotusLanding() {
       <main className="pb-24 md:pb-0">
         {/* 1. Hero */}
         <Hero />
-        {/* 2. Trust bar / social proof */}
-        <PartnersSection />
+        {/* 2. Trust bar */}
         <TrustBar />
         {/* 3. Lotus phù hợp với ai */}
         <AudienceSection />
@@ -61,9 +60,11 @@ function LotusLanding() {
         <CertificationsSection />
         {/* 8. Dự án / ứng dụng thực tế */}
         <Lookbook />
-        {/* 9. FAQ */}
+        {/* 9. Trust bar / social proof */}
+        <PartnersSection />
+        {/* 10. FAQ */}
         <FAQ />
-        {/* 10. CTA cuối / liên hệ kỹ thuật */}
+        {/* 11. CTA cuối / liên hệ kỹ thuật */}
         <ConsultBlock />
       </main>
       <Footer />
@@ -279,7 +280,9 @@ function PartnersSection() {
     if (!el) return;
     const card = el.querySelector<HTMLElement>("[data-logo-card]");
     const step = card ? card.offsetWidth + 24 : 200;
-    el.scrollBy({ left: dir * step * 2, behavior: "smooth" });
+    // On mobile, scroll by 3 cards at a time
+    const multiplier = window.innerWidth < 640 ? 3 : 2;
+    el.scrollBy({ left: dir * step * multiplier, behavior: "smooth" });
   };
 
   return (
@@ -294,24 +297,24 @@ function PartnersSection() {
             type="button"
             onClick={() => scrollBy(-1)}
             aria-label="Cuộn trái"
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-10 w-10 items-center justify-center rounded-full bg-wood-700 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/80 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900 sm:h-10 sm:w-10"
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
 
           <div
             ref={scrollerRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth px-10 sm:px-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex gap-4 overflow-x-auto scroll-smooth px-8 sm:px-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {partners.map((p) => (
               <div
                 key={p.alt}
                 data-logo-card
-                className="snap-start shrink-0 flex h-[60px] w-[160px] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-4 basis-full sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]"
+                className="snap-start shrink-0 flex h-[50px] w-[calc((100%-1rem)/3)] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-3 sm:h-[60px] sm:w-[160px] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]"
                 title={p.alt}
               >
                 {failed[p.alt] ? (
-                  <span className="text-[11px] font-medium text-wood-600 text-center leading-tight">
+                  <span className="text-[10px] font-medium text-wood-600 text-center leading-tight sm:text-[11px]">
                     {p.alt}
                   </span>
                 ) : (
@@ -330,14 +333,14 @@ function PartnersSection() {
             type="button"
             onClick={() => scrollBy(1)}
             aria-label="Cuộn phải"
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-10 w-10 items-center justify-center rounded-full bg-wood-700 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/80 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900 sm:h-10 sm:w-10"
           >
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85">
-          Sơn Lotus hiện là nhà cung cấp hệ sơn gỗ cho các xưởng nội thất xuất khẩu và chủ đầu tư dự án cao cấp tại TP.HCM.
+          Lotus đang đồng hành cùng xưởng nội thất công trình, nhà thầu hoàn thiện và các đơn vị sản xuất đồ gỗ theo dự án trong nước.
         </p>
 
         <div className="mx-auto mt-16 w-16 border-b border-wood-300/40" />
@@ -558,22 +561,22 @@ function Hero() {
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
           <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-            SƠN GỖ HỆ NƯỚC · CHO XƯỞNG NỘI THẤT & NHÀ MÁY SẢN XUẤT
+            SƠN GỖ HỆ NƯỚC CHO XƯỞNG NỘI THẤT
           </div>
 
-          <h1 className="font-display mt-6 text-[2.5rem] font-light leading-[1.05] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]">
+          <h1 className="font-display mt-6 text-[2.25rem] font-light leading-[1.08] text-wood-900 sm:mt-7 sm:text-[3.5rem] lg:text-[3rem] lg:leading-[1.08]">
             <span className="block">Sơn gỗ hệ nước cho</span>
             <span className="block italic font-normal text-wood-700">
-              xưởng nội thất công trình &amp; đơn hàng xuất khẩu.
+              xưởng nội thất công trình.
             </span>
           </h1>
 
-          <p className="mt-5 max-w-md text-[15.5px] leading-[1.65] text-wood-700/85">
-            Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, có hồ sơ kỹ thuật khi cần — để bề mặt ổn định từ mẫu đầu đến lô cuối.
+          <p className="mt-6 max-w-md text-[15px] leading-[1.7] text-wood-700/85 sm:mt-5 sm:text-[15.5px]">
+            Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, giúp chọn đúng hệ và giữ bề mặt ổn định từ mẫu thử đến lô giao thực tế.
           </p>
 
-          {/* Trust strip */}
-          <div className="mt-6">
+          {/* Trust strip - hidden on mobile */}
+          <div className="mt-6 hidden sm:block">
             <div className="text-[10px] font-medium uppercase tracking-[0.2em] text-wood-500">
               Hồ sơ &amp; tiêu chuẩn
             </div>
@@ -589,7 +592,7 @@ function Hero() {
             </ul>
           </div>
 
-          <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
+          <div className="mt-10 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center sm:gap-5">
             <a
               href={ZALO}
               target="_blank"
@@ -597,14 +600,14 @@ function Hero() {
               className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-wood-900 px-7 py-4 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto"
             >
               <Camera className="h-4 w-4" strokeWidth={1.75} />
-              Gửi ảnh mẫu — nhận tư vấn
+              Gửi ảnh hạng mục — nhận tư vấn
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
               href="tel:0943966662"
               className="text-[13px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900"
             >
-              hoặc gọi kỹ thuật <span className="underline underline-offset-4">0943 966 662</span>
+              Hoặc gọi kỹ thuật <span className="underline underline-offset-4">0943 966 662</span>
             </a>
           </div>
         </div>
@@ -855,7 +858,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
   return (
     <section
-      id="quy-trinh"
+      id="chon-he-son"
       className="bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28"
     >
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">

@@ -24,6 +24,10 @@ import heGiVan from "@/assets/son-tao-mau-go-va-hoan-thien-go-noi-that-lotus-woo
 import heMauBet from "@/assets/son-phu-mau-go-noi-that-lotus-wood-paint-indoor.png";
 import heBaoVeNgoaiThat from "@/assets/son-phu-acrylic-lacquer-ngoai-that-lotus-lacquer-exterior.png";
 import heSon2K from "@/assets/2k- lacquer 2k72 out door-1.png";
+import sonPhunWeb from "@/assets/son-phun-lotus-web.webp";
+import sonLauWeb from "@/assets/son-lau-lotus-web.jpg";
+import mauBetGoTuNhien from "@/assets/mau-bet-go-tu-nhien.jpg";
+import sonBetMdfLotus from "@/assets/son-bet-mdf-lotus.jpg";
 
 const ZALO = "https://zalo.me/0943966662";
 
@@ -703,13 +707,13 @@ function resolveCoatingSystem(
       methodLau: {
         process: "Stain màu → Lót trong suốt → Phủ trong suốt bóng / mờ bảo vệ",
         representativeProducts: ["Lotus wood stain", "Lotus sanding sealer", "Lotus acrylic lacquer IN"],
-        image: procLau,
+        image: sonLauWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
       },
       methodPhun: {
         process: "Lót trong suốt → Phun hệ 2in1 (màu và bóng chung trong 1 loại sơn)",
         representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish interior"],
-        image: procPhun,
+        image: sonPhunWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
       },
     };
@@ -724,7 +728,7 @@ function resolveCoatingSystem(
       singleMethod: {
         process: "Sơn lót trắng → Sơn phủ màu bệt trong nhà",
         representativeProducts: ["Lotus wood primer", "Lotus wood paint IN"],
-        image: procPhun,
+        image: mauBetGoTuNhien,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
       },
     };
@@ -739,13 +743,13 @@ function resolveCoatingSystem(
       methodLau: {
         process: "Stain màu → Lót trong suốt → Phủ trong suốt bóng / mờ bảo vệ ngoài trời",
         representativeProducts: ["Lotus wood stain", "Lotus sanding sealer", "Lotus acrylic lacquer EX"],
-        image: procBong,
+        image: sonLauWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
       },
       methodPhun: {
         process: "Phun hệ 2in1 ngoài trời (màu và bóng chung trong 1 loại sơn)",
         representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish exterior", "Lotus PUD EX"],
-        image: procBong,
+        image: sonPhunWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
       },
     };
@@ -760,7 +764,7 @@ function resolveCoatingSystem(
       singleMethod: {
         process: "Sơn lót trắng → Sơn phủ màu bệt ngoài trời",
         representativeProducts: ["Lotus wood primer", "Lotus wood paint EX"],
-        image: procBong,
+        image: mauBetGoTuNhien,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
       },
     };
@@ -775,7 +779,7 @@ function resolveCoatingSystem(
       singleMethod: {
         process: "Sơn lót trắng → Sơn phủ màu bệt trong nhà",
         representativeProducts: ["Lotus wood primer", "Lotus wood paint IN"],
-        image: procMdf,
+        image: sonBetMdfLotus,
         notes: "Có thể phủ thêm lớp phủ trong suốt bóng / mờ để bảo vệ độ bền. Những khu vực hay tiếp xúc thường xuyên nên sử dụng hệ 2K.",
       },
     };
@@ -789,7 +793,7 @@ function resolveCoatingSystem(
     singleMethod: {
       process: "Tùy theo hạng mục cụ thể",
       representativeProducts: ["Tư vấn theo hạng mục"],
-      image: procLau,
+      image: sonLauWeb,
     },
   };
 }
@@ -934,18 +938,23 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
     active,
     onClick,
     children,
+    disabled = false,
   }: {
     active: boolean;
     onClick: () => void;
     children: React.ReactNode;
+    disabled?: boolean;
   }) => (
     <button
       type="button"
       onClick={onClick}
+      disabled={disabled}
       className={`group flex w-full items-center justify-between gap-4 border px-5 py-4 text-left text-[14px] leading-[1.4] transition-colors sm:px-6 sm:py-5 sm:text-[15px] ${
-        active
-          ? "border-wood-900 bg-wood-900 text-background"
-          : "border-wood-200 bg-background text-wood-800 hover:border-wood-700 hover:text-wood-900"
+        disabled
+          ? "border-wood-200 bg-wood-50 text-wood-400 cursor-not-allowed"
+          : active
+            ? "border-wood-900 bg-wood-900 text-background"
+            : "border-wood-200 bg-background text-wood-800 hover:border-wood-700 hover:text-wood-900"
       }`}
       aria-pressed={active}
     >
@@ -1046,7 +1055,8 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                     </Choice>
                     <Choice
                       active={location === "outdoor"}
-                      onClick={() => surface && setLocation("outdoor")}
+                      onClick={() => surface !== "mdf" && setLocation("outdoor")}
+                      disabled={surface === "mdf"}
                     >
                       Ngoài trời
                     </Choice>
@@ -1282,42 +1292,42 @@ const PRODUCT_GROUPS = [
     title: "Xử lý nền / trám trét",
     description: "Chuẩn bị bề mặt gỗ trước khi sơn, xử lý khuyết điểm và tăng độ bám dính",
     usage: "Trám vết nứt, lỗ nhỏ trên gỗ tự nhiên và MDF trước khi lót và phủ",
-    products: ["Lotus Wood Filler", "Lotus Putty"],
+    products: ["Lotus Wood Filler", "Lotus Wood Matic"],
     image: keoTramTret,
   },
   {
     title: "Sơn lót",
     description: "Lớp nền tăng bám dính, bịt lỗ và chuẩn bị bề mặt cho lớp phủ",
     usage: "Lót cho hệ lau, phun và màu bệt trên gỗ tự nhiên và MDF",
-    products: ["Lotus Wood Primer", "Lotus MDF Primer"],
+    products: ["Lotus Wood Primer", "Lotus Sanding Sealer"],
     image: sonLot,
   },
   {
     title: "Hệ giữ vân",
     description: "Tôn màu vân gỗ tự nhiên, thấm sâu và bảo vệ độ đẹp của gỗ",
     usage: "Đồ gỗ trưng bày, handcraft, nội thất cao cấp giữ vân thật",
-    products: ["Lotus Wood Stain", "Lotus Sanding Sealer", "Lotus Clear Coat"],
+    products: ["Lotus Wood Stain", "Lotus Wood Stain Finish"],
     image: heGiVan,
   },
   {
     title: "Hệ màu bệt",
     description: "Lên màu đặc, phẳng, che nền đều theo mã màu RAL/NCS",
     usage: "MDF, tủ bếp, tủ âm tường, vách trang trí theo concept đương đại",
-    products: ["Lotus Topcoat", "Lotus Wood Paint"],
+    products: ["Lotus Wood Paint IN", "Lotus Wood Paint EX"],
     image: heMauBet,
   },
   {
     title: "Hệ bảo vệ ngoài trời",
     description: "Kháng UV, chống thấm, co giãn cùng gỗ cho hạng mục outdoor",
     usage: "Lam, sàn deck, cửa, pergola, mặt dựng gỗ ngoài trời",
-    products: ["Lotus Outdoor Primer", "Lotus Outdoor Topcoat", "Lotus PUD EX"],
+    products: ["Lotus Acrylic Lacquer EX", "Lotus PUD EX"],
     image: heBaoVeNgoaiThat,
   },
   {
     title: "Hệ sơn 2K",
     description: "Tăng độ cứng, độ bền bề mặt và khả năng chịu va chạm cho hạng mục sử dụng thường xuyên",
     usage: "Bề mặt bàn, tủ bếp, tủ áo, cửa và các chi tiết cần độ bền cao trong quá trình sử dụng",
-    products: ["Lotus 2K Topcoat", "Lotus 2K Clear Coat"],
+    products: ["Lotus Acrylic Lacquer EX 2K", "Lotus Wood Paint IN 2K", "Lotus Wood Stain Finish 2K"],
     image: heSon2K,
   },
 ];
@@ -1357,6 +1367,7 @@ function ProductsSection() {
                   src={group.image}
                   alt={group.title}
                   loading="lazy"
+                  className={index === 5 ? "scale-[103%]" : ""}
                 />
               </div>
               <div className="flex flex-col gap-4 p-6">
@@ -1410,12 +1421,12 @@ function ProductsSection() {
                 onClick={() => setExpandedGroup(expandedGroup === index ? null : index)}
                 className="flex w-full items-start gap-4 p-4 text-left"
               >
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded bg-wood-200/40 flex items-end justify-center">
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded bg-wood-200/40 flex items-center justify-center">
                   <img
                     src={group.image}
                     alt={group.title}
                     loading="lazy"
-                    className="h-full w-full object-contain object-bottom p-2 pt-0"
+                    className={`h-full w-full object-contain object-center p-2 ${index === 5 ? "scale-[143%]" : ""}`}
                   />
                 </div>
                 <div className="flex flex-1 flex-col">

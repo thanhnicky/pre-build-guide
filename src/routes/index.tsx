@@ -732,11 +732,13 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   const [location, setLocation] = useState<Location | null>(null);
   const [naturalFinish, setNaturalFinish] = useState<NaturalFinish | null>(null);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const step1Ref = useRef<HTMLDivElement>(null);
   const step2Ref = useRef<HTMLDivElement>(null);
   const step3Ref = useRef<HTMLDivElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const needsFinishStep = surface === "natural";
   const ready =
@@ -773,7 +775,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
       if (!element) return;
       const elementRect = element.getBoundingClientRect();
       const isVisible = elementRect.top >= offset && elementRect.bottom <= window.innerHeight;
-      
+
       if (!isVisible) {
         const targetPosition = elementRect.top + window.pageYOffset - offset;
         window.scrollTo({
@@ -818,6 +820,33 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
     }
   }, [surface, location, naturalFinish, needsFinishStep, ready, onInteractionChange]);
 
+  // Entrance animation on viewport entry
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const StepLabel = ({ n, text }: { n: string; text: string }) => (
     <div className="text-[10.5px] uppercase tracking-[0.28em] text-wood-500">
       <span className="font-display text-[13px] tracking-normal text-wood-400">{n}</span>
@@ -859,14 +888,17 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   return (
     <section
       id="chon-he-son"
-      className="bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28"
+      ref={sectionRef}
+      className={`bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28 transition-all duration-700 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
     >
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="text-[10.5px] uppercase tracking-[0.32em] text-wood-600">
-              Các hệ hoàn thiện chính cho xưởng
+              CÔNG CỤ TƯ VẤN NHANH
             </div>
             <h2 className="font-display mt-8 text-[2.25rem] font-light leading-[1.06] text-wood-900 sm:text-5xl lg:text-[3.5rem]">
               <span className="block">Chọn đúng hệ sơn</span>
@@ -882,17 +914,21 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
         </div>
 
         {/* Finder card */}
-        <div className="mt-14 border border-wood-200 bg-[#FAF7F2] sm:mt-16">
+        <div className="mt-14 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Steps */}
             <div className="lg:col-span-7 lg:border-r lg:border-wood-200">
               <div className="space-y-10 p-6 sm:p-10 lg:p-12">
                 {/* Step 1 */}
-                <div ref={step1Ref} className="transition-all duration-500 ease-out">
+                <div ref={step1Ref} className="relative transition-all duration-500 ease-out">
+                  <div className="absolute -left-2 top-0 h-full w-0.5 bg-wood-300/50 sm:-left-3"></div>
                   <StepLabel n="01" text="Bề mặt thi công" />
                   <h3 className="font-display mt-3 text-[1.25rem] font-light leading-[1.3] text-wood-900 sm:text-[1.4rem]">
                     Anh / chị đang thi công trên bề mặt nào?
                   </h3>
+                  <p className="mt-2 text-[13px] text-wood-600/80 sm:hidden">
+                    Chạm để chọn bề mặt thi công trước
+                  </p>
                   <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <Choice
                       active={surface === "natural"}

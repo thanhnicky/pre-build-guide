@@ -364,6 +364,15 @@ function PartnersSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState<Record<string, boolean>>({});
 
+  // Auto-scroll every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      scrollBy(1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
     if (!el) return;
@@ -386,7 +395,7 @@ function PartnersSection() {
             type="button"
             onClick={() => scrollBy(-1)}
             aria-label="Cuộn trái"
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/80 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900 sm:h-10 sm:w-10"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10"
           >
             <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
@@ -424,7 +433,7 @@ function PartnersSection() {
             type="button"
             onClick={() => scrollBy(1)}
             aria-label="Cuộn phải"
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/80 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-900 sm:h-10 sm:w-10"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10"
           >
             <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>

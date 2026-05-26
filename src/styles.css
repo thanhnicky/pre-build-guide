@@ -271,12 +271,32 @@ body {
   max-height: 92px;
 }
 
+@media (max-width: 639px) {
+  .logo--nem-fur .logo-mark img {
+    max-height: 63px;
+  }
+}
+
 .logo--masterise .logo-mark img {
   max-height: 82px;
+}
+
+@media (max-width: 639px) {
+  .logo--masterise .logo-mark img {
+    max-height: 57px;
+  }
 }
 
 .logo--pullman .logo-mark img,
 .logo--scg .logo-mark img,
 .logo--sofitels .logo-mark img {
   max-height: 76px;
+}
+
+@media (max-width: 639px) {
+  .logo--pullman .logo-mark img,
+  .logo--scg .logo-mark img,
+  .logo--sofitels .logo-mark img {
+    max-height: 67px;
+  }
 }

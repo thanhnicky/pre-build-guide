@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, useEffect } from "react";
-import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, ChevronDown, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, ChevronDown, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck, X } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -28,6 +28,9 @@ import sonPhunWeb from "@/assets/son-phun-lotus-web.webp";
 import sonLauWeb from "@/assets/son-lau-lotus-web.jpg";
 import mauBetGoTuNhien from "@/assets/mau-bet-go-tu-nhien.jpg";
 import sonBetMdfLotus from "@/assets/son-bet-mdf-lotus.jpg";
+import paletteLau from "@/assets/palette-lau.png";
+import palettePhun from "@/assets/palette-phun.png";
+import paletteBet from "@/assets/palette-bet.png";
 import pullmanPhuQuoc from "@/assets/pullman-phu-quoc-lt.jpg";
 import masteriseHn from "@/assets/masterise-hn-lt.webp";
 import grandMarinaSaigon from "@/assets/grand-marina-saigon-lt.webp";
@@ -747,28 +750,39 @@ type FinishResult = {
 // New data structure for coating systems
 type CoatingMethod = "lau" | "phun" | "single";
 
+interface ColorSwatch {
+  name: string;
+  code: string;
+  hex: string;
+}
+
 interface CoatingSystem {
   title: string;
   suitableFor: string;
   notes?: string;
   methodType: "single" | "dual";
+  colorType: "grain" | "solid";
+  colors?: ColorSwatch[];
   singleMethod?: {
     process: string;
     representativeProducts: string[];
     image: string;
     notes?: string;
+    fullChartImage?: string;
   };
   methodLau?: {
     process: string;
     representativeProducts: string[];
     image: string;
     notes?: string;
+    fullChartImage?: string;
   };
   methodPhun?: {
     process: string;
     representativeProducts: string[];
     image: string;
     notes?: string;
+    fullChartImage?: string;
   };
 }
 
@@ -783,17 +797,27 @@ function resolveCoatingSystem(
       title: "Sơn giữ vân gỗ nội thất",
       suitableFor: "Sản phẩm nội thất dùng trong nhà",
       methodType: "dual",
+      colorType: "grain",
+      colors: [
+        { name: "Sồi sáng", code: "Oak Light", hex: "#C4A77D" },
+        { name: "Óc chó", code: "Walnut", hex: "#5D4037" },
+        { name: "Gỗ mun", code: "Ebony", hex: "#3D2B1F" },
+        { name: "Anh đào", code: "Cherry", hex: "#A0522D" },
+        { name: "Teak", code: "Teak", hex: "#D2B48C" },
+      ],
       methodLau: {
         process: "Stain màu → Lót trong suốt → Phủ trong suốt bóng / mờ bảo vệ",
         representativeProducts: ["Lotus wood stain", "Lotus sanding sealer", "Lotus acrylic lacquer IN"],
         image: sonLauWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
+        fullChartImage: paletteLau,
       },
       methodPhun: {
         process: "Lót trong suốt → Phun hệ 2in1 (màu và bóng chung trong 1 loại sơn)",
         representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish interior"],
         image: sonPhunWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
+        fullChartImage: palettePhun,
       },
     };
   }
@@ -804,11 +828,20 @@ function resolveCoatingSystem(
       title: "Sơn màu bệt trong nhà",
       suitableFor: "Sản phẩm nội thất dùng trong nhà",
       methodType: "single",
+      colorType: "solid",
+      colors: [
+        { name: "Trắng tinh khiết", code: "RAL 9010", hex: "#FFFFFF" },
+        { name: "Kem", code: "RAL 9001", hex: "#F5F5DC" },
+        { name: "Xám nhạt", code: "RAL 9016", hex: "#E0E0E0" },
+        { name: "Be", code: "RAL 1001", hex: "#F5F5DC" },
+        { name: "Xám mềm", code: "RAL 7035", hex: "#B0B0B0" },
+      ],
       singleMethod: {
         process: "Sơn lót trắng → Sơn phủ màu bệt trong nhà",
         representativeProducts: ["Lotus wood primer", "Lotus wood paint IN"],
         image: mauBetGoTuNhien,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
+        fullChartImage: paletteBet,
       },
     };
   }
@@ -819,17 +852,27 @@ function resolveCoatingSystem(
       title: "Sơn giữ vân gỗ ngoại thất",
       suitableFor: "Sàn ngoài trời, hàng outdoor",
       methodType: "dual",
+      colorType: "grain",
+      colors: [
+        { name: "Cedar", code: "Cedar", hex: "#A0522D" },
+        { name: "Redwood", code: "Redwood", hex: "#CD853F" },
+        { name: "Brown Oak", code: "Brown Oak", hex: "#8B4513" },
+        { name: "Dark Walnut", code: "Dark Walnut", hex: "#4A3728" },
+        { name: "Natural Teak", code: "Natural Teak", hex: "#D2B48C" },
+      ],
       methodLau: {
         process: "Stain màu → Lót trong suốt → Phủ trong suốt bóng / mờ bảo vệ ngoài trời",
         representativeProducts: ["Lotus wood stain", "Lotus sanding sealer", "Lotus acrylic lacquer EX"],
         image: sonLauWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
+        fullChartImage: paletteLau,
       },
       methodPhun: {
         process: "Phun hệ 2in1 ngoài trời (màu và bóng chung trong 1 loại sơn)",
         representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish exterior", "Lotus PUD EX"],
         image: sonPhunWeb,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
+        fullChartImage: palettePhun,
       },
     };
   }
@@ -840,11 +883,20 @@ function resolveCoatingSystem(
       title: "Sơn màu bệt ngoài trời",
       suitableFor: "Sàn, vách ngoài trời, hàng outdoor",
       methodType: "single",
+      colorType: "solid",
+      colors: [
+        { name: "Trắng ngoại thất", code: "RAL 9016", hex: "#E0E0E0" },
+        { name: "Cát", code: "RAL 1002", hex: "#F4A460" },
+        { name: "Xám đá", code: "RAL 7030", hex: "#808080" },
+        { name: "Terracotta", code: "RAL 8001", hex: "#E2725B" },
+        { name: "Xanh olive", code: "RAL 6000", hex: "#556B2F" },
+      ],
       singleMethod: {
         process: "Sơn lót trắng → Sơn phủ màu bệt ngoài trời",
         representativeProducts: ["Lotus wood primer", "Lotus wood paint EX"],
         image: mauBetGoTuNhien,
         notes: "Có thể điều chỉnh được màu sắc, độ bóng mờ, 1K & 2K theo yêu cầu",
+        fullChartImage: paletteBet,
       },
     };
   }
@@ -855,11 +907,20 @@ function resolveCoatingSystem(
       title: "Sơn màu bệt MDF trong nhà",
       suitableFor: "Hệ tủ bếp, tủ quần áo, vách ốp",
       methodType: "single",
+      colorType: "solid",
+      colors: [
+        { name: "Trắng MDF", code: "RAL 9010", hex: "#FFFFFF" },
+        { name: "Alabaster", code: "RAL 9002", hex: "#FAF0E6" },
+        { name: "Ngà sáng", code: "RAL 1015", hex: "#FFFFF0" },
+        { name: "Xám ấm", code: "RAL 7016", hex: "#383E42" },
+        { name: "Be mềm", code: "RAL 1000", hex: "#BEB5A7" },
+      ],
       singleMethod: {
         process: "Sơn lót trắng → Sơn phủ màu bệt trong nhà",
         representativeProducts: ["Lotus wood primer", "Lotus wood paint IN"],
         image: sonBetMdfLotus,
         notes: "Có thể phủ thêm lớp phủ trong suốt bóng / mờ để bảo vệ độ bền. Những khu vực hay tiếp xúc thường xuyên nên sử dụng hệ 2K.",
+        fullChartImage: paletteBet,
       },
     };
   }
@@ -869,6 +930,7 @@ function resolveCoatingSystem(
     title: "Hệ hoàn thiện gỗ",
     suitableFor: "Liên hệ kỹ thuật để được tư vấn chi tiết",
     methodType: "single",
+    colorType: "solid",
     singleMethod: {
       process: "Tùy theo hạng mục cụ thể",
       representativeProducts: ["Tư vấn theo hạng mục"],
@@ -884,6 +946,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   const [isInteracting, setIsInteracting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [selectedMethod, setSelectedMethod] = useState<"lau" | "phun">("lau");
+  const [showFullColorChart, setShowFullColorChart] = useState(false);
 
   const step1Ref = useRef<HTMLDivElement>(null);
   const step2Ref = useRef<HTMLDivElement>(null);
@@ -1341,6 +1404,39 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       </div>
                     )}
 
+                    {/* Color reference section */}
+                    {coatingSystem.colors && coatingSystem.colors.length > 0 && (
+                      <div className="mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
+                        <div className="mb-3 flex items-center justify-between">
+                          <div className="text-[10.5px] font-medium uppercase tracking-[0.14em] text-wood-600">
+                            MÀU THAM KHẢO
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setShowFullColorChart(true)}
+                            className="text-[11px] font-medium text-wood-700 underline hover:text-wood-900"
+                          >
+                            Xem bảng màu đầy đủ
+                          </button>
+                        </div>
+                        <div className="grid grid-cols-5 gap-2">
+                          {coatingSystem.colors.slice(0, 5).map((color) => (
+                            <div key={color.code} className="flex flex-col items-center">
+                              <div
+                                className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
+                                style={{ backgroundColor: color.hex }}
+                                title={color.name}
+                              />
+                              <span className="mt-1 text-[9px] text-wood-600">{color.code}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <p className="mt-3 text-[10px] leading-[1.5] text-wood-500 italic">
+                          Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
+                        </p>
+                      </div>
+                    )}
+
                     <div className="mt-auto pt-2">
                       <a
                         href={ZALO}
@@ -1358,6 +1454,63 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
             </div>
           </div>
         </div>
+
+        {/* Full color chart modal */}
+        {showFullColorChart && coatingSystem && (() => {
+          const currentMethod = coatingSystem.methodType === "dual"
+            ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun
+            : coatingSystem.singleMethod;
+          const fullChartImage = currentMethod?.fullChartImage;
+
+          return (
+            <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center">
+              <div className="w-full max-w-2xl rounded-t-2xl bg-[#F5F0EA] p-6 shadow-2xl sm:rounded-2xl sm:p-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="font-display text-[1.25rem] font-semibold text-wood-900">
+                    Bảng màu {coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"}
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setShowFullColorChart(false)}
+                    className="rounded-full p-2 text-wood-600 hover:bg-wood-200/50"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                {fullChartImage && (
+                  <div className="mb-4">
+                    <img
+                      src={fullChartImage}
+                      alt={`Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`}
+                      className="w-full rounded-lg border border-wood-200/60 shadow-sm"
+                    />
+                  </div>
+                )}
+                <p className="mb-4 text-[11px] leading-[1.5] text-wood-500 italic">
+                  Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
+                </p>
+                <div className="flex gap-3">
+                  {fullChartImage && (
+                    <a
+                      href={fullChartImage}
+                      download={`lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`}
+                      className="flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-[12.5px] font-semibold uppercase tracking-[0.14em] text-wood-900 transition-colors hover:bg-wood-900/5"
+                    >
+                      Tải bảng màu
+                    </a>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setShowFullColorChart(false)}
+                    className="flex-1 rounded-lg bg-wood-900 py-3 text-[12.5px] font-semibold uppercase tracking-[0.14em] text-[#F5F0EA] transition-colors hover:bg-wood-800"
+                  >
+                    Đóng
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </div>
     </section>
   );

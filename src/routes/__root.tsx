@@ -72,38 +72,77 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sơn Gỗ Hệ Nước Lotus" },
+      { title: "Lotus - Sơn Gỗ Hệ Nước | Hoàn Thiện Gỗ Cho Dự Án Cao Cấp & Xuất Khẩu" },
       {
         name: "description",
         content:
-          "Dịch vụ sơn gỗ chuyên nghiệp: nội thất, ngoại thất, đánh dầu, phủ bóng, bảo dưỡng gỗ. Tư vấn & báo giá miễn phí qua Zalo 0943 966 662.",
+          "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA. Tư vấn miễn phí: 0943 966 662.",
       },
-      { name: "author", content: "Sơn Gỗ Đẹp" },
+      { name: "keywords", content: "sơn gỗ hệ nước, sơn gỗ nội thất, sơn gỗ ngoại thất, sơn gỗ xuất khẩu, sơn gỗ dự án cao cấp, Lotus wood paint, water-based wood finish, wood coating for export" },
+      { name: "author", content: "Lotus Wood Paint" },
+      { name: "robots", content: "index, follow" },
+      { name: "googlebot", content: "index, follow" },
       {
         property: "og:title",
-        content: "Sơn Gỗ Đẹp — Chuyên gia sơn gỗ nội & ngoại thất",
+        content: "Lotus - Sơn Gỗ Hệ Nước | Hoàn Thiện Gỗ Cho Dự Án Cao Cấp & Xuất Khẩu",
       },
       {
         property: "og:description",
         content:
-          "Dịch vụ sơn gỗ chuyên nghiệp. Tư vấn & báo giá miễn phí qua Zalo.",
+          "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { property: "og:title", content: "Sơn Gỗ Hệ Nước Lotus" },
-      { name: "twitter:title", content: "Sơn Gỗ Hệ Nước Lotus" },
-      { name: "description", content: "Sơn gỗ hệ nước nội thất và ngoại thất cho dự án cao cấp và nhà máy nội thất xuất khẩu thị trường Mỹ, EU, Nhật" },
-      { property: "og:description", content: "Sơn gỗ hệ nước nội thất và ngoại thất cho dự án cao cấp và nhà máy nội thất xuất khẩu thị trường Mỹ, EU, Nhật" },
-      { name: "twitter:description", content: "Sơn gỗ hệ nước nội thất và ngoại thất cho dự án cao cấp và nhà máy nội thất xuất khẩu thị trường Mỹ, EU, Nhật" },
+      { property: "og:url", content: "https://lotuswoodpaint.com" },
+      { property: "og:locale", content: "vi_VN" },
+      { property: "og:site_name", content: "Lotus Wood Paint" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Lotus - Sơn Gỗ Hệ Nước | Hoàn Thiện Gỗ Cho Dự Án Cao Cấp & Xuất Khẩu" },
+      { name: "twitter:description", content: "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
+      { name: "twitter:image:alt", content: "Lotus Wood Paint - Sơn gỗ hệ nước chuyên nghiệp" },
+      { name: "geo.region", content: "VN-SG" },
+      { name: "geo.placename", content: "Ho Chi Minh City" },
+      { name: "geo.position", content: "10.7769;106.7009" },
+      { name: "ICBM", content: "10.7769, 106.7009" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "canonical",
+        href: "https://lotuswoodpaint.com",
+      },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Lotus Wood Paint",
+          "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật",
+          "url": "https://lotuswoodpaint.com",
+          "telephone": "+84-943-966-662",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ho Chi Minh City",
+            "addressCountry": "VN"
+          },
+          "sameAs": [
+            "https://zalo.me/0943966662"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+84-943-966-662",
+            "contactType": "customer service",
+            "availableLanguage": ["Vietnamese", "English"]
+          }
+        })
+      }
+    ]
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -113,7 +152,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <head>
         <HeadContent />
         {/* Google Analytics 4 */}

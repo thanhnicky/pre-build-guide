@@ -57,6 +57,57 @@ export const Route = createFileRoute("/")({
           "Bốn quy trình hoàn thiện gỗ Lotus: sơn lau giữ vân, sơn phun nội ngoại thất, màu bệt MDF, phủ bóng ngoài trời. Nhắn Zalo để được tư vấn đúng hệ.",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Sơn gỗ hệ nước Lotus có ưu điểm gì so với sơn PU?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sơn gỗ hệ nước Lotus có ưu điểm: VOCs thấp, mùi nhẹ, an toàn cho sức khỏe, không cần pha dung môi nhiều, vận hành gọn hơn, phù hợp xưởng kín, có hồ sơ kỹ thuật TDS/MSDS đầy đủ, đáp ứng tiêu chuẩn xuất khẩu Mỹ, EU, Nhật."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Lotus có hỗ trợ kỹ thuật khi chuyển sang hệ nước không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có, kỹ sư Lotus hỗ trợ trực tiếp tại xưởng từ lần chạy đầu tiên: hỗ trợ tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt, và theo dõi độ ổn định giữa các đợt giao hàng."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sơn gỗ Lotus có đạt chứng nhận quốc tế không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có, sơn gỗ Lotus đáp ứng nhiều chứng nhận quốc tế: EN71-3 (an toàn đồ chơi trẻ em), ASTM F963 (tiêu chuẩn Hoa Kỳ), FDA (tiếp xúc gián tiếp thực phẩm), RoHS (giới hạn chất độc hại), Low VOCs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Lotus phù hợp với loại hình xưởng nào?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Lotus phù hợp với 2 loại hình chính: Xưởng nội thất công trình (thi công căn hộ, khách sạn, văn phòng cao cấp) và Nhà máy/đơn hàng xuất khẩu (sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Cách nhận tư vấn hệ sơn phù hợp từ Lotus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gửi ảnh bề mặt, loại gỗ, môi trường sử dụng và yêu cầu hoàn thiện qua Zalo 0943 966 662. Kỹ sư Lotus sẽ đề xuất hệ phù hợp và gửi kèm hồ sơ kỹ thuật TDS/MSDS khi cần."
+              }
+            }
+          ]
+        })
+      }
+    ]
   }),
 });
 
@@ -348,7 +399,7 @@ function PartnersSection() {
               <div
                 key={p.alt}
                 data-logo-card
-                className={`${p.variant || ""} logo-item snap-start shrink-0 flex min-h-[156px] w-[calc((100%-1rem)/3)] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-6 sm:w-[160px] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]`}
+                className={`${p.variant || ""} logo-item snap-start shrink-0 flex min-h-[156px] w-[calc((100%-1rem)/2)] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-6 sm:w-[160px] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]`}
                 title={p.alt}
               >
                 {failed[p.alt] ? (
@@ -657,7 +708,7 @@ function Hero() {
           <div className="relative aspect-[4/5] overflow-hidden bg-wood-200/40 sm:aspect-[5/6] lg:aspect-[4/5]">
             <img
               src={heroImg}
-              alt="Bề mặt gỗ hoàn thiện Lotus"
+              alt="Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus - bề mặt mịn, giữ vân gỗ tự nhiên, màu sắc đồng đều"
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -1172,7 +1223,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                             : coatingSystem.methodPhun?.image
                           : coatingSystem.singleMethod?.image
                       }
-                      alt={coatingSystem.title}
+                      alt={`${coatingSystem.title} - ${coatingSystem.suitableFor}`}
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
@@ -1384,7 +1435,7 @@ function ProductsSection() {
               <div className="product-image-frame">
                 <img
                   src={group.image}
-                  alt={group.title}
+                  alt={`${group.title} - ${group.description}`}
                   loading="lazy"
                   className={index === 5 ? "scale-[103%]" : ""}
                 />
@@ -1443,7 +1494,7 @@ function ProductsSection() {
                 <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded bg-wood-200/40 flex items-center justify-center">
                   <img
                     src={group.image}
-                    alt={group.title}
+                    alt={`${group.title} - ${group.description}`}
                     loading="lazy"
                     className={`h-full w-full object-contain object-center p-2 ${index === 5 ? "scale-[143%]" : ""}`}
                   />
@@ -1580,7 +1631,7 @@ function Lookbook() {
               <div className="relative aspect-[3/2] overflow-hidden bg-wood-200/40">
                 <img
                   src={p.image}
-                  alt={p.name}
+                  alt={`${p.name} - ${p.type} - ${p.note}`}
                   loading="lazy"
                   className="h-full w-full object-cover object-center"
                 />
@@ -1608,7 +1659,7 @@ function Lookbook() {
               <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/40">
                 <img
                   src={p.image}
-                  alt={p.name}
+                  alt={`${p.name} - ${p.type} - ${p.note}`}
                   loading="lazy"
                   className="h-full w-full object-cover object-center"
                 />

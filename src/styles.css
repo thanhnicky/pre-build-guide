@@ -213,12 +213,25 @@ body {
   padding: 21px 26px;
 }
 
+@media (max-width: 639px) {
+  .logo-item {
+    min-height: 140px;
+    padding: 16px 20px;
+  }
+}
+
 .logo-mark {
   width: 100%;
   height: 73px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 639px) {
+  .logo-mark {
+    height: 65px;
+  }
 }
 
 .logo-mark img {
@@ -228,6 +241,12 @@ body {
   height: auto;
   object-fit: contain;
   display: block;
+}
+
+@media (max-width: 639px) {
+  .logo-mark img {
+    max-height: 55px;
+  }
 }
 
 /* Logo Variants for Per-Logo Adjustments */

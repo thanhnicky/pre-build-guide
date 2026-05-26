@@ -35,6 +35,14 @@ import nhaMayCasta from "@/assets/nha-may-casta.png";
 import pacificFur from "@/assets/pacific-fur.jpg";
 import aeonLongan from "@/assets/aeon-longan.webp";
 import aeonTanAn from "@/assets/aeon-tan-an.jpg";
+import logoMasteriseHome from "@/assets/logo-masterise-home.png";
+import logoNemFur from "@/assets/logo-nem-fur.png";
+import logoNovaland from "@/assets/logo-novaland.png";
+import logoPrime from "@/assets/logo-prime.png";
+import logoPullman from "@/assets/logo-pullman.png";
+import logoAlc from "@/assets/logo-alc.png";
+import logoScg from "@/assets/logo-scg.jpg";
+import logoSofitels from "@/assets/logo-Sofitels.jpg";
 
 const ZALO = "https://zalo.me/0943966662";
 
@@ -42,7 +50,7 @@ export const Route = createFileRoute("/")({
   component: LotusLanding,
   head: () => ({
     meta: [
-      { title: "Lotus — Hoàn thiện gỗ cho không gian sống" },
+      { title: "Lotus - Sơn Gỗ Hệ Nước" },
       {
         name: "description",
         content:
@@ -292,12 +300,14 @@ function TechCollaborationSection() {
    ============================================================ */
 function PartnersSection() {
   const partners = [
-    { src: "/logos/novaland.png", alt: "Novaland" },
-    { src: "/logos/apc-an-phong.png", alt: "APC An Phong" },
-    { src: "/logos/masteries-homes.png", alt: "Masteries Homes" },
-    { src: "/logos/sunl-interior.png", alt: "Sun&L Interior" },
-    { src: "/logos/xuong-xk-eu-my.png", alt: "Xưởng XK EU/Mỹ" },
-    { src: "/logos/partner-6.png", alt: "Đối tác 6" },
+    { src: logoMasteriseHome, alt: "Masterise Homes", variant: "logo--wide logo--masterise" },
+    { src: logoNemFur, alt: "Nem Furniture", variant: "logo--nem-fur" },
+    { src: logoNovaland, alt: "Novaland", variant: "logo--wide" },
+    { src: logoPrime, alt: "Prime" },
+    { src: logoPullman, alt: "Pullman", variant: "logo--has-bg logo--pullman" },
+    { src: logoAlc, alt: "ALC" },
+    { src: logoScg, alt: "SCG", variant: "logo--has-bg logo--scg" },
+    { src: logoSofitels, alt: "Sofitels", variant: "logo--has-bg logo--sofitels" },
   ];
 
   const scrollerRef = useRef<HTMLDivElement>(null);
@@ -338,7 +348,7 @@ function PartnersSection() {
               <div
                 key={p.alt}
                 data-logo-card
-                className="snap-start shrink-0 flex h-[50px] w-[calc((100%-1rem)/3)] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-3 sm:h-[60px] sm:w-[160px] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]"
+                className={`${p.variant || ""} logo-item snap-start shrink-0 flex min-h-[156px] w-[calc((100%-1rem)/3)] items-center justify-center rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-6 sm:w-[160px] sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-4.5rem)/4)]`}
                 title={p.alt}
               >
                 {failed[p.alt] ? (
@@ -346,12 +356,14 @@ function PartnersSection() {
                     {p.alt}
                   </span>
                 ) : (
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    className="max-h-full max-w-full object-contain"
-                    onError={() => setFailed((f) => ({ ...f, [p.alt]: true }))}
-                  />
+                  <div className="logo-mark">
+                    <img
+                      src={p.src}
+                      alt={p.alt}
+                      className="max-w-full max-h-[62px] w-auto h-auto object-contain"
+                      onError={() => setFailed((f) => ({ ...f, [p.alt]: true }))}
+                    />
+                  </div>
                 )}
               </div>
             ))}
@@ -368,7 +380,7 @@ function PartnersSection() {
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-[15px] leading-[1.75] text-wood-700/85">
-          Lotus đang đồng hành cùng xưởng nội thất công trình, nhà thầu hoàn thiện và các đơn vị sản xuất đồ gỗ theo dự án trong nước.
+          Lotus đang đồng hành cùng xưởng nội thất công trình, nhà thầu hoàn thiện và các đơn vị sản xuất đồ gỗ theo dự án trong nước và dự án xuất khẩu.
         </p>
 
         <div className="mx-auto mt-16 w-16 border-b border-wood-300/40" />
@@ -1494,43 +1506,43 @@ const PROJECTS = [
   {
     tag: "HỆ PHUN · NỘI THẤT",
     name: "Grand Marina Saigon",
-    type: "Nội thất phòng & hành lang · TP.HCM · 2024",
-    note: "320 phòng · đồng màu giữa các lô giao · bàn giao theo tiến độ dự án.",
+    type: "Sơn hạng mục nội thất của toà Lake",
+    note: "Lotus wood primer; Lotus wood stain; Lotus PUD",
     image: grandMarinaSaigon,
   },
   {
     tag: "MÀU BỆT · MDF",
     name: "Masterise Hàng Bài - Hà Nội",
-    type: "Tủ bếp & tủ âm tường căn hộ cao cấp · TP. Thủ Đức · 2024",
-    note: "500 bộ · pha theo RAL · đồng màu ổn định giữa 4 block.",
+    type: "Sơn hạng mục nội thất khối phòng khách sạn",
+    note: "Lotus wood primer; Lotus wood paint; Lotus PUD",
     image: masteriseHn,
   },
   {
     tag: "HỆ LAU · XUẤT KHẨU EU",
     name: "Khách sạn Pullman Phú Quốc",
-    type: "Bàn & ghế gỗ tự nhiên · TP.HCM · 2023",
-    note: "1.200 sản phẩm · hồ sơ TDS/MSDS song ngữ phục vụ kiểm hàng buyer Đức.",
+    type: "Sơn bảo dưỡng nội thất hàng năm",
+    note: "Lotus wood stain FE, Lotus lacquer 2K",
     image: pullmanPhuQuoc,
   },
   {
     tag: "PHỦ BÓNG · OUTDOOR",
     name: "Nhà Máy Casta - Long Khánh",
-    type: "Lam, cửa & sàn gỗ ngoại thất · Đà Nẵng · 2023",
-    note: "Phủ kháng UV · bề mặt giữ ổn định sau 3 mùa vận hành ngoài trời.",
+    type: "Dự án",
+    note: "Lotus wood primer",
     image: nhaMayCasta,
   },
   {
     tag: "MÀU BỆT · MDF",
     name: "Nhà Máy Pacific Furniture",
-    type: "Tủ bếp & tủ âm tường · Đồng Nai · 2023",
-    note: "800 bộ · đồng màu RAL giữa 4 block.",
+    type: "Dự án trong nước & xuất khẩu",
+    note: "Lotus sanding sealer, Lotus woodstain, Lotus lacquer 2K",
     image: pacificFur,
   },
   {
     tag: "HỆ LAU · NỘI THẤT",
     name: "AEON Tân An - Long An",
-    type: "Bàn ghế & vách ốp gỗ · TP.HCM · 2022",
-    note: "Bề mặt giữ ổn định sau 2 năm vận hành cường độ cao.",
+    type: "Nội thất & vách ốp",
+    note: "Lotus wood stain, Lotus lacquer",
     image: aeonTanAn,
   },
 ];
@@ -1572,9 +1584,6 @@ function Lookbook() {
                   loading="lazy"
                   className="h-full w-full object-cover object-center"
                 />
-                <span className="absolute left-4 top-4 rounded-full bg-wood-900/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-background backdrop-blur-sm">
-                  {p.tag}
-                </span>
               </div>
               <div className="flex flex-col gap-2 p-6 sm:p-7">
                 <h3 className="font-display text-[1.35rem] font-semibold leading-[1.25] text-wood-900">
@@ -1603,9 +1612,6 @@ function Lookbook() {
                   loading="lazy"
                   className="h-full w-full object-cover object-center"
                 />
-                <span className="absolute left-3 top-3 rounded-full bg-wood-900/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-background backdrop-blur-sm">
-                  {p.tag}
-                </span>
               </div>
               <div className="flex flex-col gap-1.5 p-4">
                 <h3 className="font-display text-[14.5px] font-semibold leading-[1.25] text-wood-900">

@@ -1,33 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const Route = createFileRoute("/studio")({
-  component: StudioPage,
+  component: StudioRedirect,
 });
 
-function StudioPage() {
-  const [ready, setReady] = useState<{ Studio: React.ComponentType<any>; config: any } | null>(null);
-
+function StudioRedirect() {
   useEffect(() => {
-    Promise.all([
-      import("sanity"),
-      import("../../sanity.config"),
-    ]).then(([sanityMod, configMod]) => {
-      setReady({ Studio: sanityMod.Studio, config: configMod.default });
-    });
+    window.location.href = "https://songo-blog.sanity.studio";
   }, []);
 
-  if (!ready) {
-    return (
-      <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#FDFAF7", fontFamily: "Inter, sans-serif", color: "#5C3D1E" }}>
-        Đang tải Studio...
-      </div>
-    );
-  }
-
   return (
-    <div style={{ height: "100vh" }}>
-      <ready.Studio config={ready.config} />
+    <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#FDFAF7", fontFamily: "Inter, sans-serif", color: "#5C3D1E" }}>
+      Đang chuyển hướng đến Studio...
     </div>
   );
 }

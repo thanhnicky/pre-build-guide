@@ -1,4 +1,4 @@
-import { c as createMiddleware } from "./server-CQ3eKgpe.mjs";
+import { c as createMiddleware } from "./server-D85ewzTz.mjs";
 import { r as renderErrorPage } from "./index.mjs";
 import "../_libs/seroval.mjs";
 import "../_libs/react.mjs";
@@ -14,9 +14,9 @@ import "../_libs/seroval-plugins.mjs";
 import "node:stream/web";
 import "../_libs/tanstack__react-router.mjs";
 import "../_libs/react-dom.mjs";
+import "async_hooks";
 import "util";
 import "crypto";
-import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
 function dedupeSerializationAdapters(deduped, serializationAdapters) {

@@ -3,6 +3,8 @@ import { Q as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { b as createRouter, a as createRootRouteWithContext, u as useRouter, L as Link, O as Outlet, H as HeadContent, S as Scripts, c as createFileRoute, l as lazyRouteComponent } from "../_libs/tanstack__react-router.mjs";
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { i as instance } from "../_libs/i18next.mjs";
+import { c as createClient } from "../_libs/sanity__client.mjs";
+import { d as deprecatedcreateImageUrlBuilder } from "../_libs/sanity__image-url.mjs";
 import { i as initReactI18next } from "../_libs/react-i18next.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
@@ -12,11 +14,35 @@ import "../_libs/seroval-plugins.mjs";
 import "node:stream/web";
 import "node:stream";
 import "../_libs/react-dom.mjs";
+import "async_hooks";
 import "util";
 import "crypto";
-import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
+import "../_libs/get-it.mjs";
+import "../_libs/decompress-response.mjs";
+import "zlib";
+import "../_libs/mimic-response.mjs";
+import "url";
+import "http";
+import "https";
+import "assert";
+import "querystring";
+import "../_libs/tunnel-agent.mjs";
+import "net";
+import "tls";
+import "events";
+import "../_libs/safe-buffer.mjs";
+import "buffer";
+import "tty";
+import "../_libs/through2.mjs";
+import "../_libs/readable-stream.mjs";
+import "node:string_decoder";
+import "../_libs/inherits.mjs";
+import "../_libs/util-deprecate.mjs";
+import "../_libs/is-retry-allowed.mjs";
+import "../_libs/rxjs.mjs";
+import "../_libs/nanoid.mjs";
 import "../_libs/use-sync-external-store.mjs";
 const vi = {
   hero: {
@@ -331,7 +357,7 @@ instance.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const appCss = "/assets/styles-CUQCT0k8.css";
+const appCss = "/assets/styles-C2qfcnPr.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -349,7 +375,7 @@ function NotFoundComponent() {
 }
 function ErrorComponent({ error, reset }) {
   console.error(error);
-  const router = useRouter();
+  const router2 = useRouter();
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-xl font-semibold tracking-tight text-foreground", children: "This page didn't load" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm text-muted-foreground", children: "Something went wrong on our end. You can try refreshing or head back home." }),
@@ -358,7 +384,7 @@ function ErrorComponent({ error, reset }) {
         "button",
         {
           onClick: () => {
-            router.invalidate();
+            router2.invalidate();
             reset();
           },
           className: "inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
@@ -376,7 +402,7 @@ function ErrorComponent({ error, reset }) {
     ] })
   ] }) });
 }
-const Route$1 = createRootRouteWithContext()({
+const Route$4 = createRootRouteWithContext()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -456,6 +482,79 @@ const Route$1 = createRootRouteWithContext()({
             "availableLanguage": ["Vietnamese", "English"]
           }
         })
+      },
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Hệ sơn nước khác PU ở điểm gì thực sự quan trọng với xưởng?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mùi thấp hơn, không cần pha dung môi, và đáp ứng tiêu chuẩn xuất khẩu mà PU gốc dung môi không qua được — đó là ba lý do xưởng chuyển hệ."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Chuyển sang hệ sơn nước có phức tạp không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Không. Kỹ sư Lotus vào xưởng lần đầu — chỉnh tỷ lệ pha, súng phun, xử lý lỗi bề mặt tại chỗ. Xưởng không phải tự dò một mình."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hồ sơ kỹ thuật sơn gỗ Lotus cung cấp được gì cho buyer xuất khẩu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "TDS, MSDS song ngữ Anh–Việt, cùng các chứng nhận EN71-3, ASTM F963, FDA, RoHS — đủ cho hầu hết yêu cầu xuất khẩu Mỹ, EU, Nhật."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Xưởng nội thất công trình dùng sơn Lotus có lợi ích gì?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Đồng màu giữa các lô sản xuất, hồ sơ kỹ thuật phục vụ nghiệm thu dự án, VOC thấp và mùi nhẹ phù hợp hạng mục bàn giao sớm."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Thời gian khô của sơn gỗ hệ nước Lotus là bao lâu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ — thông số cụ thể theo từng hệ trong TDS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sơn gỗ Lotus có mẫu thử trước khi đặt hàng lớn không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sơn gỗ hệ nước Lotus dùng được với súng phun HVLP không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Được. Kỹ sư Lotus tư vấn tỷ lệ pha và áp suất cụ thể cho từng loại súng HVLP và air-assisted."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Làm thế nào để bắt đầu tư vấn sơn gỗ với Lotus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gửi ảnh bề mặt qua Zalo 0943 966 662. Kỹ sư đọc ảnh, hỏi thêm nếu cần, đề xuất hệ và gửi hồ sơ kỹ thuật trong ngày."
+              }
+            }
+          ]
+        })
       }
     ]
   }),
@@ -492,7 +591,7 @@ function RootShell({ children }) {
         "script",
         {
           async: true,
-          src: "https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"
+          src: "https://www.googletagmanager.com/gtag/js?id=AW-16701011893"
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -503,7 +602,7 @@ function RootShell({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-XXXXXXXXXX');
+              gtag('config', 'AW-16701011893');
             `
           }
         }
@@ -516,12 +615,16 @@ function RootShell({ children }) {
   ] });
 }
 function RootComponent() {
-  const { queryClient } = Route$1.useRouteContext();
+  const { queryClient } = Route$4.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter = () => import("./index-DhZtJXHU.mjs");
-const Route = createFileRoute("/")({
-  component: lazyRouteComponent($$splitComponentImporter, "component"),
+const $$splitComponentImporter$3 = () => import("./studio-DSJqIYXK.mjs");
+const Route$3 = createFileRoute("/studio")({
+  component: lazyRouteComponent($$splitComponentImporter$3, "component")
+});
+const $$splitComponentImporter$2 = () => import("./index-BMO-cKlH.mjs");
+const Route$2 = createFileRoute("/")({
+  component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
     meta: [{
       title: "Lotus - Sơn Gỗ Hệ Nước"
@@ -574,25 +677,108 @@ const Route = createFileRoute("/")({
     }]
   })
 });
-const IndexRoute = Route.update({
+const sanityClient = createClient({
+  projectId: "d8bj0857",
+  dataset: "production",
+  apiVersion: "2024-01-01",
+  useCdn: true
+});
+const builder = deprecatedcreateImageUrlBuilder(sanityClient);
+function urlFor(source) {
+  return builder.image(source);
+}
+async function getAllPosts() {
+  return sanityClient.fetch(
+    `*[_type == "post"] | order(publishedAt desc) {
+      _id, title, slug, excerpt, publishedAt, tags, mainImage, seoDescription
+    }`
+  );
+}
+async function getPostBySlug(slug) {
+  return sanityClient.fetch(
+    `*[_type == "post" && slug.current == $slug][0] {
+      _id, title, slug, excerpt, publishedAt, tags, mainImage, body, seoDescription
+    }`,
+    { slug }
+  );
+}
+const $$splitComponentImporter$1 = () => import("./index-CaRq5G3t.mjs");
+const Route$1 = createFileRoute("/blog/")({
+  loader: async () => {
+    const posts = await getAllPosts();
+    return {
+      posts
+    };
+  },
+  component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+const $$splitComponentImporter = () => import("../_slug-CG4JSS2f.mjs");
+const Route = createFileRoute("/blog/$slug")({
+  loader: async ({
+    params
+  }) => {
+    const post = await getPostBySlug(params.slug);
+    if (!post) throw new Error("Post not found");
+    return {
+      post
+    };
+  },
+  head: ({
+    loaderData
+  }) => ({
+    meta: [{
+      title: `${loaderData?.post?.title ?? "Bài viết"} — Sơn Gỗ Lotus`
+    }, {
+      name: "description",
+      content: loaderData?.post?.seoDescription ?? loaderData?.post?.excerpt ?? ""
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter, "component")
+});
+const StudioRoute = Route$3.update({
+  id: "/studio",
+  path: "/studio",
+  getParentRoute: () => Route$4
+});
+const IndexRoute = Route$2.update({
   id: "/",
   path: "/",
-  getParentRoute: () => Route$1
+  getParentRoute: () => Route$4
+});
+const BlogIndexRoute = Route$1.update({
+  id: "/blog/",
+  path: "/blog/",
+  getParentRoute: () => Route$4
+});
+const BlogSlugRoute = Route.update({
+  id: "/blog/$slug",
+  path: "/blog/$slug",
+  getParentRoute: () => Route$4
 });
 const rootRouteChildren = {
-  IndexRoute
+  IndexRoute,
+  StudioRoute,
+  BlogSlugRoute,
+  BlogIndexRoute
 };
-const routeTree = Route$1._addFileChildren(rootRouteChildren)._addFileTypes();
+const routeTree = Route$4._addFileChildren(rootRouteChildren)._addFileTypes();
 const getRouter = () => {
   const queryClient = new QueryClient();
-  const router = createRouter({
+  const router2 = createRouter({
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0
   });
-  return router;
+  return router2;
 };
-export {
+const router = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
   getRouter
+}, Symbol.toStringTag, { value: "Module" }));
+export {
+  Route$1 as R,
+  Route as a,
+  router as r,
+  urlFor as u
 };

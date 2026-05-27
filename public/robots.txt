@@ -2,4 +2,17 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://lotuswoodpaint.com/sitemap.xml
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://www.songo.com.vn/sitemap.xml
+LLMs: https://www.songo.com.vn/llms.txt

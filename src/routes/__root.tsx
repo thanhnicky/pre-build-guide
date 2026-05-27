@@ -150,6 +150,79 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "availableLanguage": ["Vietnamese", "English"]
           }
         })
+      },
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Hệ sơn nước khác PU ở điểm gì thực sự quan trọng với xưởng?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mùi thấp hơn, không cần pha dung môi, và đáp ứng tiêu chuẩn xuất khẩu mà PU gốc dung môi không qua được — đó là ba lý do xưởng chuyển hệ."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Chuyển sang hệ sơn nước có phức tạp không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Không. Kỹ sư Lotus vào xưởng lần đầu — chỉnh tỷ lệ pha, súng phun, xử lý lỗi bề mặt tại chỗ. Xưởng không phải tự dò một mình."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hồ sơ kỹ thuật sơn gỗ Lotus cung cấp được gì cho buyer xuất khẩu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "TDS, MSDS song ngữ Anh–Việt, cùng các chứng nhận EN71-3, ASTM F963, FDA, RoHS — đủ cho hầu hết yêu cầu xuất khẩu Mỹ, EU, Nhật."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Xưởng nội thất công trình dùng sơn Lotus có lợi ích gì?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Đồng màu giữa các lô sản xuất, hồ sơ kỹ thuật phục vụ nghiệm thu dự án, VOC thấp và mùi nhẹ phù hợp hạng mục bàn giao sớm."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Thời gian khô của sơn gỗ hệ nước Lotus là bao lâu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ — thông số cụ thể theo từng hệ trong TDS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sơn gỗ Lotus có mẫu thử trước khi đặt hàng lớn không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sơn gỗ hệ nước Lotus dùng được với súng phun HVLP không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Được. Kỹ sư Lotus tư vấn tỷ lệ pha và áp suất cụ thể cho từng loại súng HVLP và air-assisted."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Làm thế nào để bắt đầu tư vấn sơn gỗ với Lotus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gửi ảnh bề mặt qua Zalo 0943 966 662. Kỹ sư đọc ảnh, hỏi thêm nếu cần, đề xuất hệ và gửi hồ sơ kỹ thuật trong ngày."
+              }
+            }
+          ]
+        })
       }
     ]
   }),

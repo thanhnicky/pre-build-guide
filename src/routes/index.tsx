@@ -164,15 +164,15 @@ function AudienceSection() {
       icon: Factory,
       title: t("audience.factory.title"),
       lead: t("audience.factory.lead"),
-      bullets: t("audience.factory.bullets", { returnObjects: true }),
-      tags: t("audience.factory.tags", { returnObjects: true }),
+      bullets: t("audience.factory.bullets", { returnObjects: true }) as string[],
+      tags: t("audience.factory.tags", { returnObjects: true }) as string[],
     },
     {
       icon: Ship,
       title: t("audience.export.title"),
       lead: t("audience.export.lead"),
-      bullets: t("audience.export.bullets", { returnObjects: true }),
-      tags: t("audience.export.tags", { returnObjects: true }),
+      bullets: t("audience.export.bullets", { returnObjects: true }) as string[],
+      tags: t("audience.export.tags", { returnObjects: true }) as string[],
     },
   ];
 

@@ -354,7 +354,7 @@ function TrustBar() {
   const {
     t
   } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-wood-200 bg-background pt-12 pb-10 sm:pt-12 sm:pb-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 items-center gap-6 text-center lg:grid-cols-4 lg:gap-10", children: [{
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-wood-200 bg-background pt-12 pb-10 sm:pt-12 sm:pb-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 items-start gap-6 text-center lg:grid-cols-4 lg:gap-10", children: [{
     k: "200+",
     v: t("trust.stat1Label")
   }, {
@@ -1115,7 +1115,7 @@ function Lookbook() {
   const {
     t
   } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "cong-trinh", className: "bg-[oklch(0.96_0.018_82)] py-24 sm:py-32 lg:py-40", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "cong-trinh", className: "bg-[oklch(0.96_0.018_82)] py-16 sm:py-24 lg:py-32", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("lookbook.label") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-4xl lg:text-[2.75rem]", children: [
@@ -1150,7 +1150,7 @@ function ConsultBlock() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-wood-900 py-16 text-background sm:py-28 lg:py-36", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-400 sm:text-[14px]", children: t("consult.label") }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3rem]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[1.9rem] font-light leading-[1.06] sm:text-[2.4rem] lg:text-[3rem]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: t("consult.title") }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-200", children: t("consult.titleItalic") })
       ] }),
@@ -1232,7 +1232,7 @@ function FAQ() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { "aria-hidden": true, className: "faq-icon-minus text-[15px] leading-none", children: "−" })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-7 pr-12 text-[16px] leading-[1.75] text-wood-700/85 sm:text-[17px]", children: t(f.a) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-7 pr-4 text-[16px] leading-[1.75] text-wood-700/85 sm:pr-12 sm:text-[17px]", children: t(f.a) })
     ] }, i)) }) })
   ] }) }) });
 }

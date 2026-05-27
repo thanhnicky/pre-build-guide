@@ -445,7 +445,7 @@ function TrustBar() {
   return (
     <section className="border-y border-wood-200 bg-background pt-12 pb-10 sm:pt-12 sm:pb-14">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-2 items-center gap-6 text-center lg:grid-cols-4 lg:gap-10">
+        <div className="grid grid-cols-2 items-start gap-6 text-center lg:grid-cols-4 lg:gap-10">
           {[
             { k: "200+", v: t("trust.stat1Label") },
             { k: "12+", v: t("trust.stat2Label") },
@@ -1753,7 +1753,7 @@ function Lookbook() {
   return (
     <section
       id="cong-trinh"
-      className="bg-[oklch(0.96_0.018_82)] py-24 sm:py-32 lg:py-40"
+      className="bg-[oklch(0.96_0.018_82)] py-16 sm:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
         <div className="max-w-3xl">
@@ -1848,7 +1848,7 @@ function ConsultBlock() {
             <div className="text-[13px] uppercase tracking-[0.32em] text-wood-400 sm:text-[14px]">
               {t("consult.label")}
             </div>
-            <h2 className="font-display mt-8 text-[2.4rem] font-light leading-[1.06] sm:text-5xl lg:text-[3rem]">
+            <h2 className="font-display mt-8 text-[1.9rem] font-light leading-[1.06] sm:text-[2.4rem] lg:text-[3rem]">
               <span className="block">{t("consult.title")}</span>
               <span className="block italic font-normal text-wood-200">
                 {t("consult.titleItalic")}
@@ -1976,7 +1976,7 @@ function FAQ() {
                       <span aria-hidden className="faq-icon-minus text-[15px] leading-none">−</span>
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-7 pr-12 text-[16px] leading-[1.75] text-wood-700/85 sm:text-[17px]">
+                  <AccordionContent className="pb-7 pr-4 text-[16px] leading-[1.75] text-wood-700/85 sm:pr-12 sm:text-[17px]">
                     {t(f.a)}
                   </AccordionContent>
                 </AccordionItem>

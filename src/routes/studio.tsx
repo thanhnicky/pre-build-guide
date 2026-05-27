@@ -7,7 +7,7 @@ export const Route = createFileRoute("/studio")({
 
 function StudioRedirect() {
   useEffect(() => {
-    window.location.href = "https://songo-blog.sanity.studio";
+    window.location.href = "/studio/index.html";
   }, []);
 
   return (

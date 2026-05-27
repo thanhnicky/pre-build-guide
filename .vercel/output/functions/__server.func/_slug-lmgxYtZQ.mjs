@@ -1,6 +1,6 @@
 import { j as jsxRuntimeExports } from "./_libs/react.mjs";
 import { L as Link } from "./_libs/tanstack__react-router.mjs";
-import { a as Route, u as urlFor } from "./_ssr/router-ByOoMFBk.mjs";
+import { a as Route, u as urlFor } from "./_ssr/router-zwrm5MNA.mjs";
 import { N as Navbar, F as Footer } from "./_ssr/Footer-EPKtGATy.mjs";
 import { P as PortableText } from "./_libs/portabletext__react.mjs";
 import "./_libs/i18next.mjs";

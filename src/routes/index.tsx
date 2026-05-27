@@ -361,15 +361,6 @@ function PartnersSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState<Record<string, boolean>>({});
 
-  // Auto-scroll every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      scrollBy(1);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
     if (!el) return;

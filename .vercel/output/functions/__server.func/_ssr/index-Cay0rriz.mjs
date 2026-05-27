@@ -325,12 +325,6 @@ function PartnersSection() {
   }];
   const scrollerRef = reactExports.useRef(null);
   const [failed, setFailed] = reactExports.useState({});
-  reactExports.useEffect(() => {
-    const interval = setInterval(() => {
-      scrollBy(1);
-    }, 5e3);
-    return () => clearInterval(interval);
-  }, []);
   const scrollBy = (dir) => {
     const el = scrollerRef.current;
     if (!el) return;

@@ -6,7 +6,7 @@ import { postSchema } from "./src/lib/sanity/schema";
 export default defineConfig({
   name: "songo-studio",
   title: "Sơn Gỗ Lotus — Quản trị nội dung",
-  projectId: "d8bj0857",
+  projectId: "fzoqzuni",
   dataset: "production",
   plugins: [structureTool(), visionTool()],
   schema: {

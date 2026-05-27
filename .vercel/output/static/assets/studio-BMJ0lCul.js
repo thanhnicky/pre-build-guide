@@ -1,1 +1,0 @@
-import{r as t,j as n}from"./index-V2qv0cZ2.js";function o(){return t.useEffect(()=>{window.location.href="https://songo-blog.sanity.studio"},[]),n.jsx("div",{style:{height:"100vh",display:"flex",alignItems:"center",justifyContent:"center",background:"#FDFAF7",fontFamily:"Inter, sans-serif",color:"#5C3D1E"},children:"Đang chuyển hướng đến Studio..."})}export{o as component};

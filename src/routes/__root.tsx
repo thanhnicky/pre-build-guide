@@ -1,3 +1,4 @@
+import "@/lib/i18n";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -92,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://lotuswoodpaint.com" },
+      { property: "og:url", content: "https://www.songo.com.vn" },
       { property: "og:locale", content: "vi_VN" },
       { property: "og:site_name", content: "Lotus Wood Paint" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -103,8 +104,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image:alt", content: "Lotus Wood Paint - Sơn gỗ hệ nước chuyên nghiệp" },
       { name: "geo.region", content: "VN-SG" },
       { name: "geo.placename", content: "Ho Chi Minh City" },
-      { name: "geo.position", content: "10.7769;106.7009" },
-      { name: "ICBM", content: "10.7769, 106.7009" },
+      { name: "geo.position", content: "10.8544;106.5775" },
+      { name: "ICBM", content: "10.8544, 106.5775" },
     ],
     links: [
       {
@@ -113,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "canonical",
-        href: "https://lotuswoodpaint.com",
+        href: "https://www.songo.com.vn",
       },
     ],
     scripts: [
@@ -121,16 +122,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         innerHTML: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": ["Organization", "LocalBusiness"],
           "name": "Lotus Wood Paint",
           "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật",
-          "url": "https://lotuswoodpaint.com",
+          "url": "https://www.songo.com.vn",
           "telephone": "+84-943-966-662",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Ho Chi Minh City",
+            "streetAddress": "99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm",
+            "addressLocality": "Huyện Hóc Môn",
+            "addressRegion": "Thành phố Hồ Chí Minh",
             "addressCountry": "VN"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 10.8544175,
+            "longitude": 106.5774582
+          },
+          "hasMap": "https://maps.app.goo.gl/JZ9NvsifM5T1PfcA9",
           "sameAs": [
             "https://zalo.me/0943966662"
           ],
@@ -158,7 +167,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
         {/* Google Analytics 4 */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-WJJM4HV5LR"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -166,7 +175,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX');
+              gtag('config', 'G-WJJM4HV5LR');
             `,
           }}
         />

@@ -27,7 +27,7 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-[12.5px] tracking-wide text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap"
+              className="text-[13px] tracking-wide text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]"
             >
               {link.label}
             </a>
@@ -37,7 +37,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="tel:0943966662"
-            className="text-[12px] tracking-wide text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap"
+            className="text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]"
           >
             0943 966 662
           </a>
@@ -45,7 +45,7 @@ export function Navbar() {
             href="https://zalo.me/0943966662"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-wood-900 px-3.5 py-2 text-[12.5px] font-medium tracking-wide text-background transition-colors hover:bg-wood-800"
+            className="inline-flex items-center gap-1.5 rounded-full bg-wood-900 px-3.5 py-2 text-[13px] font-medium tracking-wide text-background transition-colors hover:bg-wood-800 sm:text-[14px]"
           >
             <MessageCircle className="h-3.5 w-3.5" />
             Zalo
@@ -72,7 +72,7 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-wood-700 transition-colors hover:text-wood-900"
+                className="text-[15px] font-medium text-wood-700 transition-colors hover:text-wood-900"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -81,7 +81,7 @@ export function Navbar() {
             <div className="mt-2 flex gap-2">
               <a
                 href="tel:0943966662"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-100 px-3 py-2 text-sm font-medium text-wood-700"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-100 px-3 py-2 text-[15px] font-medium text-wood-700"
               >
                 
                 0943 966 662
@@ -90,7 +90,7 @@ export function Navbar() {
                 href="https://zalo.me/0943966662"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-600 px-3 py-2 text-sm font-medium text-primary-foreground"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-600 px-3 py-2 text-[15px] font-medium text-primary-foreground"
               >
                 <MessageCircle className="h-3.5 w-3.5" />
                 Zalo

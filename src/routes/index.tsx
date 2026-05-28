@@ -14,6 +14,17 @@ import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { StickyZalo } from "@/components/StickyZalo";
 
 import heroImg from "@/assets/lotus-hero.jpg";
+import sanGoTruoc from "@/assets/san-go-truoc-khi-bao-duong.jpg";
+import sanGoSau from "@/assets/san-go-truoc-sau-khi-son-bao-duong.jpg";
+import kiemTraMau from "@/assets/kiem-tra-mau-thuc-te.jpg";
+import kysuHoTro from "@/assets/ky-su-ho-tro-giai-doan-dau.jpg";
+import dongHanh from "@/assets/dong-hanh-cung-nha-may.jpg";
+import congTrinhSonGo from "@/assets/cong-trinh-son-go-ngoai-troi-lotus.jpg";
+import nhaMayDonHang from "@/assets/nha-may-don-hang-xk.jpg";
+import thuMauTruocLo from "@/assets/thu-mau-truoc-khi-vao-lo.jpg";
+import hoTroKyThuat from "@/assets/ho-tro-ky-thuat-tai-xuong.jpg";
+import cungUngTienDo from "@/assets/cung-ung-theo-doi-tien-do.jpg";
+import sonAnToanXK from "@/assets/son-an-toan-noi-that-xuat-khau-09.jpeg";
 import heroWood from "@/assets/hero-wood.jpg";
 import procLau from "@/assets/proc-lau.jpg";
 import procPhun from "@/assets/proc-phun.jpg";
@@ -60,6 +71,22 @@ const PARTNERS = [
   { src: logoScg, alt: "SCG" },
   { src: logoSofitels, alt: "Sofitel" },
 ];
+
+// ─── PHOTO CONSTANTS ── TODO: replace (placeholder) with actual Lotus photos ──
+const heroMainImage      = heroImg;           // (real) finished wood surface
+const heroSampleImage    = sanGoTruoc;        // (real) sàn gỗ cũ trước khi sơn
+const heroSupportImage   = sanGoSau;          // (real) sàn gỗ đã được sơn Lotus
+const proofTestImage     = kiemTraMau;        // (real) kiểm tra màu sắc trước khi sản xuất
+const proofEngineerImage = kysuHoTro;         // (real) kỹ sư Lotus hỗ trợ kỹ thuật
+const proofFinishedImage = dongHanh;          // (real) đồng hành cùng nhà máy sản xuất
+const audienceFactoryImage  = congTrinhSonGo;    // (real) công trình sơn gỗ ngoại trời Lotus
+const audienceExportImage   = nhaMayDonHang;     // (real) nhà máy đơn hàng xuất khẩu
+const whyWaterVisual1    = heroWood;          // (placeholder) → workshop / surface shot
+const whyWaterVisual2    = procPhun;          // (placeholder) → spray technique
+const techStep3Image     = thuMauTruocLo;     // (real) thử mẫu trước khi vào lô
+const techStep4Image     = hoTroKyThuat;      // (real) hỗ trợ kỹ thuật tại xưởng
+const techStep5Image     = cungUngTienDo;     // (real) cung ứng theo dõi tiến độ
+const ctaSupportImage    = sonAnToanXK;       // (real) sơn an toàn nội thất xuất khẩu
 
 export const Route = createFileRoute("/")({
   component: LotusLanding,
@@ -137,6 +164,8 @@ function LotusLanding() {
         <Hero />
         {/* 2. Trust bar */}
         <TrustBar />
+        {/* 2b. Proof gallery */}
+        <ProofGallery />
         {/* 3. Audience */}
         <AudienceSection />
         {/* 4. Why Water */}
@@ -173,6 +202,7 @@ function AudienceSection() {
   const audiences = [
     {
       icon: Factory,
+      image: audienceFactoryImage, // TODO: replace with actual interior construction photo
       title: t("audience.factory.title"),
       lead: t("audience.factory.lead"),
       bullets: t("audience.factory.bullets", { returnObjects: true }) as string[],
@@ -180,6 +210,7 @@ function AudienceSection() {
     },
     {
       icon: Ship,
+      image: audienceExportImage, // TODO: replace with actual factory/export production photo
       title: t("audience.export.title"),
       lead: t("audience.export.lead"),
       bullets: t("audience.export.bullets", { returnObjects: true }) as string[],
@@ -211,8 +242,13 @@ function AudienceSection() {
           {audiences.map((a) => (
             <div
               key={a.title}
-              className="flex flex-col gap-6 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-9"
+              className="flex flex-col overflow-hidden rounded-lg border border-wood-200/60 bg-[#F5F0EA]"
             >
+              {/* Context image — TODO: swap a.image for real audience photo */}
+              <div className="relative aspect-[16/7] overflow-hidden bg-wood-200/30">
+                <img src={a.image} alt={a.title} loading="lazy" className="h-full w-full object-cover object-center" />
+              </div>
+              <div className="flex flex-col gap-6 p-7 sm:p-9">
               {/* Header */}
               <div className="flex items-center gap-3">
                 <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
@@ -243,11 +279,12 @@ function AudienceSection() {
                 {a.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-wood-700 px-2.5 py-1 text-[12px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[13px]"
+                    className="font-display rounded-full bg-wood-700 px-2.5 py-1 text-[12px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[13px]"
                   >
                     {t}
                   </span>
                 ))}
+              </div>
               </div>
             </div>
           ))}
@@ -263,35 +300,22 @@ function AudienceSection() {
 function TechCollaborationSection() {
   const { t } = useTranslation();
   const steps = [
+    { icon: Camera,      n: "01", title: t("tech.step1.title"), body: t("tech.step1.body"), image: "", imageCaption: "" },
+    { icon: FileText,    n: "02", title: t("tech.step2.title"), body: t("tech.step2.body"), image: "", imageCaption: "" },
     {
-      icon: Camera,
-      n: "01",
-      title: t("tech.step1.title"),
-      body: t("tech.step1.body"),
+      icon: FlaskConical, n: "03", title: t("tech.step3.title"), body: t("tech.step3.body"),
+      image: techStep3Image, // TODO: replace with actual sample-board / color-test photo
+      imageCaption: "Bảng mẫu test màu thực tế trước khi vào lô",
     },
     {
-      icon: FileText,
-      n: "02",
-      title: t("tech.step2.title"),
-      body: t("tech.step2.body"),
+      icon: Wrench, n: "04", title: t("tech.step4.title"), body: t("tech.step4.body"),
+      image: techStep4Image, // TODO: replace with actual engineer directing spray at workshop
+      imageCaption: "Kỹ sư chỉnh hệ — hướng dẫn phun tại xưởng",
     },
     {
-      icon: FlaskConical,
-      n: "03",
-      title: t("tech.step3.title"),
-      body: t("tech.step3.body"),
-    },
-    {
-      icon: Wrench,
-      n: "04",
-      title: t("tech.step4.title"),
-      body: t("tech.step4.body"),
-    },
-    {
-      icon: Truck,
-      n: "05",
-      title: t("tech.step5.title"),
-      body: t("tech.step5.body"),
+      icon: Truck, n: "05", title: t("tech.step5.title"), body: t("tech.step5.body"),
+      image: techStep5Image, // TODO: replace with actual paint supply / warehouse photo
+      imageCaption: "Cung ứng đúng tiến độ sản xuất",
     },
   ];
 
@@ -315,38 +339,47 @@ function TechCollaborationSection() {
           </p>
         </div>
 
-        <ol className="mt-14 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5">
-          {steps.map((s, index) => (
-            <li
-              key={s.n}
-              className="relative flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6"
-            >
-              {/* Desktop arrow connector */}
-              {index < steps.length - 1 && (
-                <div className="absolute -right-2.5 top-8 hidden lg:block z-10">
-                  <ChevronRight className="h-5 w-5 text-wood-300" strokeWidth={1.5} />
-                </div>
-              )}
-              
-              {/* Prominent step number */}
-              <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">
-                {s.n}
-              </div>
-              
-              {/* Icon and title */}
+        {/* Steps 01 & 02 — text-only cards */}
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2">
+          {steps.slice(0, 2).map((s) => (
+            <div key={s.n} className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6">
+              <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">{s.n}</div>
               <div className="flex items-start gap-3 -mt-2">
                 <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
-                <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]">
-                  {s.title}
-                </h3>
+                <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]">{s.title}</h3>
               </div>
-              
-              <p className="text-[16px] leading-[1.65] text-wood-700/85">
-                {s.body}
-              </p>
-            </li>
+              <p className="text-[16px] leading-[1.65] text-wood-700/85">{s.body}</p>
+            </div>
           ))}
-        </ol>
+        </div>
+
+        {/* Steps 03–05 — storytelling: text one side, image the other, alternating */}
+        {/* TODO: replace step images with actual Lotus process photos */}
+        <div className="mt-5 flex flex-col gap-5">
+          {steps.slice(2).map((s, idx) => {
+            const textLeft = idx % 2 === 0;
+            return (
+              <div key={s.n} className="overflow-hidden rounded-lg border border-wood-200/60 bg-background">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className={`flex flex-col gap-4 p-7 sm:p-9 ${textLeft ? "lg:order-1" : "lg:order-2"}`}>
+                    <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">{s.n}</div>
+                    <div className="flex items-start gap-3 -mt-2">
+                      <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
+                      <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]">{s.title}</h3>
+                    </div>
+                    <p className="text-[16px] leading-[1.65] text-wood-700/85">{s.body}</p>
+                  </div>
+                  <div className={`relative aspect-[4/3] overflow-hidden bg-wood-200/30 ${textLeft ? "lg:order-2" : "lg:order-1"}`}>
+                    <img src={s.image} alt={s.imageCaption} loading="lazy" className="h-full w-full object-cover object-center" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/45 to-transparent px-4 pb-3 pt-10">
+                      <p className="text-[11px] font-medium tracking-wide text-white/90">{s.imageCaption}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
       </div>
     </section>
@@ -377,7 +410,6 @@ function PartnersSection() {
     if (!el) return;
     const card = el.querySelector<HTMLElement>("[data-logo-card]");
     const step = card ? card.offsetWidth + 24 : 200;
-    // On mobile, scroll by 3 cards at a time
     const multiplier = window.innerWidth < 640 ? 3 : 2;
     el.scrollBy({ left: dir * step * multiplier, behavior: "smooth" });
   };
@@ -449,6 +481,52 @@ function PartnersSection() {
 }
 
 /* ============================================================
+   PROOF GALLERY — 3-image mini proof after trust bar
+   ============================================================ */
+function ProofGallery() {
+  const items = [
+    {
+      image: proofTestImage,
+      caption: "Kiểm tra màu sắc trước khi sản xuất",
+      alt: "Kiểm tra màu sắc thực tế trước khi vào lô sản xuất — Lotus Paint",
+    },
+    {
+      image: proofEngineerImage,
+      caption: "Hỗ trợ kỹ thuật từ giai đoạn làm mẫu",
+      alt: "Kỹ sư Lotus hỗ trợ kỹ thuật trực tiếp tại xưởng nội thất",
+    },
+    {
+      image: proofFinishedImage,
+      caption: "Đồng hành cùng nhà máy sản xuất",
+      alt: "Lotus đồng hành cùng nhà máy sản xuất nội thất trong suốt quá trình",
+    },
+  ];
+  return (
+    <section className="bg-background pb-16 sm:pb-20">
+      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
+          {items.map((item, i) => (
+            <div key={i} className="group overflow-hidden rounded-lg ring-1 ring-wood-200/50">
+              <div className="relative aspect-[4/3] overflow-hidden bg-wood-200/30">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="border-t border-wood-200/50 px-4 py-3">
+                <p className="font-display text-[13px] font-medium text-wood-700 sm:text-[14px]">{item.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
    TRUST BAR
    ============================================================ */
 function TrustBar() {
@@ -469,12 +547,12 @@ function TrustBar() {
                   <div className="font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]">
                     {s.k}
                   </div>
-                  <div className="mt-2 text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]">
+                  <div className="mt-2 font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]">
                     {s.v}
                   </div>
                 </>
               ) : (
-                <div className="text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]">
+                <div className="font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]">
                   {s.v}
                 </div>
               )}
@@ -490,7 +568,7 @@ function TrustBar() {
                 key={p.alt}
                 src={p.src}
                 alt={p.alt}
-                className="h-6 w-auto max-w-[88px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-8 sm:max-w-[110px]"
+                className="h-8 w-auto max-w-[122px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-12 sm:max-w-[152px]"
               />
             ))}
           </div>
@@ -562,7 +640,7 @@ function CertificationsSection() {
           {badges.map((b) => (
             <li
               key={`pill-${b.code}`}
-              className="rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-wood-800 sm:text-[14px]"
+              className="font-display rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-wood-800 sm:text-[14px]"
             >
               {b.code}
             </li>
@@ -584,7 +662,7 @@ function CertificationsSection() {
                 <div className="mt-1 text-[15px] leading-[1.5] text-wood-600 sm:text-[16px]">
                   {b.name}
                 </div>
-                <div className="mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[12px]">
+                <div className="font-display mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[12px]">
                   {b.tag}
                 </div>
               </div>
@@ -649,16 +727,10 @@ function WhyWaterSection() {
               key={c.heading}
               className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7"
             >
-              <div className="font-display text-[13px] tracking-normal text-wood-400">
-                {c.n}
-              </div>
-              <h3 className="font-display text-[18px] font-medium leading-[1.25] text-wood-900">
-                {c.heading}
-              </h3>
-              <p className="text-[15px] leading-[1.65] text-wood-700/85 sm:text-[16px]">
-                {c.body}
-              </p>
-              <p className="mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-wood-900 sm:text-[16px]">
+              <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">{c.n}</div>
+              <h3 className="font-display text-[18px] font-medium leading-[1.25] text-wood-900">{c.heading}</h3>
+              <p className="text-[15px] leading-[1.65] text-wood-700/85 sm:text-[16px]">{c.body}</p>
+              <p className="font-display mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-wood-900 sm:text-[16px]">
                 → {c.punch}
               </p>
             </div>
@@ -698,14 +770,14 @@ function Hero() {
 
           {/* Trust strip */}
           <div className="mt-6 block">
-            <div className="text-[12px] font-medium uppercase tracking-[0.2em] text-wood-500 sm:text-[13px]">
+            <div className="font-display text-[12px] font-medium uppercase tracking-[0.2em] text-wood-500 sm:text-[13px]">
               {t("hero.trustLabel")}
             </div>
             <ul className="mt-2.5 flex flex-wrap gap-1.5">
               {trust.map((t) => (
                 <li
                   key={t}
-                  className="rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-800 sm:text-[14px]"
+                  className="font-display rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-800 sm:text-[14px]"
                 >
                   {t}
                 </li>
@@ -718,7 +790,7 @@ function Hero() {
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-900 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap"
+              className="font-display group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-900 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap"
             >
               <Camera className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
               {t("hero.ctaButton")}
@@ -733,15 +805,21 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — image */}
+        {/* Right — image collage (1 main + 2 small) */}
+        {/* TODO: replace heroMainImage, heroSampleImage, heroSupportImage with actual Lotus photos */}
         <div className="lg:col-span-7">
-          <div className="relative aspect-[16/9] overflow-hidden bg-wood-200/40 sm:aspect-[5/6] lg:aspect-[4/5]">
+          {/* Main image */}
+          <div className="relative overflow-hidden rounded-sm bg-wood-200/40 aspect-[16/10] sm:aspect-[4/3]">
             <img
-              src={heroImg}
-              alt="Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus - bề mặt mịn, giữ vân gỗ tự nhiên, màu sắc đồng đều"
+              src={heroMainImage}
+              alt="Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus — vân rõ, màu đồng đều"
               className="h-full w-full object-cover object-center"
             />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-4 pb-3 pt-10">
+              <p className="text-[11px] font-medium tracking-wide text-white/90">Bề mặt hoàn thiện giữ vân, đồng đều màu</p>
+            </div>
           </div>
+
         </div>
       </div>
 
@@ -1090,7 +1168,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   }, [coatingSystem?.title]);
 
   const StepLabel = ({ n, text }: { n: string; text: string }) => (
-    <div className="text-[13px] uppercase tracking-[0.28em] text-wood-500 sm:text-[14px]">
+    <div className="font-display text-[13px] uppercase tracking-[0.28em] text-wood-500 sm:text-[14px]">
       <span className="font-display text-[15px] tracking-normal text-wood-400 sm:text-[16px]">{n}</span>
       <span className="mx-2.5 text-wood-300">·</span>
       {text}
@@ -1258,7 +1336,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                   <button
                     type="button"
                     onClick={reset}
-                    className="text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900"
+                    className="font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900"
                   >
                     ← Chọn lại từ đầu
                   </button>
@@ -1283,7 +1361,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       <button
                         type="button"
                         onClick={() => setSelectedMethod("lau")}
-                        className={`flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${
+                        className={`font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${
                           selectedMethod === "lau"
                             ? "border-b-2 border-wood-900 text-wood-900"
                             : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"
@@ -1294,7 +1372,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       <button
                         type="button"
                         onClick={() => setSelectedMethod("phun")}
-                        className={`flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${
+                        className={`font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${
                           selectedMethod === "phun"
                             ? "border-b-2 border-wood-900 text-wood-900"
                             : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"
@@ -1321,7 +1399,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
                   <div className="flex flex-1 flex-col gap-6 p-6 sm:p-8">
                     <div>
-                      <div className="text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
+                      <div className="font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
                         {t("finishFinder.resultLabel")}
                       </div>
                       <h3 className="font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
@@ -1331,7 +1409,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
                     <dl className="divide-y divide-wood-200 border-t border-wood-200">
                       <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                        <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                        <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                           {t("finishFinder.suitableFor")}
                         </dt>
                         <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1343,7 +1421,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       {coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && (
                         <>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               {t("finishFinder.techConfig")} (Lau)
                             </dt>
                             <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1351,7 +1429,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                             </dd>
                           </div>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               {t("finishFinder.repProducts")} (Lau)
                             </dt>
                             <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1364,7 +1442,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       {coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && (
                         <>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               {t("finishFinder.techConfig")} (Phun)
                             </dt>
                             <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1372,7 +1450,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                             </dd>
                           </div>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               {t("finishFinder.repProducts")} (Phun)
                             </dt>
                             <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1385,7 +1463,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       {coatingSystem.methodType === "single" && coatingSystem.singleMethod && (
                         <>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               {t("finishFinder.techConfig")}
                             </dt>
                             <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1393,7 +1471,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                             </dd>
                           </div>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               {t("finishFinder.repProducts")}
                             </dt>
                             <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
@@ -1622,34 +1700,34 @@ function ProductsSection() {
                   className={index === 5 ? "scale-[103%]" : ""}
                 />
               </div>
-              <div className="flex flex-col gap-4 p-6">
+              <div className="flex flex-col gap-5 p-6">
                 <div>
-                  <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                  <div className="font-display text-[11px] font-medium uppercase tracking-[0.22em] text-wood-400">
                     {t("products.group")} {index + 1}
                   </div>
-                  <h3 className="font-display mt-2 text-[19px] font-semibold leading-[1.3] text-wood-900">
+                  <h3 className="font-display mt-2 text-[19px] font-semibold leading-[1.2] tracking-[-0.01em] text-wood-900">
                     {t(group.title)}
                   </h3>
                 </div>
-                <p className="text-[16px] leading-[1.6] text-wood-700/90 sm:text-[17px]">
+                <p className="text-[14px] leading-[1.7] text-wood-600/90 sm:text-[15px]">
                   {t(group.description)}
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-4 border-t border-wood-200/50 pt-4">
                   <div>
-                    <div className="text-[12px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:text-[13px]">
+                    <div className="font-display text-[10px] font-medium uppercase tracking-[0.22em] text-wood-400">
                       {t("products.usage")}
                     </div>
-                    <p className="mt-1 text-[15px] leading-[1.5] text-wood-600 sm:text-[16px]">
+                    <p className="mt-1.5 text-[14px] leading-[1.6] text-wood-600">
                       {t(group.usage)}
                     </p>
                   </div>
                   <div>
-                    <div className="text-[12px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:text-[13px]">
+                    <div className="font-display text-[10px] font-medium uppercase tracking-[0.22em] text-wood-400">
                       {t("products.repProducts")}
                     </div>
-                    <div className="mt-2 space-y-1">
+                    <div className="mt-2 space-y-1.5">
                       {group.products.map((product, pIndex) => (
-                        <div key={pIndex} className="text-[15px] font-medium text-wood-800 sm:text-[16px]">
+                        <div key={pIndex} className="font-display text-[14px] italic text-wood-800">
                           {product}
                         </div>
                       ))}
@@ -1682,7 +1760,7 @@ function ProductsSection() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col">
-                  <div className="text-[12px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[13px]">
+                  <div className="font-display text-[12px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[13px]">
                     {t("products.group")} {index + 1}
                   </div>
                   <h3 className="font-display mt-1 text-[17px] font-semibold leading-[1.3] text-wood-900">
@@ -1819,12 +1897,15 @@ function Lookbook() {
                 />
               </div>
               <div className="flex flex-col gap-1.5 p-4 sm:gap-2 sm:p-6 lg:p-7">
+                <span className="inline-block rounded-full bg-wood-700/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-wood-700">
+                  {t(p.tag)}
+                </span>
                 <h3 className="font-display text-[17px] font-semibold leading-[1.25] text-wood-900 sm:text-[1.4rem]">
                   {p.name}
                 </h3>
                 <p className="text-[13px] text-wood-600 sm:text-[15px] lg:text-[16px]">{t(p.type)}</p>
-                <p className="mt-1 text-[14px] leading-[1.5] text-wood-600 sm:text-[15px]">
-                  {p.note}
+                <p className="mt-1 text-[13px] leading-[1.5] text-wood-500 sm:text-[14px]">
+                  <span className="font-medium text-wood-700">Hệ sơn: </span>{p.note}
                 </p>
               </div>
             </article>
@@ -1847,11 +1928,14 @@ function Lookbook() {
                 />
               </div>
               <div className="flex flex-col gap-1.5 p-4">
+                <span className="inline-block rounded-full bg-wood-700/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-wood-700">
+                  {t(p.tag)}
+                </span>
                 <h3 className="font-display text-[16px] font-semibold leading-[1.25] text-wood-900 sm:text-[17px]">
                   {p.name}
                 </h3>
                 <p className="text-[13px] text-wood-600 sm:text-[14px]">{t(p.type)}</p>
-                <p className="mt-1 text-[14px] leading-[1.5] text-wood-600 sm:text-[15px]">{p.note}</p>
+                <p className="mt-1 text-[12px] leading-[1.5] text-wood-500">{p.note}</p>
               </div>
 
             </article>
@@ -1906,7 +1990,22 @@ function ConsultBlock() {
 
           </div>
 
-          <div className="flex flex-col gap-5 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2">
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:justify-end lg:pb-2">
+            {/* TODO: replace ctaSupportImage with actual engineer-consulting-at-workshop photo */}
+            <div className="relative overflow-hidden rounded-lg aspect-[4/3] bg-wood-700/20">
+              <img
+                src={ctaSupportImage}
+                alt="Kỹ sư Lotus tư vấn kỹ thuật trực tiếp tại xưởng sản xuất nội thất"
+                loading="lazy"
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
+            <p className="text-[15px] leading-[1.65] text-wood-300">
+              Lotus không chỉ bán sơn mà đồng hành như một bộ phận kỹ thuật mở rộng của xưởng.
+            </p>
+            <p className="text-[15px] leading-[1.65] text-wood-300">
+              Từ mẫu thử đầu tiên đến lô hàng cuối, đội ngũ hỗ trợ để bề mặt ổn định hơn.
+            </p>
             <a
               href={ZALO}
               target="_blank"

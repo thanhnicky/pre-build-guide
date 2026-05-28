@@ -635,7 +635,7 @@ const Route$2 = createFileRoute("/")({
       title: "Lotus - Sơn Gỗ Hệ Nước"
     }, {
       name: "description",
-      content: "Sơn Lotus là giải pháp sơn gỗ hệ nước chuyên dành cho xưởng sản xuất nội thất và nhà máy nội thất xuất khẩu, giúp giảm mùi dung môi trong quá trình sản xuất, nâng cao môi trường làm việc và đáp ứng xu hướng vật liệu an toàn."
+      content: "Sơn gỗ hệ nước Lotus cho xưởng nội thất và nhà máy xuất khẩu. Giảm mùi dung môi, cải thiện môi trường làm việc, đáp ứng xu hướng vật liệu an toàn."
     }],
     scripts: [{
       type: "application/ld+json",
@@ -707,7 +707,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-BM5wiqem.mjs");
+const $$splitComponentImporter$1 = () => import("./index-BMq9vq0P.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -717,7 +717,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-B8rw1Hzz.mjs");
+const $$splitComponentImporter = () => import("../_slug-Dd0S4Hyf.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

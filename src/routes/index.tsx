@@ -96,7 +96,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sơn Lotus là giải pháp sơn gỗ hệ nước chuyên dành cho xưởng sản xuất nội thất và nhà máy nội thất xuất khẩu, giúp giảm mùi dung môi trong quá trình sản xuất, nâng cao môi trường làm việc và đáp ứng xu hướng vật liệu an toàn.",
+          "Sơn gỗ hệ nước Lotus cho xưởng nội thất và nhà máy xuất khẩu. Giảm mùi dung môi, cải thiện môi trường làm việc, đáp ứng xu hướng vật liệu an toàn.",
       },
     ],
     scripts: [

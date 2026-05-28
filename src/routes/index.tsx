@@ -96,7 +96,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Bốn quy trình hoàn thiện gỗ Lotus: sơn lau giữ vân, sơn phun nội ngoại thất, màu bệt MDF, phủ bóng ngoài trời. Nhắn Zalo để được tư vấn đúng hệ.",
+          "Sơn Lotus là giải pháp sơn gỗ hệ nước chuyên dành cho xưởng sản xuất nội thất và nhà máy nội thất xuất khẩu, giúp giảm mùi dung môi trong quá trình sản xuất, nâng cao môi trường làm việc và đáp ứng xu hướng vật liệu an toàn.",
       },
     ],
     scripts: [

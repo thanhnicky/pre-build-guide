@@ -2,7 +2,7 @@ import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { R as Root2, I as Item, H as Header, T as Trigger2, C as Content2 } from "../_libs/radix-ui__react-accordion.mjs";
 import { c as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-import { N as Navbar, F as Footer } from "./Footer-EPKtGATy.mjs";
+import { N as Navbar, F as Footer } from "./Footer-rvhSXuIN.mjs";
 import { u as useTranslation } from "../_libs/react-i18next.mjs";
 import { C as Camera, a as ArrowUpRight, F as Factory, l as Ship, e as CircleCheckBig, X, b as ChevronDown, f as FileText, g as FlaskConical, n as Wrench, m as Truck, S as ShieldCheck, h as Leaf, W as Wind, c as ChevronLeft, d as ChevronRight, k as MessageCircle, L as Layers } from "../_libs/lucide-react.mjs";
 import "../_libs/radix-ui__react-context.mjs";

@@ -1,6 +1,6 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { k as MessageCircle, X, j as Menu, i as MapPin, M as Mail, G as Globe, P as Phone } from "../_libs/lucide-react.mjs";
+import { X, j as Menu, k as MessageCircle, i as MapPin, M as Mail, G as Globe, P as Phone } from "../_libs/lucide-react.mjs";
 const logo = "/assets/lotus-logo-C0CbJd0t.jpg";
 function Navbar() {
   const [open, setOpen] = reactExports.useState(false);
@@ -19,34 +19,19 @@ function Navbar() {
         "a",
         {
           href: link.href,
-          className: "text-[13px] tracking-wide text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]",
+          className: "relative text-[13px] tracking-[0.05em] text-wood-600 transition-colors hover:text-wood-900 after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-wood-700/60 after:transition-[width] after:duration-300 hover:after:w-full whitespace-nowrap sm:text-[14px]",
           children: link.label
         },
         link.label
       )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden items-center gap-3 md:flex", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "a",
-          {
-            href: "tel:0943966662",
-            className: "text-[13px] tracking-wide text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]",
-            children: "0943 966 662"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "a",
-          {
-            href: "https://zalo.me/0943966662",
-            target: "_blank",
-            rel: "noopener noreferrer",
-            className: "inline-flex items-center gap-1.5 rounded-full bg-wood-900 px-3.5 py-2 text-[13px] font-medium tracking-wide text-background transition-colors hover:bg-wood-800 sm:text-[14px]",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageCircle, { className: "h-3.5 w-3.5" }),
-              "Zalo"
-            ]
-          }
-        )
-      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden items-center gap-3 md:flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "a",
+        {
+          href: "tel:0943966662",
+          className: "text-[13px] tracking-[0.05em] text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]",
+          children: "0943 966 662"
+        }
+      ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "button",
         {

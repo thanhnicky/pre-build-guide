@@ -568,7 +568,7 @@ function TrustBar() {
                 key={p.alt}
                 src={p.src}
                 alt={p.alt}
-                className="h-8 w-auto max-w-[122px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-12 sm:max-w-[152px]"
+                className="h-10 w-auto max-w-[146px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-14 sm:max-w-[182px]"
               />
             ))}
           </div>

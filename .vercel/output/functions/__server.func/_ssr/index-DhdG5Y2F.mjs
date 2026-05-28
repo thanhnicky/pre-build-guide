@@ -469,7 +469,7 @@ function TrustBar() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]", children: s.k }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v })
     ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v }) }, i)) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 border-t border-wood-200/50 py-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10", children: PARTNERS.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "h-8 w-auto max-w-[122px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-12 sm:max-w-[152px]" }, p.alt)) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 border-t border-wood-200/50 py-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10", children: PARTNERS.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "h-10 w-auto max-w-[146px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-14 sm:max-w-[182px]" }, p.alt)) }) })
   ] }) });
 }
 function CertificationsSection() {

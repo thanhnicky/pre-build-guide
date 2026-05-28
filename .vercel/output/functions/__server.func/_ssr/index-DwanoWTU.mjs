@@ -1,6 +1,6 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { R as Route$1, u as urlFor } from "./router-CsT2Inx9.mjs";
+import { R as Route$1, u as urlFor } from "./router-DesnW8QE.mjs";
 import { N as Navbar, F as Footer } from "./Footer-EPKtGATy.mjs";
 import "../_libs/i18next.mjs";
 import { T as Tag, a as ArrowUpRight } from "../_libs/lucide-react.mjs";

@@ -4,7 +4,7 @@ import { c as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { N as Navbar, F as Footer } from "./Footer-EPKtGATy.mjs";
 import { u as useTranslation } from "../_libs/react-i18next.mjs";
-import { C as Camera, a as ArrowUpRight, F as Factory, l as Ship, e as CircleCheckBig, X, b as ChevronDown, f as FileText, g as FlaskConical, n as Wrench, m as Truck, d as ChevronRight, S as ShieldCheck, h as Leaf, W as Wind, c as ChevronLeft, k as MessageCircle, L as Layers } from "../_libs/lucide-react.mjs";
+import { C as Camera, a as ArrowUpRight, F as Factory, l as Ship, e as CircleCheckBig, X, b as ChevronDown, f as FileText, g as FlaskConical, n as Wrench, m as Truck, S as ShieldCheck, h as Leaf, W as Wind, c as ChevronLeft, d as ChevronRight, k as MessageCircle, L as Layers } from "../_libs/lucide-react.mjs";
 import "../_libs/radix-ui__react-context.mjs";
 import "../_libs/radix-ui__react-collection.mjs";
 import "../_libs/radix-ui__react-compose-refs.mjs";
@@ -135,6 +135,15 @@ function StickyZalo() {
   );
 }
 const heroImg = "/assets/lotus-hero-8ya1L8m7.jpg";
+const kiemTraMau = "/assets/kiem-tra-mau-thuc-te-xM-bON58.jpg";
+const kysuHoTro = "/assets/ky-su-ho-tro-giai-doan-dau-CaMl8z1h.jpg";
+const dongHanh = "/assets/dong-hanh-cung-nha-may-CmuVSGjD.jpg";
+const congTrinhSonGo = "/assets/cong-trinh-son-go-ngoai-troi-lotus-CfL54FRg.jpg";
+const nhaMayDonHang = "/assets/nha-may-don-hang-xk-Cn5RtVx5.jpg";
+const thuMauTruocLo = "/assets/thu-mau-truoc-khi-vao-lo-BY07_jkW.jpg";
+const hoTroKyThuat = "/assets/ho-tro-ky-thuat-tai-xuong-1NYSCKb3.jpg";
+const cungUngTienDo = "/assets/cung-ung-theo-doi-tien-do-S4PQoPXP.jpg";
+const sonAnToanXK = "/assets/son-an-toan-noi-that-xuat-khau-09-CvYMtbZL.jpeg";
 const keoTramTret = "/assets/keo-tram-tret-go-lotus-wood-filler-DMY3Z9Nl.png";
 const sonLot = "/assets/son-lot-lap-tim-va-lam-phang-go-lotus-sanding-sealer-CCNSwxq4.png";
 const heGiVan = "/assets/son-tao-mau-go-va-hoan-thien-go-noi-that-lotus-woodstain-finish-interior-DNG2Rtg4.png";
@@ -188,6 +197,16 @@ const PARTNERS = [{
   src: logoSofitels,
   alt: "Sofitel"
 }];
+const heroMainImage = heroImg;
+const proofTestImage = kiemTraMau;
+const proofEngineerImage = kysuHoTro;
+const proofFinishedImage = dongHanh;
+const audienceFactoryImage = congTrinhSonGo;
+const audienceExportImage = nhaMayDonHang;
+const techStep3Image = thuMauTruocLo;
+const techStep4Image = hoTroKyThuat;
+const techStep5Image = cungUngTienDo;
+const ctaSupportImage = sonAnToanXK;
 function LotusLanding() {
   const [isSelectorInteracting, setIsSelectorInteracting] = reactExports.useState(false);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -195,6 +214,7 @@ function LotusLanding() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "pb-24 md:pb-0", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TrustBar, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ProofGallery, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(AudienceSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(WhyWaterSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(FinishFinder, { onInteractionChange: setIsSelectorInteracting }),
@@ -217,6 +237,8 @@ function AudienceSection() {
   } = useTranslation();
   const audiences = [{
     icon: Factory,
+    image: audienceFactoryImage,
+    // TODO: replace with actual interior construction photo
     title: t("audience.factory.title"),
     lead: t("audience.factory.lead"),
     bullets: t("audience.factory.bullets", {
@@ -227,6 +249,8 @@ function AudienceSection() {
     })
   }, {
     icon: Ship,
+    image: audienceExportImage,
+    // TODO: replace with actual factory/export production photo
     title: t("audience.export.title"),
     lead: t("audience.export.lead"),
     bullets: t("audience.export.bullets", {
@@ -247,17 +271,20 @@ function AudienceSection() {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]", children: t("audience.description") })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid grid-cols-1 gap-6 sm:mt-16 lg:grid-cols-2 lg:gap-8", children: audiences.map((a) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-6 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-7 sm:p-9", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(a.icon, { className: "h-6 w-6 text-wood-700", strokeWidth: 1.5 }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]", children: a.title }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[16px] leading-[1.6] text-wood-700/85 sm:text-[17px]", children: a.lead })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2.5 border-t border-wood-300/40 pt-5", children: a.bullets.map((b) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex gap-3 text-[16px] leading-[1.6] text-wood-800", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheckBig, { className: "mt-0.5 h-4 w-4 shrink-0 text-wood-600", strokeWidth: 1.75 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: b })
-      ] }, b)) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-auto flex flex-wrap gap-2 pt-2", children: a.tags.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "rounded-full bg-wood-700 px-2.5 py-1 text-[12px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[13px]", children: t2 }, t2)) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid grid-cols-1 gap-6 sm:mt-16 lg:grid-cols-2 lg:gap-8", children: audiences.map((a) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col overflow-hidden rounded-lg border border-wood-200/60 bg-[#F5F0EA]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[16/7] overflow-hidden bg-wood-200/30", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: a.image, alt: a.title, loading: "lazy", className: "h-full w-full object-cover object-center" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-6 p-7 sm:p-9", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(a.icon, { className: "h-6 w-6 text-wood-700", strokeWidth: 1.5 }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]", children: a.title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[16px] leading-[1.6] text-wood-700/85 sm:text-[17px]", children: a.lead })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2.5 border-t border-wood-300/40 pt-5", children: a.bullets.map((b) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex gap-3 text-[16px] leading-[1.6] text-wood-800", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheckBig, { className: "mt-0.5 h-4 w-4 shrink-0 text-wood-600", strokeWidth: 1.75 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: b })
+        ] }, b)) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-auto flex flex-wrap gap-2 pt-2", children: a.tags.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display rounded-full bg-wood-700 px-2.5 py-1 text-[12px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[13px]", children: t2 }, t2)) })
+      ] })
     ] }, a.title)) })
   ] }) });
 }
@@ -269,27 +296,40 @@ function TechCollaborationSection() {
     icon: Camera,
     n: "01",
     title: t("tech.step1.title"),
-    body: t("tech.step1.body")
+    body: t("tech.step1.body"),
+    image: "",
+    imageCaption: ""
   }, {
     icon: FileText,
     n: "02",
     title: t("tech.step2.title"),
-    body: t("tech.step2.body")
+    body: t("tech.step2.body"),
+    image: "",
+    imageCaption: ""
   }, {
     icon: FlaskConical,
     n: "03",
     title: t("tech.step3.title"),
-    body: t("tech.step3.body")
+    body: t("tech.step3.body"),
+    image: techStep3Image,
+    // TODO: replace with actual sample-board / color-test photo
+    imageCaption: "Bảng mẫu test màu thực tế trước khi vào lô"
   }, {
     icon: Wrench,
     n: "04",
     title: t("tech.step4.title"),
-    body: t("tech.step4.body")
+    body: t("tech.step4.body"),
+    image: techStep4Image,
+    // TODO: replace with actual engineer directing spray at workshop
+    imageCaption: "Kỹ sư chỉnh hệ — hướng dẫn phun tại xưởng"
   }, {
     icon: Truck,
     n: "05",
     title: t("tech.step5.title"),
-    body: t("tech.step5.body")
+    body: t("tech.step5.body"),
+    image: techStep5Image,
+    // TODO: replace with actual paint supply / warehouse photo
+    imageCaption: "Cung ứng đúng tiến độ sản xuất"
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "phoi-hop", className: "bg-[#F5F0EA] py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
@@ -302,15 +342,31 @@ function TechCollaborationSection() {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]", children: t("tech.description") })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ol", { className: "mt-14 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-5", children: steps.map((s, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "relative flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6", children: [
-      index < steps.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -right-2.5 top-8 hidden lg:block z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "h-5 w-5 text-wood-300", strokeWidth: 1.5 }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2", children: steps.slice(0, 2).map((s) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]", children: s.n }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 -mt-2", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(s.icon, { className: "h-5 w-5 shrink-0 text-wood-700 mt-0.5", strokeWidth: 1.5 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]", children: s.title })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] leading-[1.65] text-wood-700/85", children: s.body })
-    ] }, s.n)) })
+    ] }, s.n)) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5 flex flex-col gap-5", children: steps.slice(2).map((s, idx) => {
+      const textLeft = idx % 2 === 0;
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-hidden rounded-lg border border-wood-200/60 bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `flex flex-col gap-4 p-7 sm:p-9 ${textLeft ? "lg:order-1" : "lg:order-2"}`, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]", children: s.n }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 -mt-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(s.icon, { className: "h-5 w-5 shrink-0 text-wood-700 mt-0.5", strokeWidth: 1.5 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]", children: s.title })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] leading-[1.65] text-wood-700/85", children: s.body })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `relative aspect-[4/3] overflow-hidden bg-wood-200/30 ${textLeft ? "lg:order-2" : "lg:order-1"}`, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: s.image, alt: s.imageCaption, loading: "lazy", className: "h-full w-full object-cover object-center" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/45 to-transparent px-4 pb-3 pt-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium tracking-wide text-white/90", children: s.imageCaption }) })
+        ] })
+      ] }) }, s.n);
+    }) })
   ] }) });
 }
 function PartnersSection() {
@@ -375,6 +431,25 @@ function PartnersSection() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto mt-16 w-16 border-b border-wood-300/40" })
   ] }) });
 }
+function ProofGallery() {
+  const items = [{
+    image: proofTestImage,
+    caption: "Kiểm tra màu sắc trước khi sản xuất",
+    alt: "Kiểm tra màu sắc thực tế trước khi vào lô sản xuất — Lotus Paint"
+  }, {
+    image: proofEngineerImage,
+    caption: "Hỗ trợ kỹ thuật từ giai đoạn làm mẫu",
+    alt: "Kỹ sư Lotus hỗ trợ kỹ thuật trực tiếp tại xưởng nội thất"
+  }, {
+    image: proofFinishedImage,
+    caption: "Đồng hành cùng nhà máy sản xuất",
+    alt: "Lotus đồng hành cùng nhà máy sản xuất nội thất trong suốt quá trình"
+  }];
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-background pb-16 sm:pb-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5", children: items.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group overflow-hidden rounded-lg ring-1 ring-wood-200/50", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[4/3] overflow-hidden bg-wood-200/30", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: item.image, alt: item.alt, loading: "lazy", className: "h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "border-t border-wood-200/50 px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-[13px] font-medium text-wood-700 sm:text-[14px]", children: item.caption }) })
+  ] }, i)) }) }) });
+}
 function TrustBar() {
   const {
     t
@@ -392,9 +467,9 @@ function TrustBar() {
       v: t("trust.custom")
     }].map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full flex-col justify-center", children: s.k ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]", children: s.k }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v })
-    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v }) }, i)) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 border-t border-wood-200/50 py-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10", children: PARTNERS.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "h-6 w-auto max-w-[88px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-8 sm:max-w-[110px]" }, p.alt)) }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v }) }, i)) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 border-t border-wood-200/50 py-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10", children: PARTNERS.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "h-8 w-auto max-w-[122px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-12 sm:max-w-[152px]" }, p.alt)) }) })
   ] }) });
 }
 function CertificationsSection() {
@@ -438,13 +513,13 @@ function CertificationsSection() {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]", children: t("certifications.description") })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-10 flex flex-wrap gap-2", children: badges.map((b) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-wood-800 sm:text-[14px]", children: b.code }, `pill-${b.code}`)) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-10 flex flex-wrap gap-2", children: badges.map((b) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "font-display rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-wood-800 sm:text-[14px]", children: b.code }, `pill-${b.code}`)) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5", children: badges.map((b) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-4 rounded-lg border border-wood-200/60 bg-[#F5F0EA] p-5", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(b.icon, { className: "mt-0.5 h-5 w-5 shrink-0 text-wood-700", strokeWidth: 1.5 }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[16px] font-semibold leading-tight text-wood-900 sm:text-[17px]", children: b.code }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-1 text-[15px] leading-[1.5] text-wood-600 sm:text-[16px]", children: b.name }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[12px]", children: b.tag })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[12px]", children: b.tag })
       ] })
     ] }, b.code)) })
   ] }) });
@@ -481,10 +556,10 @@ function WhyWaterSection() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: t("whyWater.titleItalic") })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4", children: cols.map((c) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] tracking-normal text-wood-400", children: c.n }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]", children: c.n }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[18px] font-medium leading-[1.25] text-wood-900", children: c.heading }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] leading-[1.65] text-wood-700/85 sm:text-[16px]", children: c.body }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-wood-900 sm:text-[16px]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-display mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-wood-900 sm:text-[16px]", children: [
         "→ ",
         c.punch
       ] })
@@ -505,11 +580,11 @@ function Hero() {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-[17px] leading-[1.7] text-wood-700/85 sm:mt-5 sm:text-[18px]", children: t("hero.description") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 block", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[12px] font-medium uppercase tracking-[0.2em] text-wood-500 sm:text-[13px]", children: t("hero.trustLabel") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-2.5 flex flex-wrap gap-1.5", children: trust.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-800 sm:text-[14px]", children: t2 }, t2)) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[12px] font-medium uppercase tracking-[0.2em] text-wood-500 sm:text-[13px]", children: t("hero.trustLabel") }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-2.5 flex flex-wrap gap-1.5", children: trust.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { className: "font-display rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-800 sm:text-[14px]", children: t2 }, t2)) })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 flex flex-col items-start gap-3 sm:mt-8", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-900 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "font-display group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-900 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-3.5 w-3.5 shrink-0", strokeWidth: 1.75 }),
           t("hero.ctaButton"),
           /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "h-3 w-3 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" })
@@ -521,7 +596,10 @@ function Hero() {
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[16/9] overflow-hidden bg-wood-200/40 sm:aspect-[5/6] lg:aspect-[4/5]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: heroImg, alt: "Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus - bề mặt mịn, giữ vân gỗ tự nhiên, màu sắc đồng đều", className: "h-full w-full object-cover object-center" }) }) })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative overflow-hidden rounded-sm bg-wood-200/40 aspect-[16/10] sm:aspect-[4/3]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: heroMainImage, alt: "Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus — vân rõ, màu đồng đều", className: "h-full w-full object-cover object-center" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-4 pb-3 pt-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium tracking-wide text-white/90", children: "Bề mặt hoàn thiện giữ vân, đồng đều màu" }) })
+    ] }) })
   ] }) });
 }
 function resolveCoatingSystem(surface, location, naturalFinish, t) {
@@ -838,7 +916,7 @@ function FinishFinder({
   const StepLabel = ({
     n,
     text
-  }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[13px] uppercase tracking-[0.28em] text-wood-500 sm:text-[14px]", children: [
+  }) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-display text-[13px] uppercase tracking-[0.28em] text-wood-500 sm:text-[14px]", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display text-[15px] tracking-normal text-wood-400 sm:text-[16px]", children: n }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mx-2.5 text-wood-300", children: "·" }),
     text
@@ -897,34 +975,34 @@ function FinishFinder({
             /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "solid", onClick: () => location && setNaturalFinish("solid"), children: t("finishFinder.gloss") })
           ] })
         ] }),
-        ready && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: reset, className: "text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900", children: "← Chọn lại từ đầu" })
+        ready && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: reset, className: "font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900", children: "← Chọn lại từ đầu" })
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: resultRef, className: "lg:col-span-5", children: !coatingSystem ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full min-h-[320px] items-center justify-center p-10 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[260px] text-[14px] leading-[1.7] text-wood-600", children: t("finishFinder.completeSteps") }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "flex h-full flex-col transition-all duration-500 ease-out", children: [
         coatingSystem.methodType === "dual" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex border-b border-wood-200 bg-wood-50/50", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("lau"), className: `flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "lau" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodLau") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("phun"), className: `flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "phun" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodPhun") })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("lau"), className: `font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "lau" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodLau") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("phun"), className: `font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "phun" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodPhun") })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[5/4] overflow-hidden bg-wood-200/40", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau?.image : coatingSystem.methodPhun?.image : coatingSystem.singleMethod?.image, alt: `${coatingSystem.title} - ${coatingSystem.suitableFor}`, className: "h-full w-full object-cover object-center" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-1 flex-col gap-6 p-6 sm:p-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: t("finishFinder.resultLabel") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: t("finishFinder.resultLabel") }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem.title })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("dl", { className: "divide-y divide-wood-200 border-t border-wood-200", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.suitableFor") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.suitableFor") }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.suitableFor })
             ] }),
             coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
                   t("finishFinder.techConfig"),
                   " (Lau)"
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodLau.process })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
                   t("finishFinder.repProducts"),
                   " (Lau)"
                 ] }),
@@ -933,14 +1011,14 @@ function FinishFinder({
             ] }),
             coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
                   t("finishFinder.techConfig"),
                   " (Phun)"
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodPhun.process })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
                   t("finishFinder.repProducts"),
                   " (Phun)"
                 ] }),
@@ -949,11 +1027,11 @@ function FinishFinder({
             ] }),
             coatingSystem.methodType === "single" && coatingSystem.singleMethod && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.techConfig") }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.techConfig") }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.singleMethod.process })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.repProducts") }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.repProducts") }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.singleMethod.representativeProducts.join(" · ") })
               ] })
             ] })
@@ -1055,24 +1133,24 @@ function ProductsSection() {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12 hidden gap-6 lg:grid lg:grid-cols-3", children: PRODUCT_GROUPS.map((group, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col overflow-hidden rounded-lg border border-wood-200/60 bg-background", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "product-image-frame", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: group.image, alt: `${group.title} - ${group.description}`, loading: "lazy", className: index === 5 ? "scale-[103%]" : "" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4 p-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-5 p-6", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-display text-[11px] font-medium uppercase tracking-[0.22em] text-wood-400", children: [
             t("products.group"),
             " ",
             index + 1
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-2 text-[19px] font-semibold leading-[1.3] text-wood-900", children: t(group.title) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-2 text-[19px] font-semibold leading-[1.2] tracking-[-0.01em] text-wood-900", children: t(group.title) })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] leading-[1.6] text-wood-700/90 sm:text-[17px]", children: t(group.description) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.7] text-wood-600/90 sm:text-[15px]", children: t(group.description) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 border-t border-wood-200/50 pt-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[12px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:text-[13px]", children: t("products.usage") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[15px] leading-[1.5] text-wood-600 sm:text-[16px]", children: t(group.usage) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[10px] font-medium uppercase tracking-[0.22em] text-wood-400", children: t("products.usage") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1.5 text-[14px] leading-[1.6] text-wood-600", children: t(group.usage) })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[12px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:text-[13px]", children: t("products.repProducts") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 space-y-1", children: group.products.map((product, pIndex) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[15px] font-medium text-wood-800 sm:text-[16px]", children: product }, pIndex)) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[10px] font-medium uppercase tracking-[0.22em] text-wood-400", children: t("products.repProducts") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 space-y-1.5", children: group.products.map((product, pIndex) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[14px] italic text-wood-800", children: product }, pIndex)) })
           ] })
         ] })
       ] })
@@ -1081,7 +1159,7 @@ function ProductsSection() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { type: "button", onClick: () => setExpandedGroup(expandedGroup === index ? null : index), className: "flex w-full items-start gap-4 p-4 text-left", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative h-20 w-20 shrink-0 overflow-hidden rounded bg-wood-200/40 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: group.image, alt: `${group.title} - ${group.description}`, loading: "lazy", className: `h-full w-full object-contain object-center p-2 ${index === 5 ? "scale-[143%]" : ""}` }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-1 flex-col", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[12px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[13px]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-display text-[12px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[13px]", children: [
             t("products.group"),
             " ",
             index + 1
@@ -1159,17 +1237,22 @@ function Lookbook() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-16 grid grid-cols-1 gap-8 lg:mt-20 lg:grid-cols-2 lg:gap-10", children: PROJECTS.slice(0, 2).map((p, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "overflow-hidden rounded-lg bg-[#FDFAF7] shadow-sm ring-1 ring-wood-200/60 transition-shadow hover:shadow-md", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[4/3] overflow-hidden bg-wood-200/40 sm:aspect-[3/2]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.image, alt: `${p.name} - ${p.type} - ${p.note}`, loading: "lazy", className: "h-full w-full object-cover object-center" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1.5 p-4 sm:gap-2 sm:p-6 lg:p-7", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block rounded-full bg-wood-700/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-wood-700", children: t(p.tag) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[17px] font-semibold leading-[1.25] text-wood-900 sm:text-[1.4rem]", children: p.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-wood-600 sm:text-[15px] lg:text-[16px]", children: t(p.type) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[14px] leading-[1.5] text-wood-600 sm:text-[15px]", children: p.note })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-1 text-[13px] leading-[1.5] text-wood-500 sm:text-[14px]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-wood-700", children: "Hệ sơn: " }),
+          p.note
+        ] })
       ] })
     ] }, `feat-${i}`)) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-10 lg:grid-cols-4 lg:gap-6", children: PROJECTS.slice(2).map((p, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "overflow-hidden rounded-lg bg-[#FDFAF7] ring-1 ring-wood-200/60 transition-shadow hover:shadow-md", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[4/3] overflow-hidden bg-wood-200/40", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.image, alt: `${p.name} - ${p.type} - ${p.note}`, loading: "lazy", className: "h-full w-full object-cover object-center" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1.5 p-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block rounded-full bg-wood-700/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-wood-700", children: t(p.tag) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[16px] font-semibold leading-[1.25] text-wood-900 sm:text-[17px]", children: p.name }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] text-wood-600 sm:text-[14px]", children: t(p.type) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[14px] leading-[1.5] text-wood-600 sm:text-[15px]", children: p.note })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] leading-[1.5] text-wood-500", children: p.note })
       ] })
     ] }, `sm-${i}`)) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mx-auto mt-14 max-w-xl text-center text-[15px] leading-[1.65] text-wood-600 lg:mt-20 sm:text-[16px]", children: t("lookbook.cta") })
@@ -1202,7 +1285,10 @@ function ConsultBlock() {
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-5 lg:col-span-5 lg:items-end lg:justify-end lg:pb-2", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-5 lg:col-span-5 lg:justify-end lg:pb-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative overflow-hidden rounded-lg aspect-[4/3] bg-wood-700/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: ctaSupportImage, alt: "Kỹ sư Lotus tư vấn kỹ thuật trực tiếp tại xưởng sản xuất nội thất", loading: "lazy", className: "h-full w-full object-cover object-center" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] leading-[1.65] text-wood-300", children: "Lotus không chỉ bán sơn mà đồng hành như một bộ phận kỹ thuật mở rộng của xưởng." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] leading-[1.65] text-wood-300", children: "Từ mẫu thử đầu tiên đến lô hàng cuối, đội ngũ hỗ trợ để bề mặt ổn định hơn." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.18em] text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto sm:text-[16px]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-4 w-4", strokeWidth: 1.75 }),
         t("consult.ctaButton"),

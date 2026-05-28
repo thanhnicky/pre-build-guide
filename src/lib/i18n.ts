@@ -16,7 +16,7 @@ const vi = {
     stat1Label: "Xưởng & Nhà Máy Tin Dùng",
     stat2Label: "Năm Kinh Nghiệm",
     consult: "Tư Vấn Kỹ Thuật 1-1 Miễn Phí",
-    custom: "Pha Màu Theo Yêu Cầu",
+    custom: "100+ màu có sẵn — pha riêng theo yêu cầu",
     customDetail: "RAL · NCS · Mã Màu Riêng",
   },
   audience: {
@@ -51,19 +51,24 @@ const vi = {
     title: "PU vẫn sơn được.",
     titleItalic: "Nhưng hệ nước giúp xưởng lợi hơn ở đâu?",
     col1: {
-      heading: "Vận hành gọn hơn",
-      body: "Không phải pha thêm nhiều dung môi, mùi trong xưởng nhẹ hơn và khâu xử lý cũng đơn giản hơn.",
-      punch: "Giảm áp lực vận hành khi chạy hàng mỗi ngày.",
+      heading: "Vận hành gọn hơn — chi phí xưởng thấp hơn",
+      body: "Không pha dung môi, không cần kho chứa riêng, thợ làm cả ngày trong xưởng kín mà không cần hệ thống thông khí công nghiệp đắt tiền. Mùi nhẹ — thợ làm việc thoải mái hơn, năng suất thực tế cao hơn.",
+      punch: "GIẢM CHI PHÍ VẬN HÀNH — KHÔNG CẦN ĐẦU TƯ THÊM HẠ TẦNG.",
     },
     col2: {
-      heading: "Chuyển hệ có người đi cùng",
-      body: "Khi xưởng chuyển sang hệ nước, kỹ sư Lotus hỗ trợ tỷ lệ pha, chỉnh súng phun và xử lý lỗi bề mặt ngay từ lần chạy đầu.",
-      punch: "Rút ngắn thời gian dò hệ — đỡ mất hàng, mất công.",
+      heading: "Chuyển hệ không phải tự mày mò",
+      body: "Kỹ sư Lotus vào xưởng buổi đầu tiên — chỉnh tỷ lệ pha, căn áp suất súng phun, xử lý lỗi bề mặt ngay tại chỗ. Xưởng chạy đúng ngay từ lô đầu, không mất hàng thử nghiệm.",
+      punch: "RÚT NGẮN THỜI GIAN DÒ HỆ — ĐỠ MẤT HÀNG, MẤT CÔNG.",
     },
     col3: {
-      heading: "Sẵn cho nghiệm thu công trình",
-      body: "VOCs thấp, mùi nhẹ và có hồ sơ kỹ thuật khi cần — phù hợp các hạng mục nội thất cần bàn giao gọn và làm việc rõ với đội giám sát.",
-      punch: "Giảm vướng khi nghiệm thu và bàn giao.",
+      heading: "Hồ sơ kỹ thuật đầy đủ — nghiệm thu không vướng",
+      body: "VOCs thấp, mùi nhẹ, TDS/MSDS song ngữ sẵn có — hạng mục bàn giao đúng tiến độ, không bị đội giám sát giữ lại vì thiếu hồ sơ hay mùi sơn chưa thoát.",
+      punch: "GIẢM VƯỚNG KHI NGHIỆM THU VÀ BÀN GIAO.",
+    },
+    col4: {
+      heading: "Độ cứng & kháng hoá chất — không còn phải đánh đổi",
+      body: "Hệ nước thế hệ cũ mềm hơn PU, dễ trầy và kém chịu cồn — điều đó đúng với acrylic 1K trước đây. Lotus hệ 2 thành phần, cho độ cứng màng sơn và khả năng kháng hoá chất tương đương hệ PU gốc dung môi khi thi công đúng quy trình.",
+      punch: "HỆ NƯỚC LOTUS — ĐỦ CỨNG, ĐỦ BỀN, KHÔNG CẦN THÊM PU.",
     },
   },
   finishFinder: {

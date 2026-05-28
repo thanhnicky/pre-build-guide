@@ -163,6 +163,31 @@ const logoAlc = "/assets/logo-alc-DmbDMgyX.png";
 const logoScg = "/assets/logo-scg-n7X-XJR3.jpg";
 const logoSofitels = "/assets/logo-Sofitels-5fHEngPS.jpg";
 const ZALO = "https://zalo.me/0943966662";
+const PARTNERS = [{
+  src: logoMasteriseHome,
+  alt: "Masterise Homes"
+}, {
+  src: logoNemFur,
+  alt: "NEM Furniture"
+}, {
+  src: logoNovaland,
+  alt: "Novaland"
+}, {
+  src: logoPrime,
+  alt: "Prime"
+}, {
+  src: logoPullman,
+  alt: "Pullman"
+}, {
+  src: logoAlc,
+  alt: "ALC"
+}, {
+  src: logoScg,
+  alt: "SCG"
+}, {
+  src: logoSofitels,
+  alt: "Sofitel"
+}];
 function LotusLanding() {
   const [isSelectorInteracting, setIsSelectorInteracting] = reactExports.useState(false);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -354,21 +379,23 @@ function TrustBar() {
   const {
     t
   } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-wood-200 bg-background pt-12 pb-10 sm:pt-12 sm:pb-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 items-start gap-6 text-center lg:grid-cols-4 lg:gap-10", children: [{
-    k: "200+",
-    v: t("trust.stat1Label")
-  }, {
-    k: "12+",
-    v: t("trust.stat2Label")
-  }, {
-    v: t("trust.consult")
-  }, {
-    k: t("trust.custom"),
-    v: t("trust.customDetail")
-  }].map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full flex-col justify-center", children: s.k ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]", children: s.k }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v })
-  ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v }) }, i)) }) }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-wood-200 bg-background pt-12 pb-10 sm:pt-12 sm:pb-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 items-start gap-6 text-center lg:grid-cols-4 lg:gap-10", children: [{
+      k: "200+",
+      v: t("trust.stat1Label")
+    }, {
+      k: "12+",
+      v: t("trust.stat2Label")
+    }, {
+      v: t("trust.consult")
+    }, {
+      v: t("trust.custom")
+    }].map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full flex-col justify-center", children: s.k ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]", children: s.k }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v })
+    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]", children: s.v }) }, i)) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 border-t border-wood-200/50 py-5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10", children: PARTNERS.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: p.src, alt: p.alt, className: "h-6 w-auto max-w-[88px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-8 sm:max-w-[110px]" }, p.alt)) }) })
+  ] }) });
 }
 function CertificationsSection() {
   const {
@@ -441,6 +468,11 @@ function WhyWaterSection() {
     heading: t("whyWater.col3.heading"),
     body: t("whyWater.col3.body"),
     punch: t("whyWater.col3.punch")
+  }, {
+    n: "04",
+    heading: t("whyWater.col4.heading"),
+    body: t("whyWater.col4.body"),
+    punch: t("whyWater.col4.punch")
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-20 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("whyWater.label") }),
@@ -448,7 +480,7 @@ function WhyWaterSection() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: t("whyWater.title") }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: t("whyWater.titleItalic") })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-5", children: cols.map((c) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4", children: cols.map((c) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] tracking-normal text-wood-400", children: c.n }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[18px] font-medium leading-[1.25] text-wood-900", children: c.heading }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] leading-[1.65] text-wood-700/85 sm:text-[16px]", children: c.body }),

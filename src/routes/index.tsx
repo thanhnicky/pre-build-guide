@@ -50,6 +50,17 @@ import logoSofitels from "@/assets/logo-Sofitels.jpg";
 
 const ZALO = "https://zalo.me/0943966662";
 
+const PARTNERS = [
+  { src: logoMasteriseHome, alt: "Masterise Homes" },
+  { src: logoNemFur, alt: "NEM Furniture" },
+  { src: logoNovaland, alt: "Novaland" },
+  { src: logoPrime, alt: "Prime" },
+  { src: logoPullman, alt: "Pullman" },
+  { src: logoAlc, alt: "ALC" },
+  { src: logoScg, alt: "SCG" },
+  { src: logoSofitels, alt: "Sofitel" },
+];
+
 export const Route = createFileRoute("/")({
   component: LotusLanding,
   head: () => ({
@@ -450,7 +461,7 @@ function TrustBar() {
             { k: "200+", v: t("trust.stat1Label") },
             { k: "12+", v: t("trust.stat2Label") },
             { v: t("trust.consult") },
-            { k: t("trust.custom"), v: t("trust.customDetail") },
+            { v: t("trust.custom") },
           ].map((s, i) => (
             <div key={i} className="flex h-full flex-col justify-center">
               {s.k ? (
@@ -469,6 +480,20 @@ function TrustBar() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Customer logo trust strip */}
+        <div className="mt-8 border-t border-wood-200/50 py-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-10">
+            {PARTNERS.map((p) => (
+              <img
+                key={p.alt}
+                src={p.src}
+                alt={p.alt}
+                className="h-6 w-auto max-w-[88px] object-contain opacity-[0.55] grayscale transition-opacity duration-200 hover:opacity-[0.85] sm:h-8 sm:max-w-[110px]"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -596,6 +621,12 @@ function WhyWaterSection() {
       body: t("whyWater.col3.body"),
       punch: t("whyWater.col3.punch"),
     },
+    {
+      n: "04",
+      heading: t("whyWater.col4.heading"),
+      body: t("whyWater.col4.body"),
+      punch: t("whyWater.col4.punch"),
+    },
   ];
 
 
@@ -612,7 +643,7 @@ function WhyWaterSection() {
           </span>
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-5">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
           {cols.map((c) => (
             <div
               key={c.heading}
@@ -713,6 +744,7 @@ function Hero() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

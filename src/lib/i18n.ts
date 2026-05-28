@@ -27,7 +27,7 @@ const vi = {
       "Cùng quy trình và công thức sơn — Lotus điều chỉnh hồ sơ kỹ thuật và hỗ trợ phù hợp theo từng loại hình xưởng.",
     factory: {
       title: "Xưởng nội thất công trình",
-      lead: "Hạng mục cần bàn giao đúng màu, đủ hồ sơ — không phát sinh sau nghiệm thu.",
+      lead: "Hạng mục cần bàn giao đúng màu, đủ hồ sơ kỹ thuật — Lotus giữ màu ổn định từ mẫu thử đến lô cuối, tài liệu sẵn khi cần.",
       bullets: [
         "Đồng màu giữa các lô — hạn chế chênh sắc khi giao theo đợt",
         "Hồ sơ kỹ thuật phục vụ nghiệm thu dự án",
@@ -37,7 +37,7 @@ const vi = {
     },
     export: {
       title: "Nhà máy / đơn hàng xuất khẩu",
-      lead: "Buyer yêu cầu chứng nhận, hồ sơ song ngữ và màu ổn định giữa các lô — Lotus có sẵn cả ba.",
+      lead: "Không để mất đơn vì lý do kỹ thuật — chứng nhận, hồ sơ song ngữ và màu ổn định lô sau lô, Lotus chuẩn bị sẵn.",
       bullets: [
         "TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer",
         "Đáp ứng EN71-3 · ASTM F963 · FDA · RoHS",

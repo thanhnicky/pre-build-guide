@@ -790,7 +790,7 @@ function Hero() {
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-900 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-900/10 transition-all hover:bg-wood-700 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap"
+              className="font-display group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-700 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-700/10 transition-all hover:bg-wood-600 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap"
             >
               <Camera className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
               {t("hero.ctaButton")}
@@ -2010,7 +2010,7 @@ function ConsultBlock() {
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-[15px] font-semibold uppercase tracking-[0.18em] text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto sm:text-[16px]"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto sm:text-[14px] sm:tracking-[0.18em]"
             >
               <Camera className="h-4 w-4" strokeWidth={1.75} />
               {t("consult.ctaButton")}

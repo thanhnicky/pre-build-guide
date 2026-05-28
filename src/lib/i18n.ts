@@ -270,15 +270,15 @@ const vi = {
     cta: "Bạn có dự án tương tự? Gửi ảnh để nhận tư vấn hệ sơn phù hợp qua Zalo 0943 966 662.",
     project1: {
       tag: "Căn hộ cao cấp",
-      type: "Sơn hạng mục nội thất của toà Lake",
+      type: "Sơn hạng mục gỗ nội thất của toà Lake",
     },
     project2: {
       tag: "Khách sạn",
-      type: "Sơn hạng mục nội thất khối phòng khách sạn",
+      type: "Sơn hạng mục gỗ nội thất khối phòng khách sạn",
     },
     project3: {
       tag: "Khách sạn 5 sao",
-      type: "Sơn bảo dưỡng nội thất hàng năm",
+      type: "Sơn bảo dưỡng gỗ nội thất hàng năm",
     },
     project4: {
       tag: "Nhà máy sản xuất",
@@ -290,7 +290,7 @@ const vi = {
     },
     project6: {
       tag: "Thương mại",
-      type: "Nội thất & vách ốp",
+      type: "Gỗ nội thất & vách ốp",
     },
   },
   partners: {

@@ -27,7 +27,7 @@ const headers = ((m) => function headersRouteRule(event) {
   }
 });
 const findRouteRules = /* @__PURE__ */ (() => {
-  const $0 = [{ name: "headers", route: "/assets/**", handler: headers, options: { "cache-control": "public, max-age=31536000, immutable" } }];
+  const $0 = [{ name: "headers", route: "/assets/**", handler: headers, options: { "cache-control": "public, max-age=31536000, immutable" } }], $1 = [{ name: "headers", route: "/**", handler: headers, options: { "X-Frame-Options": "SAMEORIGIN", "X-Content-Type-Options": "nosniff", "Referrer-Policy": "strict-origin-when-cross-origin", "Permissions-Policy": "camera=(), microphone=(), geolocation=()", "X-XSS-Protection": "1; mode=block" } }];
   return (m, p) => {
     let r = [];
     if (p.charCodeAt(p.length - 1) === 47) p = p.slice(0, -1) || "/";
@@ -37,6 +37,7 @@ const findRouteRules = /* @__PURE__ */ (() => {
         r.unshift({ data: $0, params: { "_": s.slice(2).join("/") } });
       }
     }
+    r.unshift({ data: $1, params: { "_": s.slice(1).join("/") } });
     return r;
   };
 })();

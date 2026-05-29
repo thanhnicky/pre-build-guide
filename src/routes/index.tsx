@@ -184,7 +184,9 @@ function LotusLanding() {
         <PartnersSection />
         {/* 10. FAQ */}
         <FAQ />
-        {/* 11. Consult */}
+        {/* 11. AI Chat — Sol trợ lý kỹ thuật */}
+        <AIChatSection />
+        {/* 12. Consult */}
         <ConsultBlock />
       </main>
       <Footer />
@@ -2115,6 +2117,231 @@ function FAQ() {
             </Accordion>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   AI CHAT SECTION — Sol trợ lý kỹ thuật
+   ============================================================ */
+const SOL_API_URL   = "https://9router.vuhai.io.vn/v1/chat/completions";
+const SOL_API_KEY   = "sk-4bd27113b7dc78d1-lh6jld-f4f9c69f";
+const SOL_API_MODEL = "ces-chatbot-gpt-5.4";
+
+type ChatMsg = { role: "user" | "assistant"; content: string };
+
+function BotMessage({ content }: { content: string }) {
+  const w = typeof window !== "undefined"
+    ? (window as unknown as { marked?: { parse: (s: string) => string } })
+    : null;
+  const html = w?.marked ? w.marked.parse(content) : null;
+  return html ? (
+    <div
+      className="prose prose-sm max-w-none prose-img:rounded-xl prose-img:max-w-full prose-a:text-wood-700"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  ) : (
+    <p className="whitespace-pre-wrap">{content}</p>
+  );
+}
+
+function AIChatSection() {
+  const [messages, setMessages] = useState<ChatMsg[]>([]);
+  const [input, setInput]       = useState("");
+  const [loading, setLoading]   = useState(false);
+  const [kb, setKb]             = useState("");
+  const messagesEndRef          = useRef<HTMLDivElement>(null);
+  const textareaRef             = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef            = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    fetch("/chatbot_data.txt").then((r) => r.text()).then(setKb).catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  const buildPrompt = (msgCount: number) =>
+    `Bạn là Sol — nhân viên kỹ thuật tư vấn của Sơn Lotus (3 năm kinh nghiệm thực chiến), KHÔNG phải chatbot.
+
+QUY TẮC PHẢN HỒI (BẮT BUỘC):
+1. SÚC TÍCH: Cắt bỏ 100% câu dẫn rườm rà. Trả lời ĐÚNG, TRỰC TIẾP. Không quá 6-8 dòng.
+2. ĐỘ DÀI: Hỏi ngắn → đáp ngắn (2-4 câu), kết bằng 1 câu hỏi dẫn dắt nhu cầu.
+3. KHÔNG DÙNG **BOLD**: Muốn nhấn mạnh hãy dùng CHỮ HOA hoặc ngắt dòng.
+4. KHÔNG chào máy móc. KHÔNG dùng ngôn ngữ quảng cáo sáo rỗng.
+5. CHỨNG CHỈ: Nếu hỏi về an toàn/xuất khẩu, giới thiệu EN71-3, ASTM F963, FDA, RoHS, Low VOCs.
+6. BẢNG MÀU: Phải gửi ngay ảnh markdown khi khách hỏi. TUYỆT ĐỐI CẤM nói chưa gửi được ảnh.
+   - Giả gỗ xi măng: ![Bảng màu xi măng](https://w.ladicdn.com/s1300x1600/5e3e73f71adefa2bf15bd42f/bang-mau-son-gia-go-lotus-2999-20251208134932-nwilo.png)
+   - Giả gỗ trên sắt: ![Bảng màu sắt](https://w.ladicdn.com/s1300x950/5e3e73f71adefa2bf15bd42f/bang-mau-son-gia-go-tren-sat-lotus-20251227093233-pvhrl.png)
+   - Sơn gỗ màu bệt: ![Bảng màu gỗ](https://w.ladicdn.com/s750x900/5e3e73f71adefa2bf15bd42f/bang-mau-son-go-lotus-83285p-20251209012759-qpvpg.png)
+7. MDF: KHÔNG hỏi "MDF thường hay chống ẩm". Vào thẳng: "Anh cần sơn màu trơn hay hệ giả gỗ ạ?"
+8. NGOÀI TRỜI: Chủ động tư vấn thêm lớp Phủ Bóng (Topcoat) nếu công trình ngoài trời.
+9. GIÁ 2K TRỌN BỘ: Luôn báo giá GỘP sơn + đóng rắn. Không để khách tự cộng.
+   + Tỷ lệ 10%: +79.920đ/kg. Tỷ lệ 15%: +119.880đ/kg. Tỷ lệ 20%: +159.840đ/kg.
+10. CHỐT SALE: B1.Chốt mã màu → B2.Quy trình → B3.Khối lượng → B4.Tổng tiền → B5.Thông tin giao hàng.
+${msgCount < 2 ? "CHẶN TUYỆT ĐỐI: KHÔNG hỏi SĐT/Zalo trong 2 tin nhắn đầu." : "Có thể gợi ý để lại SĐT/Zalo nếu cần tư vấn chuyên sâu."}
+
+Tri thức chuyên môn: ${kb}`;
+
+  const sendMessage = async (text: string) => {
+    const trimmed = text.trim();
+    if (!trimmed || loading) return;
+    const next: ChatMsg[] = [...messages, { role: "user", content: trimmed }];
+    setMessages(next);
+    setInput("");
+    if (textareaRef.current) textareaRef.current.style.height = "auto";
+    setLoading(true);
+    try {
+      const res = await fetch(SOL_API_URL, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${SOL_API_KEY}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: SOL_API_MODEL,
+          messages: [{ role: "system", content: buildPrompt(messages.length) }, ...next.slice(-10)],
+        }),
+      });
+      const data = await res.json();
+      const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
+      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+    } catch (err) {
+      console.error("[AI Sơn] API error:", err);
+      const msg = err instanceof Error && err.message.includes("Failed to fetch")
+        ? "Không thể kết nối API — có thể do CORS khi chạy localhost. Vui lòng test trên domain thật."
+        : "Xin lỗi, AI Sơn đang bận một chút. Bạn thử lại nhé!";
+      setMessages((prev) => [...prev, { role: "assistant", content: msg }]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const SUGGESTIONS = [
+    { emoji: "🪵", label: "Bảng màu giả gỗ" },
+    { emoji: "🧪", label: "Báo giá sơn 2K" },
+    { emoji: "🏡", label: "Quy trình sơn nền" },
+    { emoji: "✏️", label: "Giá Hardener" },
+  ];
+
+  const isEmpty = messages.length === 0;
+
+  return (
+    <section id="hoi-sol" className="bg-[#F5F0EA] py-16 sm:py-24">
+      <div className="mx-auto max-w-[820px] px-6 sm:px-10">
+
+        {/* Greeting — only when no messages */}
+        {isEmpty && (
+          <div className="mb-10 text-center">
+            <h2 className="font-display text-[2rem] font-light leading-[1.1] sm:text-[2.75rem]">
+              <span className="bg-gradient-to-r from-wood-800 via-wood-600 to-amber-500 bg-clip-text text-transparent">
+                Xin chào, tôi là AI sơn!
+              </span>
+            </h2>
+            <p className="mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-400 sm:text-[1.75rem]">
+              Tôi có thể giúp ích gì cho bạn?
+            </p>
+          </div>
+        )}
+
+        {/* Header when chat active */}
+        {!isEmpty && (
+          <div className="mb-5 flex items-center justify-between">
+            <p className="text-[12px] uppercase tracking-[0.2em] text-wood-500">
+              AI sơn — Trợ lý kỹ thuật Lotus
+            </p>
+            <button
+              onClick={() => setMessages([])}
+              className="text-[12px] text-wood-400 transition-colors hover:text-wood-600"
+            >
+              Cuộc trò chuyện mới
+            </button>
+          </div>
+        )}
+
+        {/* Message list */}
+        {!isEmpty && (
+          <div className="mb-6 max-h-[480px] space-y-5 overflow-y-auto scroll-smooth pr-1">
+            {messages.map((m, i) => (
+              <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                <div
+                  className={`max-w-[80%] rounded-2xl px-4 py-3 text-[14px] leading-[1.75] sm:text-[15px] ${
+                    m.role === "user"
+                      ? "rounded-tr-none bg-wood-100 text-wood-900"
+                      : "rounded-tl-none bg-white text-wood-800 shadow-sm"
+                  }`}
+                >
+                  {m.role === "assistant" ? <BotMessage content={m.content} /> : <p>{m.content}</p>}
+                </div>
+              </div>
+            ))}
+
+            {loading && (
+              <div className="flex gap-3 justify-start">
+                <div className="rounded-2xl rounded-tl-none bg-white px-4 py-3 shadow-sm">
+                  <div className="flex items-center gap-1">
+                    {[0, 150, 300].map((d) => (
+                      <span key={d} className="h-1.5 w-1.5 animate-bounce rounded-full bg-wood-400" style={{ animationDelay: `${d}ms` }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+        )}
+
+        {/* Input bar */}
+        <div className="flex items-end gap-2 rounded-2xl border border-wood-200/80 bg-white px-4 py-3 shadow-sm transition-shadow focus-within:border-wood-400 focus-within:shadow-md">
+          <input ref={fileInputRef} type="file" accept="image/*" className="hidden" />
+          <textarea
+            ref={textareaRef}
+            value={input}
+            rows={1}
+            placeholder="Nhập câu hỏi về sơn gỗ..."
+            className="max-h-32 flex-1 resize-none bg-transparent text-[15px] leading-[1.6] text-wood-900 placeholder-wood-400 outline-none"
+            onChange={(e) => {
+              setInput(e.target.value);
+              e.target.style.height = "auto";
+              e.target.style.height = e.target.scrollHeight + "px";
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); }
+            }}
+          />
+          <div className="flex shrink-0 items-center gap-1">
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="flex h-8 w-8 items-center justify-center rounded-full text-wood-400 transition-colors hover:bg-wood-100 hover:text-wood-700"
+              title="Gửi ảnh mẫu"
+            >
+              <Camera className="h-4 w-4" strokeWidth={1.75} />
+            </button>
+            <button
+              onClick={() => sendMessage(input)}
+              disabled={!input.trim() || loading}
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-wood-600/80 text-background transition-colors hover:bg-wood-700 disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+            </button>
+          </div>
+        </div>
+
+        {/* Suggestion chips */}
+        {isEmpty && (
+          <div className="mt-5 flex flex-wrap justify-center gap-2">
+            {SUGGESTIONS.map((s) => (
+              <button
+                key={s.label}
+                onClick={() => sendMessage(s.label)}
+                className="flex items-center gap-1.5 rounded-full border border-wood-200 bg-white px-4 py-2 text-[13px] text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[14px]"
+              >
+                <span>{s.emoji}</span>
+                <span>{s.label}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
       </div>
     </section>
   );

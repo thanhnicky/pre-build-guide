@@ -1,0 +1,1 @@
+import{r as t,j as e}from"./index-n4XZ1x71.js";function o(){return t.useEffect(()=>{window.location.href="/studio/index.html"},[]),e.jsx("div",{style:{height:"100vh",display:"flex",alignItems:"center",justifyContent:"center",background:"#FDFAF7",fontFamily:"Inter, sans-serif",color:"#5C3D1E"},children:"Đang chuyển hướng đến Studio..."})}export{o as component};

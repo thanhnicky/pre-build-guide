@@ -362,7 +362,7 @@ instance.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const appCss = "/assets/styles-I0ORLWh7.css";
+const appCss = "/assets/styles-DZM589wH.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -611,7 +611,8 @@ function RootShell({ children }) {
             `
           }
         }
-      )
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("script", { src: "https://cdn.jsdelivr.net/npm/marked/marked.min.js" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("body", { children: [
       children,
@@ -627,7 +628,7 @@ const $$splitComponentImporter$3 = () => import("./studio-BFMuw0pq.mjs");
 const Route$3 = createFileRoute("/studio")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-DhdG5Y2F.mjs");
+const $$splitComponentImporter$2 = () => import("./index-Iquy18MO.mjs");
 const Route$2 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
@@ -707,7 +708,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-D6XgHhom.mjs");
+const $$splitComponentImporter$1 = () => import("./index-DXIkdLTB.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -717,7 +718,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-SwZWgoau.mjs");
+const $$splitComponentImporter = () => import("../_slug-DbqAsX-C.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

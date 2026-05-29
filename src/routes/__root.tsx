@@ -267,6 +267,8 @@ function RootShell({ children }: { children: React.ReactNode }) {
             `,
           }}
         />
+        {/* marked.js — used by inline AI chat section */}
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       </head>
       <body>
         {children}

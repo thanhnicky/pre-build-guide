@@ -2151,6 +2151,7 @@ function AIChatSection() {
   const isComposing = useRef(false);
   const [kb, setKb]             = useState("");
   const messagesEndRef          = useRef<HTMLDivElement>(null);
+  const scrollContainerRef      = useRef<HTMLDivElement>(null);
   const textareaRef             = useRef<HTMLTextAreaElement>(null);
   const fileInputRef            = useRef<HTMLInputElement>(null);
 
@@ -2159,7 +2160,8 @@ function AIChatSection() {
   }, []);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const el = scrollContainerRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [messages, loading]);
 
   const buildPrompt = (msgCount: number) =>
@@ -2256,7 +2258,7 @@ Tri thức chuyên môn: ${kb}`;
 
         {/* Message list */}
         {!isEmpty && (
-          <div className="mb-6 max-h-[480px] space-y-5 overflow-y-auto scroll-smooth pr-1">
+          <div ref={scrollContainerRef} className="mb-6 max-h-[480px] space-y-5 overflow-y-auto scroll-smooth pr-1">
             {messages.map((m, i) => (
               <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
@@ -2327,21 +2329,6 @@ Tri thức chuyên môn: ${kb}`;
           </div>
         </div>
 
-        {/* Suggestion chips */}
-        {isEmpty && (
-          <div className="mt-5 flex flex-wrap justify-center gap-2">
-            {SUGGESTIONS.map((s) => (
-              <button
-                key={s.label}
-                onClick={() => sendMessage(s.label)}
-                className="flex items-center gap-1.5 rounded-full border border-wood-200 bg-white px-4 py-2 text-[13px] text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[14px]"
-              >
-                <span>{s.emoji}</span>
-                <span>{s.label}</span>
-              </button>
-            ))}
-          </div>
-        )}
 
       </div>
     </section>

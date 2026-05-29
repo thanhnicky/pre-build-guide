@@ -1372,6 +1372,7 @@ function AIChatSection() {
   const isComposing = reactExports.useRef(false);
   const [kb, setKb] = reactExports.useState("");
   const messagesEndRef = reactExports.useRef(null);
+  const scrollContainerRef = reactExports.useRef(null);
   const textareaRef = reactExports.useRef(null);
   const fileInputRef = reactExports.useRef(null);
   reactExports.useEffect(() => {
@@ -1379,9 +1380,8 @@ function AIChatSection() {
     });
   }, []);
   reactExports.useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({
-      behavior: "smooth"
-    });
+    const el = scrollContainerRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [messages, loading]);
   const buildPrompt = (msgCount) => `Bạn là Sol — nhân viên kỹ thuật tư vấn của Sơn Lotus (3 năm kinh nghiệm thực chiến), KHÔNG phải chatbot.
 
@@ -1444,19 +1444,6 @@ Tri thức chuyên môn: ${kb}`;
       setLoading(false);
     }
   };
-  const SUGGESTIONS = [{
-    emoji: "🪵",
-    label: "Bảng màu giả gỗ"
-  }, {
-    emoji: "🧪",
-    label: "Báo giá sơn 2K"
-  }, {
-    emoji: "🏡",
-    label: "Quy trình sơn nền"
-  }, {
-    emoji: "✏️",
-    label: "Giá Hardener"
-  }];
   const isEmpty = messages.length === 0;
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "hoi-sol", className: "bg-[#F5F0EA] py-16 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[820px] px-6 sm:px-10", children: [
     isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-10 text-center", children: [
@@ -1467,7 +1454,7 @@ Tri thức chuyên môn: ${kb}`;
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[12px] uppercase tracking-[0.2em] text-wood-500", children: "AI sơn — Trợ lý kỹ thuật Lotus" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => setMessages([]), className: "text-[12px] text-wood-400 transition-colors hover:text-wood-600", children: "Cuộc trò chuyện mới" })
     ] }),
-    !isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 max-h-[480px] space-y-5 overflow-y-auto scroll-smooth pr-1", children: [
+    !isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: scrollContainerRef, className: "mb-6 max-h-[480px] space-y-5 overflow-y-auto scroll-smooth pr-1", children: [
       messages.map((m, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `max-w-[80%] rounded-2xl px-4 py-3 text-[14px] leading-[1.75] sm:text-[15px] ${m.role === "user" ? "rounded-tr-none bg-wood-100 text-wood-900" : "rounded-tl-none bg-white text-wood-800 shadow-sm"}`, children: m.role === "assistant" ? /* @__PURE__ */ jsxRuntimeExports.jsx(BotMessage, { content: m.content }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: m.content }) }) }, i)),
       loading && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 justify-start", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-2xl rounded-tl-none bg-white px-4 py-3 shadow-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1", children: [0, 150, 300].map((d) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 w-1.5 animate-bounce rounded-full bg-wood-400", style: {
         animationDelay: `${d}ms`
@@ -1495,11 +1482,7 @@ Tri thức chuyên môn: ${kb}`;
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => fileInputRef.current?.click(), className: "flex h-8 w-8 items-center justify-center rounded-full text-wood-400 transition-colors hover:bg-wood-100 hover:text-wood-700", title: "Gửi ảnh mẫu", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-4 w-4", strokeWidth: 1.75 }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => sendMessage(input), disabled: !input.trim() || loading, className: "flex h-8 w-8 items-center justify-center rounded-full bg-wood-600/80 text-background transition-colors hover:bg-wood-700 disabled:cursor-not-allowed disabled:opacity-30", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "h-4 w-4", strokeWidth: 2 }) })
       ] })
-    ] }),
-    isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5 flex flex-wrap justify-center gap-2", children: SUGGESTIONS.map((s) => /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { onClick: () => sendMessage(s.label), className: "flex items-center gap-1.5 rounded-full border border-wood-200 bg-white px-4 py-2 text-[13px] text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[14px]", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: s.emoji }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: s.label })
-    ] }, s.label)) })
+    ] })
   ] }) });
 }
 export {

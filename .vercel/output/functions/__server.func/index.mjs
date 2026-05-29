@@ -1,5 +1,5 @@
 globalThis.__nitro_main__ = import.meta.url;
-import { d as defineLazyEventHandler, a as HTTPError, H as H3Core } from "./_libs/h3.mjs";
+import { b as defineLazyEventHandler, a as HTTPError, H as H3Core } from "./_libs/h3.mjs";
 import { N as NodeResponse } from "./_libs/srvx.mjs";
 import "./_libs/rou3.mjs";
 import "node:stream";
@@ -41,12 +41,19 @@ const findRouteRules = /* @__PURE__ */ (() => {
     return r;
   };
 })();
+const _lazy_3flkyN = defineLazyEventHandler(() => import("./_routes/api/chat.mjs"));
 const _lazy_BZhGaQ = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
 const findRoute = /* @__PURE__ */ (() => {
-  const data = { route: "/**", handler: _lazy_BZhGaQ };
-  return ((_m, p) => {
-    return { data, params: { "_": p.slice(1) } };
-  });
+  const $0 = { route: "/api/chat", handler: _lazy_3flkyN }, $1 = { route: "/**", handler: _lazy_BZhGaQ };
+  return (m, p) => {
+    if (p.charCodeAt(p.length - 1) === 47) p = p.slice(0, -1) || "/";
+    if (p === "/api/chat") {
+      return { data: $0 };
+    }
+    let s = p.split("/");
+    s.length;
+    return { data: $1, params: { "_": s.slice(1).join("/") } };
+  };
 })();
 const errorHandler$1 = (error, event) => {
   const res = defaultHandler(error, event);

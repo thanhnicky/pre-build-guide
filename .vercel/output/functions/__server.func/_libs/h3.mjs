@@ -133,6 +133,13 @@ var HTTPError = class HTTPError2 extends Error {
     };
   }
 };
+function hasProp(obj, prop) {
+  try {
+    return prop in obj;
+  } catch {
+    return false;
+  }
+}
 function isJSONSerializable(value, _type) {
   if (value === null || value === void 0) return true;
   if (_type !== "object") return _type === "boolean" || _type === "number" || _type === "string";
@@ -398,9 +405,35 @@ var H3Core = class {
     return routeMiddleware ? [...globalMiddleware, ...routeMiddleware] : globalMiddleware;
   }
 };
+function parseURLEncodedBody(body) {
+  const form = new URLSearchParams(body);
+  const parsedForm = new NullProtoObj();
+  for (const [key, value] of form.entries()) if (hasProp(parsedForm, key)) {
+    if (!Array.isArray(parsedForm[key])) parsedForm[key] = [parsedForm[key]];
+    parsedForm[key].push(value);
+  } else parsedForm[key] = value;
+  return parsedForm;
+}
+async function readBody(event) {
+  const text = await event.req.text();
+  if (!text) return;
+  if ((event.req.headers.get("content-type") || "").startsWith("application/x-www-form-urlencoded")) return parseURLEncodedBody(text);
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new HTTPError({
+      status: 400,
+      statusText: "Bad Request",
+      message: "Invalid JSON body"
+    });
+  }
+}
+const defineEventHandler = defineHandler;
 export {
   H3Core as H,
   HTTPError as a,
-  defineLazyEventHandler as d,
+  defineLazyEventHandler as b,
+  defineEventHandler as d,
+  readBody as r,
   toRequest as t
 };

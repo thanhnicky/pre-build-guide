@@ -16,7 +16,7 @@ const chat = defineEventHandler(async (event) => {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
         "HTTP-Referer": "https://songo.com.vn",
-        "X-Title": "AI Sơn - Lotus Paint"
+        "X-Title": "AI Son - Lotus Paint"
       },
       body: {
         model: "openai/gpt-4o-mini",

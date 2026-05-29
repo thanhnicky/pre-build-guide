@@ -2200,6 +2200,12 @@ Tri thức chuyên môn: ${kb}`;
         }),
       });
       const data = await res.json();
+      if (data._error) {
+        console.error("[AI Sơn] Proxy error:", data);
+        const reply = `[DEBUG] Status: ${data.status} | ${data.message} | ${JSON.stringify(data.data)}`;
+        setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+        return;
+      }
       const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch (err) {

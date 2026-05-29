@@ -1427,6 +1427,13 @@ Tri thức chuyên môn: ${kb}`;
         })
       });
       const data = await res.json();
+      if (data._error) {
+        setMessages((prev) => [...prev, {
+          role: "assistant",
+          content: `[DEBUG] ${data.status} | ${data.message} | ${JSON.stringify(data.data)}`
+        }]);
+        return;
+      }
       const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
       setMessages((prev) => [...prev, {
         role: "assistant",

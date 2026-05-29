@@ -3,7 +3,10 @@ import { $fetch } from "ofetch";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<{ messages: unknown[] }>(event);
-  const apiKey = process.env.OPENROUTER_API_KEY ?? "";
+  const apiKey = process.env.OPENROUTER_API_KEY ?? process.env.VITE_OPENROUTER_API_KEY ?? "";
+  if (!apiKey) {
+    return { _error: true, status: 500, message: "API key not configured", data: "OPENROUTER_API_KEY missing" };
+  }
 
   try {
     const response = await $fetch<unknown>("https://openrouter.ai/api/v1/chat/completions", {

@@ -1369,6 +1369,7 @@ function AIChatSection() {
   const [messages, setMessages] = reactExports.useState([]);
   const [input, setInput] = reactExports.useState("");
   const [loading, setLoading] = reactExports.useState(false);
+  const isComposing = reactExports.useRef(false);
   const [kb, setKb] = reactExports.useState("");
   const messagesEndRef = reactExports.useRef(null);
   const textareaRef = reactExports.useRef(null);
@@ -1427,13 +1428,6 @@ Tri thức chuyên môn: ${kb}`;
         })
       });
       const data = await res.json();
-      if (data._error) {
-        setMessages((prev) => [...prev, {
-          role: "assistant",
-          content: `[DEBUG] ${data.status} | ${data.message} | ${JSON.stringify(data.data)}`
-        }]);
-        return;
-      }
       const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
       setMessages((prev) => [...prev, {
         role: "assistant",
@@ -1486,8 +1480,13 @@ Tri thức chuyên môn: ${kb}`;
         setInput(e.target.value);
         e.target.style.height = "auto";
         e.target.style.height = e.target.scrollHeight + "px";
+      }, onCompositionStart: () => {
+        isComposing.current = true;
+      }, onCompositionEnd: (e) => {
+        isComposing.current = false;
+        setInput(e.target.value);
       }, onKeyDown: (e) => {
-        if (e.key === "Enter" && !e.shiftKey) {
+        if (e.key === "Enter" && !e.shiftKey && !isComposing.current) {
           e.preventDefault();
           sendMessage(input);
         }

@@ -2148,6 +2148,7 @@ function AIChatSection() {
   const [messages, setMessages] = useState<ChatMsg[]>([]);
   const [input, setInput]       = useState("");
   const [loading, setLoading]   = useState(false);
+  const isComposing = useRef(false);
   const [kb, setKb]             = useState("");
   const messagesEndRef          = useRef<HTMLDivElement>(null);
   const textareaRef             = useRef<HTMLTextAreaElement>(null);
@@ -2200,10 +2201,6 @@ Tri thức chuyên môn: ${kb}`;
         }),
       });
       const data = await res.json();
-      if (data._error) {
-        setMessages((prev) => [...prev, { role: "assistant", content: `[DEBUG] ${data.status} | ${data.message} | ${JSON.stringify(data.data)}` }]);
-        return;
-      }
       const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch (err) {
@@ -2303,8 +2300,13 @@ Tri thức chuyên môn: ${kb}`;
               e.target.style.height = "auto";
               e.target.style.height = e.target.scrollHeight + "px";
             }}
+            onCompositionStart={() => { isComposing.current = true; }}
+            onCompositionEnd={(e) => {
+              isComposing.current = false;
+              setInput((e.target as HTMLTextAreaElement).value);
+            }}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); }
+              if (e.key === "Enter" && !e.shiftKey && !isComposing.current) { e.preventDefault(); sendMessage(input); }
             }}
           />
           <div className="flex shrink-0 items-center gap-1">

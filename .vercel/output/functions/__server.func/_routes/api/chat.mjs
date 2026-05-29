@@ -11,8 +11,8 @@ const chat = defineEventHandler(async (event) => {
       headers: {
         Authorization: "Bearer sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
         "Content-Type": "application/json",
-        Origin: "https://songo.com.vn",
-        Referer: "https://songo.com.vn/"
+        Origin: "https://web-mau-v1.vercel.app",
+        Referer: "https://web-mau-v1.vercel.app/"
       },
       body: {
         model: "ces-chatbot-gpt-5.4",

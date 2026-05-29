@@ -10,6 +10,8 @@ export default defineEventHandler(async (event) => {
       headers: {
         Authorization: "Bearer sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
         "Content-Type": "application/json",
+        Origin: "https://songo.com.vn",
+        Referer: "https://songo.com.vn/",
       },
       body: {
         model: "ces-chatbot-gpt-5.4",

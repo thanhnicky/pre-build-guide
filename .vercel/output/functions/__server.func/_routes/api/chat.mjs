@@ -12,7 +12,8 @@ const chat = defineEventHandler(async (event) => {
         Authorization: "Bearer sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
         "Content-Type": "application/json",
         Origin: "https://web-mau-v1.vercel.app",
-        Referer: "https://web-mau-v1.vercel.app/"
+        Referer: "https://web-mau-v1.vercel.app/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
       },
       body: {
         model: "ces-chatbot-gpt-5.4",

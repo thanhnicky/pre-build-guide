@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
         "Content-Type": "application/json",
         Origin: "https://web-mau-v1.vercel.app",
         Referer: "https://web-mau-v1.vercel.app/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
       },
       body: {
         model: "ces-chatbot-gpt-5.4",

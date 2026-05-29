@@ -5,18 +5,18 @@ import "../../_libs/srvx.mjs";
 import "node:stream";
 const chat = defineEventHandler(async (event) => {
   const body = await readBody(event);
+  const apiKey = process.env.OPENROUTER_API_KEY ?? "";
   try {
-    const response = await $fetch("https://9router.vuhai.io.vn/v1/chat/completions", {
+    const response = await $fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer sk-4bd27113b7dc78d1-lh6jld-f4f9c69f",
+        Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
-        Origin: "https://web-mau-v1.vercel.app",
-        Referer: "https://web-mau-v1.vercel.app/",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        "HTTP-Referer": "https://songo.com.vn",
+        "X-Title": "AI Sơn - Lotus Paint"
       },
       body: {
-        model: "ces-chatbot-gpt-5.4",
+        model: "openai/gpt-4o-mini",
         messages: body?.messages ?? []
       }
     });

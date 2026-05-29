@@ -2125,9 +2125,7 @@ function FAQ() {
 /* ============================================================
    AI CHAT SECTION — Sol trợ lý kỹ thuật
    ============================================================ */
-const SOL_API_URL   = "https://9router.vuhai.io.vn/v1/chat/completions";
-const SOL_API_KEY   = "sk-4bd27113b7dc78d1-lh6jld-f4f9c69f";
-const SOL_API_MODEL = "ces-chatbot-gpt-5.4";
+const SOL_API_URL = "/api/chat";
 
 type ChatMsg = { role: "user" | "assistant"; content: string };
 
@@ -2196,9 +2194,8 @@ Tri thức chuyên môn: ${kb}`;
     try {
       const res = await fetch(SOL_API_URL, {
         method: "POST",
-        headers: { Authorization: `Bearer ${SOL_API_KEY}`, "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: SOL_API_MODEL,
           messages: [{ role: "system", content: buildPrompt(messages.length) }, ...next.slice(-10)],
         }),
       });

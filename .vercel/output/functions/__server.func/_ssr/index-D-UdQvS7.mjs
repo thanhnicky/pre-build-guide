@@ -1355,7 +1355,9 @@ function FAQ() {
     ] }, i)) }) })
   ] }) }) });
 }
-const SOL_API_URL = "/api/chat";
+const SOL_API_URL = "https://9router.vuhai.io.vn/v1/chat/completions";
+const SOL_API_KEY = "sk-4bd27113b7dc78d1-lh6jld-f4f9c69f";
+const SOL_API_MODEL = "ces-chatbot-gpt-5.4";
 function BotMessage({
   content
 }) {
@@ -1417,9 +1419,11 @@ Tri thức chuyên môn: ${kb}`;
       const res = await fetch(SOL_API_URL, {
         method: "POST",
         headers: {
+          Authorization: `Bearer ${SOL_API_KEY}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          model: SOL_API_MODEL,
           messages: [{
             role: "system",
             content: buildPrompt(messages.length)
@@ -1427,15 +1431,6 @@ Tri thức chuyên môn: ${kb}`;
         })
       });
       const data = await res.json();
-      if (data._error) {
-        console.error("[AI Sơn] Proxy error:", data);
-        const reply2 = `[DEBUG] Status: ${data.status} | ${data.message} | ${JSON.stringify(data.data)}`;
-        setMessages((prev) => [...prev, {
-          role: "assistant",
-          content: reply2
-        }]);
-        return;
-      }
       const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
       setMessages((prev) => [...prev, {
         role: "assistant",

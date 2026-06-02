@@ -418,7 +418,7 @@ const Route$4 = createRootRouteWithContext()({
         content: "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA. Tư vấn miễn phí: 0943 966 662."
       },
       { name: "keywords", content: "sơn gỗ hệ nước, sơn gỗ nội thất, sơn gỗ ngoại thất, sơn gỗ xuất khẩu, sơn gỗ dự án cao cấp, Lotus wood paint, water-based wood finish, wood coating for export" },
-      { name: "author", content: "Lotus Wood Paint" },
+      { name: "author", content: "Sơn Gỗ Lotus" },
       { name: "robots", content: "index, follow" },
       { name: "googlebot", content: "index, follow" },
       {
@@ -432,13 +432,13 @@ const Route$4 = createRootRouteWithContext()({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.songo.com.vn" },
       { property: "og:locale", content: "vi_VN" },
-      { property: "og:site_name", content: "Lotus Wood Paint" },
+      { property: "og:site_name", content: "Sơn Gỗ Lotus" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Lotus - Sơn Gỗ Hệ Nước | Hoàn Thiện Gỗ Cho Dự Án Cao Cấp & Xuất Khẩu" },
       { name: "twitter:description", content: "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
-      { name: "twitter:image:alt", content: "Lotus Wood Paint - Sơn gỗ hệ nước chuyên nghiệp" },
+      { name: "twitter:image:alt", content: "Sơn Gỗ Lotus - Sơn gỗ hệ nước chuyên nghiệp" },
       { name: "geo.region", content: "VN-SG" },
       { name: "geo.placename", content: "Ho Chi Minh City" },
       { name: "geo.position", content: "10.8544;106.5775" },
@@ -465,7 +465,7 @@ function RootShell({ children }) {
     {
       "@context": "https://schema.org",
       "@type": ["Organization", "LocalBusiness"],
-      "name": "Lotus Wood Paint",
+      "name": "Sơn Gỗ Lotus",
       "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật",
       "url": "https://www.songo.com.vn",
       "telephone": "+84-943-966-662",
@@ -740,7 +740,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-Bo2GnEGs.mjs");
+const $$splitComponentImporter$1 = () => import("./index-BO8aamah.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -750,7 +750,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-D5Aqs2fF.mjs");
+const $$splitComponentImporter = () => import("../_slug-BUVELmAA.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

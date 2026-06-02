@@ -172,6 +172,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       "category": "Sơn gỗ hệ nước",
       "offers": {
         "@type": "Offer",
+        "price": "0",
         "priceCurrency": "VND",
         "availability": "https://schema.org/InStock",
         "seller": {

@@ -508,6 +508,7 @@ function RootShell({ children }) {
       "category": "Sơn gỗ hệ nước",
       "offers": {
         "@type": "Offer",
+        "price": "0",
         "priceCurrency": "VND",
         "availability": "https://schema.org/InStock",
         "seller": {
@@ -739,7 +740,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-CtmIC3BA.mjs");
+const $$splitComponentImporter$1 = () => import("./index-Bo2GnEGs.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -749,7 +750,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-CwjOwTrO.mjs");
+const $$splitComponentImporter = () => import("../_slug-D5Aqs2fF.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

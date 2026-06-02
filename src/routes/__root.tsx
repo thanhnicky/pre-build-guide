@@ -155,6 +155,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         innerHTML: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Lotus Wood Paint - Sơn Gỗ Hệ Nước",
+          "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Lotus Wood Paint"
+          },
+          "image": [
+            "https://www.songo.com.vn/lotus-hero.jpg",
+            "https://www.songo.com.vn/son-phun-lotus-web.webp"
+          ],
+          "category": "Sơn gỗ hệ nước",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Lotus Wood Paint"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "200"
+          }
+        })
+      },
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
             {
@@ -268,7 +300,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
           }}
         />
         {/* marked.js — used by inline AI chat section */}
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       </head>
       <body>
         {children}

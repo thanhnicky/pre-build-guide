@@ -300,3 +300,29 @@ body {
     max-height: 67px;
   }
 }
+
+/* ==========================================================================
+   Google Translate Styling Customization
+   ========================================================================== */
+
+/* Hide Google Translate top banner bar */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Force body to top (Google Translate often pushes body down by 40px) */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Disable translate yellow hover highlight on words */
+font {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+}
+

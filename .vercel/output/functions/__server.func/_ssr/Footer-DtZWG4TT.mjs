@@ -1,7 +1,94 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { X, j as Menu, k as MessageCircle, i as MapPin, M as Mail, G as Globe, P as Phone } from "../_libs/lucide-react.mjs";
+import { X, j as Menu, k as MessageCircle, i as MapPin, M as Mail, G as Globe, P as Phone, b as ChevronDown } from "../_libs/lucide-react.mjs";
 const logo = "/assets/lotus-logo-C0CbJd0t.jpg";
+const languages = [
+  { code: "vi", label: "Tiếng Việt", flag: "🇻🇳", labelShort: "VI" },
+  { code: "en", label: "English", flag: "🇬🇧", labelShort: "EN" },
+  { code: "ja", label: "日本語", flag: "🇯🇵", labelShort: "JA" },
+  { code: "zh-CN", label: "中文", flag: "🇨🇳", labelShort: "ZH" }
+];
+function LanguageSelector() {
+  const [open, setOpen] = reactExports.useState(false);
+  const [selected, setSelected] = reactExports.useState("vi");
+  const dropdownRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const getLangFromCookie = () => {
+      const match = document.cookie.match(/(^| )googtrans=([^;]+)/);
+      if (match) {
+        const val = decodeURIComponent(match[2]);
+        const parts = val.split("/");
+        if (parts.length >= 3) {
+          return parts[2];
+        }
+      }
+      return "vi";
+    };
+    setSelected(getLangFromCookie());
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+  const handleLanguageChange = (langCode) => {
+    const cookieValue = langCode === "vi" ? "" : `/vi/${langCode}`;
+    const domain = window.location.hostname;
+    document.cookie = `googtrans=${cookieValue}; path=/;`;
+    if (domain !== "localhost") {
+      document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain};`;
+      if (domain.includes(".")) {
+        const mainDomain = domain.substring(domain.indexOf("."));
+        document.cookie = `googtrans=${cookieValue}; path=/; domain=${mainDomain};`;
+      }
+    }
+    const selectEl = document.querySelector(".goog-te-combo");
+    if (selectEl) {
+      selectEl.value = langCode;
+      selectEl.dispatchEvent(new Event("change"));
+    } else {
+      window.location.reload();
+      return;
+    }
+    setSelected(langCode);
+    setOpen(false);
+  };
+  const currentLangObj = languages.find((l) => l.code === selected) || languages[0];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: dropdownRef, className: "relative notranslate", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        onClick: () => setOpen(!open),
+        className: "flex items-center gap-1.5 rounded-full border border-wood-200 bg-background/50 px-2.5 py-1.5 text-[13px] font-semibold text-wood-700 hover:bg-wood-50 transition-colors focus:outline-none",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "h-3.5 w-3.5 text-wood-500" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[14px]", children: currentLangObj.flag }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden text-xs font-semibold uppercase tracking-wide text-wood-600 sm:inline", children: currentLangObj.labelShort }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            ChevronDown,
+            {
+              className: `h-3 w-3 text-wood-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`
+            }
+          )
+        ]
+      }
+    ),
+    open && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute right-0 mt-1.5 w-36 origin-top-right rounded-xl border border-wood-150 bg-background py-1.5 shadow-lg ring-1 ring-black/5 focus:outline-none z-50", children: languages.map((lang) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        onClick: () => handleLanguageChange(lang.code),
+        className: `flex w-full items-center gap-2.5 px-3 py-2 text-left text-xs sm:text-[13px] font-medium transition-colors ${selected === lang.code ? "bg-wood-50 font-semibold text-wood-900" : "text-wood-600 hover:bg-wood-50/70 hover:text-wood-900"}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base", children: lang.flag }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: lang.label })
+        ]
+      },
+      lang.code
+    )) })
+  ] });
+}
 function Navbar() {
   const [open, setOpen] = reactExports.useState(false);
   const navLinks = [
@@ -24,23 +111,28 @@ function Navbar() {
         },
         link.label
       )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden items-center gap-3 md:flex", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "a",
-        {
-          href: "tel:0943966662",
-          className: "text-[13px] tracking-[0.05em] text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]",
-          children: "0943 966 662"
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          className: "md:hidden",
-          onClick: () => setOpen(!open),
-          "aria-label": "Toggle menu",
-          children: open ? /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5 text-wood-700" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { className: "h-5 w-5 text-wood-700" })
-        }
-      )
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden items-center gap-4 md:flex", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSelector, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "a",
+          {
+            href: "tel:0943966662",
+            className: "text-[13px] tracking-[0.05em] text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]",
+            children: "0943 966 662"
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 md:hidden", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageSelector, {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            onClick: () => setOpen(!open),
+            "aria-label": "Toggle menu",
+            children: open ? /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5 text-wood-700" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { className: "h-5 w-5 text-wood-700" })
+          }
+        )
+      ] })
     ] }),
     open && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "border-t border-wood-200/50 px-4 py-4 md:hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "flex flex-col gap-3", children: [
       navLinks.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx(

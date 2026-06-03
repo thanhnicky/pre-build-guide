@@ -362,7 +362,7 @@ instance.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const appCss = "/assets/styles-DNnpSbaS.css";
+const appCss = "/assets/styles-Dhdtd3cq.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -644,10 +644,36 @@ function RootShell({ children }) {
           }
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("script", { defer: true, src: "https://cdn.jsdelivr.net/npm/marked/marked.min.js" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("script", { defer: true, src: "https://cdn.jsdelivr.net/npm/marked/marked.min.js" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "script",
+        {
+          dangerouslySetInnerHTML: {
+            __html: `
+              window.googleTranslateElementInit = function() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'vi',
+                  includedLanguages: 'en,ja,zh-CN',
+                  autoDisplay: false,
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+              };
+            `
+          }
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "script",
+        {
+          async: true,
+          defer: true,
+          src: "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        }
+      )
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("body", { children: [
       children,
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { id: "google_translate_element", style: { position: "absolute", top: "-9999px", left: "-9999px", opacity: 0, pointerEvents: "none", width: "1px", height: "1px", overflow: "hidden" } }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Scripts, {})
     ] })
   ] });
@@ -660,7 +686,7 @@ const $$splitComponentImporter$3 = () => import("./studio-BFMuw0pq.mjs");
 const Route$3 = createFileRoute("/studio")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-NwruSZj7.mjs");
+const $$splitComponentImporter$2 = () => import("./index-6S7m7kYg.mjs");
 const Route$2 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
@@ -740,7 +766,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-BO8aamah.mjs");
+const $$splitComponentImporter$1 = () => import("./index-Vj-G-87b.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -750,7 +776,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-BUVELmAA.mjs");
+const $$splitComponentImporter = () => import("../_slug-B6LwZsg4.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

@@ -302,9 +302,30 @@ function RootShell({ children }: { children: React.ReactNode }) {
         />
         {/* marked.js — used by inline AI chat section */}
         <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        {/* Google Translate Element Initialization */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.googleTranslateElementInit = function() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'vi',
+                  includedLanguages: 'en,ja,zh-CN',
+                  autoDisplay: false,
+                  layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+              };
+            `,
+          }}
+        />
+        <script
+          async
+          defer
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        />
       </head>
       <body>
         {children}
+        <div id="google_translate_element" style={{ position: "absolute", top: "-9999px", left: "-9999px", opacity: 0, pointerEvents: "none", width: "1px", height: "1px", overflow: "hidden" }} />
         <Scripts />
       </body>
     </html>

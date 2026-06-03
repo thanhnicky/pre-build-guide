@@ -8,6 +8,7 @@ export default defineConfig({
   title: "Sơn Gỗ Lotus — Quản trị nội dung",
   projectId: "fzoqzuni",
   dataset: "production",
+  basePath: "/studio",
   plugins: [structureTool(), visionTool()],
   schema: {
     types: [postSchema],

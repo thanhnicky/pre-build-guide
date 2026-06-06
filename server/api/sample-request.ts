@@ -14,7 +14,12 @@ interface SampleRequestData {
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<SampleRequestData>(event);
-  
+
+  if (!body) {
+    console.error("No body received in request");
+    return { success: false, message: "Invalid request" };
+  }
+
   // Log dữ liệu để debug
   console.log("Sample request received:", JSON.stringify(body, null, 2));
 
@@ -50,7 +55,7 @@ export default defineEventHandler(async (event) => {
         "Content-Type": "application/json",
       },
       body: {
-        from: "Sơn Lotus <noreply@songo.com.vn>",
+        from: "Sơn Lotus <onboarding@resend.dev>",
         to: recipientEmail,
         subject: `Đặt mẫu thử mới - ${body.name} - ${body.coatingSystem}`,
         html: emailContent,

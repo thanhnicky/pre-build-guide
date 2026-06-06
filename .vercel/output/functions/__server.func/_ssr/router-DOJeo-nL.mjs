@@ -49,7 +49,7 @@ const vi = {
     subtitle: "Sơn Gỗ Hệ Nước",
     title: "Sơn gỗ hệ nước cho",
     titleItalic: "xưởng nội thất công trình và nội thất xuất khẩu.",
-    description: "Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, giúp chọn đúng hệ và giữ bề mặt ổn định từ mẫu thử đến lô giao thực tế.",
+    description: "Giữ màu ổn định, đủ hồ sơ kỹ thuật, có kỹ sư hỗ trợ tại xưởng",
     trustLabel: "Hồ sơ & Tiêu chuẩn",
     ctaButton: "Gửi ảnh hạng mục — nhận tư vấn",
     ctaPhone: "Hoặc gọi kỹ thuật"
@@ -766,7 +766,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-Vj-G-87b.mjs");
+const $$splitComponentImporter$1 = () => import("./index-CAIRUKwc.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -776,7 +776,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-B6LwZsg4.mjs");
+const $$splitComponentImporter = () => import("../_slug-qufdv0MB.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

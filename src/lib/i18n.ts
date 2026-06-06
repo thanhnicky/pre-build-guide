@@ -7,7 +7,7 @@ const vi = {
     title: "Sơn gỗ hệ nước cho",
     titleItalic: "xưởng nội thất công trình và nội thất xuất khẩu.",
     description:
-      "Kỹ sư Lotus hỗ trợ trực tiếp tại xưởng, giúp chọn đúng hệ và giữ bề mặt ổn định từ mẫu thử đến lô giao thực tế.",
+      "Giữ màu ổn định, đủ hồ sơ kỹ thuật, có kỹ sư hỗ trợ tại xưởng",
     trustLabel: "Hồ sơ & Tiêu chuẩn",
     ctaButton: "Gửi ảnh hạng mục — nhận tư vấn",
     ctaPhone: "Hoặc gọi kỹ thuật",

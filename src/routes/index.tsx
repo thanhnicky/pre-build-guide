@@ -1317,7 +1317,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
       // Gửi dữ liệu đến API
       try {
-        await fetch('/api/sample-request', {
+        const response = await fetch('/api/sample-request', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -1333,6 +1333,13 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
             samplePrice: getSamplePrice(coatingSystem.title, selectedMethod),
           }),
         });
+
+        const result = await response.json();
+        console.log('API response:', result);
+
+        if (!response.ok) {
+          console.error('API request failed:', result);
+        }
       } catch (error) {
         console.error('Failed to send sample request:', error);
       }

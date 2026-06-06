@@ -1035,7 +1035,7 @@ function FinishFinder({
       const projectType = form.elements.namedItem("projectType").value;
       const notes = form.elements.namedItem("notes").value;
       try {
-        await fetch("/api/sample-request", {
+        const response = await fetch("/api/sample-request", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -1051,6 +1051,11 @@ function FinishFinder({
             samplePrice: getSamplePrice(coatingSystem2.title, selectedMethod2)
           })
         });
+        const result = await response.json();
+        console.log("API response:", result);
+        if (!response.ok) {
+          console.error("API request failed:", result);
+        }
       } catch (error) {
         console.error("Failed to send sample request:", error);
       }

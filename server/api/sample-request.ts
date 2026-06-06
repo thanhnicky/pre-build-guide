@@ -27,6 +27,9 @@ export default defineEventHandler(async (event) => {
   const resendApiKey = process.env.RESEND_API_KEY;
   const recipientEmail = "nguyenxuanthanh2009@gmail.com";
 
+  console.log("RESEND_API_KEY exists:", !!resendApiKey);
+  console.log("RESEND_API_KEY length:", resendApiKey?.length || 0);
+
   if (!resendApiKey) {
     console.warn("RESEND_API_KEY not configured. Email notification skipped.");
     // Vẫn trả về success để không block flow

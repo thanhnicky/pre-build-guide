@@ -149,7 +149,7 @@ const vi = {
       title: "Hệ Giữ Vân Nội Thất",
       suitableFor: "Gỗ tự nhiên, veneer trong nhà — căn hộ, khách sạn, văn phòng",
       methodLau: {
-        process: "Lau màu → Lót sealer → Phủ PUD trong nhà",
+        process: "Lau màu → Lót trong suốt sealer → Phủ bóng lacquer trong nhà",
         notes: "Phương pháp lau cho hiệu ứng vân gỗ sâu, phù hợp nội thất cao cấp cần tạo chiều sâu màu."
       },
       methodPhun: {
@@ -167,11 +167,11 @@ const vi = {
       title: "Hệ Giữ Vân Ngoại Thất",
       suitableFor: "Gỗ tự nhiên, veneer ngoài trời — sân vườn, mặt tiền, cổng",
       methodLau: {
-        process: "Lau màu → Lót sealer → Phủ acrylic lacquer ngoại thất",
+        process: "Lau màu → Lót trong suốt sealer → Phủ acrylic lacquer ngoại thất",
         notes: "Chống UV và thấm nước, giữ vân tự nhiên bền ngoài trời."
       },
       methodPhun: {
-        process: "Phun sealer → Phun woodstain finish EX → Phủ PUD EX",
+        process: "Phun sealer → Phun woodstain finish EX",
         notes: "Lớp phủ ngoại thất nhiều lớp, chịu thời tiết khắc nghiệt."
       }
     },
@@ -362,7 +362,7 @@ instance.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const appCss = "/assets/styles-Dhdtd3cq.css";
+const appCss = "/assets/styles-CgAJLbMH.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -686,7 +686,7 @@ const $$splitComponentImporter$3 = () => import("./studio-BFMuw0pq.mjs");
 const Route$3 = createFileRoute("/studio")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-6S7m7kYg.mjs");
+const $$splitComponentImporter$2 = () => import("./index-584PX2Qc.mjs");
 const Route$2 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
@@ -766,7 +766,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-CAIRUKwc.mjs");
+const $$splitComponentImporter$1 = () => import("./index-BZ1Dummc.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -776,7 +776,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-qufdv0MB.mjs");
+const $$splitComponentImporter = () => import("../_slug-DgTqNRwl.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

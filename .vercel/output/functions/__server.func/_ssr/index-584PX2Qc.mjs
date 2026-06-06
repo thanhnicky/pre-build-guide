@@ -719,7 +719,7 @@ function resolveCoatingSystem(surface, location, naturalFinish, t) {
       },
       methodPhun: {
         process: t("finishFinder.system3.methodPhun.process"),
-        representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish exterior", "Lotus PUD EX"],
+        representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish exterior"],
         image: sonPhunWeb,
         notes: t("finishFinder.system3.methodPhun.notes"),
         fullChartImage: palettePhun
@@ -810,6 +810,84 @@ function resolveCoatingSystem(surface, location, naturalFinish, t) {
     }
   };
 }
+const sampleItemsMap = {
+  "Hệ Giữ Vân Nội Thất": {
+    lau: [{
+      name: "Lotus wood stain",
+      price: 205e3
+    }, {
+      name: "Lotus sanding sealer",
+      price: 16e4
+    }, {
+      name: "Lotus acrylic lacquer IN",
+      price: 205e3
+    }],
+    phun: [{
+      name: "Lotus sanding sealer",
+      price: 16e4
+    }, {
+      name: "Lotus wood stain finish IN",
+      price: 248e3
+    }]
+  },
+  "Hệ Màu Bệt Nội Thất — Gỗ Tự Nhiên": [{
+    name: "Lotus wood primer",
+    price: 16e4
+  }, {
+    name: "Lotus wood paint IN",
+    price: 254e3
+  }],
+  "Hệ Giữ Vân Ngoại Thất": {
+    lau: [{
+      name: "Lotus wood stain",
+      price: 205e3
+    }, {
+      name: "Lotus sanding sealer",
+      price: 16e4
+    }, {
+      name: "Lotus acrylic lacquer EX",
+      price: 237e3
+    }],
+    phun: [{
+      name: "Lotus sanding sealer",
+      price: 16e4
+    }, {
+      name: "Lotus woodstain finish exterior",
+      price: 313e3
+    }]
+  },
+  "Hệ Màu Bệt Ngoại Thất — Gỗ Tự Nhiên": [{
+    name: "Lotus wood primer",
+    price: 16e4
+  }, {
+    name: "Lotus wood paint EX",
+    price: 318e3
+  }],
+  "Hệ Màu Bệt MDF Nội Thất": [{
+    name: "Lotus wood primer",
+    price: 16e4
+  }, {
+    name: "Lotus wood paint IN",
+    price: 254e3
+  }]
+};
+const getSampleItems = (title, selectedMethod) => {
+  const items = sampleItemsMap[title];
+  if (typeof items === "object" && !Array.isArray(items) && items !== null) {
+    return items[selectedMethod] || [];
+  }
+  if (Array.isArray(items)) {
+    return items;
+  }
+  return [];
+};
+const getSamplePrice = (title, selectedMethod) => {
+  const items = getSampleItems(title, selectedMethod);
+  return items.reduce((total, item) => total + item.price, 0);
+};
+const formatPrice = (price) => {
+  return price.toLocaleString("vi-VN") + " đ";
+};
 function FinishFinder({
   onInteractionChange
 }) {
@@ -823,6 +901,10 @@ function FinishFinder({
   const [isVisible, setIsVisible] = reactExports.useState(false);
   const [selectedMethod, setSelectedMethod] = reactExports.useState("lau");
   const [showFullColorChart, setShowFullColorChart] = reactExports.useState(false);
+  const [showSampleForm, setShowSampleForm] = reactExports.useState(false);
+  const [showThankYouModal, setShowThankYouModal] = reactExports.useState(false);
+  const [customerName, setCustomerName] = reactExports.useState("");
+  const [customerAddress, setCustomerAddress] = reactExports.useState("");
   const step1Ref = reactExports.useRef(null);
   const step2Ref = reactExports.useRef(null);
   const step3Ref = reactExports.useRef(null);
@@ -931,153 +1013,344 @@ function FinishFinder({
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-[19px] leading-none transition-transform ${active ? "text-background" : "text-wood-400 group-hover:translate-x-0.5"}`, children: "→" })
   ] });
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "chon-he-son", ref: sectionRef, className: `bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("finishFinder.label") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: t("finishFinder.title") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: t("finishFinder.titleItalic") })
-        ] })
+  const SampleRequestModal = ({
+    isOpen,
+    onClose,
+    coatingSystem: coatingSystem2,
+    selectedMethod: selectedMethod2,
+    onSubmit
+  }) => {
+    if (!isOpen || !coatingSystem2) return null;
+    const activeMethod = coatingSystem2.methodType === "dual" ? selectedMethod2 === "lau" ? coatingSystem2.methodLau : coatingSystem2.methodPhun : coatingSystem2.singleMethod;
+    const processText = activeMethod?.process || coatingSystem2.singleMethod?.process || "";
+    const sampleItems = getSampleItems(coatingSystem2.title, selectedMethod2);
+    const samplePrice = getSamplePrice(coatingSystem2.title, selectedMethod2);
+    const formattedPrice = formatPrice(samplePrice);
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const name = form.elements.namedItem("name").value;
+      const phone = form.elements.namedItem("phone").value;
+      const location2 = form.elements.namedItem("location").value;
+      const projectType = form.elements.namedItem("projectType").value;
+      const notes = form.elements.namedItem("notes").value;
+      try {
+        await fetch("/api/sample-request", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            location: location2,
+            projectType,
+            notes,
+            coatingSystem: coatingSystem2.title,
+            selectedMethod: selectedMethod2,
+            samplePrice: getSamplePrice(coatingSystem2.title, selectedMethod2)
+          })
+        });
+      } catch (error) {
+        console.error("Failed to send sample request:", error);
+      }
+      onSubmit(name, location2);
+      onClose();
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 flex items-start justify-between", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Hệ sơn Lotus đề xuất" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-2 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem2.title })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]", children: t("finishFinder.description") })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 lg:border-r lg:border-wood-200", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-10 p-6 sm:p-10 lg:p-12", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step1Ref, className: "relative transition-all duration-500 ease-out", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -left-2 top-0 h-full w-0.5 bg-wood-300/50 sm:-left-3" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "01", text: t("finishFinder.step1") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-900 sm:text-[1.45rem]", children: t("finishFinder.step1Question") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[15px] text-wood-600/80 sm:hidden", children: t("finishFinder.step1Hint") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: surface === "natural", onClick: () => {
-              setSurface("natural");
-              setNaturalFinish(null);
-            }, children: t("finishFinder.surfaceNatural") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: surface === "mdf", onClick: () => {
-              setSurface("mdf");
-              setNaturalFinish(null);
-            }, children: t("finishFinder.surfaceMdf") })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step2Ref, className: `transition-all duration-500 ease-out ${surface ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"}`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "02", text: t("finishFinder.step2") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-900 sm:text-[1.45rem]", children: t("finishFinder.step2Question") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: location === "indoor", onClick: () => surface && setLocation("indoor"), children: t("finishFinder.indoor") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: location === "outdoor", onClick: () => surface !== "mdf" && setLocation("outdoor"), disabled: surface === "mdf", children: t("finishFinder.outdoor") })
-          ] })
-        ] }),
-        needsFinishStep && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step3Ref, className: `transition-all duration-500 ease-out ${location ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"}`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "03", text: t("finishFinder.step3") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-900 sm:text-[1.45rem]", children: t("finishFinder.step3Question") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "grain", onClick: () => location && setNaturalFinish("grain"), children: t("finishFinder.matte") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "solid", onClick: () => location && setNaturalFinish("solid"), children: t("finishFinder.gloss") })
-          ] })
-        ] }),
-        ready && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: reset, className: "font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900", children: "← Chọn lại từ đầu" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: resultRef, className: "lg:col-span-5", children: !coatingSystem ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full min-h-[320px] items-center justify-center p-10 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[260px] text-[14px] leading-[1.7] text-wood-600", children: t("finishFinder.completeSteps") }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "flex h-full flex-col transition-all duration-500 ease-out", children: [
-        coatingSystem.methodType === "dual" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex border-b border-wood-200 bg-wood-50/50", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("lau"), className: `font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "lau" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodLau") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("phun"), className: `font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "phun" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodPhun") })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[5/4] overflow-hidden bg-wood-200/40", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau?.image : coatingSystem.methodPhun?.image : coatingSystem.singleMethod?.image, alt: `${coatingSystem.title} - ${coatingSystem.suitableFor}`, className: "h-full w-full object-cover object-center" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-1 flex-col gap-6 p-6 sm:p-8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử 1kg theo hệ đã chọn. Dưới đây là quy trình và các sản phẩm có trong bộ mẫu để anh/chị dễ đối chiếu giá." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 rounded-lg bg-wood-50/50 p-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: t("finishFinder.resultLabel") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem.title })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Quy trình gợi ý" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-1 text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: processText })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("dl", { className: "divide-y divide-wood-200 border-t border-wood-200", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.suitableFor") }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.suitableFor })
-            ] }),
-            coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
-                  t("finishFinder.techConfig"),
-                  " (Lau)"
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodLau.process })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
-                  t("finishFinder.repProducts"),
-                  " (Lau)"
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodLau.representativeProducts.join(" · ") })
-              ] })
-            ] }),
-            coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
-                  t("finishFinder.techConfig"),
-                  " (Phun)"
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodPhun.process })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
-                  t("finishFinder.repProducts"),
-                  " (Phun)"
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodPhun.representativeProducts.join(" · ") })
-              ] })
-            ] }),
-            coatingSystem.methodType === "single" && coatingSystem.singleMethod && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.techConfig") }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.singleMethod.process })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.repProducts") }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.singleMethod.representativeProducts.join(" · ") })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Chi tiết sản phẩm trong bộ mẫu" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2", children: [
+              sampleItems.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item.name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formatPrice(item.price) })
+              ] }, index)),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 pt-2 border-t border-wood-200 flex justify-between text-[15px] font-semibold leading-[1.5] text-wood-900 sm:text-[16px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Tổng giá bộ mẫu thử 1kg" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formattedPrice })
               ] })
             ] })
-          ] }),
-          (coatingSystem.methodType === "single" && coatingSystem.singleMethod?.notes || coatingSystem.methodType === "dual" && (selectedMethod === "lau" ? coatingSystem.methodLau?.notes : coatingSystem.methodPhun?.notes) || coatingSystem.notes) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 rounded-lg bg-wood-50/50 p-4", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: t("finishFinder.notes") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]", children: coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau?.notes || coatingSystem.notes : coatingSystem.methodPhun?.notes || coatingSystem.notes : coatingSystem.singleMethod?.notes || coatingSystem.notes })
-          ] }),
-          coatingSystem.colors && coatingSystem.colors.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 flex items-center justify-between", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: t("finishFinder.colorRef") }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(true), className: "text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]", children: t("finishFinder.viewFullChart") })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-2", children: coatingSystem.colors.slice(0, 5).map((color) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm", style: {
-                backgroundColor: color.hex
-              }, title: color.name }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-1 text-[11px] text-wood-600 sm:text-[12px]", children: color.code })
-            ] }, color.code)) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]", children: t("finishFinder.colorDisclaimer") })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-auto pt-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "group inline-flex items-center gap-2 border-b border-wood-900 pb-1 text-[14px] font-semibold uppercase tracking-[0.16em] text-wood-900 transition-colors hover:text-wood-700 sm:text-[15px]", children: [
-            t("finishFinder.consultThis"),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" })
-          ] }) })
-        ] })
-      ] }) })
-    ] }) }),
-    showFullColorChart && coatingSystem && (() => {
-      const currentMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
-      const fullChartImage = currentMethod?.fullChartImage;
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-t-2xl bg-[#F5F0EA] p-6 shadow-2xl sm:rounded-2xl sm:p-8", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.3rem] font-semibold text-wood-900", children: t("finishFinder.downloadChart") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
+          ] })
         ] }),
-        fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: fullChartImage, alt: `Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`, className: "w-full rounded-lg border border-wood-200/60 shadow-sm" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-4 text-[13px] leading-[1.5] text-wood-500 italic sm:text-[14px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
-          fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: fullChartImage, download: `lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`, className: "flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 transition-colors hover:bg-wood-900/5 sm:text-[14px]", children: t("finishFinder.download") }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "flex-1 rounded-lg bg-wood-900 py-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#F5F0EA] transition-colors hover:bg-wood-800 sm:text-[14px]", children: t("finishFinder.close") })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Tổng giá bộ mẫu thử 1kg" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[2rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2.2rem]", children: formattedPrice }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: "Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "name", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Họ tên / Tên xưởng ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "name", required: true, placeholder: "Nhập họ tên hoặc tên xưởng", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "phone", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Số điện thoại / Zalo ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "tel", id: "phone", required: true, placeholder: "Nhập số điện thoại hoặc Zalo", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "location", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Địa chỉ nhận hàng ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "location", required: true, placeholder: "Ví dụ: TP.HCM, Bình Dương, Hà Nội...", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "projectType", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Loại hạng mục / công trình ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "projectType", required: true, placeholder: "Ví dụ: cửa gỗ, bàn ghế ngoài trời, tủ bếp, vách ốp...", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "notes", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Ghi chú thêm ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { id: "notes", rows: 3, required: true, placeholder: "Mã màu lựa chọn và yêu cầu độ bóng/mờ", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-lg bg-wood-50/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết thanh toán. Không gửi tin nhắn quảng cáo hàng loạt." }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", className: "w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Xác nhận đặt mẫu thử" })
+      ] })
+    ] }) });
+  };
+  const ThankYouModal = ({
+    isOpen,
+    onClose,
+    customerName: customerName2,
+    coatingSystem: coatingSystem2,
+    selectedMethod: selectedMethod2,
+    customerAddress: customerAddress2
+  }) => {
+    const samplePrice = coatingSystem2 ? getSamplePrice(coatingSystem2.title, selectedMethod2) : 0;
+    const formattedPrice = formatPrice(samplePrice);
+    reactExports.useEffect(() => {
+      if (isOpen) {
+        const timer = setTimeout(() => {
+          onClose();
+        }, 1e4);
+        return () => clearTimeout(timer);
+      }
+    }, [isOpen, onClose]);
+    if (!isOpen) return null;
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 text-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100", children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-8 w-8 text-green-600", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M5 13l4 4L19 7" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.4rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: "Đã nhận được yêu cầu" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]", children: [
+        "Sơn Lotus đã nhận được yêu cầu đặt mẫu thử của khách hàng Anh/chị ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-wood-900", children: customerName2 })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Hệ sơn:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: coatingSystem2?.title })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Giá bộ mẫu:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formattedPrice })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Địa chỉ:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: customerAddress2 })
         ] })
-      ] }) });
-    })()
-  ] }) });
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-center text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]", children: "Sơn Lotus sẽ liên hệ trong 24h để xác nhận" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "block w-full rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Liên hệ Zalo để được hỗ trợ sớm nhất" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "block w-full rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]", children: "Đóng" })
+      ] })
+    ] }) });
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "chon-he-son", ref: sectionRef, className: `bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("finishFinder.label") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: t("finishFinder.title") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: t("finishFinder.titleItalic") })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[17px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]", children: t("finishFinder.description") })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 lg:border-r lg:border-wood-200", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-10 p-6 sm:p-10 lg:p-12", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step1Ref, className: "relative transition-all duration-500 ease-out", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -left-2 top-0 h-full w-0.5 bg-wood-300/50 sm:-left-3" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "01", text: t("finishFinder.step1") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-900 sm:text-[1.45rem]", children: t("finishFinder.step1Question") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[15px] text-wood-600/80 sm:hidden", children: t("finishFinder.step1Hint") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: surface === "natural", onClick: () => {
+                setSurface("natural");
+                setNaturalFinish(null);
+              }, children: t("finishFinder.surfaceNatural") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: surface === "mdf", onClick: () => {
+                setSurface("mdf");
+                setNaturalFinish(null);
+              }, children: t("finishFinder.surfaceMdf") })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step2Ref, className: `transition-all duration-500 ease-out ${surface ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "02", text: t("finishFinder.step2") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-900 sm:text-[1.45rem]", children: t("finishFinder.step2Question") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: location === "indoor", onClick: () => surface && setLocation("indoor"), children: t("finishFinder.indoor") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: location === "outdoor", onClick: () => surface !== "mdf" && setLocation("outdoor"), disabled: surface === "mdf", children: t("finishFinder.outdoor") })
+            ] })
+          ] }),
+          needsFinishStep && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step3Ref, className: `transition-all duration-500 ease-out ${location ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "03", text: t("finishFinder.step3") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-900 sm:text-[1.45rem]", children: t("finishFinder.step3Question") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "grain", onClick: () => location && setNaturalFinish("grain"), children: t("finishFinder.matte") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "solid", onClick: () => location && setNaturalFinish("solid"), children: t("finishFinder.gloss") })
+            ] })
+          ] }),
+          ready && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: reset, className: "font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900", children: "← Chọn lại từ đầu" })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: resultRef, className: "lg:col-span-5", children: !coatingSystem ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full min-h-[320px] items-center justify-center p-10 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[260px] text-[14px] leading-[1.7] text-wood-600", children: t("finishFinder.completeSteps") }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "flex h-full flex-col transition-all duration-500 ease-out", children: [
+          coatingSystem.methodType === "dual" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex border-b border-wood-200 bg-wood-50/50", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("lau"), className: `font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "lau" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodLau") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setSelectedMethod("phun"), className: `font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${selectedMethod === "phun" ? "border-b-2 border-wood-900 text-wood-900" : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"}`, children: t("finishFinder.methodPhun") })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[5/4] overflow-hidden bg-wood-200/40", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau?.image : coatingSystem.methodPhun?.image : coatingSystem.singleMethod?.image, alt: `${coatingSystem.title} - ${coatingSystem.suitableFor}`, className: "h-full w-full object-cover object-center" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-1 flex-col gap-6 p-6 sm:p-8", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: t("finishFinder.resultLabel") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem.title })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("dl", { className: "divide-y divide-wood-200 border-t border-wood-200", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.suitableFor") }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.suitableFor })
+              ] }),
+              coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                    t("finishFinder.techConfig"),
+                    " (Lau)"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodLau.process })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                    t("finishFinder.repProducts"),
+                    " (Lau)"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodLau.representativeProducts.join(" · ") })
+                ] })
+              ] }),
+              coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                    t("finishFinder.techConfig"),
+                    " (Phun)"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodPhun.process })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: [
+                    t("finishFinder.repProducts"),
+                    " (Phun)"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.methodPhun.representativeProducts.join(" · ") })
+                ] })
+              ] }),
+              coatingSystem.methodType === "single" && coatingSystem.singleMethod && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.techConfig") }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.singleMethod.process })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dt", { className: "font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]", children: t("finishFinder.repProducts") }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("dd", { className: "text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: coatingSystem.singleMethod.representativeProducts.join(" · ") })
+                ] })
+              ] })
+            ] }),
+            (coatingSystem.methodType === "single" && coatingSystem.singleMethod?.notes || coatingSystem.methodType === "dual" && (selectedMethod === "lau" ? coatingSystem.methodLau?.notes : coatingSystem.methodPhun?.notes) || coatingSystem.notes) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 rounded-lg bg-wood-50/50 p-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: t("finishFinder.notes") }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]", children: coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau?.notes || coatingSystem.notes : coatingSystem.methodPhun?.notes || coatingSystem.notes : coatingSystem.singleMethod?.notes || coatingSystem.notes })
+            ] }),
+            coatingSystem.colors && coatingSystem.colors.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 flex items-center justify-between", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: t("finishFinder.colorRef") }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(true), className: "text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]", children: t("finishFinder.viewFullChart") })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-2", children: coatingSystem.colors.slice(0, 5).map((color) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm", style: {
+                  backgroundColor: color.hex
+                }, title: color.name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-1 text-[11px] text-wood-600 sm:text-[12px]", children: color.code })
+              ] }, color.code)) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]", children: t("finishFinder.colorDisclaimer") })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 space-y-2 rounded-lg bg-wood-50/50 p-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Hệ trên là gợi ý sơ bộ theo nhu cầu anh/chị vừa chọn." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Để chốt đúng màu, độ bám và quy trình thi công, bước tiếp theo là test trên mẫu thực tế." })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Giá bộ mẫu thử 1kg" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[1.8rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2rem]", children: formatPrice(getSamplePrice(coatingSystem.title, selectedMethod)) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: "Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn." })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 space-y-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Đặt mẫu thử 1kg theo hệ đã chọn" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[13px] leading-[1.5] text-wood-600 text-center sm:text-[14px]", children: [
+                "Giá bộ mẫu thử: ",
+                formatPrice(getSamplePrice(coatingSystem.title, selectedMethod)),
+                ". Chưa bao gồm phí giao hàng."
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "block text-center text-[14px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[15px]", children: "Hoặc nhắn Zalo để kỹ sư xem trước hạng mục" })
+            ] })
+          ] })
+        ] }) })
+      ] }) }),
+      showFullColorChart && coatingSystem && (() => {
+        const currentMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
+        const fullChartImage = currentMethod?.fullChartImage;
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-t-2xl bg-[#F5F0EA] p-6 shadow-2xl sm:rounded-2xl sm:p-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.3rem] font-semibold text-wood-900", children: t("finishFinder.downloadChart") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
+          ] }),
+          fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: fullChartImage, alt: `Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`, className: "w-full rounded-lg border border-wood-200/60 shadow-sm" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-4 text-[13px] leading-[1.5] text-wood-500 italic sm:text-[14px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+            fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: fullChartImage, download: `lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`, className: "flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 transition-colors hover:bg-wood-900/5 sm:text-[14px]", children: t("finishFinder.download") }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "flex-1 rounded-lg bg-wood-900 py-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#F5F0EA] transition-colors hover:bg-wood-800 sm:text-[14px]", children: t("finishFinder.close") })
+          ] })
+        ] }) });
+      })()
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SampleRequestModal, { isOpen: showSampleForm, onClose: () => setShowSampleForm(false), coatingSystem, selectedMethod, onSubmit: (name, address) => {
+      setCustomerName(name);
+      setCustomerAddress(address);
+      setShowThankYouModal(true);
+    } }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ThankYouModal, { isOpen: showThankYouModal, onClose: () => setShowThankYouModal(false), customerName, coatingSystem, selectedMethod, customerAddress })
+  ] });
 }
 const PRODUCT_GROUPS = [{
   title: "products.group1.title",

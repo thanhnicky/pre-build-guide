@@ -42,17 +42,20 @@ const findRouteRules = /* @__PURE__ */ (() => {
   };
 })();
 const _lazy_3flkyN = defineLazyEventHandler(() => import("./_routes/api/chat.mjs"));
+const _lazy_IguJKC = defineLazyEventHandler(() => import("./_routes/api/sample_request.mjs"));
 const _lazy_BZhGaQ = defineLazyEventHandler(() => import("./_chunks/ssr-renderer.mjs"));
 const findRoute = /* @__PURE__ */ (() => {
-  const $0 = { route: "/api/chat", handler: _lazy_3flkyN }, $1 = { route: "/**", handler: _lazy_BZhGaQ };
+  const $0 = { route: "/api/chat", handler: _lazy_3flkyN }, $1 = { route: "/api/sample-request", handler: _lazy_IguJKC }, $2 = { route: "/**", handler: _lazy_BZhGaQ };
   return (m, p) => {
     if (p.charCodeAt(p.length - 1) === 47) p = p.slice(0, -1) || "/";
     if (p === "/api/chat") {
       return { data: $0 };
+    } else if (p === "/api/sample-request") {
+      return { data: $1 };
     }
     let s = p.split("/");
     s.length;
-    return { data: $1, params: { "_": s.slice(1).join("/") } };
+    return { data: $2, params: { "_": s.slice(1).join("/") } };
   };
 })();
 const errorHandler$1 = (error, event) => {

@@ -111,7 +111,7 @@ const vi = {
       title: "Hệ Giữ Vân Nội Thất",
       suitableFor: "Gỗ tự nhiên, veneer trong nhà — căn hộ, khách sạn, văn phòng",
       methodLau: {
-        process: "Lau màu → Lót sealer → Phủ PUD trong nhà",
+        process: "Lau màu → Lót trong suốt sealer → Phủ bóng lacquer trong nhà",
         notes:
           "Phương pháp lau cho hiệu ứng vân gỗ sâu, phù hợp nội thất cao cấp cần tạo chiều sâu màu.",
       },
@@ -132,11 +132,11 @@ const vi = {
       title: "Hệ Giữ Vân Ngoại Thất",
       suitableFor: "Gỗ tự nhiên, veneer ngoài trời — sân vườn, mặt tiền, cổng",
       methodLau: {
-        process: "Lau màu → Lót sealer → Phủ acrylic lacquer ngoại thất",
+        process: "Lau màu → Lót trong suốt sealer → Phủ acrylic lacquer ngoại thất",
         notes: "Chống UV và thấm nước, giữ vân tự nhiên bền ngoài trời.",
       },
       methodPhun: {
-        process: "Phun sealer → Phun woodstain finish EX → Phủ PUD EX",
+        process: "Phun sealer → Phun woodstain finish EX",
         notes:
           "Lớp phủ ngoại thất nhiều lớp, chịu thời tiết khắc nghiệt.",
       },

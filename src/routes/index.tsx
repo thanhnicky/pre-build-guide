@@ -969,7 +969,7 @@ function resolveCoatingSystem(
       },
       methodPhun: {
         process: t("finishFinder.system3.methodPhun.process"),
-        representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish exterior", "Lotus PUD EX"],
+        representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish exterior"],
         image: sonPhunWeb,
         notes: t("finishFinder.system3.methodPhun.notes"),
         fullChartImage: palettePhun,
@@ -1039,6 +1039,69 @@ function resolveCoatingSystem(
   };
 }
 
+// Helper functions for pricing
+interface SampleItem {
+  name: string;
+  price: number;
+}
+
+const sampleItemsMap: Record<string, SampleItem[] | { lau: SampleItem[]; phun: SampleItem[] }> = {
+  "Hệ Giữ Vân Nội Thất": {
+    lau: [
+      { name: "Lotus wood stain", price: 205000 },
+      { name: "Lotus sanding sealer", price: 160000 },
+      { name: "Lotus acrylic lacquer IN", price: 205000 },
+    ],
+    phun: [
+      { name: "Lotus sanding sealer", price: 160000 },
+      { name: "Lotus wood stain finish IN", price: 248000 },
+    ],
+  },
+  "Hệ Màu Bệt Nội Thất — Gỗ Tự Nhiên": [
+    { name: "Lotus wood primer", price: 160000 },
+    { name: "Lotus wood paint IN", price: 254000 },
+  ],
+  "Hệ Giữ Vân Ngoại Thất": {
+    lau: [
+      { name: "Lotus wood stain", price: 205000 },
+      { name: "Lotus sanding sealer", price: 160000 },
+      { name: "Lotus acrylic lacquer EX", price: 237000 },
+    ],
+    phun: [
+      { name: "Lotus sanding sealer", price: 160000 },
+      { name: "Lotus woodstain finish exterior", price: 313000 },
+    ],
+  },
+  "Hệ Màu Bệt Ngoại Thất — Gỗ Tự Nhiên": [
+    { name: "Lotus wood primer", price: 160000 },
+    { name: "Lotus wood paint EX", price: 318000 },
+  ],
+  "Hệ Màu Bệt MDF Nội Thất": [
+    { name: "Lotus wood primer", price: 160000 },
+    { name: "Lotus wood paint IN", price: 254000 },
+  ],
+};
+
+const getSampleItems = (title: string, selectedMethod: "lau" | "phun"): SampleItem[] => {
+  const items = sampleItemsMap[title];
+  if (typeof items === "object" && !Array.isArray(items) && items !== null) {
+    return items[selectedMethod] || [];
+  }
+  if (Array.isArray(items)) {
+    return items;
+  }
+  return [];
+};
+
+const getSamplePrice = (title: string, selectedMethod: "lau" | "phun"): number => {
+  const items = getSampleItems(title, selectedMethod);
+  return items.reduce((total, item) => total + item.price, 0);
+};
+
+const formatPrice = (price: number): string => {
+  return price.toLocaleString("vi-VN") + " đ";
+};
+
 function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacting: boolean) => void }) {
   const { t } = useTranslation();
   const [surface, setSurface] = useState<Surface | null>(null);
@@ -1048,6 +1111,10 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   const [isVisible, setIsVisible] = useState(false);
   const [selectedMethod, setSelectedMethod] = useState<"lau" | "phun">("lau");
   const [showFullColorChart, setShowFullColorChart] = useState(false);
+  const [showSampleForm, setShowSampleForm] = useState(false);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
+  const [customerName, setCustomerName] = useState("");
+  const [customerAddress, setCustomerAddress] = useState("");
 
   const step1Ref = useRef<HTMLDivElement>(null);
   const step2Ref = useRef<HTMLDivElement>(null);
@@ -1212,14 +1279,320 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
     </button>
   );
 
+  const SampleRequestModal = ({
+    isOpen,
+    onClose,
+    coatingSystem,
+    selectedMethod,
+    onSubmit
+  }: {
+    isOpen: boolean;
+    onClose: () => void;
+    coatingSystem: CoatingSystem | null;
+    selectedMethod: "lau" | "phun";
+    onSubmit: (name: string, address: string) => void;
+  }) => {
+    if (!isOpen || !coatingSystem) return null;
+
+    const activeMethod =
+      coatingSystem.methodType === "dual"
+        ? selectedMethod === "lau"
+          ? coatingSystem.methodLau
+          : coatingSystem.methodPhun
+        : coatingSystem.singleMethod;
+
+    const processText = activeMethod?.process || coatingSystem.singleMethod?.process || "";
+    const sampleItems = getSampleItems(coatingSystem.title, selectedMethod);
+    const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
+    const formattedPrice = formatPrice(samplePrice);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+      const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
+      const location = (form.elements.namedItem('location') as HTMLInputElement).value;
+      const projectType = (form.elements.namedItem('projectType') as HTMLInputElement).value;
+      const notes = (form.elements.namedItem('notes') as HTMLTextAreaElement).value;
+
+      // Gửi dữ liệu đến API
+      try {
+        await fetch('/api/sample-request', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            phone,
+            location,
+            projectType,
+            notes,
+            coatingSystem: coatingSystem.title,
+            selectedMethod,
+            samplePrice: getSamplePrice(coatingSystem.title, selectedMethod),
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send sample request:', error);
+      }
+
+      onSubmit(name, location);
+      onClose();
+    };
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div className="w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto">
+          {/* Header */}
+          <div className="mb-6 flex items-start justify-between">
+            <div>
+              <div className="font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
+                Hệ sơn Lotus đề xuất
+              </div>
+              <h3 className="font-display mt-2 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
+                {coatingSystem.title}
+              </h3>
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+
+          {/* Description before form */}
+          <p className="mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
+            Anh/chị đang đặt mẫu thử 1kg theo hệ đã chọn. Dưới đây là quy trình và các sản phẩm có trong bộ mẫu để anh/chị dễ đối chiếu giá.
+          </p>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Auto-fill fields - không cho sửa */}
+            <div className="space-y-4 rounded-lg bg-wood-50/50 p-4">
+              <div>
+                <label className="block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                  Quy trình gợi ý
+                </label>
+                <div className="mt-1 text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                  {processText}
+                </div>
+              </div>
+              <div>
+                <label className="block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                  Chi tiết sản phẩm trong bộ mẫu
+                </label>
+                <div className="mt-2 space-y-2">
+                  {sampleItems.map((item, index) => (
+                    <div key={index} className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
+                      <span>{item.name}</span>
+                      <span className="font-medium">{formatPrice(item.price)}</span>
+                    </div>
+                  ))}
+                  <div className="mt-3 pt-2 border-t border-wood-200 flex justify-between text-[15px] font-semibold leading-[1.5] text-wood-900 sm:text-[16px]">
+                    <span>Tổng giá bộ mẫu thử 1kg</span>
+                    <span>{formattedPrice}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Price block */}
+            <div className="rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
+              <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                Tổng giá bộ mẫu thử 1kg
+              </div>
+              <p className="mt-2 text-[2rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2.2rem]">
+                {formattedPrice}
+              </p>
+              <p className="mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]">
+                Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn.
+              </p>
+            </div>
+
+            {/* User input fields */}
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  Họ tên / Tên xưởng <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  placeholder="Nhập họ tên hoặc tên xưởng"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  Số điện thoại / Zalo <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  placeholder="Nhập số điện thoại hoặc Zalo"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                />
+              </div>
+              <div>
+                <label htmlFor="location" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  Địa chỉ nhận hàng <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  required
+                  placeholder="Ví dụ: TP.HCM, Bình Dương, Hà Nội..."
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                />
+              </div>
+              <div>
+                <label htmlFor="projectType" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  Loại hạng mục / công trình <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="projectType"
+                  required
+                  placeholder="Ví dụ: cửa gỗ, bàn ghế ngoài trời, tủ bếp, vách ốp..."
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                />
+              </div>
+              <div>
+                <label htmlFor="notes" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  Ghi chú thêm <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="notes"
+                  rows={3}
+                  required
+                  placeholder="Mã màu lựa chọn và yêu cầu độ bóng/mờ"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                />
+              </div>
+            </div>
+
+            {/* Informative text */}
+            <div className="rounded-lg bg-wood-50/50 p-4">
+              <p className="text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
+                Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết thanh toán. Không gửi tin nhắn quảng cáo hàng loạt.
+              </p>
+            </div>
+
+            {/* Submit button */}
+            <button
+              type="submit"
+              className="w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+            >
+              Xác nhận đặt mẫu thử
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  };
+
+  const ThankYouModal = ({
+    isOpen,
+    onClose,
+    customerName,
+    coatingSystem,
+    selectedMethod,
+    customerAddress
+  }: {
+    isOpen: boolean;
+    onClose: () => void;
+    customerName: string;
+    coatingSystem: CoatingSystem | null;
+    selectedMethod: "lau" | "phun";
+    customerAddress: string;
+  }) => {
+    const samplePrice = coatingSystem ? getSamplePrice(coatingSystem.title, selectedMethod) : 0;
+    const formattedPrice = formatPrice(samplePrice);
+
+    useEffect(() => {
+      if (isOpen) {
+        const timer = setTimeout(() => {
+          onClose();
+        }, 10000);
+        return () => clearTimeout(timer);
+      }
+    }, [isOpen, onClose]);
+
+    if (!isOpen) return null;
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div className="w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto">
+          <div className="mb-6 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+              <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="font-display text-[1.4rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.6rem]">
+              Đã nhận được yêu cầu
+            </h3>
+          </div>
+
+          <p className="mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]">
+            Sơn Lotus đã nhận được yêu cầu đặt mẫu thử của khách hàng Anh/chị <span className="font-semibold text-wood-900">{customerName}</span>
+          </p>
+
+          <div className="mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4">
+            <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
+              <span className="text-wood-600">Hệ sơn:</span>
+              <span className="font-medium">{coatingSystem?.title}</span>
+            </div>
+            <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
+              <span className="text-wood-600">Giá bộ mẫu:</span>
+              <span className="font-medium">{formattedPrice}</span>
+            </div>
+            <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
+              <span className="text-wood-600">Địa chỉ:</span>
+              <span className="font-medium">{customerAddress}</span>
+            </div>
+          </div>
+
+          <p className="mb-6 text-center text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]">
+            Sơn Lotus sẽ liên hệ trong 24h để xác nhận
+          </p>
+
+          <div className="space-y-3">
+            <a
+              href={ZALO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+            >
+              Liên hệ Zalo để được hỗ trợ sớm nhất
+            </a>
+            <button
+              type="button"
+              onClick={onClose}
+              className="block w-full rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]"
+            >
+              Đóng
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <section
-      id="chon-he-son"
-      ref={sectionRef}
-      className={`bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28 transition-all duration-700 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
+    <>
+      <section
+        id="chon-he-son"
+        ref={sectionRef}
+        className={`bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28 transition-all duration-700 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         {/* Section opener */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
@@ -1536,15 +1909,53 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       </div>
                     )}
 
-                    <div className="mt-auto pt-2">
+                    {/* Microcopy trước CTA */}
+                    <div className="mt-6 space-y-2 rounded-lg bg-wood-50/50 p-4">
+                      <p className="text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
+                        Hệ trên là gợi ý sơ bộ theo nhu cầu anh/chị vừa chọn.
+                      </p>
+                      <p className="text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
+                        Để chốt đúng màu, độ bám và quy trình thi công, bước tiếp theo là test trên mẫu thực tế.
+                      </p>
+                    </div>
+
+                    {/* Price block */}
+                    <div className="mt-6 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
+                      <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                        Giá bộ mẫu thử 1kg
+                      </div>
+                      <p className="mt-2 text-[1.8rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2rem]">
+                        {formatPrice(getSamplePrice(coatingSystem.title, selectedMethod))}
+                      </p>
+                      <p className="mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]">
+                        Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn.
+                      </p>
+                    </div>
+
+                    {/* CTA block mới */}
+                    <div className="mt-6 space-y-4">
+                      {/* Nút chính - Primary CTA */}
+                      <button
+                        type="button"
+                        onClick={() => setShowSampleForm(true)}
+                        className="w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+                      >
+                        Đặt mẫu thử 1kg theo hệ đã chọn
+                      </button>
+
+                      {/* Dòng phụ dưới nút chính */}
+                      <p className="text-[13px] leading-[1.5] text-wood-600 text-center sm:text-[14px]">
+                        Giá bộ mẫu thử: {formatPrice(getSamplePrice(coatingSystem.title, selectedMethod))}. Chưa bao gồm phí giao hàng.
+                      </p>
+
+                      {/* Link Zalo - Secondary CTA */}
                       <a
                         href={ZALO}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 border-b border-wood-900 pb-1 text-[14px] font-semibold uppercase tracking-[0.16em] text-wood-900 transition-colors hover:text-wood-700 sm:text-[15px]"
+                        className="block text-center text-[14px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[15px]"
                       >
-                        {t("finishFinder.consultThis")}
-                        <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        Hoặc nhắn Zalo để kỹ sư xem trước hạng mục
                       </a>
                     </div>
                   </div>
@@ -1612,6 +2023,30 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
         })()}
       </div>
     </section>
+
+      {/* Modal form đặt mẫu thử */}
+      <SampleRequestModal
+        isOpen={showSampleForm}
+        onClose={() => setShowSampleForm(false)}
+        coatingSystem={coatingSystem}
+        selectedMethod={selectedMethod}
+        onSubmit={(name, address) => {
+          setCustomerName(name);
+          setCustomerAddress(address);
+          setShowThankYouModal(true);
+        }}
+      />
+
+      {/* Modal cảm ơn */}
+      <ThankYouModal
+        isOpen={showThankYouModal}
+        onClose={() => setShowThankYouModal(false)}
+        customerName={customerName}
+        coatingSystem={coatingSystem}
+        selectedMethod={selectedMethod}
+        customerAddress={customerAddress}
+      />
+    </>
   );
 }
 

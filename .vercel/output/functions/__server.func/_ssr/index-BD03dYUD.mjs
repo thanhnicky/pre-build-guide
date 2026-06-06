@@ -1329,7 +1329,7 @@ function FinishFinder({
       showFullColorChart && coatingSystem && (() => {
         const currentMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
         const fullChartImage = currentMethod?.fullChartImage;
-        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-t-2xl bg-[#F5F0EA] p-6 shadow-2xl sm:rounded-2xl sm:p-8", children: [
+        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.3rem] font-semibold text-wood-900", children: t("finishFinder.downloadChart") }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })

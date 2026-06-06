@@ -1979,8 +1979,8 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
           const fullChartImage = currentMethod?.fullChartImage;
 
           return (
-            <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 sm:items-center">
-              <div className="w-full max-w-2xl rounded-t-2xl bg-[#F5F0EA] p-6 shadow-2xl sm:rounded-2xl sm:p-8">
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+              <div className="w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8">
                 <div className="mb-4 flex items-center justify-between">
                   <h3 className="font-display text-[1.3rem] font-semibold text-wood-900">
                     {t("finishFinder.downloadChart")}

@@ -1325,24 +1325,24 @@ function FinishFinder({
             ] })
           ] })
         ] }) })
-      ] }) }),
-      showFullColorChart && coatingSystem && (() => {
-        const currentMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
-        const fullChartImage = currentMethod?.fullChartImage;
-        return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.3rem] font-semibold text-wood-900", children: t("finishFinder.downloadChart") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
-          ] }),
-          fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: fullChartImage, alt: `Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`, className: "w-full rounded-lg border border-wood-200/60 shadow-sm" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-4 text-[13px] leading-[1.5] text-wood-500 italic sm:text-[14px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
-            fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: fullChartImage, download: `lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`, className: "flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 transition-colors hover:bg-wood-900/5 sm:text-[14px]", children: t("finishFinder.download") }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "flex-1 rounded-lg bg-wood-900 py-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#F5F0EA] transition-colors hover:bg-wood-800 sm:text-[14px]", children: t("finishFinder.close") })
-          ] })
-        ] }) });
-      })()
+      ] }) })
     ] }) }),
+    showFullColorChart && coatingSystem && (() => {
+      const currentMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
+      const fullChartImage = currentMethod?.fullChartImage;
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.3rem] font-semibold text-wood-900", children: t("finishFinder.downloadChart") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
+        ] }),
+        fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: fullChartImage, alt: `Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`, className: "w-full rounded-lg border border-wood-200/60 shadow-sm" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-4 text-[13px] leading-[1.5] text-wood-500 italic sm:text-[14px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+          fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: fullChartImage, download: `lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`, className: "flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 transition-colors hover:bg-wood-900/5 sm:text-[14px]", children: t("finishFinder.download") }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "flex-1 rounded-lg bg-wood-900 py-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#F5F0EA] transition-colors hover:bg-wood-800 sm:text-[14px]", children: t("finishFinder.close") })
+        ] })
+      ] }) });
+    })(),
     /* @__PURE__ */ jsxRuntimeExports.jsx(SampleRequestModal, { isOpen: showSampleForm, onClose: () => setShowSampleForm(false), coatingSystem, selectedMethod, onSubmit: (name, address) => {
       setCustomerName(name);
       setCustomerAddress(address);

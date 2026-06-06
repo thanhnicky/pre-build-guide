@@ -1546,7 +1546,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
           </div>
 
           <p className="mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]">
-            Sơn Lotus đã nhận được yêu cầu đặt mẫu thử của khách hàng Anh/chị <span className="font-semibold text-wood-900">{customerName}</span>
+            Lotus đã nhận được yêu cầu đặt mẫu thử của anh/chị <span className="font-semibold text-wood-900">{customerName}</span>.
           </p>
 
           <div className="mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4">

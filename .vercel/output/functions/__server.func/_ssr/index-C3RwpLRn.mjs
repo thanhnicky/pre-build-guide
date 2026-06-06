@@ -1157,8 +1157,9 @@ function FinishFinder({
         /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.4rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: "Đã nhận được yêu cầu" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]", children: [
-        "Sơn Lotus đã nhận được yêu cầu đặt mẫu thử của khách hàng Anh/chị ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-wood-900", children: customerName2 })
+        "Lotus đã nhận được yêu cầu đặt mẫu thử của anh/chị ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-wood-900", children: customerName2 }),
+        "."
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [

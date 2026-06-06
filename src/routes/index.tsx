@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, ChevronDown, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck, X } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import {
   Accordion,
   AccordionContent,
@@ -1314,34 +1315,32 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
       const location = (form.elements.namedItem('location') as HTMLInputElement).value;
       const projectType = (form.elements.namedItem('projectType') as HTMLInputElement).value;
       const notes = (form.elements.namedItem('notes') as HTMLTextAreaElement).value;
+      const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
 
-      // Gửi dữ liệu đến API
+      // Gửi email bằng EmailJS
       try {
-        const response = await fetch('/api/sample-request', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            phone,
-            location,
-            projectType,
-            notes,
-            coatingSystem: coatingSystem.title,
-            selectedMethod,
-            samplePrice: getSamplePrice(coatingSystem.title, selectedMethod),
-          }),
-        });
+        const templateParams = {
+          to_email: "nguyenxuanthanh2009@gmail.com",
+          from_name: name,
+          phone: phone,
+          location: location,
+          project_type: projectType,
+          coating_system: coatingSystem.title,
+          method: selectedMethod === "lau" ? "Lau" : "Phun",
+          sample_price: samplePrice.toLocaleString("vi-VN") + " đ",
+          notes: notes,
+        };
 
-        const result = await response.json();
-        console.log('API response:', result);
+        await emailjs.send(
+          "service_10gzden",
+          "template_fqpe61i",
+          templateParams,
+          "6fnqTqeKE41MYvFHJ"
+        );
 
-        if (!response.ok) {
-          console.error('API request failed:', result);
-        }
+        console.log('Email sent successfully via EmailJS');
       } catch (error) {
-        console.error('Failed to send sample request:', error);
+        console.error('Failed to send email via EmailJS:', error);
       }
 
       onSubmit(name, location);

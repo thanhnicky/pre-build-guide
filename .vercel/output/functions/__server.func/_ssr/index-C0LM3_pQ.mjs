@@ -1,4 +1,5 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
+import { e as emailjs } from "../_libs/emailjs__browser.mjs";
 import { R as Root2, I as Item, H as Header, T as Trigger2, C as Content2 } from "../_libs/radix-ui__react-accordion.mjs";
 import { c as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
@@ -1034,30 +1035,23 @@ function FinishFinder({
       const location2 = form.elements.namedItem("location").value;
       const projectType = form.elements.namedItem("projectType").value;
       const notes = form.elements.namedItem("notes").value;
+      const samplePrice2 = getSamplePrice(coatingSystem2.title, selectedMethod2);
       try {
-        const response = await fetch("/api/sample-request", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            name,
-            phone,
-            location: location2,
-            projectType,
-            notes,
-            coatingSystem: coatingSystem2.title,
-            selectedMethod: selectedMethod2,
-            samplePrice: getSamplePrice(coatingSystem2.title, selectedMethod2)
-          })
-        });
-        const result = await response.json();
-        console.log("API response:", result);
-        if (!response.ok) {
-          console.error("API request failed:", result);
-        }
+        const templateParams = {
+          to_email: "nguyenxuanthanh2009@gmail.com",
+          from_name: name,
+          phone,
+          location: location2,
+          project_type: projectType,
+          coating_system: coatingSystem2.title,
+          method: selectedMethod2 === "lau" ? "Lau" : "Phun",
+          sample_price: samplePrice2.toLocaleString("vi-VN") + " đ",
+          notes
+        };
+        await emailjs.send("service_10gzden", "template_fqpe61i", templateParams, "6fnqTqeKE41MYvFHJ");
+        console.log("Email sent successfully via EmailJS");
       } catch (error) {
-        console.error("Failed to send sample request:", error);
+        console.error("Failed to send email via EmailJS:", error);
       }
       onSubmit(name, location2);
       onClose();

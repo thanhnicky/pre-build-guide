@@ -467,7 +467,7 @@ function RootShell({ children }) {
       "@type": ["Organization", "LocalBusiness"],
       "name": "Sơn Gỗ Lotus",
       "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật",
-      "url": "https://www.songo.com.vn",
+      "url": "https://www.sonlotus.vn",
       "telephone": "+84-943-966-662",
       "address": {
         "@type": "PostalAddress",
@@ -483,6 +483,14 @@ function RootShell({ children }) {
       },
       "hasMap": "https://maps.app.goo.gl/JZ9NvsifM5T1PfcA9",
       "sameAs": [
+        "https://sonlotus.vn",
+        "https://www.sonlotus.vn",
+        "https://songo.com.vn",
+        "https://www.songo.com.vn",
+        "https://sonlotus.com",
+        "https://www.sonlotus.com",
+        "https://jades.vn",
+        "https://www.jades.vn",
         "https://zalo.me/0943966662"
       ],
       "contactPoint": {
@@ -766,7 +774,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-CCSRQdrE.mjs");
+const $$splitComponentImporter$1 = () => import("./index-ByBkV-rF.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -776,7 +784,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-CPgd1QGZ.mjs");
+const $$splitComponentImporter = () => import("../_slug-Bvr0Wgzw.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

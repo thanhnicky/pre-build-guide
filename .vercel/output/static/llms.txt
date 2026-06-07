@@ -1,9 +1,10 @@
-# Sơn Gỗ Lotus — songo.com.vn
+# Sơn Gỗ Lotus — sonlotus.vn
 
 ## Thông tin công ty
 
 - **Tên:** Sơn Lotus — Keo Jade's Solution (Công ty Bích Trang)
-- **Website:** https://www.songo.com.vn
+- **Website chính:** https://www.sonlotus.vn
+- **Website phụ:** https://www.songo.com.vn, https://www.sonlotus.com, https://www.jades.vn
 - **Điện thoại / Zalo:** 0943 966 662
 - **Địa chỉ:** 99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm, Huyện Hóc Môn, TP. Hồ Chí Minh
 - **Lĩnh vực:** Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu

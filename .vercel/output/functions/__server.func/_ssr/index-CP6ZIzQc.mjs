@@ -1,5 +1,4 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { e as emailjs } from "../_libs/emailjs__browser.mjs";
 import { R as Root2, I as Item, H as Header, T as Trigger2, C as Content2 } from "../_libs/radix-ui__react-accordion.mjs";
 import { c as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
@@ -987,22 +986,29 @@ const SampleRequestModal = ({
     const notes = form.elements.namedItem("notes").value;
     const samplePrice2 = getSamplePrice(coatingSystem.title, selectedMethod);
     try {
-      const templateParams = {
-        to_email: "nguyenxuanthanh2009@gmail.com",
-        from_name: name,
+      const orderData = {
+        source: "songo",
+        name,
         phone,
         location,
-        color_code: colorCode,
-        surface_type: surfaceType,
+        colorCode,
+        surfaceType,
         coating_system: coatingSystem.title,
         method: selectedMethod === "lau" ? "Lau" : "Phun",
         sample_price: samplePrice2.toLocaleString("vi-VN") + " đ",
         notes
       };
-      await emailjs.send("service_10gzden", "template_fqpe61i", templateParams, "6fnqTqeKE41MYvFHJ");
-      console.log("Email sent successfully via EmailJS");
+      await fetch("https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderData)
+      });
+      console.log("Data sent successfully to Google Sheet");
     } catch (error) {
-      console.error("Failed to send email via EmailJS:", error);
+      console.error("Failed to send data to Google Sheet:", error);
     }
     onSubmit(name, location);
     onClose();

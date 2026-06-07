@@ -1235,31 +1235,33 @@ const SampleRequestModal = ({
     const notes = (form.elements.namedItem('notes') as HTMLTextAreaElement).value;
     const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
 
-    // Gửi email bằng EmailJS
+    // Gửi dữ liệu đến Google Apps Script Web App
     try {
-      const templateParams = {
-        to_email: "nguyenxuanthanh2009@gmail.com",
-        from_name: name,
+      const orderData = {
+        source: "songo",
+        name: name,
         phone: phone,
         location: location,
-        color_code: colorCode,
-        surface_type: surfaceType,
+        colorCode: colorCode,
+        surfaceType: surfaceType,
         coating_system: coatingSystem.title,
         method: selectedMethod === "lau" ? "Lau" : "Phun",
         sample_price: samplePrice.toLocaleString("vi-VN") + " đ",
         notes: notes,
       };
 
-      await emailjs.send(
-        "service_10gzden",
-        "template_fqpe61i",
-        templateParams,
-        "6fnqTqeKE41MYvFHJ"
-      );
+      await fetch("https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
 
-      console.log('Email sent successfully via EmailJS');
+      console.log('Data sent successfully to Google Sheet');
     } catch (error) {
-      console.error('Failed to send email via EmailJS:', error);
+      console.error('Failed to send data to Google Sheet:', error);
     }
 
     onSubmit(name, location);

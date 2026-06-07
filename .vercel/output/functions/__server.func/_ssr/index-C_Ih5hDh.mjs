@@ -897,6 +897,16 @@ const SampleRequestModal = ({
   onSubmit
 }) => {
   const [showColorChart, setShowColorChart] = reactExports.useState(false);
+  const [zoom, setZoom] = reactExports.useState(1);
+  const [position, setPosition] = reactExports.useState({
+    x: 0,
+    y: 0
+  });
+  const [isDragging, setIsDragging] = reactExports.useState(false);
+  const [dragStart, setDragStart] = reactExports.useState({
+    x: 0,
+    y: 0
+  });
   if (!isOpen || !coatingSystem) return null;
   const activeMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
   const processText = activeMethod?.process || coatingSystem.singleMethod?.process || "";
@@ -904,6 +914,42 @@ const SampleRequestModal = ({
   const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
   const formattedPrice = formatPrice(samplePrice);
   const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
+  const handleImageDoubleClick = () => {
+    if (zoom === 1) {
+      setZoom(2);
+      setPosition({
+        x: 0,
+        y: 0
+      });
+    } else {
+      setZoom(1);
+      setPosition({
+        x: 0,
+        y: 0
+      });
+    }
+  };
+  const handleTouchStart = (e) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.touches[0].clientX - position.x,
+        y: e.touches[0].clientY - position.y
+      });
+    }
+  };
+  const handleTouchMove = (e) => {
+    if (isDragging && zoom > 1) {
+      e.preventDefault();
+      setPosition({
+        x: e.touches[0].clientX - dragStart.x,
+        y: e.touches[0].clientY - dragStart.y
+      });
+    }
+  };
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -1032,7 +1078,16 @@ const SampleRequestModal = ({
     showColorChart && colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full max-w-4xl rounded-xl bg-background p-4 shadow-xl sm:p-6 max-h-[90vh] overflow-y-auto", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(false), className: "absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4 font-display text-[1.2rem] font-semibold text-wood-900 sm:text-[1.4rem]", children: "Bảng màu đầy đủ" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: colorChartImage, alt: "Bảng màu đầy đủ", className: "w-full rounded-lg" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-hidden rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: colorChartImage, alt: "Bảng màu đầy đủ", className: "w-full rounded-lg cursor-pointer touch-pan-x touch-pan-y", style: {
+        transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+        transformOrigin: "center center",
+        transition: isDragging ? "none" : "transform 0.3s ease-out"
+      }, onDoubleClick: handleImageDoubleClick, onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-center text-[12px] text-wood-500 sm:text-[13px]", children: "Nhấn đúp để zoom, giữ và kéo để di chuyển ảnh" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 flex gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: colorChartImage, download: "bang-mau-lotus.jpg", target: "_blank", rel: "noopener noreferrer", className: "flex-1 rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Tải ảnh về" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(false), className: "flex-1 rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]", children: "Đóng" })
+      ] })
     ] }) })
   ] });
 };

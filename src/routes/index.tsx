@@ -1146,6 +1146,10 @@ const SampleRequestModal = ({
   onSubmit: (name: string, address: string) => void;
 }) => {
   const [showColorChart, setShowColorChart] = useState(false);
+  const [zoom, setZoom] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
   if (!isOpen || !coatingSystem) return null;
 
@@ -1162,6 +1166,40 @@ const SampleRequestModal = ({
   const formattedPrice = formatPrice(samplePrice);
 
   const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
+
+  const handleImageDoubleClick = () => {
+    if (zoom === 1) {
+      setZoom(2);
+      setPosition({ x: 0, y: 0 });
+    } else {
+      setZoom(1);
+      setPosition({ x: 0, y: 0 });
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.touches[0].clientX - position.x,
+        y: e.touches[0].clientY - position.y,
+      });
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging && zoom > 1) {
+      e.preventDefault();
+      setPosition({
+        x: e.touches[0].clientX - dragStart.x,
+        y: e.touches[0].clientY - dragStart.y,
+      });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -1416,11 +1454,43 @@ const SampleRequestModal = ({
             <h3 className="mb-4 font-display text-[1.2rem] font-semibold text-wood-900 sm:text-[1.4rem]">
               Bảng màu đầy đủ
             </h3>
-            <img
-              src={colorChartImage}
-              alt="Bảng màu đầy đủ"
-              className="w-full rounded-lg"
-            />
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={colorChartImage}
+                alt="Bảng màu đầy đủ"
+                className="w-full rounded-lg cursor-pointer touch-pan-x touch-pan-y"
+                style={{
+                  transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+                  transformOrigin: 'center center',
+                  transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+                }}
+                onDoubleClick={handleImageDoubleClick}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              />
+            </div>
+            <p className="mt-2 text-center text-[12px] text-wood-500 sm:text-[13px]">
+              Nhấn đúp để zoom, giữ và kéo để di chuyển ảnh
+            </p>
+            <div className="mt-4 flex gap-3">
+              <a
+                href={colorChartImage}
+                download="bang-mau-lotus.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+              >
+                Tải ảnh về
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowColorChart(false)}
+                className="flex-1 rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]"
+              >
+                Đóng
+              </button>
+            </div>
           </div>
         </div>
       )}

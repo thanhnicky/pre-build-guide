@@ -1164,6 +1164,7 @@ const SampleRequestModal = ({
   const sampleItems = getSampleItems(coatingSystem.title, selectedMethod);
   const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
   const formattedPrice = formatPrice(samplePrice);
+  const totalWeight = sampleItems.length; // 1kg per product
 
   const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
 
@@ -1290,7 +1291,7 @@ const SampleRequestModal = ({
 
           {/* Description before form */}
           <p className="mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
-            Anh/chị đang đặt mẫu thử 1kg theo hệ đã chọn. Dưới đây là quy trình và các sản phẩm có trong bộ mẫu để anh/chị dễ đối chiếu giá.
+            Anh/chị đang đặt mẫu thử theo hệ đã chọn. Mỗi sản phẩm trong bộ mẫu là 1kg. Hệ nào có 2 sản phẩm thì tổng khối lượng là 2kg, hệ nào có 3 sản phẩm thì tổng khối lượng là 3kg. Dưới đây là quy trình và chi tiết sản phẩm.
           </p>
 
           {/* Form */}
@@ -1317,7 +1318,7 @@ const SampleRequestModal = ({
                     </div>
                   ))}
                   <div className="mt-3 pt-2 border-t border-wood-200 flex justify-between text-[15px] font-semibold leading-[1.5] text-wood-900 sm:text-[16px]">
-                    <span>Tổng giá bộ mẫu thử 1kg</span>
+                    <span>Tổng giá bộ mẫu thử ({totalWeight}kg)</span>
                     <span>{formattedPrice}</span>
                   </div>
                 </div>
@@ -1327,7 +1328,7 @@ const SampleRequestModal = ({
             {/* Price block */}
             <div className="rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
               <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
-                Tổng giá bộ mẫu thử 1kg
+                Tổng giá bộ mẫu thử ({totalWeight}kg)
               </div>
               <p className="mt-2 text-[2rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2.2rem]">
                 {formattedPrice}

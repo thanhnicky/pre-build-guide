@@ -913,6 +913,7 @@ const SampleRequestModal = ({
   const sampleItems = getSampleItems(coatingSystem.title, selectedMethod);
   const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
   const formattedPrice = formatPrice(samplePrice);
+  const totalWeight = sampleItems.length;
   const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
   const handleImageDoubleClick = () => {
     if (zoom === 1) {
@@ -1015,7 +1016,7 @@ const SampleRequestModal = ({
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử 1kg theo hệ đã chọn. Dưới đây là quy trình và các sản phẩm có trong bộ mẫu để anh/chị dễ đối chiếu giá." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử theo hệ đã chọn. Mỗi sản phẩm trong bộ mẫu là 1kg. Hệ nào có 2 sản phẩm thì tổng khối lượng là 2kg, hệ nào có 3 sản phẩm thì tổng khối lượng là 3kg. Dưới đây là quy trình và chi tiết sản phẩm." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 rounded-lg bg-wood-50/50 p-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -1030,14 +1031,22 @@ const SampleRequestModal = ({
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formatPrice(item.price) })
               ] }, index)),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 pt-2 border-t border-wood-200 flex justify-between text-[15px] font-semibold leading-[1.5] text-wood-900 sm:text-[16px]", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Tổng giá bộ mẫu thử 1kg" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                  "Tổng giá bộ mẫu thử (",
+                  totalWeight,
+                  "kg)"
+                ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formattedPrice })
               ] })
             ] })
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Tổng giá bộ mẫu thử 1kg" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: [
+            "Tổng giá bộ mẫu thử (",
+            totalWeight,
+            "kg)"
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[2rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2.2rem]", children: formattedPrice }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: "Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn." })
         ] }),

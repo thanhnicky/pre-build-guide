@@ -941,13 +941,38 @@ const SampleRequestModal = ({
   const handleTouchMove = (e) => {
     if (isDragging && zoom > 1) {
       e.preventDefault();
+      const newX = e.touches[0].clientX - dragStart.x;
+      const newY = e.touches[0].clientY - dragStart.y;
       setPosition({
-        x: e.touches[0].clientX - dragStart.x,
-        y: e.touches[0].clientY - dragStart.y
+        x: newX,
+        y: newY
       });
     }
   };
   const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+  const handleMouseDown = (e) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y
+      });
+    }
+  };
+  const handleMouseMove = (e) => {
+    if (isDragging && zoom > 1) {
+      e.preventDefault();
+      const newX = e.clientX - dragStart.x;
+      const newY = e.clientY - dragStart.y;
+      setPosition({
+        x: newX,
+        y: newY
+      });
+    }
+  };
+  const handleMouseUp = () => {
     setIsDragging(false);
   };
   const handleSubmit = async (e) => {
@@ -1079,10 +1104,13 @@ const SampleRequestModal = ({
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(false), className: "absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4 font-display text-[1.2rem] font-semibold text-wood-900 sm:text-[1.4rem]", children: "Bảng màu đầy đủ" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-hidden rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: colorChartImage, alt: "Bảng màu đầy đủ", className: "w-full rounded-lg cursor-pointer touch-pan-x touch-pan-y", style: {
-        transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+        transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${zoom})`,
         transformOrigin: "center center",
-        transition: isDragging ? "none" : "transform 0.3s ease-out"
-      }, onDoubleClick: handleImageDoubleClick, onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd }) }),
+        transition: isDragging ? "none" : "transform 0.2s ease-out",
+        cursor: zoom > 1 ? isDragging ? "grabbing" : "grab" : "pointer",
+        willChange: isDragging ? "transform" : "auto",
+        touchAction: "none"
+      }, onDoubleClick: handleImageDoubleClick, onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd, onMouseDown: handleMouseDown, onMouseMove: handleMouseMove, onMouseUp: handleMouseUp, onMouseLeave: handleMouseUp }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-center text-[12px] text-wood-500 sm:text-[13px]", children: "Nhấn đúp để zoom, giữ và kéo để di chuyển ảnh" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 flex gap-3", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: colorChartImage, download: "bang-mau-lotus.jpg", target: "_blank", rel: "noopener noreferrer", className: "flex-1 rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Tải ảnh về" }),

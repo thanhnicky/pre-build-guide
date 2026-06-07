@@ -1190,14 +1190,36 @@ const SampleRequestModal = ({
   const handleTouchMove = (e: React.TouchEvent) => {
     if (isDragging && zoom > 1) {
       e.preventDefault();
-      setPosition({
-        x: e.touches[0].clientX - dragStart.x,
-        y: e.touches[0].clientY - dragStart.y,
-      });
+      const newX = e.touches[0].clientX - dragStart.x;
+      const newY = e.touches[0].clientY - dragStart.y;
+      setPosition({ x: newX, y: newY });
     }
   };
 
   const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoom > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y,
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoom > 1) {
+      e.preventDefault();
+      const newX = e.clientX - dragStart.x;
+      const newY = e.clientY - dragStart.y;
+      setPosition({ x: newX, y: newY });
+    }
+  };
+
+  const handleMouseUp = () => {
     setIsDragging(false);
   };
 
@@ -1460,14 +1482,21 @@ const SampleRequestModal = ({
                 alt="Bảng màu đầy đủ"
                 className="w-full rounded-lg cursor-pointer touch-pan-x touch-pan-y"
                 style={{
-                  transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+                  transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${zoom})`,
                   transformOrigin: 'center center',
-                  transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+                  transition: isDragging ? 'none' : 'transform 0.2s ease-out',
+                  cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'pointer',
+                  willChange: isDragging ? 'transform' : 'auto',
+                  touchAction: 'none',
                 }}
                 onDoubleClick={handleImageDoubleClick}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
               />
             </div>
             <p className="mt-2 text-center text-[12px] text-wood-500 sm:text-[13px]">

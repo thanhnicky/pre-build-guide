@@ -916,7 +916,7 @@ const SampleRequestModal = ({
   const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
   const handleImageDoubleClick = () => {
     if (zoom === 1) {
-      setZoom(2);
+      setZoom(2.4);
       setPosition({
         x: 0,
         y: 0

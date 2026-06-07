@@ -1169,7 +1169,7 @@ const SampleRequestModal = ({
 
   const handleImageDoubleClick = () => {
     if (zoom === 1) {
-      setZoom(2);
+      setZoom(2.4);
       setPosition({ x: 0, y: 0 });
     } else {
       setZoom(1);

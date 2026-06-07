@@ -889,6 +889,195 @@ const getSamplePrice = (title, selectedMethod) => {
 const formatPrice = (price) => {
   return price.toLocaleString("vi-VN") + " đ";
 };
+const SampleRequestModal = ({
+  isOpen,
+  onClose,
+  coatingSystem,
+  selectedMethod,
+  onSubmit
+}) => {
+  const [showColorChart, setShowColorChart] = reactExports.useState(false);
+  if (!isOpen || !coatingSystem) return null;
+  const activeMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
+  const processText = activeMethod?.process || coatingSystem.singleMethod?.process || "";
+  const sampleItems = getSampleItems(coatingSystem.title, selectedMethod);
+  const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
+  const formattedPrice = formatPrice(samplePrice);
+  const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.elements.namedItem("name").value;
+    const phone = form.elements.namedItem("phone").value;
+    const location = form.elements.namedItem("location").value;
+    const colorCode = form.elements.namedItem("colorCode").value;
+    const surfaceType = form.elements.namedItem("surfaceType").value;
+    const notes = form.elements.namedItem("notes").value;
+    const samplePrice2 = getSamplePrice(coatingSystem.title, selectedMethod);
+    try {
+      const templateParams = {
+        to_email: "nguyenxuanthanh2009@gmail.com",
+        from_name: name,
+        phone,
+        location,
+        color_code: colorCode,
+        surface_type: surfaceType,
+        coating_system: coatingSystem.title,
+        method: selectedMethod === "lau" ? "Lau" : "Phun",
+        sample_price: samplePrice2.toLocaleString("vi-VN") + " đ",
+        notes
+      };
+      await emailjs.send("service_10gzden", "template_fqpe61i", templateParams, "6fnqTqeKE41MYvFHJ");
+      console.log("Email sent successfully via EmailJS");
+    } catch (error) {
+      console.error("Failed to send email via EmailJS:", error);
+    }
+    onSubmit(name, location);
+    onClose();
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 flex items-start justify-between", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Hệ sơn Lotus đề xuất" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-2 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem.title })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử 1kg theo hệ đã chọn. Dưới đây là quy trình và các sản phẩm có trong bộ mẫu để anh/chị dễ đối chiếu giá." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 rounded-lg bg-wood-50/50 p-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Quy trình gợi ý" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-1 text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: processText })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Chi tiết sản phẩm trong bộ mẫu" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2", children: [
+              sampleItems.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item.name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formatPrice(item.price) })
+              ] }, index)),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 pt-2 border-t border-wood-200 flex justify-between text-[15px] font-semibold leading-[1.5] text-wood-900 sm:text-[16px]", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Tổng giá bộ mẫu thử 1kg" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formattedPrice })
+              ] })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Tổng giá bộ mẫu thử 1kg" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[2rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2.2rem]", children: formattedPrice }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: "Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn." })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "name", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Họ tên / Tên xưởng ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "name", required: true, placeholder: "Nhập họ tên hoặc tên xưởng", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "phone", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Số điện thoại / Zalo ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "tel", id: "phone", required: true, placeholder: "Nhập số điện thoại hoặc Zalo", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "location", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Địa chỉ nhận hàng ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "location", required: true, placeholder: "Ví dụ: TP.HCM, Bình Dương, Hà Nội...", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "colorCode", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Mã màu ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "colorCode", required: true, placeholder: "Nhập mã màu (ví dụ: RAL 9010)", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" }),
+            colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(true), className: "mt-1.5 text-[13px] text-wood-700 underline hover:text-wood-900 sm:text-[14px]", children: "Xem bảng màu đầy đủ" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
+              "Bề mặt ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-3 cursor-pointer", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", name: "surfaceType", value: "Bóng", required: true, className: "h-4 w-4 text-wood-900 border-wood-300 focus:ring-wood-900" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15px] text-wood-900 sm:text-[16px]", children: "Bóng" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-3 cursor-pointer", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", name: "surfaceType", value: "Bóng 50%", className: "h-4 w-4 text-wood-900 border-wood-300 focus:ring-wood-900" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15px] text-wood-900 sm:text-[16px]", children: "Bóng 50%" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "flex items-center gap-3 cursor-pointer", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "radio", name: "surfaceType", value: "Mờ", className: "h-4 w-4 text-wood-900 border-wood-300 focus:ring-wood-900" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15px] text-wood-900 sm:text-[16px]", children: "Mờ" })
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: "notes", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: "Ghi chú thêm" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { id: "notes", rows: 3, placeholder: "Thông tin thêm (nếu có)", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-lg bg-wood-50/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết thanh toán. Không gửi tin nhắn quảng cáo hàng loạt." }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", className: "w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Xác nhận đặt mẫu thử" })
+      ] })
+    ] }) }),
+    showColorChart && colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full max-w-4xl rounded-xl bg-background p-4 shadow-xl sm:p-6 max-h-[90vh] overflow-y-auto", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(false), className: "absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4 font-display text-[1.2rem] font-semibold text-wood-900 sm:text-[1.4rem]", children: "Bảng màu đầy đủ" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: colorChartImage, alt: "Bảng màu đầy đủ", className: "w-full rounded-lg" })
+    ] }) })
+  ] });
+};
+const ThankYouModal = ({
+  isOpen,
+  onClose,
+  customerName,
+  coatingSystem,
+  selectedMethod,
+  customerAddress
+}) => {
+  const samplePrice = coatingSystem ? getSamplePrice(coatingSystem.title, selectedMethod) : 0;
+  const formattedPrice = formatPrice(samplePrice);
+  if (!isOpen) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 text-center", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100", children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-8 w-8 text-green-600", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M5 13l4 4L19 7" }) }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.4rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: "Đã nhận được yêu cầu" })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]", children: [
+      "Lotus đã nhận được yêu cầu đặt mẫu thử của anh/chị ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-wood-900", children: customerName }),
+      "."
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Hệ sơn:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: coatingSystem?.title })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Giá bộ mẫu:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formattedPrice })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Địa chỉ:" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: customerAddress })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-center text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]", children: "Sơn Lotus sẽ liên hệ trong 24h để xác nhận" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "block w-full rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Liên hệ Zalo để được hỗ trợ sớm nhất" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "block w-full rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]", children: "Đóng" })
+    ] })
+  ] }) });
+};
 function FinishFinder({
   onInteractionChange
 }) {
@@ -1014,174 +1203,6 @@ function FinishFinder({
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-[19px] leading-none transition-transform ${active ? "text-background" : "text-wood-400 group-hover:translate-x-0.5"}`, children: "→" })
   ] });
-  const SampleRequestModal = ({
-    isOpen,
-    onClose,
-    coatingSystem: coatingSystem2,
-    selectedMethod: selectedMethod2,
-    onSubmit
-  }) => {
-    if (!isOpen || !coatingSystem2) return null;
-    const activeMethod = coatingSystem2.methodType === "dual" ? selectedMethod2 === "lau" ? coatingSystem2.methodLau : coatingSystem2.methodPhun : coatingSystem2.singleMethod;
-    const processText = activeMethod?.process || coatingSystem2.singleMethod?.process || "";
-    const sampleItems = getSampleItems(coatingSystem2.title, selectedMethod2);
-    const samplePrice = getSamplePrice(coatingSystem2.title, selectedMethod2);
-    const formattedPrice = formatPrice(samplePrice);
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const form = e.currentTarget;
-      const name = form.elements.namedItem("name").value;
-      const phone = form.elements.namedItem("phone").value;
-      const location2 = form.elements.namedItem("location").value;
-      const projectType = form.elements.namedItem("projectType").value;
-      const notes = form.elements.namedItem("notes").value;
-      const samplePrice2 = getSamplePrice(coatingSystem2.title, selectedMethod2);
-      try {
-        const templateParams = {
-          to_email: "nguyenxuanthanh2009@gmail.com",
-          from_name: name,
-          phone,
-          location: location2,
-          project_type: projectType,
-          coating_system: coatingSystem2.title,
-          method: selectedMethod2 === "lau" ? "Lau" : "Phun",
-          sample_price: samplePrice2.toLocaleString("vi-VN") + " đ",
-          notes
-        };
-        await emailjs.send("service_10gzden", "template_fqpe61i", templateParams, "6fnqTqeKE41MYvFHJ");
-        console.log("Email sent successfully via EmailJS");
-      } catch (error) {
-        console.error("Failed to send email via EmailJS:", error);
-      }
-      onSubmit(name, location2);
-      onClose();
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 flex items-start justify-between", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Hệ sơn Lotus đề xuất" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-2 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem2.title })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử 1kg theo hệ đã chọn. Dưới đây là quy trình và các sản phẩm có trong bộ mẫu để anh/chị dễ đối chiếu giá." }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 rounded-lg bg-wood-50/50 p-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Quy trình gợi ý" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-1 text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]", children: processText })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Chi tiết sản phẩm trong bộ mẫu" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2", children: [
-              sampleItems.map((item, index) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item.name }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formatPrice(item.price) })
-              ] }, index)),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 pt-2 border-t border-wood-200 flex justify-between text-[15px] font-semibold leading-[1.5] text-wood-900 sm:text-[16px]", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Tổng giá bộ mẫu thử 1kg" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formattedPrice })
-              ] })
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Tổng giá bộ mẫu thử 1kg" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[2rem] font-semibold leading-[1.1] text-wood-900 sm:text-[2.2rem]", children: formattedPrice }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: "Chưa bao gồm phí giao hàng. Lotus xác nhận khu vực giao trước khi chốt đơn." })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "name", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
-              "Họ tên / Tên xưởng ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "name", required: true, placeholder: "Nhập họ tên hoặc tên xưởng", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "phone", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
-              "Số điện thoại / Zalo ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "tel", id: "phone", required: true, placeholder: "Nhập số điện thoại hoặc Zalo", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "location", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
-              "Địa chỉ nhận hàng ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "location", required: true, placeholder: "Ví dụ: TP.HCM, Bình Dương, Hà Nội...", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "projectType", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
-              "Loại hạng mục / công trình ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "projectType", required: true, placeholder: "Ví dụ: cửa gỗ, bàn ghế ngoài trời, tủ bếp, vách ốp...", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { htmlFor: "notes", className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
-              "Ghi chú thêm ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { id: "notes", rows: 3, required: true, placeholder: "Mã màu lựa chọn và yêu cầu độ bóng/mờ", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-lg bg-wood-50/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết thanh toán. Không gửi tin nhắn quảng cáo hàng loạt." }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", className: "w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Xác nhận đặt mẫu thử" })
-      ] })
-    ] }) });
-  };
-  const ThankYouModal = ({
-    isOpen,
-    onClose,
-    customerName: customerName2,
-    coatingSystem: coatingSystem2,
-    selectedMethod: selectedMethod2,
-    customerAddress: customerAddress2
-  }) => {
-    const samplePrice = coatingSystem2 ? getSamplePrice(coatingSystem2.title, selectedMethod2) : 0;
-    const formattedPrice = formatPrice(samplePrice);
-    reactExports.useEffect(() => {
-      if (isOpen) {
-        const timer = setTimeout(() => {
-          onClose();
-        }, 1e4);
-        return () => clearTimeout(timer);
-      }
-    }, [isOpen, onClose]);
-    if (!isOpen) return null;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 text-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100", children: /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-8 w-8 text-green-600", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M5 13l4 4L19 7" }) }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.4rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: "Đã nhận được yêu cầu" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]", children: [
-        "Lotus đã nhận được yêu cầu đặt mẫu thử của anh/chị ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-wood-900", children: customerName2 }),
-        "."
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Hệ sơn:" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: coatingSystem2?.title })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Giá bộ mẫu:" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: formattedPrice })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Địa chỉ:" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: customerAddress2 })
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-center text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]", children: "Sơn Lotus sẽ liên hệ trong 24h để xác nhận" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "block w-full rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Liên hệ Zalo để được hỗ trợ sớm nhất" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "block w-full rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]", children: "Đóng" })
-      ] })
-    ] }) });
-  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "chon-he-son", ref: sectionRef, className: `bg-background pt-12 pb-20 sm:pt-12 sm:pb-24 lg:pt-12 lg:pb-28 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [

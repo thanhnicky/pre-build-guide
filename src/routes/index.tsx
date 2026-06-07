@@ -1291,7 +1291,7 @@ const SampleRequestModal = ({
 
           {/* Description before form */}
           <p className="mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
-            Anh/chị đang đặt mẫu thử theo hệ đã chọn. Mỗi sản phẩm trong bộ mẫu là 1kg. Hệ nào có 2 sản phẩm thì tổng khối lượng là 2kg, hệ nào có 3 sản phẩm thì tổng khối lượng là 3kg. Dưới đây là quy trình và chi tiết sản phẩm.
+            Anh/chị đang đặt mẫu thử theo hệ đã chọn. Mỗi sản phẩm trong bộ mẫu là 1kg. Dưới đây là quy trình và chi tiết sản phẩm.
           </p>
 
           {/* Form */}

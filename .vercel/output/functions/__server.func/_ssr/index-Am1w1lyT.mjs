@@ -1016,7 +1016,7 @@ const SampleRequestModal = ({
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử theo hệ đã chọn. Mỗi sản phẩm trong bộ mẫu là 1kg. Hệ nào có 2 sản phẩm thì tổng khối lượng là 2kg, hệ nào có 3 sản phẩm thì tổng khối lượng là 3kg. Dưới đây là quy trình và chi tiết sản phẩm." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Anh/chị đang đặt mẫu thử theo hệ đã chọn. Mỗi sản phẩm trong bộ mẫu là 1kg. Dưới đây là quy trình và chi tiết sản phẩm." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 rounded-lg bg-wood-50/50 p-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [

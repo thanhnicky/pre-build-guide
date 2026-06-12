@@ -14,7 +14,7 @@ import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { StickyZalo } from "@/components/StickyZalo";
 
-import heroImg from "@/assets/lotus-hero.webp";
+import heroImg from "@/assets/son-go-lotus-hero-87.jpeg";
 import sanGoTruoc from "@/assets/san-go-truoc-khi-bao-duong.webp";
 import sanGoSau from "@/assets/san-go-truoc-sau-khi-son-bao-duong.webp";
 import kiemTraMau from "@/assets/kiem-tra-mau-thuc-te.webp";

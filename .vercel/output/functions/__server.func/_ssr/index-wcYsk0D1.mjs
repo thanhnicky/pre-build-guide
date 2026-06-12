@@ -134,7 +134,7 @@ function StickyZalo() {
     }
   );
 }
-const heroImg = "/assets/lotus-hero-Butx14fm.webp";
+const heroImg = "/assets/son-go-lotus-hero-87-BROc89qS.jpeg";
 const kiemTraMau = "/assets/kiem-tra-mau-thuc-te-r8x5-Evb.webp";
 const kysuHoTro = "/assets/ky-su-ho-tro-giai-doan-dau-9fXIm5Tp.webp";
 const dongHanh = "/assets/dong-hanh-cung-nha-may-DiuU66bl.webp";

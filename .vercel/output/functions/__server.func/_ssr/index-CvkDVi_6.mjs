@@ -157,6 +157,16 @@ const sonBetMdfLotus = "/assets/son-bet-mdf-lotus-C_9fflZB.webp";
 const paletteLau = "/assets/palette-lau-6yPVzlIc.webp";
 const palettePhun = "/assets/palette-phun-03571x9u.webp";
 const paletteBet = "/assets/palette-bet-DEgvrFp-.webp";
+const LRS001 = "/assets/LRS001-i-BJwfLE.png";
+const LRS033 = "/assets/LRS033-OFEAhZjd.png";
+const LRS011 = "/assets/LRS011-Dkqrva9K.png";
+const LRS018 = "/assets/LRS018-DnWyJ2nk.png";
+const LRS024 = "/assets/LRS024-Cb8d-vD2.png";
+const LWPI072 = "/assets/LWPI%20072-CVmHyLXq.png";
+const LWPI42 = "/assets/LWPI%2042-CeFAmJ11.png";
+const LWPI064 = "/assets/LWPI%20064-CVL-I7vV.png";
+const LWPI055 = "/assets/LWPI%20055-Bx_jkGWc.png";
+const LWPI002 = "/assets/LWPI%20002-BaEXBCA5.png";
 const pullmanPhuQuoc = "/assets/pullman-phu-quoc-lt-CSjTy02K.webp";
 const masteriseHn = "/assets/masterise-hn-lt-Bw4LGOT-.webp";
 const grandMarinaSaigon = "/assets/grand-marina-saigon-lt-DJFRJA6M.webp";
@@ -611,25 +621,25 @@ function resolveCoatingSystem(surface, location, naturalFinish, t) {
       methodType: "dual",
       colorType: "grain",
       colors: [{
-        name: "Sồi sáng",
-        code: "Oak Light",
-        hex: "#C9A87C"
+        name: "LRS 001",
+        code: "LRS 001",
+        image: LRS001
       }, {
-        name: "Óc chó",
-        code: "Walnut",
-        hex: "#4D2A16"
+        name: "LRS 033",
+        code: "LRS 033",
+        image: LRS033
       }, {
-        name: "Gỗ mun",
-        code: "Ebony",
-        hex: "#261710"
+        name: "LRS 011",
+        code: "LRS 011",
+        image: LRS011
       }, {
-        name: "Anh đào",
-        code: "Cherry",
-        hex: "#B84528"
+        name: "LRS 018",
+        code: "LRS 018",
+        image: LRS018
       }, {
-        name: "Teak",
-        code: "Teak",
-        hex: "#D4BB8C"
+        name: "LRS 024",
+        code: "LRS 024",
+        image: LRS024
       }],
       methodLau: {
         process: t("finishFinder.system1.methodLau.process"),
@@ -654,25 +664,25 @@ function resolveCoatingSystem(surface, location, naturalFinish, t) {
       methodType: "single",
       colorType: "solid",
       colors: [{
-        name: "Trắng tinh khiết",
-        code: "RAL 9010",
-        hex: "#FFFFFF"
+        name: "LWPI 072",
+        code: "LWPI 072",
+        image: LWPI072
       }, {
-        name: "Kem",
-        code: "RAL 9001",
-        hex: "#F5F5DC"
+        name: "LWPI 42",
+        code: "LWPI 42",
+        image: LWPI42
       }, {
-        name: "Xám nhạt",
-        code: "RAL 9016",
-        hex: "#E0E0E0"
+        name: "LWPI 064",
+        code: "LWPI 064",
+        image: LWPI064
       }, {
-        name: "Be",
-        code: "RAL 1001",
-        hex: "#F5F5DC"
+        name: "LWPI 055",
+        code: "LWPI 055",
+        image: LWPI055
       }, {
-        name: "Xám mềm",
-        code: "RAL 7035",
-        hex: "#B0B0B0"
+        name: "LWPI 002",
+        code: "LWPI 002",
+        image: LWPI002
       }],
       singleMethod: {
         process: t("finishFinder.system2.process"),
@@ -769,25 +779,25 @@ function resolveCoatingSystem(surface, location, naturalFinish, t) {
       methodType: "single",
       colorType: "solid",
       colors: [{
-        name: "Trắng MDF",
-        code: "RAL 9010",
-        hex: "#FFFFFF"
+        name: "LWPI 072",
+        code: "LWPI 072",
+        image: LWPI072
       }, {
-        name: "Alabaster",
-        code: "RAL 9002",
-        hex: "#FAF0E6"
+        name: "LWPI 42",
+        code: "LWPI 42",
+        image: LWPI42
       }, {
-        name: "Ngà sáng",
-        code: "RAL 1015",
-        hex: "#FFFFF0"
+        name: "LWPI 064",
+        code: "LWPI 064",
+        image: LWPI064
       }, {
-        name: "Xám ấm",
-        code: "RAL 7016",
-        hex: "#383E42"
+        name: "LWPI 055",
+        code: "LWPI 055",
+        image: LWPI055
       }, {
-        name: "Be mềm",
-        code: "RAL 1000",
-        hex: "#BEB5A7"
+        name: "LWPI 002",
+        code: "LWPI 002",
+        image: LWPI002
       }],
       singleMethod: {
         process: t("finishFinder.system5.process"),
@@ -1120,7 +1130,7 @@ const SampleRequestModal = ({
               "Mã màu ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "colorCode", required: true, placeholder: "Nhập mã màu (ví dụ: RAL 9010)", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "colorCode", required: true, placeholder: selectedMethod === "lau" ? "Nhập mã màu (ví dụ: LRS 009)" : "Nhập mã màu (ví dụ: LWPI 018)", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" }),
             colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(true), className: "mt-1.5 text-[13px] text-wood-700 underline hover:text-wood-900 sm:text-[14px]", children: "Xem bảng màu đầy đủ" })
           ] }),
           !(selectedPackage === "500g" && (naturalFinish === "solid" || surface === "mdf" && location === "indoor")) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -1524,7 +1534,7 @@ function FinishFinder({
                   /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(true), className: "text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]", children: "Xem bảng màu đầy đủ" })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-2", children: coatingSystem.colors.slice(0, 5).map((color) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm", style: {
+                  color.image ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: color.image, alt: color.name, className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover", title: color.name }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm", style: {
                     backgroundColor: color.hex
                   }, title: color.name }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-1 text-[11px] text-wood-600 sm:text-[12px]", children: color.code })

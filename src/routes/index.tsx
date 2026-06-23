@@ -44,6 +44,16 @@ import sonBetMdfLotus from "@/assets/son-bet-mdf-lotus.webp";
 import paletteLau from "@/assets/palette-lau.webp";
 import palettePhun from "@/assets/palette-phun.webp";
 import paletteBet from "@/assets/palette-bet.webp";
+import LRS001 from "@/assets/LRS001.png";
+import LRS033 from "@/assets/LRS033.png";
+import LRS011 from "@/assets/LRS011.png";
+import LRS018 from "@/assets/LRS018.png";
+import LRS024 from "@/assets/LRS024.png";
+import LWPI072 from "@/assets/LWPI 072.png";
+import LWPI42 from "@/assets/LWPI 42.png";
+import LWPI064 from "@/assets/LWPI 064.png";
+import LWPI055 from "@/assets/LWPI 055.png";
+import LWPI002 from "@/assets/LWPI 002.png";
 import pullmanPhuQuoc from "@/assets/pullman-phu-quoc-lt.webp";
 import masteriseHn from "@/assets/masterise-hn-lt.webp";
 import grandMarinaSaigon from "@/assets/grand-marina-saigon-lt.webp";
@@ -853,7 +863,8 @@ type CoatingMethod = "lau" | "phun" | "single";
 interface ColorSwatch {
   name: string;
   code: string;
-  hex: string;
+  hex?: string;
+  image?: string;
 }
 
 interface CoatingSystem {
@@ -900,11 +911,11 @@ function resolveCoatingSystem(
       methodType: "dual",
       colorType: "grain",
       colors: [
-        { name: "Sồi sáng", code: "Oak Light", hex: "#C9A87C" },
-        { name: "Óc chó", code: "Walnut", hex: "#4D2A16" },
-        { name: "Gỗ mun", code: "Ebony", hex: "#261710" },
-        { name: "Anh đào", code: "Cherry", hex: "#B84528" },
-        { name: "Teak", code: "Teak", hex: "#D4BB8C" },
+        { name: "LRS 001", code: "LRS 001", image: LRS001 },
+        { name: "LRS 033", code: "LRS 033", image: LRS033 },
+        { name: "LRS 011", code: "LRS 011", image: LRS011 },
+        { name: "LRS 018", code: "LRS 018", image: LRS018 },
+        { name: "LRS 024", code: "LRS 024", image: LRS024 },
       ],
       methodLau: {
         process: t("finishFinder.system1.methodLau.process"),
@@ -931,11 +942,11 @@ function resolveCoatingSystem(
       methodType: "single",
       colorType: "solid",
       colors: [
-        { name: "Trắng tinh khiết", code: "RAL 9010", hex: "#FFFFFF" },
-        { name: "Kem", code: "RAL 9001", hex: "#F5F5DC" },
-        { name: "Xám nhạt", code: "RAL 9016", hex: "#E0E0E0" },
-        { name: "Be", code: "RAL 1001", hex: "#F5F5DC" },
-        { name: "Xám mềm", code: "RAL 7035", hex: "#B0B0B0" },
+        { name: "LWPI 072", code: "LWPI 072", image: LWPI072 },
+        { name: "LWPI 42", code: "LWPI 42", image: LWPI42 },
+        { name: "LWPI 064", code: "LWPI 064", image: LWPI064 },
+        { name: "LWPI 055", code: "LWPI 055", image: LWPI055 },
+        { name: "LWPI 002", code: "LWPI 002", image: LWPI002 },
       ],
       singleMethod: {
         process: t("finishFinder.system2.process"),
@@ -1010,11 +1021,11 @@ function resolveCoatingSystem(
       methodType: "single",
       colorType: "solid",
       colors: [
-        { name: "Trắng MDF", code: "RAL 9010", hex: "#FFFFFF" },
-        { name: "Alabaster", code: "RAL 9002", hex: "#FAF0E6" },
-        { name: "Ngà sáng", code: "RAL 1015", hex: "#FFFFF0" },
-        { name: "Xám ấm", code: "RAL 7016", hex: "#383E42" },
-        { name: "Be mềm", code: "RAL 1000", hex: "#BEB5A7" },
+        { name: "LWPI 072", code: "LWPI 072", image: LWPI072 },
+        { name: "LWPI 42", code: "LWPI 42", image: LWPI42 },
+        { name: "LWPI 064", code: "LWPI 064", image: LWPI064 },
+        { name: "LWPI 055", code: "LWPI 055", image: LWPI055 },
+        { name: "LWPI 002", code: "LWPI 002", image: LWPI002 },
       ],
       singleMethod: {
         process: t("finishFinder.system5.process"),
@@ -1420,7 +1431,7 @@ const SampleRequestModal = ({
                     type="text"
                     id="colorCode"
                     required
-                    placeholder="Nhập mã màu (ví dụ: RAL 9010)"
+                    placeholder={selectedMethod === "lau" ? "Nhập mã màu (ví dụ: LRS 009)" : "Nhập mã màu (ví dụ: LWPI 018)"}
                     className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
                   />
                   {colorChartImage && (
@@ -2303,11 +2314,20 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                           <div className="grid grid-cols-5 gap-2">
                             {coatingSystem.colors.slice(0, 5).map((color) => (
                               <div key={color.code} className="flex flex-col items-center">
-                                <div
-                                  className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
-                                  style={{ backgroundColor: color.hex }}
-                                  title={color.name}
-                                />
+                                {color.image ? (
+                                  <img
+                                    src={color.image}
+                                    alt={color.name}
+                                    className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover"
+                                    title={color.name}
+                                  />
+                                ) : (
+                                  <div
+                                    className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
+                                    style={{ backgroundColor: color.hex }}
+                                    title={color.name}
+                                  />
+                                )}
                                 <span className="mt-1 text-[11px] text-wood-600 sm:text-[12px]">{color.code}</span>
                               </div>
                             ))}

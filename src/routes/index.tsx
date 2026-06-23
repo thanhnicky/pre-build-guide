@@ -2137,7 +2137,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                         Chọn gói mẫu
                       </div>
                       <p className="mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]">
-                        Chọn gói phù hợp với nhu cầu test thực tế.
+                        Test hệ thật — trước khi vào lô.
                       </p>
                       <p className="mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
                         Dung tích tính riêng cho từng sản phẩm trong quy trình.
@@ -2189,11 +2189,11 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                 Bộ mẫu 500g
                               </h4>
                               <p className="text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]">
-                                Phù hợp khi cần test độ bám, độ phủ và quy trình thi công trước.
+                                Kiểm tra độ bám, độ phủ và cách sơn chạy — trước khi ra quyết định.
                               </p>
                               <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]">
                                 <div className="h-1 w-1 rounded-full bg-wood-400" />
-                                <span>{selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu ngẫu nhiên" : "Chọn màu theo yêu cầu"}</span>
+                                <span>{selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn — giao ngay" : "Chọn màu theo yêu cầu"}</span>
                               </div>
                               <p className="text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
                                 500g cho mỗi sản phẩm trong quy trình được đề xuất.
@@ -2209,7 +2209,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   onClick={() => setShowSampleForm(true)}
                                   className="w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]"
                                 >
-                                  Nhận bộ mẫu 500g
+                                  Đặt bộ mẫu 500g →
                                 </button>
                                 <a
                                   href={ZALO}
@@ -2234,7 +2234,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                 Bộ mẫu 1kg
                               </h4>
                               <p className="text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]">
-                                Phù hợp khi cần test đúng màu trước khi vào mẫu thật hoặc lên đơn lớn.
+                                Xác nhận đúng màu trước khi đặt lô. Chọn từ bảng màu hoặc báo mã màu riêng.
                               </p>
                               <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]">
                                 <div className="h-1 w-1 rounded-full bg-wood-600" />
@@ -2254,7 +2254,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   onClick={() => setShowSampleForm(true)}
                                   className="w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]"
                                 >
-                                  Nhận bộ mẫu 1kg
+                                  Đặt bộ mẫu 1kg — chọn màu →
                                 </button>
                                 <a
                                   href={ZALO}

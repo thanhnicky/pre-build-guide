@@ -1453,7 +1453,7 @@ function FinishFinder({
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] font-medium uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Chọn gói mẫu" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]", children: "Chọn gói phù hợp với nhu cầu test thực tế." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]", children: "Test hệ thật — trước khi vào lô." }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]", children: "Dung tích tính riêng cho từng sản phẩm trong quy trình." }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-2 gap-3", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { type: "button", onClick: () => setSelectedPackage("500g"), className: `relative flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${selectedPackage === "500g" ? "border-wood-900 bg-wood-50/60" : "border-wood-200/50 bg-background hover:border-wood-400"}`, children: [
@@ -1469,17 +1469,17 @@ function FinishFinder({
                 selectedPackage === "500g" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-display text-[1rem] font-medium text-wood-900 sm:text-[1.05rem]", children: "Bộ mẫu 500g" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Phù hợp khi cần test độ bám, độ phủ và quy trình thi công trước." }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Kiểm tra độ bám, độ phủ và cách sơn chạy — trước khi ra quyết định." }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 w-1 rounded-full bg-wood-400" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu ngẫu nhiên" : "Chọn màu theo yêu cầu" })
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu do Lotus chọn sẵn — giao ngay" : "Chọn màu theo yêu cầu" })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]", children: "500g cho mỗi sản phẩm trong quy trình được đề xuất." })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end justify-between space-y-3 sm:space-y-4", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]", children: surface === "mdf" && location === "indoor" ? "169.000 đ" : "199.000 đ" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex w-full flex-col gap-2 sm:w-auto", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Nhận bộ mẫu 500g" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Đặt bộ mẫu 500g →" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-[12px] font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[13px]", children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-3.5 w-3.5", fill: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z" }) }),
                         "Hỏi nhanh qua Zalo"
@@ -1490,7 +1490,7 @@ function FinishFinder({
                 selectedPackage === "1kg" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-display text-[1rem] font-medium text-wood-900 sm:text-[1.05rem]", children: "Bộ mẫu 1kg" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Phù hợp khi cần test đúng màu trước khi vào mẫu thật hoặc lên đơn lớn." }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Xác nhận đúng màu trước khi đặt lô. Chọn từ bảng màu hoặc báo mã màu riêng." }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 w-1 rounded-full bg-wood-600" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Chọn màu theo yêu cầu" })
@@ -1500,7 +1500,7 @@ function FinishFinder({
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end justify-between space-y-3 sm:space-y-4", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]", children: formattedPrice1kg }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex w-full flex-col gap-2 sm:w-auto", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Nhận bộ mẫu 1kg" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Đặt bộ mẫu 1kg — chọn màu →" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-[12px] font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[13px]", children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-3.5 w-3.5", fill: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z" }) }),
                         "Hỏi nhanh qua Zalo"

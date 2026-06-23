@@ -1453,7 +1453,7 @@ function FinishFinder({
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] font-medium uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Chọn gói mẫu" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]", children: "Test hệ thật — trước khi vào lô." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]", children: "Thử trước — quyết định sau." }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]", children: "Dung tích tính riêng cho từng sản phẩm trong quy trình." }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-2 gap-3", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { type: "button", onClick: () => setSelectedPackage("500g"), className: `relative flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${selectedPackage === "500g" ? "border-wood-900 bg-wood-50/60" : "border-wood-200/50 bg-background hover:border-wood-400"}`, children: [

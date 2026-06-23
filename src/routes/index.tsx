@@ -2137,7 +2137,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                         Chọn gói mẫu
                       </div>
                       <p className="mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]">
-                        Test hệ thật — trước khi vào lô.
+                        Thử trước — quyết định sau.
                       </p>
                       <p className="mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
                         Dung tích tính riêng cho từng sản phẩm trong quy trình.

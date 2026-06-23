@@ -1355,10 +1355,10 @@ function FinishFinder({
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "chon-he-son", ref: sectionRef, className: `bg-background pt-16 pb-24 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-8 lg:grid-cols-12", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: "CÔNG CỤ TƯ VẤN NHANH" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: "Chọn đúng hệ sơn trong vài bước" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: "TƯ VẤN NHANH CHỌN HỆ SƠN" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: "Chọn đúng hệ sơ bộ chỉ trong vài bước" }) })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[17px]", children: "Cho Lotus biết bề mặt, môi trường sử dụng và kiểu hoàn thiện. Hệ phù hợp sẽ hiện ra ngay, kèm cấu hình kỹ thuật sơ bộ và gợi ý bước test tiếp theo." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[17px]", children: "Chọn bề mặt, môi trường sử dụng và kiểu hoàn thiện. Lotus sẽ gợi ý hệ phù hợp để anh/chị test mẫu trước khi vào lô." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 lg:border-r lg:border-wood-200", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-8 p-6 sm:p-10 lg:p-12", children: [
@@ -1369,7 +1369,7 @@ function FinishFinder({
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step1Ref, className: "relative transition-all duration-500 ease-out", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "Bước 1", text: "Bề mặt thi công" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Anh/chị đang thi công trên bề mặt nào?" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Anh/chị thi công trên bề mặt nào?" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: surface === "natural", onClick: () => {
                 setSurface("natural");
@@ -1383,7 +1383,7 @@ function FinishFinder({
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step2Ref, className: `transition-all duration-500 ease-out ${surface ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"}`, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "Bước 2", text: "Môi trường sử dụng" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Sản phẩm sẽ đặt ở đâu?" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Sản phẩm dùng trong môi trường nào?" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: location === "indoor", onClick: () => surface && setLocation("indoor"), children: "Trong nhà (Nội thất)" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: location === "outdoor", onClick: () => surface !== "mdf" && setLocation("outdoor"), disabled: surface === "mdf", children: "Ngoài trời" })
@@ -1391,13 +1391,13 @@ function FinishFinder({
           ] }),
           needsFinishStep && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step3Ref, className: `transition-all duration-500 ease-out ${location ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"}`, children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "Bước 3", text: "Kiểu hoàn thiện" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Anh/chị muốn giữ vân hay phủ màu?" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Anh/chị muốn hoàn thiện kiểu nào?" }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "grain", onClick: () => location && setNaturalFinish("grain"), children: "Giữ vân gỗ" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Choice, { active: naturalFinish === "solid", onClick: () => location && setNaturalFinish("solid"), children: "Phủ màu bệt" })
             ] })
           ] }),
-          ready && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: reset, className: "font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900", children: "← Chọn lại từ đầu" })
+          ready && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: reset, className: "font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900", children: "← Làm lại từ đầu" })
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: resultRef, className: "lg:col-span-5", children: !coatingSystem ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex h-full min-h-[320px] items-center justify-center p-10 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[260px] text-[14px] leading-[1.7] text-wood-600", children: "Hoàn thành 3 bước bên trái để nhận hệ đề xuất phù hợp." }) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "flex h-full flex-col transition-all duration-500 ease-out", children: [
           coatingSystem.methodType === "dual" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex border-b border-wood-200 bg-wood-50/50", children: [
@@ -1407,9 +1407,9 @@ function FinishFinder({
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[5/4] overflow-hidden bg-wood-200/40", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau?.image : coatingSystem.methodPhun?.image : coatingSystem.singleMethod?.image, alt: `${coatingSystem.title} - ${coatingSystem.suitableFor}`, className: "h-full w-full object-cover object-center" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-1 flex-col gap-5 p-6 sm:p-8", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Hệ đề xuất sơ bộ cho hạng mục của anh/chị" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Hệ đề xuất sơ bộ" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem.title }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]", children: "Kết quả này giúp rút ngắn thời gian chọn hệ trước khi test trên mẫu thực tế tại xưởng." })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]", children: "Đây là cấu hình gợi ý để anh/chị rút ngắn thời gian chọn hệ trước khi test mẫu thực tế." })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("dl", { className: "divide-y divide-wood-200 border-t border-wood-200", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4", children: [
@@ -1448,13 +1448,13 @@ function FinishFinder({
               ] })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 mb-6 rounded-lg border-l-4 border-wood-400 bg-wood-100/40 p-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]", children: "Hệ trên là gợi ý sơ bộ theo nhu cầu anh/chị vừa chọn." }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]", children: "Để chốt đúng màu, độ bám và quy trình thi công, bước tiếp theo là test trên mẫu thực tế." })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]", children: "Hệ trên được gợi ý theo nhu cầu anh/chị vừa chọn." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]", children: "Để chốt đúng màu và kiểm tra quy trình thi công thực tế, bước tiếp theo là test mẫu." })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] font-medium uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Chọn gói test phù hợp" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]", children: "Test đúng hệ trước, chọn màu ở bước cần thiết." }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]", children: "Dung tích áp dụng cho từng loại trong quy trình." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] font-medium uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Chọn gói mẫu" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]", children: "Chọn gói phù hợp với nhu cầu test thực tế." }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]", children: "Dung tích tính riêng cho từng sản phẩm trong quy trình." }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 grid grid-cols-2 gap-3", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { type: "button", onClick: () => setSelectedPackage("500g"), className: `relative flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${selectedPackage === "500g" ? "border-wood-900 bg-wood-50/60" : "border-wood-200/50 bg-background hover:border-wood-400"}`, children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-medium uppercase tracking-[0.12em] text-wood-500 sm:text-[11px]", children: "500g" }),
@@ -1469,7 +1469,7 @@ function FinishFinder({
                 selectedPackage === "500g" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-display text-[1rem] font-medium text-wood-900 sm:text-[1.05rem]", children: "Bộ mẫu 500g" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Phù hợp khi cần test kỹ hơn quy trình thi công trên mẫu lớn hơn." }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Phù hợp khi cần test độ bám, độ phủ và quy trình thi công trước." }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 w-1 rounded-full bg-wood-400" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu ngẫu nhiên" : "Chọn màu theo yêu cầu" })
@@ -1482,7 +1482,7 @@ function FinishFinder({
                       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Nhận bộ mẫu 500g" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-[12px] font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[13px]", children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-3.5 w-3.5", fill: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z" }) }),
-                        "Nhắn Zalo để được tư vấn"
+                        "Hỏi nhanh qua Zalo"
                       ] })
                     ] })
                   ] })
@@ -1490,7 +1490,7 @@ function FinishFinder({
                 selectedPackage === "1kg" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-display text-[1rem] font-medium text-wood-900 sm:text-[1.05rem]", children: "Bộ mẫu 1kg" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Được chọn màu theo bảng màu hoặc nhu cầu thực tế trước khi vào mẫu thật." }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]", children: "Phù hợp khi cần test đúng màu trước khi vào mẫu thật hoặc lên đơn lớn." }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 w-1 rounded-full bg-wood-600" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Chọn màu theo yêu cầu" })
@@ -1500,10 +1500,10 @@ function FinishFinder({
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end justify-between space-y-3 sm:space-y-4", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]", children: formattedPrice1kg }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex w-full flex-col gap-2 sm:w-auto", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Nhận bộ mẫu 1kg chọn màu" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowSampleForm(true), className: "w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]", children: "Nhận bộ mẫu 1kg" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: ZALO, target: "_blank", rel: "noopener noreferrer", className: "inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-[12px] font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[13px]", children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { className: "h-3.5 w-3.5", fill: "currentColor", viewBox: "0 0 24 24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z" }) }),
-                        "Nhắn Zalo để được tư vấn"
+                        "Hỏi nhanh qua Zalo"
                       ] })
                     ] })
                   ] })

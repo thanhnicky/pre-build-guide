@@ -1858,14 +1858,14 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
-              CÔNG CỤ TƯ VẤN NHANH
+              TƯ VẤN NHANH CHỌN HỆ SƠN
             </div>
             <h2 className="font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
-              <span className="block">Chọn đúng hệ sơn trong vài bước</span>
+              <span className="block">Chọn đúng hệ sơ bộ chỉ trong vài bước</span>
             </h2>
           </div>
           <p className="text-[16px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[17px]">
-            Cho Lotus biết bề mặt, môi trường sử dụng và kiểu hoàn thiện. Hệ phù hợp sẽ hiện ra ngay, kèm cấu hình kỹ thuật sơ bộ và gợi ý bước test tiếp theo.
+            Chọn bề mặt, môi trường sử dụng và kiểu hoàn thiện. Lotus sẽ gợi ý hệ phù hợp để anh/chị test mẫu trước khi vào lô.
           </p>
         </div>
 
@@ -1886,7 +1886,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                 <div ref={step1Ref} className="relative transition-all duration-500 ease-out">
                   <StepLabel n="Bước 1" text="Bề mặt thi công" />
                   <h3 className="font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]">
-                    Anh/chị đang thi công trên bề mặt nào?
+                    Anh/chị thi công trên bề mặt nào?
                   </h3>
                   <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <Choice
@@ -1919,7 +1919,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                 >
                   <StepLabel n="Bước 2" text="Môi trường sử dụng" />
                   <h3 className="font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]">
-                    Sản phẩm sẽ đặt ở đâu?
+                    Sản phẩm dùng trong môi trường nào?
                   </h3>
                   <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <Choice
@@ -1948,7 +1948,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                   >
                     <StepLabel n="Bước 3" text="Kiểu hoàn thiện" />
                     <h3 className="font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]">
-                      Anh/chị muốn giữ vân hay phủ màu?
+                      Anh/chị muốn hoàn thiện kiểu nào?
                     </h3>
                     <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                       <Choice
@@ -1973,7 +1973,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                     onClick={reset}
                     className="font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900"
                   >
-                    ← Chọn lại từ đầu
+                    ← Làm lại từ đầu
                   </button>
                 )}
               </div>
@@ -2035,13 +2035,13 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                   <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
                     <div>
                       <div className="font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
-                        Hệ đề xuất sơ bộ cho hạng mục của anh/chị
+                        Hệ đề xuất sơ bộ
                       </div>
                       <h3 className="font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
                         {coatingSystem.title}
                       </h3>
                       <p className="mt-2 text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]">
-                        Kết quả này giúp rút ngắn thời gian chọn hệ trước khi test trên mẫu thực tế tại xưởng.
+                        Đây là cấu hình gợi ý để anh/chị rút ngắn thời gian chọn hệ trước khi test mẫu thực tế.
                       </p>
                     </div>
 
@@ -2123,10 +2123,10 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                     {/* Transition copy trước pricing */}
                     <div className="mt-8 mb-6 rounded-lg border-l-4 border-wood-400 bg-wood-100/40 p-5">
                       <p className="text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]">
-                        Hệ trên là gợi ý sơ bộ theo nhu cầu anh/chị vừa chọn.
+                        Hệ trên được gợi ý theo nhu cầu anh/chị vừa chọn.
                       </p>
                       <p className="mt-2 text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]">
-                        Để chốt đúng màu, độ bám và quy trình thi công, bước tiếp theo là test trên mẫu thực tế.
+                        Để chốt đúng màu và kiểm tra quy trình thi công thực tế, bước tiếp theo là test mẫu.
                       </p>
                     </div>
 
@@ -2134,13 +2134,13 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                     <div className="mt-6">
                       {/* Heading */}
                       <div className="font-display text-[13px] font-medium uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
-                        Chọn gói test phù hợp
+                        Chọn gói mẫu
                       </div>
                       <p className="mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]">
-                        Test đúng hệ trước, chọn màu ở bước cần thiết.
+                        Chọn gói phù hợp với nhu cầu test thực tế.
                       </p>
                       <p className="mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
-                        Dung tích áp dụng cho từng loại trong quy trình.
+                        Dung tích tính riêng cho từng sản phẩm trong quy trình.
                       </p>
 
                       {/* Tầng 1: Selector row */}
@@ -2189,7 +2189,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                 Bộ mẫu 500g
                               </h4>
                               <p className="text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]">
-                                Phù hợp khi cần test kỹ hơn quy trình thi công trên mẫu lớn hơn.
+                                Phù hợp khi cần test độ bám, độ phủ và quy trình thi công trước.
                               </p>
                               <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]">
                                 <div className="h-1 w-1 rounded-full bg-wood-400" />
@@ -2220,7 +2220,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
                                   </svg>
-                                  Nhắn Zalo để được tư vấn
+                                  Hỏi nhanh qua Zalo
                                 </a>
                               </div>
                             </div>
@@ -2234,7 +2234,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                 Bộ mẫu 1kg
                               </h4>
                               <p className="text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]">
-                                Được chọn màu theo bảng màu hoặc nhu cầu thực tế trước khi vào mẫu thật.
+                                Phù hợp khi cần test đúng màu trước khi vào mẫu thật hoặc lên đơn lớn.
                               </p>
                               <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]">
                                 <div className="h-1 w-1 rounded-full bg-wood-600" />
@@ -2254,7 +2254,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   onClick={() => setShowSampleForm(true)}
                                   className="w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]"
                                 >
-                                  Nhận bộ mẫu 1kg chọn màu
+                                  Nhận bộ mẫu 1kg
                                 </button>
                                 <a
                                   href={ZALO}
@@ -2265,7 +2265,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
                                   </svg>
-                                  Nhắn Zalo để được tư vấn
+                                  Hỏi nhanh qua Zalo
                                 </a>
                               </div>
                             </div>

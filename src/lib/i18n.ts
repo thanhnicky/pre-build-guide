@@ -116,7 +116,7 @@ const vi = {
           "Phương pháp lau cho hiệu ứng vân gỗ sâu, phù hợp nội thất cao cấp cần tạo chiều sâu màu.",
       },
       methodPhun: {
-        process: "Phun sealer → Phun woodstain + finish nội thất",
+        process: "Phun sealer → Phun woodstain finish nội thất",
         notes:
           "Phương pháp phun cho năng suất cao, màu đồng đều — phù hợp xưởng sản xuất loạt.",
       },

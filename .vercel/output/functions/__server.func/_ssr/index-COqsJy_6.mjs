@@ -167,6 +167,11 @@ const LWPI42 = "/assets/LWPI%2042-CeFAmJ11.png";
 const LWPI064 = "/assets/LWPI%20064-CVL-I7vV.png";
 const LWPI055 = "/assets/LWPI%20055-Bx_jkGWc.png";
 const LWPI002 = "/assets/LWPI%20002-BaEXBCA5.png";
+const LWSFI020 = "/assets/LWSFI%20020-Co5uIx2Q.png";
+const LWSFI012 = "/assets/LWSFI%20012-xb1wjsTs.png";
+const LWSFI017 = "/assets/LWSFI%20017-BS3ksCDE.png";
+const LWSFI009 = "/assets/LWSFI%20009-D3eh3lVB.png";
+const LWSFI001 = "/assets/LWSFI%20001-C6ExJNYy.png";
 const pullmanPhuQuoc = "/assets/pullman-phu-quoc-lt-CSjTy02K.webp";
 const masteriseHn = "/assets/masterise-hn-lt-Bw4LGOT-.webp";
 const grandMarinaSaigon = "/assets/grand-marina-saigon-lt-DJFRJA6M.webp";
@@ -653,7 +658,28 @@ function resolveCoatingSystem(surface, location, naturalFinish, t) {
         representativeProducts: ["Lotus sanding sealer", "Lotus woodstain finish interior"],
         image: sonPhunWeb,
         notes: t("finishFinder.system1.methodPhun.notes"),
-        fullChartImage: palettePhun
+        fullChartImage: palettePhun,
+        colors: [{
+          name: "LWSFI 020",
+          code: "LWSFI 020",
+          image: LWSFI020
+        }, {
+          name: "LWSFI 012",
+          code: "LWSFI 012",
+          image: LWSFI012
+        }, {
+          name: "LWSFI 017",
+          code: "LWSFI 017",
+          image: LWSFI017
+        }, {
+          name: "LWSFI 009",
+          code: "LWSFI 009",
+          image: LWSFI009
+        }, {
+          name: "LWSFI 001",
+          code: "LWSFI 001",
+          image: LWSFI001
+        }]
       }
     };
   }
@@ -1528,19 +1554,25 @@ function FinishFinder({
                   ] })
                 ] })
               ] }),
-              coatingSystem.colors && coatingSystem.colors.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 flex items-center justify-between", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Bảng màu tham khảo" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(true), className: "text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]", children: "Xem bảng màu đầy đủ" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-2", children: coatingSystem.colors.slice(0, 5).map((color) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center", children: [
-                  color.image ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: color.image, alt: color.name, className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover", title: color.name }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm", style: {
-                    backgroundColor: color.hex
-                  }, title: color.name }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-1 text-[11px] text-wood-600 sm:text-[12px]", children: color.code })
-                ] }, color.code)) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." })
-              ] })
+              (() => {
+                const currentMethod = coatingSystem.methodType === "dual" ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun : coatingSystem.singleMethod;
+                const methodColors = currentMethod?.colors;
+                const displayColors = methodColors || coatingSystem.colors;
+                if (!displayColors || displayColors.length === 0) return null;
+                return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 flex items-center justify-between", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]", children: "Bảng màu tham khảo" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(true), className: "text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]", children: "Xem bảng màu đầy đủ" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-5 gap-2", children: displayColors.slice(0, 5).map((color) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center", children: [
+                    color.image ? /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: color.image, alt: color.name, className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover", title: color.name }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-10 w-10 rounded-full border border-wood-300/50 shadow-sm", style: {
+                      backgroundColor: color.hex
+                    }, title: color.name }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "mt-1 text-[11px] text-wood-600 sm:text-[12px]", children: color.code })
+                  ] }, color.code)) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." })
+                ] });
+              })()
             ] })
           ] })
         ] }) })

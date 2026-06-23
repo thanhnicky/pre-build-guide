@@ -54,6 +54,11 @@ import LWPI42 from "@/assets/LWPI 42.png";
 import LWPI064 from "@/assets/LWPI 064.png";
 import LWPI055 from "@/assets/LWPI 055.png";
 import LWPI002 from "@/assets/LWPI 002.png";
+import LWSFI020 from "@/assets/LWSFI 020.png";
+import LWSFI012 from "@/assets/LWSFI 012.png";
+import LWSFI017 from "@/assets/LWSFI 017.png";
+import LWSFI009 from "@/assets/LWSFI 009.png";
+import LWSFI001 from "@/assets/LWSFI 001.png";
 import pullmanPhuQuoc from "@/assets/pullman-phu-quoc-lt.webp";
 import masteriseHn from "@/assets/masterise-hn-lt.webp";
 import grandMarinaSaigon from "@/assets/grand-marina-saigon-lt.webp";
@@ -887,6 +892,7 @@ interface CoatingSystem {
     image: string;
     notes?: string;
     fullChartImage?: string;
+    colors?: ColorSwatch[];
   };
   methodPhun?: {
     process: string;
@@ -894,6 +900,7 @@ interface CoatingSystem {
     image: string;
     notes?: string;
     fullChartImage?: string;
+    colors?: ColorSwatch[];
   };
 }
 
@@ -930,6 +937,13 @@ function resolveCoatingSystem(
         image: sonPhunWeb,
         notes: t("finishFinder.system1.methodPhun.notes"),
         fullChartImage: palettePhun,
+        colors: [
+          { name: "LWSFI 020", code: "LWSFI 020", image: LWSFI020 },
+          { name: "LWSFI 012", code: "LWSFI 012", image: LWSFI012 },
+          { name: "LWSFI 017", code: "LWSFI 017", image: LWSFI017 },
+          { name: "LWSFI 009", code: "LWSFI 009", image: LWSFI009 },
+          { name: "LWSFI 001", code: "LWSFI 001", image: LWSFI001 },
+        ],
       },
     };
   }
@@ -2297,46 +2311,56 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       </div>
 
                       {/* Color reference section */}
-                      {coatingSystem.colors && coatingSystem.colors.length > 0 && (
-                        <div className="mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
-                          <div className="mb-3 flex items-center justify-between">
-                            <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
-                              Bảng màu tham khảo
-                            </div>
-                            <button
-                              type="button"
-                              onClick={() => setShowFullColorChart(true)}
-                              className="text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]"
-                            >
-                              Xem bảng màu đầy đủ
-                            </button>
-                          </div>
-                          <div className="grid grid-cols-5 gap-2">
-                            {coatingSystem.colors.slice(0, 5).map((color) => (
-                              <div key={color.code} className="flex flex-col items-center">
-                                {color.image ? (
-                                  <img
-                                    src={color.image}
-                                    alt={color.name}
-                                    className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover"
-                                    title={color.name}
-                                  />
-                                ) : (
-                                  <div
-                                    className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
-                                    style={{ backgroundColor: color.hex }}
-                                    title={color.name}
-                                  />
-                                )}
-                                <span className="mt-1 text-[11px] text-wood-600 sm:text-[12px]">{color.code}</span>
+                      {(() => {
+                        const currentMethod = coatingSystem.methodType === "dual"
+                          ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun
+                          : coatingSystem.singleMethod;
+                        const methodColors = currentMethod?.colors;
+                        const displayColors = methodColors || coatingSystem.colors;
+
+                        if (!displayColors || displayColors.length === 0) return null;
+
+                        return (
+                          <div className="mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
+                            <div className="mb-3 flex items-center justify-between">
+                              <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                                Bảng màu tham khảo
                               </div>
-                            ))}
+                              <button
+                                type="button"
+                                onClick={() => setShowFullColorChart(true)}
+                                className="text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]"
+                              >
+                                Xem bảng màu đầy đủ
+                              </button>
+                            </div>
+                            <div className="grid grid-cols-5 gap-2">
+                              {displayColors.slice(0, 5).map((color) => (
+                                <div key={color.code} className="flex flex-col items-center">
+                                  {color.image ? (
+                                    <img
+                                      src={color.image}
+                                      alt={color.name}
+                                      className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover"
+                                      title={color.name}
+                                    />
+                                  ) : (
+                                    <div
+                                      className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
+                                      style={{ backgroundColor: color.hex }}
+                                      title={color.name}
+                                    />
+                                  )}
+                                  <span className="mt-1 text-[11px] text-wood-600 sm:text-[12px]">{color.code}</span>
+                                </div>
+                              ))}
+                            </div>
+                            <p className="mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]">
+                              Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
+                            </p>
                           </div>
-                          <p className="mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]">
-                            Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
-                          </p>
-                        </div>
-                      )}
+                        );
+                      })()}
                     </div>
                   </div>
                 </article>

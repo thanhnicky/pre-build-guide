@@ -153,7 +153,7 @@ const vi = {
         notes: "Phương pháp lau cho hiệu ứng vân gỗ sâu, phù hợp nội thất cao cấp cần tạo chiều sâu màu."
       },
       methodPhun: {
-        process: "Phun sealer → Phun woodstain + finish nội thất",
+        process: "Phun sealer → Phun woodstain finish nội thất",
         notes: "Phương pháp phun cho năng suất cao, màu đồng đều — phù hợp xưởng sản xuất loạt."
       }
     },
@@ -694,7 +694,7 @@ const $$splitComponentImporter$3 = () => import("./studio-BFMuw0pq.mjs");
 const Route$3 = createFileRoute("/studio")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-CvkDVi_6.mjs");
+const $$splitComponentImporter$2 = () => import("./index-COqsJy_6.mjs");
 const Route$2 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
@@ -774,7 +774,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-CGZvMZBE.mjs");
+const $$splitComponentImporter$1 = () => import("./index-omKvBDN7.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -784,7 +784,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-4zlGSuHf.mjs");
+const $$splitComponentImporter = () => import("../_slug-D19gDgsX.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

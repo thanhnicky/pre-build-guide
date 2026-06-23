@@ -362,7 +362,7 @@ instance.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const appCss = "/assets/styles-3Sv_yFF6.css";
+const appCss = "/assets/styles-BaS6ygw-.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -694,7 +694,7 @@ const $$splitComponentImporter$3 = () => import("./studio-BFMuw0pq.mjs");
 const Route$3 = createFileRoute("/studio")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-wcYsk0D1.mjs");
+const $$splitComponentImporter$2 = () => import("./index-qRtcBseR.mjs");
 const Route$2 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
@@ -774,7 +774,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-DNU_-qgV.mjs");
+const $$splitComponentImporter$1 = () => import("./index-BCuYUK8R.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -784,7 +784,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-B1Q06Oyg.mjs");
+const $$splitComponentImporter = () => import("../_slug-CAveCB76.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

@@ -1368,6 +1368,9 @@ const SampleRequestModal = ({
               <p className="mt-2 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]">
                 {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn." : "Mặc định màu trắng.")}
               </p>
+              <p className="mt-1.5 text-[12px] leading-[1.4] text-wood-500 sm:text-[13px]">
+                Toàn bộ {formattedPackagePrice} hoàn vào đơn hàng đầu tiên từ {selectedPackage === "500g" ? "2kg" : "5kg"} trở lên.
+              </p>
             </div>
 
             {/* User input fields */}
@@ -2038,23 +2041,23 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
                   <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
                     <div>
-                      <div className="font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
+                      <div className="font-display text-[14px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
                         Hệ đề xuất sơ bộ
                       </div>
-                      <h3 className="font-display mt-3 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
+                      <h3 className="font-display mt-3 text-[1.5rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
                         {coatingSystem.title}
                       </h3>
-                      <p className="mt-2 text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]">
+                      <p className="mt-2 text-[15px] leading-[1.6] text-wood-600 sm:text-[15px]">
                         Đây là cấu hình gợi ý để anh/chị rút ngắn thời gian chọn hệ trước khi test mẫu thực tế.
                       </p>
                     </div>
 
                     <dl className="divide-y divide-wood-200 border-t border-wood-200">
                       <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                        <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                        <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                           Phù hợp với
                         </dt>
-                        <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                        <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                           {coatingSystem.suitableFor}
                         </dd>
                       </div>
@@ -2063,18 +2066,18 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       {coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && (
                         <>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               Quy trình (Lau)
                             </dt>
-                            <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                               {coatingSystem.methodLau.process}
                             </dd>
                           </div>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               Sản phẩm (Lau)
                             </dt>
-                            <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                               {coatingSystem.methodLau.representativeProducts.join(" · ")}
                             </dd>
                           </div>
@@ -2084,18 +2087,18 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       {coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && (
                         <>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               Quy trình (Phun)
                             </dt>
-                            <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                               {coatingSystem.methodPhun.process}
                             </dd>
                           </div>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               Sản phẩm (Phun)
                             </dt>
-                            <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                               {coatingSystem.methodPhun.representativeProducts.join(" · ")}
                             </dd>
                           </div>
@@ -2105,18 +2108,18 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                       {coatingSystem.methodType === "single" && coatingSystem.singleMethod && (
                         <>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               Quy trình
                             </dt>
-                            <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                               {coatingSystem.singleMethod.process}
                             </dd>
                           </div>
                           <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[13px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
+                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
                               Sản phẩm
                             </dt>
-                            <dd className="text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
+                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
                               {coatingSystem.singleMethod.representativeProducts.join(" · ")}
                             </dd>
                           </div>
@@ -2126,10 +2129,10 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
                     {/* Transition copy trước pricing */}
                     <div className="mt-8 mb-6 rounded-lg border-l-4 border-wood-400 bg-wood-100/40 p-5">
-                      <p className="text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]">
+                      <p className="text-[15px] leading-[1.6] text-wood-800 sm:text-[15px]">
                         Hệ trên được gợi ý theo nhu cầu anh/chị vừa chọn.
                       </p>
-                      <p className="mt-2 text-[14px] leading-[1.6] text-wood-800 sm:text-[15px]">
+                      <p className="mt-2 text-[15px] leading-[1.6] text-wood-800 sm:text-[15px]">
                         Để chốt đúng màu và kiểm tra quy trình thi công thực tế, bước tiếp theo là test mẫu.
                       </p>
                     </div>
@@ -2184,6 +2187,11 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                         </button>
                       </div>
 
+                      {/* Helper text động - dung tích theo package */}
+                      <p className="mt-2 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
+                        {selectedPackage === "500g" ? "500g cho mỗi sản phẩm trong quy trình được đề xuất." : "1kg cho mỗi sản phẩm trong quy trình được đề xuất."}
+                      </p>
+
                       {/* Tầng 2: Detail panel động 2 cột */}
                       <div className="mt-5 rounded-md border border-wood-200/50 bg-wood-50/20 p-5">
                         {selectedPackage === "500g" && (
@@ -2199,9 +2207,6 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                 <div className="h-1 w-1 rounded-full bg-wood-400" />
                                 <span>{selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn — giao ngay" : "Chọn màu theo yêu cầu"}</span>
                               </div>
-                              <p className="text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
-                                500g cho mỗi sản phẩm trong quy trình được đề xuất.
-                              </p>
                             </div>
                             <div className="flex flex-col items-end justify-between space-y-3 sm:space-y-4">
                               <div className="text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]">
@@ -2227,6 +2232,9 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   Hỏi nhanh qua Zalo
                                 </a>
                               </div>
+                              <p className="mt-2.5 mx-auto w-full text-center text-[12px] text-wood-500 sm:text-[13px]">
+                                ✓ Hoàn tiền mẫu vào đơn hàng đầu tiên
+                              </p>
                             </div>
                           </div>
                         )}
@@ -2244,9 +2252,6 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                 <div className="h-1 w-1 rounded-full bg-wood-600" />
                                 <span>Chọn màu theo yêu cầu</span>
                               </div>
-                              <p className="text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
-                                1kg cho mỗi sản phẩm trong quy trình được đề xuất.
-                              </p>
                             </div>
                             <div className="flex flex-col items-end justify-between space-y-3 sm:space-y-4">
                               <div className="text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]">
@@ -2272,6 +2277,9 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
                                   Hỏi nhanh qua Zalo
                                 </a>
                               </div>
+                              <p className="mt-2.5 mx-auto w-full text-center text-[12px] text-wood-500 sm:text-[13px]">
+                                ✓ Hoàn tiền mẫu vào đơn hàng đầu tiên
+                              </p>
                             </div>
                           </div>
                         )}

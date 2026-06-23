@@ -1116,12 +1116,7 @@ const SampleRequestModal = ({
             /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "text", id: "colorCode", required: true, placeholder: "Nhập mã màu (ví dụ: RAL 9010)", className: "mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]" }),
             colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(true), className: "mt-1.5 text-[13px] text-wood-700 underline hover:text-wood-900 sm:text-[14px]", children: "Xem bảng màu đầy đủ" })
           ] }),
-          !needsColorSelection && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-lg bg-wood-50/50 p-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[13px] leading-[1.5] text-wood-600 sm:text-[14px]", children: [
-            "Gói ",
-            selectedPackage,
-            " mặc định màu trắng. Không cần chọn mã màu."
-          ] }) }),
-          !(selectedPackage === "500g" && naturalFinish === "solid") && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          !(selectedPackage === "500g" && (naturalFinish === "solid" || surface === "mdf" && location === "indoor")) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
               "Bề mặt ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })

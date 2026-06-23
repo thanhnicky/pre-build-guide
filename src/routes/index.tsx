@@ -1431,14 +1431,7 @@ const SampleRequestModal = ({
                   )}
                 </div>
               )}
-              {!needsColorSelection && (
-                <div className="rounded-lg bg-wood-50/50 p-3">
-                  <p className="text-[13px] leading-[1.5] text-wood-600 sm:text-[14px]">
-                    Gói {selectedPackage} mặc định màu trắng. Không cần chọn mã màu.
-                  </p>
-                </div>
-              )}
-              {!(selectedPackage === "500g" && naturalFinish === "solid") && (
+              {!(selectedPackage === "500g" && (naturalFinish === "solid" || (surface === "mdf" && location === "indoor"))) && (
                 <div>
                   <label className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
                     Bề mặt <span className="text-red-500">*</span>

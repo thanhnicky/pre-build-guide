@@ -988,7 +988,7 @@ const SampleRequestModal = ({
     const name = form.elements.namedItem("name").value;
     const phone = form.elements.namedItem("phone").value;
     const location2 = form.elements.namedItem("location").value;
-    const colorCode = needsColorSelection ? form.elements.namedItem("colorCode").value : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location2 === "indoor") ? "Màu ngẫu nhiên" : "Màu trắng (mặc định)";
+    const colorCode = needsColorSelection ? form.elements.namedItem("colorCode").value : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location2 === "indoor") ? "Màu do Lotus chọn sẵn" : "Màu trắng (mặc định)";
     const surfaceTypeInput = form.elements.namedItem("surfaceType");
     const surfaceType = surfaceTypeInput ? surfaceTypeInput.value : "Không áp dụng";
     const notes = form.elements.namedItem("notes").value;
@@ -1036,7 +1036,7 @@ const SampleRequestModal = ({
         "Anh/chị đang đặt bộ mẫu ",
         selectedPackage,
         " theo hệ đã chọn. ",
-        needsColorSelection ? "Chọn màu theo yêu cầu." : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu ngẫu nhiên để test vân gỗ." : "Mặc định màu trắng để tập trung test đúng hệ."
+        needsColorSelection ? "Chọn màu theo yêu cầu." : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu do Lotus chọn sẵn để test vân gỗ." : "Mặc định màu trắng để tập trung test đúng hệ."
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-5", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 rounded-lg bg-wood-50/50 p-4", children: [
@@ -1084,7 +1084,7 @@ const SampleRequestModal = ({
             " MỖI LOẠI"
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-3 text-[2.2rem] font-bold leading-none text-wood-900 sm:text-[2.5rem]", children: formattedPackagePrice }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: needsColorSelection ? "Chọn màu theo yêu cầu." : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu ngẫu nhiên." : "Mặc định màu trắng." })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]", children: needsColorSelection ? "Chọn màu theo yêu cầu." : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu do Lotus chọn sẵn." : "Mặc định màu trắng." })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -1118,7 +1118,7 @@ const SampleRequestModal = ({
           ] }),
           !(selectedPackage === "500g" && (naturalFinish === "solid" || surface === "mdf" && location === "indoor")) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: "block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]", children: [
-              "Bề mặt ",
+              "ĐỘ BÓNG MONG MUỐN ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-red-500", children: "*" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 space-y-2", children: [
@@ -1142,7 +1142,7 @@ const SampleRequestModal = ({
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-lg bg-wood-50/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: "Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết thanh toán. Không gửi tin nhắn quảng cáo hàng loạt." }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", className: "w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Xác nhận đặt mẫu thử" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", className: "w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]", children: "Gửi đơn đặt mẫu" })
       ] })
     ] }) }),
     showColorChart && colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full max-w-4xl rounded-xl bg-background p-4 shadow-xl sm:p-6 max-h-[90vh] overflow-y-auto", children: [
@@ -1209,7 +1209,7 @@ const ThankYouModal = ({
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Màu:" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: needsColorSelection ? "Chọn màu theo yêu cầu" : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu ngẫu nhiên" : "Màu trắng (mặc định)" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: needsColorSelection ? "Chọn màu theo yêu cầu" : selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || surface === "mdf" && location === "indoor") ? "Màu do Lotus chọn sẵn" : "Màu trắng (mặc định)" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-wood-600", children: "Địa chỉ:" }),

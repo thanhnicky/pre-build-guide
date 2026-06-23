@@ -1245,7 +1245,7 @@ const SampleRequestModal = ({
     const name = (form.elements.namedItem('name') as HTMLInputElement).value;
     const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
     const location = (form.elements.namedItem('location') as HTMLInputElement).value;
-    const colorCode = needsColorSelection ? (form.elements.namedItem('colorCode') as HTMLInputElement).value : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu ngẫu nhiên" : "Màu trắng (mặc định)");
+    const colorCode = needsColorSelection ? (form.elements.namedItem('colorCode') as HTMLInputElement).value : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn" : "Màu trắng (mặc định)");
     const surfaceTypeInput = form.elements.namedItem('surfaceType') as HTMLInputElement;
     const surfaceType = surfaceTypeInput ? surfaceTypeInput.value : "Không áp dụng";
     const notes = (form.elements.namedItem('notes') as HTMLTextAreaElement).value;
@@ -1311,7 +1311,7 @@ const SampleRequestModal = ({
 
           {/* Description before form */}
           <p className="mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
-            Anh/chị đang đặt bộ mẫu {selectedPackage} theo hệ đã chọn. {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu ngẫu nhiên để test vân gỗ." : "Mặc định màu trắng để tập trung test đúng hệ.")}
+            Anh/chị đang đặt bộ mẫu {selectedPackage} theo hệ đã chọn. {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn để test vân gỗ." : "Mặc định màu trắng để tập trung test đúng hệ.")}
           </p>
 
           {/* Form */}
@@ -1366,7 +1366,7 @@ const SampleRequestModal = ({
                 {formattedPackagePrice}
               </div>
               <p className="mt-2 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]">
-                {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu ngẫu nhiên." : "Mặc định màu trắng.")}
+                {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn." : "Mặc định màu trắng.")}
               </p>
             </div>
 
@@ -1434,7 +1434,7 @@ const SampleRequestModal = ({
               {!(selectedPackage === "500g" && (naturalFinish === "solid" || (surface === "mdf" && location === "indoor"))) && (
                 <div>
                   <label className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
-                    Bề mặt <span className="text-red-500">*</span>
+                    ĐỘ BÓNG MONG MUỐN <span className="text-red-500">*</span>
                   </label>
                   <div className="mt-2 space-y-2">
                     <label className="flex items-center gap-3 cursor-pointer">
@@ -1493,7 +1493,7 @@ const SampleRequestModal = ({
               type="submit"
               className="w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
             >
-              Xác nhận đặt mẫu thử
+              Gửi đơn đặt mẫu
             </button>
           </form>
         </div>
@@ -1628,7 +1628,7 @@ const ThankYouModal = ({
           </div>
           <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
             <span className="text-wood-600">Màu:</span>
-            <span className="font-medium">{needsColorSelection ? "Chọn màu theo yêu cầu" : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu ngẫu nhiên" : "Màu trắng (mặc định)")}</span>
+            <span className="font-medium">{needsColorSelection ? "Chọn màu theo yêu cầu" : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn" : "Màu trắng (mặc định)")}</span>
           </div>
           <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
             <span className="text-wood-600">Địa chỉ:</span>

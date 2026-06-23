@@ -1877,10 +1877,13 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
             <div className="lg:col-span-7 lg:border-r lg:border-wood-200">
               <div className="space-y-8 p-6 sm:p-10 lg:p-12">
                 {/* Progress indicator */}
-                <div className="flex items-center gap-3 pb-6 border-b border-wood-200/50">
-                  <div className={`h-2 w-2 rounded-full ${surface ? "bg-wood-900" : "bg-wood-300"}`} />
-                  <div className={`h-2 w-2 rounded-full ${location ? "bg-wood-900" : "bg-wood-300"}`} />
-                  <div className={`h-2 w-2 rounded-full ${ready ? "bg-wood-900" : "bg-wood-300"}`} />
+                <div className="pb-6 border-b border-wood-200/50">
+                  <div className="h-1.5 w-full bg-wood-200 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-wood-600 transition-all duration-500 ease-out"
+                      style={{ width: `${ready ? "100" : location ? "66.67" : surface ? "33.33" : "0"}%` }}
+                    />
+                  </div>
                 </div>
 
                 {/* Step 1 */}

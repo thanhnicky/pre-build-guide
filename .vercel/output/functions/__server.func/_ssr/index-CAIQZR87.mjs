@@ -1365,11 +1365,9 @@ function FinishFinder({
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 lg:border-r lg:border-wood-200", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-8 p-6 sm:p-10 lg:p-12", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 pb-6 border-b border-wood-200/50", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `h-2 w-2 rounded-full ${surface ? "bg-wood-900" : "bg-wood-300"}` }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `h-2 w-2 rounded-full ${location ? "bg-wood-900" : "bg-wood-300"}` }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `h-2 w-2 rounded-full ${ready ? "bg-wood-900" : "bg-wood-300"}` })
-          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pb-6 border-b border-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1.5 w-full bg-wood-200 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full bg-wood-600 transition-all duration-500 ease-out", style: {
+            width: `${ready ? "100" : location ? "66.67" : surface ? "33.33" : "0"}%`
+          } }) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: step1Ref, className: "relative transition-all duration-500 ease-out", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(StepLabel, { n: "Bước 1", text: "Bề mặt thi công" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]", children: "Anh/chị thi công trên bề mặt nào?" }),

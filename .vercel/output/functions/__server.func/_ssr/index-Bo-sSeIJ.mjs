@@ -1356,7 +1356,10 @@ function FinishFinder({
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-8 lg:grid-cols-12", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: "TƯ VẤN NHANH CHỌN HỆ SƠN" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: "Chọn đúng hệ sơ bộ chỉ trong vài bước" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: "Chọn đúng hệ sơn" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block italic font-normal text-wood-700", children: "chỉ trong vài bước" })
+          ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[16px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[17px]", children: "Chọn bề mặt, môi trường sử dụng và kiểu hoàn thiện. Lotus sẽ gợi ý hệ phù hợp để anh/chị test mẫu trước khi vào lô." })
       ] }),

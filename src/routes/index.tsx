@@ -1861,7 +1861,8 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
               TƯ VẤN NHANH CHỌN HỆ SƠN
             </div>
             <h2 className="font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
-              <span className="block">Chọn đúng hệ sơ bộ chỉ trong vài bước</span>
+              <span className="block">Chọn đúng hệ sơn</span>
+              <span className="block italic font-normal text-wood-700">chỉ trong vài bước</span>
             </h2>
           </div>
           <p className="text-[16px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[17px]">

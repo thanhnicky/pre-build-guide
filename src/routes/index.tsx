@@ -1328,6 +1328,7 @@ const SampleRequestModal = ({
             <button
               type="button"
               onClick={onClose}
+              aria-label="Đóng"
               className="rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors"
             >
               <X className="h-5 w-5" />
@@ -1534,6 +1535,7 @@ const SampleRequestModal = ({
             <button
               type="button"
               onClick={() => setShowColorChart(false)}
+              aria-label="Đóng bảng màu"
               className="absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10"
             >
               <X className="h-5 w-5" />
@@ -2388,6 +2390,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
               <button
                 type="button"
                 onClick={() => setShowFullColorChart(false)}
+                aria-label="Đóng bảng màu"
                 className="rounded-full p-2 text-wood-600 hover:bg-wood-200/50"
               >
                 <X className="h-5 w-5" />
@@ -3181,6 +3184,7 @@ ${kb}`;
           <div className="flex shrink-0 items-center gap-1">
             <button
               onClick={() => fileInputRef.current?.click()}
+              aria-label="Gửi ảnh mẫu"
               className="flex h-8 w-8 items-center justify-center rounded-full text-wood-400 transition-colors hover:bg-wood-100 hover:text-wood-700"
               title="Gửi ảnh mẫu"
             >

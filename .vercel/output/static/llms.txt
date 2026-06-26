@@ -1,73 +1,95 @@
-# Sơn Gỗ Lotus — sonlotus.vn
+# Lotus Paint - Wood Stain & Metal Coatings Ecosystem
 
-## Thông tin công ty
+## Company Information
 
-- **Tên:** Sơn Lotus — Keo Jade's Solution (Công ty Bích Trang)
-- **Website chính:** https://www.sonlotus.vn
-- **Website phụ:** https://www.songo.com.vn, https://www.sonlotus.com, https://www.jades.vn
-- **Điện thoại / Zalo:** 0943 966 662
-- **Địa chỉ:** 99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm, Huyện Hóc Môn, TP. Hồ Chí Minh
-- **Lĩnh vực:** Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu
-- **Kinh nghiệm:** 12+ năm
-- **Khách hàng:** 200+ xưởng & nhà máy tin dùng
+- **Name:** Lotus Paint (Keo Jade's Solution - Công ty Bích Trang)
+- **Primary Website:** https://www.songo.com.vn
+- **Websites:** https://www.sonlotus.vn, https://www.sonlotus.com, https://www.jades.vn
+- **Contact:** 0943 966 662 (Phone/Zalo)
+- **Address:** 99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm, Huyện Hóc Môn, TP. Hồ Chí Minh
+- **Industry:** Water-based wood coating systems for furniture manufacturing and export
+- **Experience:** 12+ years
+- **Customer Base:** 200+ workshops and factories
 
-## Sản phẩm & Dịch vụ
+## Product Categories
 
-Lotus cung cấp hệ sơn gỗ gốc nước (water-based wood coating) cho:
+### Wood Coating Systems
+1. **Wiping Stain (Sơn lau)** - For natural wood/veneer, preserves wood grain
+2. **Interior Spray (Sơn phun nội thất)** - Water-based acrylic lacquer for indoor use
+3. **Exterior Spray (Sơn phun ngoại thất)** - UV-resistant, water-resistant coating
+4. **MDF Paint (Sơn MDF)** - Solid color coating for engineered wood panels
+5. **2K Coating (Sơn 2K)** - High hardness, scratch-resistant for harsh environments
 
-1. **Xưởng nội thất công trình** — thi công căn hộ cao cấp, khách sạn, văn phòng
-   - Đồng màu giữa các lô sản xuất
-   - Hồ sơ kỹ thuật phục vụ nghiệm thu dự án
-   - VOC thấp, mùi nhẹ phù hợp bàn giao sớm
+### Target Markets
+- **Construction Furniture Workshops** - High-end apartments, hotels, offices
+- **Export Manufacturing** - Wood products exported to US, EU, Japan
 
-2. **Nhà máy xuất khẩu** — sản xuất đồ gỗ xuất sang Mỹ, EU, Nhật Bản
-   - TDS / MSDS song ngữ Anh–Việt theo yêu cầu buyer
-   - Đạt chuẩn EN71-3, ASTM F963, FDA, RoHS
-   - Bề mặt ổn định trên sản lượng lớn, nhiều lô
+## Certifications & Standards
 
-## Hệ sơn chính
+- EN71-3 (Toy safety, EU)
+- ASTM F963 (US standard)
+- FDA (Food contact)
+- RoHS (Hazardous substance restriction)
+- TDS/MSDS in English-Vietnamese
 
-- **Sơn lau (Wiping stain):** Cho gỗ tự nhiên, veneer — giữ vân gỗ
-- **Sơn phun nội thất:** Acrylic lacquer hệ nước trong nhà
-- **Sơn phun ngoại thất:** Chống UV, chống nước
-- **Sơn MDF:** Phủ màu đồng nhất cho ván công nghiệp
-- **Sơn 2K:** Độ cứng cao, chống trầy cho môi trường khắc nghiệt
+## Key Projects
 
-## Chứng nhận & Tiêu chuẩn
+- Grand Marina Saigon (luxury apartments, Masterise)
+- Masterise Hàng Bài - Hanoi (hotel)
+- Pullman Phu Quoc Hotel (5-star, annual maintenance)
+- Casta Factory, Pacific Furniture (export)
+- AEON Long An, AEON Tân An (commercial)
 
-- EN71-3 (an toàn đồ chơi trẻ em, EU)
-- ASTM F963 (tiêu chuẩn Mỹ)
-- FDA (tiếp xúc thực phẩm)
-- RoHS (hạn chế chất độc hại)
-- TDS / MSDS song ngữ Anh–Việt
+## Page Structure
 
-## Dự án tiêu biểu
+### Main Pages
+- `/` - Homepage with product showcase and consultation tool
+- `/blog` - Blog articles about wood coating techniques
+- `/blog/$slug` - Individual blog posts
+- `/studio` - Sanity CMS studio (restricted access)
 
-- Grand Marina Saigon (căn hộ cao cấp, Masterise)
-- Masterise Hàng Bài — Hà Nội (khách sạn)
-- Khách sạn Pullman Phú Quốc (5 sao, bảo dưỡng hàng năm)
-- Nhà máy Casta, Pacific Furniture (xuất khẩu)
-- AEON Long An, AEON Tân An (thương mại)
+### Key Features
+- **FinishFinder Tool** - Interactive coating system recommendation based on:
+  - Surface type (natural wood, MDF, metal)
+  - Location (indoor, outdoor)
+  - Finish type (grain preservation, solid color)
+  - Application method (wiping, spraying)
 
-## Câu hỏi thường gặp
+## FAQ
 
-**Hệ nước khác PU ở điểm gì quan trọng với xưởng?**
-Mùi thấp hơn, không cần pha dung môi, đáp ứng tiêu chuẩn xuất khẩu mà PU gốc dung môi không qua được.
+**Q: How does water-based coating differ from PU for workshops?**
+A: Lower odor, no solvent mixing, meets export standards that solvent-based PU cannot pass.
 
-**Chuyển sang hệ nước có phức tạp không?**
-Không. Kỹ sư Lotus hỗ trợ tại xưởng lần đầu — chỉnh tỷ lệ pha, súng phun, xử lý lỗi bề mặt ngay tại chỗ.
+**Q: Is switching to water-based complex?**
+A: No. Lotus engineers support on-site first-time setup - mixing ratios, spray gun adjustment, surface defect handling.
 
-**Hồ sơ kỹ thuật Lotus cung cấp những gì cho buyer?**
-TDS, MSDS song ngữ Anh–Việt, chứng nhận EN71-3, ASTM F963, FDA, RoHS — đủ cho hầu hết yêu cầu xuất khẩu Mỹ, EU, Nhật.
+**Q: What technical documents does Lotus provide for buyers?**
+A: TDS, MSDS in English-Vietnamese, EN71-3, ASTM F963, FDA, RoHS certifications - sufficient for most US, EU, Japan export requirements.
 
-**Thời gian khô để đóng gói là bao lâu?**
-Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ.
+**Q: Drying time before packaging?**
+A: Surface dry 30-60 minutes, safe packaging after 12-24 hours.
 
-**Bắt đầu tư vấn như thế nào?**
-Gửi ảnh bề mặt qua Zalo 0943 966 662. Kỹ sư phản hồi và đề xuất hệ sơn trong ngày.
+**Q: How to start consultation?**
+A: Send surface photos via Zalo 0943 966 662. Engineers respond and propose coating system within the day.
 
-## Liên hệ
+## Contact Information
 
-- **Zalo / Điện thoại:** 0943 966 662
+- **Phone/Zalo:** 0943 966 662
 - **Google Maps:** https://maps.app.goo.gl/JZ9NvsifM5T1PfcA9
 - **Website:** https://www.songo.com.vn
+
+## Content Discovery
+
+AI agents should crawl:
+- Product information from the FinishFinder tool
+- Blog articles for technical guidance
+- Project showcases for reference
+- Contact information for direct consultation
+
+## Schema.org Recommendations
+
+This site should include:
+- Organization schema for company details
+- Product schema for coating systems
+- Article schema for blog posts
+- FAQPage schema for common questions

@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /studio/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+Crawl-delay: 1
 
 User-agent: GPTBot
 Allow: /
@@ -9,9 +15,6 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: Googlebot
 Allow: /
 
 User-agent: Google-Extended
@@ -27,4 +30,3 @@ User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://www.songo.com.vn/sitemap.xml
-LLMs: https://www.songo.com.vn/llms.txt

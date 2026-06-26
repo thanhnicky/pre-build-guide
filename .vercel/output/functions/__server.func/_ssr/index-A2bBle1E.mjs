@@ -1066,7 +1066,7 @@ const SampleRequestModal = ({
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]", children: "Hệ sơn Lotus đề xuất" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display mt-2 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]", children: coatingSystem.title })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: onClose, "aria-label": "Đóng", className: "rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]", children: [
         "Anh/chị đang đặt bộ mẫu ",
@@ -1189,7 +1189,7 @@ const SampleRequestModal = ({
       ] })
     ] }) }),
     showColorChart && colorChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-full max-w-4xl rounded-xl bg-background p-4 shadow-xl sm:p-6 max-h-[90vh] overflow-y-auto", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(false), className: "absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowColorChart(false), "aria-label": "Đóng bảng màu", className: "absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mb-4 font-display text-[1.2rem] font-semibold text-wood-900 sm:text-[1.4rem]", children: "Bảng màu đầy đủ" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-hidden rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: colorChartImage, alt: "Bảng màu đầy đủ", className: "w-full rounded-lg cursor-pointer touch-pan-x touch-pan-y", style: {
         transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${zoom})`,
@@ -1584,7 +1584,7 @@ function FinishFinder({
       return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 flex items-center justify-between", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[1.3rem] font-semibold text-wood-900", children: "Bảng màu đầy đủ" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setShowFullColorChart(false), "aria-label": "Đóng bảng màu", className: "rounded-full p-2 text-wood-600 hover:bg-wood-200/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-5 w-5" }) })
         ] }),
         fullChartImage && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: fullChartImage, alt: `Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`, className: "w-full rounded-lg border border-wood-200/60 shadow-sm" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mb-4 text-[13px] leading-[1.5] text-wood-500 italic sm:text-[14px]", children: "Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt." }),
@@ -2022,7 +2022,7 @@ ${kb}`;
         }
       } }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex shrink-0 items-center gap-1", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => fileInputRef.current?.click(), className: "flex h-8 w-8 items-center justify-center rounded-full text-wood-400 transition-colors hover:bg-wood-100 hover:text-wood-700", title: "Gửi ảnh mẫu", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-4 w-4", strokeWidth: 1.75 }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => fileInputRef.current?.click(), "aria-label": "Gửi ảnh mẫu", className: "flex h-8 w-8 items-center justify-center rounded-full text-wood-400 transition-colors hover:bg-wood-100 hover:text-wood-700", title: "Gửi ảnh mẫu", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-4 w-4", strokeWidth: 1.75 }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => sendMessage(input), disabled: !input.trim() || loading, className: "flex h-8 w-8 items-center justify-center rounded-full bg-wood-600/80 text-background transition-colors hover:bg-wood-700 disabled:cursor-not-allowed disabled:opacity-30", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "h-4 w-4", strokeWidth: 2 }) })
       ] })
     ] })

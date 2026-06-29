@@ -3097,20 +3097,6 @@ ${kb}`;
     <section id="hoi-sol" className="bg-[#F5F0EA] py-16 sm:py-24">
       <div className="mx-auto max-w-[820px] px-6 sm:px-10">
 
-        {/* Greeting — only when no messages */}
-        {isEmpty && (
-          <div className="mb-10 text-center">
-            <h2 className="font-display text-[2rem] font-light leading-[1.1] sm:text-[2.75rem]">
-              <span className="bg-gradient-to-r from-wood-800 via-wood-600 to-amber-500 bg-clip-text text-transparent">
-                Xin chào, tôi là AI sơn!
-              </span>
-            </h2>
-            <p className="mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-400 sm:text-[1.75rem]">
-              Tôi có thể giúp ích gì cho bạn?
-            </p>
-          </div>
-        )}
-
         {/* Header when chat active */}
         {!isEmpty && (
           <div className="mb-5 flex items-center justify-between">

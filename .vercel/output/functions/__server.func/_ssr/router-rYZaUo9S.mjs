@@ -94,22 +94,22 @@ const vi = {
     col1: {
       heading: "Vận hành gọn hơn — chi phí xưởng thấp hơn",
       body: "Không pha dung môi, không cần kho chứa riêng, thợ làm cả ngày trong xưởng kín mà không cần hệ thống thông khí công nghiệp đắt tiền. Mùi nhẹ — thợ làm việc thoải mái hơn, năng suất thực tế cao hơn.",
-      punch: "GIẢM CHI PHÍ VẬN HÀNH — KHÔNG CẦN ĐẦU TƯ THÊM HẠ TẦNG."
+      punch: "Giảm chi phí vận hành — không cần đầu tư thêm hạ tầng."
     },
     col2: {
       heading: "Chuyển hệ không phải tự mày mò",
       body: "Kỹ sư Lotus vào xưởng buổi đầu tiên — chỉnh tỷ lệ pha, căn áp suất súng phun, xử lý lỗi bề mặt ngay tại chỗ. Xưởng chạy đúng ngay từ lô đầu, không mất hàng thử nghiệm.",
-      punch: "RÚT NGẮN THỜI GIAN DÒ HỆ — ĐỠ MẤT HÀNG, MẤT CÔNG."
+      punch: "Rút ngắn thời gian dò hệ — đỡ mất hàng, mất công."
     },
     col3: {
       heading: "Hồ sơ kỹ thuật đầy đủ — nghiệm thu không vướng",
       body: "VOCs thấp, mùi nhẹ, TDS/MSDS song ngữ sẵn có — hạng mục bàn giao đúng tiến độ, không bị đội giám sát giữ lại vì thiếu hồ sơ hay mùi sơn chưa thoát.",
-      punch: "GIẢM VƯỚNG KHI NGHIỆM THU VÀ BÀN GIAO."
+      punch: "Giảm vướng khi nghiệm thu và bàn giao."
     },
     col4: {
       heading: "Độ cứng & kháng hoá chất — không còn phải đánh đổi",
       body: "Hệ nước thế hệ cũ mềm hơn PU, dễ trầy và kém chịu cồn — điều đó đúng với acrylic 1K trước đây. Lotus hệ 2 thành phần, cho độ cứng màng sơn và khả năng kháng hoá chất tương đương hệ PU gốc dung môi khi thi công đúng quy trình.",
-      punch: "HỆ NƯỚC LOTUS — ĐỦ CỨNG, ĐỦ BỀN, KHÔNG CẦN THÊM PU."
+      punch: "Hệ nước Lotus — đủ cứng, đủ bền, không cần thêm PU."
     }
   },
   finishFinder: {
@@ -347,9 +347,7 @@ const vi = {
     q6: "Thời gian khô đủ để đóng gói là bao lâu?",
     a6: "Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ — thông số cụ thể theo từng hệ trong TDS.",
     q7: "Có mẫu thử trước khi đặt hàng lớn không?",
-    a7: "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô.",
-    q8: "Súng phun HVLP và air-assisted dùng được không?",
-    a8: "Được. Kỹ sư Lotus tư vấn tỷ lệ pha và áp suất cụ thể cho từng loại súng — không phải tự căn chỉnh."
+    a7: "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô."
   }
 };
 instance.use(initReactI18next).init({
@@ -362,7 +360,7 @@ instance.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const appCss = "/assets/styles-xM5k6c0j.css";
+const appCss = "/assets/styles-DsSkb8yF.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -694,7 +692,7 @@ const $$splitComponentImporter$3 = () => import("./studio-BFMuw0pq.mjs");
 const Route$3 = createFileRoute("/studio")({
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./index-A2bBle1E.mjs");
+const $$splitComponentImporter$2 = () => import("./index-B99AEARa.mjs");
 const Route$2 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$2, "component"),
   head: () => ({
@@ -774,7 +772,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-BFqYNwnn.mjs");
+const $$splitComponentImporter$1 = () => import("./index-r61dwe8Y.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -784,7 +782,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-DOS-sgfZ.mjs");
+const $$splitComponentImporter = () => import("../_slug-CcplVSP7.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

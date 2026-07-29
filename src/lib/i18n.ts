@@ -53,22 +53,22 @@ const vi = {
     col1: {
       heading: "Vận hành gọn hơn — chi phí xưởng thấp hơn",
       body: "Không pha dung môi, không cần kho chứa riêng, thợ làm cả ngày trong xưởng kín mà không cần hệ thống thông khí công nghiệp đắt tiền. Mùi nhẹ — thợ làm việc thoải mái hơn, năng suất thực tế cao hơn.",
-      punch: "GIẢM CHI PHÍ VẬN HÀNH — KHÔNG CẦN ĐẦU TƯ THÊM HẠ TẦNG.",
+      punch: "Giảm chi phí vận hành — không cần đầu tư thêm hạ tầng.",
     },
     col2: {
       heading: "Chuyển hệ không phải tự mày mò",
       body: "Kỹ sư Lotus vào xưởng buổi đầu tiên — chỉnh tỷ lệ pha, căn áp suất súng phun, xử lý lỗi bề mặt ngay tại chỗ. Xưởng chạy đúng ngay từ lô đầu, không mất hàng thử nghiệm.",
-      punch: "RÚT NGẮN THỜI GIAN DÒ HỆ — ĐỠ MẤT HÀNG, MẤT CÔNG.",
+      punch: "Rút ngắn thời gian dò hệ — đỡ mất hàng, mất công.",
     },
     col3: {
       heading: "Hồ sơ kỹ thuật đầy đủ — nghiệm thu không vướng",
       body: "VOCs thấp, mùi nhẹ, TDS/MSDS song ngữ sẵn có — hạng mục bàn giao đúng tiến độ, không bị đội giám sát giữ lại vì thiếu hồ sơ hay mùi sơn chưa thoát.",
-      punch: "GIẢM VƯỚNG KHI NGHIỆM THU VÀ BÀN GIAO.",
+      punch: "Giảm vướng khi nghiệm thu và bàn giao.",
     },
     col4: {
       heading: "Độ cứng & kháng hoá chất — không còn phải đánh đổi",
       body: "Hệ nước thế hệ cũ mềm hơn PU, dễ trầy và kém chịu cồn — điều đó đúng với acrylic 1K trước đây. Lotus hệ 2 thành phần, cho độ cứng màng sơn và khả năng kháng hoá chất tương đương hệ PU gốc dung môi khi thi công đúng quy trình.",
-      punch: "HỆ NƯỚC LOTUS — ĐỦ CỨNG, ĐỦ BỀN, KHÔNG CẦN THÊM PU.",
+      punch: "Hệ nước Lotus — đủ cứng, đủ bền, không cần thêm PU.",
     },
   },
   finishFinder: {
@@ -328,8 +328,6 @@ const vi = {
     a6: "Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ — thông số cụ thể theo từng hệ trong TDS.",
     q7: "Có mẫu thử trước khi đặt hàng lớn không?",
     a7: "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô.",
-    q8: "Súng phun HVLP và air-assisted dùng được không?",
-    a8: "Được. Kỹ sư Lotus tư vấn tỷ lệ pha và áp suất cụ thể cho từng loại súng — không phải tự căn chỉnh.",
   },
 };
 

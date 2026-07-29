@@ -239,7 +239,6 @@ function LotusLanding() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(Lookbook, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(PartnersSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(FAQ, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(AIChatSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ConsultBlock, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {}),
@@ -276,7 +275,7 @@ function AudienceSection() {
       returnObjects: true
     })
   }];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "phu-hop", className: "bg-background py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "phu-hop", className: "bg-background py-16 sm:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("audience.label") }),
@@ -347,7 +346,7 @@ function TechCollaborationSection() {
     // TODO: replace with actual paint supply / warehouse photo
     imageCaption: "Cung ứng đúng tiến độ sản xuất"
   }];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "phoi-hop", className: "bg-[#F5F0EA] py-20 sm:py-28", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "phoi-hop", className: "bg-[#F5F0EA] py-16 sm:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("tech.label") }),
@@ -433,7 +432,7 @@ function PartnersSection() {
       behavior: "smooth"
     });
   };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-12", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("partners.label") }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mt-10", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => scrollBy(-1), "aria-label": "Cuộn trái", className: "absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronLeft, { className: "h-4 w-4 sm:h-5 sm:w-5" }) }),
@@ -461,7 +460,7 @@ function ProofGallery() {
     caption: "Đồng hành cùng nhà máy sản xuất",
     alt: "Lotus đồng hành cùng nhà máy sản xuất nội thất trong suốt quá trình"
   }];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-background pb-16 sm:pb-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5", children: items.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group overflow-hidden rounded-lg ring-1 ring-wood-200/50", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-background pb-12 sm:pb-16", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5", children: items.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group overflow-hidden rounded-lg ring-1 ring-wood-200/50", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative aspect-[4/3] overflow-hidden bg-wood-200/30", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: item.image, alt: item.alt, loading: "lazy", className: "h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "border-t border-wood-200/50 px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-[13px] font-medium text-wood-700 sm:text-[14px]", children: item.caption }) })
   ] }, i)) }) }) });
@@ -518,7 +517,7 @@ function CertificationsSection() {
     name: t("certifications.cert5.name"),
     tag: t("certifications.cert5.tag")
   }];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "tieu-chuan", className: "bg-background py-20 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "tieu-chuan", className: "bg-background py-16 sm:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("certifications.label") }),
@@ -565,7 +564,7 @@ function WhyWaterSection() {
     body: t("whyWater.col4.body"),
     punch: t("whyWater.col4.punch")
   }];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-20 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-[#F5F0EA] py-16 sm:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("whyWater.label") }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 max-w-3xl text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block", children: t("whyWater.title") }),
@@ -575,7 +574,7 @@ function WhyWaterSection() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]", children: c.n }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display text-[18px] font-medium leading-[1.25] text-wood-900", children: c.heading }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] leading-[1.65] text-wood-700/85 sm:text-[16px]", children: c.body }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-display mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold uppercase tracking-[0.08em] text-wood-900 sm:text-[16px]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-display mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold tracking-[0.08em] text-wood-900 sm:text-[16px]", children: [
         "→ ",
         c.punch
       ] })
@@ -1644,7 +1643,7 @@ function ProductsSection() {
     t
   } = useTranslation();
   const [expandedGroup, setExpandedGroup] = reactExports.useState(null);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "san-pham", className: "bg-[#F5F0EA] py-16 sm:py-20 lg:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "san-pham", className: "bg-[#F5F0EA] py-14 sm:py-18 lg:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-10 lg:grid-cols-12", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("products.label") }),
@@ -1749,7 +1748,7 @@ function Lookbook() {
   const {
     t
   } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "cong-trinh", className: "bg-[oklch(0.96_0.018_82)] py-16 sm:py-24 lg:py-32", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "cong-trinh", className: "bg-[oklch(0.96_0.018_82)] py-14 sm:py-20 lg:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("lookbook.label") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-4xl lg:text-[2.75rem]", children: [
@@ -1786,7 +1785,7 @@ function ConsultBlock() {
   const {
     t
   } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-wood-900 py-16 text-background sm:py-28 lg:py-36", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "bg-wood-900 py-14 text-background sm:py-20 lg:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-7", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-400 sm:text-[14px]", children: t("consult.label") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[1.9rem] font-light leading-[1.06] sm:text-[2.4rem] lg:text-[3rem]", children: [
@@ -1847,15 +1846,12 @@ const FAQS = [{
 }, {
   q: "faq.q7",
   a: "faq.a7"
-}, {
-  q: "faq.q8",
-  a: "faq.a8"
 }];
 function FAQ() {
   const {
     t
   } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "faq", className: "bg-background py-14 sm:py-24 lg:py-32", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "faq", className: "bg-background py-14 sm:py-20 lg:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]", children: t("faq.label") }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mt-8 text-[2rem] font-light leading-[1.1] text-wood-900 sm:text-[2.25rem]", children: [
@@ -1877,156 +1873,6 @@ function FAQ() {
       /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-7 pr-4 text-[16px] leading-[1.75] text-wood-700/85 sm:pr-12 sm:text-[17px]", children: t(f.a) })
     ] }, i)) }) })
   ] }) }) });
-}
-const SOL_API_URL = "/api/chat";
-function BotMessage({
-  content
-}) {
-  const w = typeof window !== "undefined" ? window : null;
-  const html = w?.marked ? w.marked.parse(content) : null;
-  return html ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "prose prose-sm max-w-none prose-img:rounded-xl prose-img:max-w-full prose-a:text-wood-700", dangerouslySetInnerHTML: {
-    __html: html
-  } }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "whitespace-pre-wrap", children: content });
-}
-function AIChatSection() {
-  const [messages, setMessages] = reactExports.useState([]);
-  const [input, setInput] = reactExports.useState("");
-  const [loading, setLoading] = reactExports.useState(false);
-  const isComposing = reactExports.useRef(false);
-  const [kb, setKb] = reactExports.useState("");
-  const messagesEndRef = reactExports.useRef(null);
-  const scrollContainerRef = reactExports.useRef(null);
-  const textareaRef = reactExports.useRef(null);
-  const fileInputRef = reactExports.useRef(null);
-  reactExports.useEffect(() => {
-    fetch("/chatbot_data.txt").then((r) => r.text()).then(setKb).catch(() => {
-    });
-  }, []);
-  reactExports.useEffect(() => {
-    const el = scrollContainerRef.current;
-    if (el) el.scrollTop = el.scrollHeight;
-  }, [messages, loading]);
-  const buildPrompt = (msgCount) => `Bạn là Sol — kỹ sư tư vấn kỹ thuật của Sơn Lotus (3 năm thực chiến). KHÔNG phải chatbot. KHÔNG trả lời ngay bằng tên sản phẩm khi chưa đủ dữ liệu.
-
-== QUY TRÌNH TƯ VẤN BẮT BUỘC (4 BƯỚC) ==
-BUOC 1 — XAC DINH NHU CAU: Thu thập đủ 5 biến trước khi đề xuất bất kỳ sản phẩm nào:
-  (1) Loai nen: gỗ tự nhiên / MDF / HDF / ván ghép / sắt mạ kẽm / nhôm / nhựa / tấm xi măng?
-  (2) Moi truong: trong nhà / ngoài trời / nơi ẩm ướt?
-  (3) Kieu hoan thien: giữ vân gỗ tự nhiên / màu bệt / giả gỗ?
-  (4) Yeu cau do ben: thông thường / kháng cồn / kháng hóa chất / cần độ cứng cao?
-  (5) Can ho so buyer: cần chứng nhận xuất khẩu hay không?
-→ Thiếu biến nào → hỏi ngay biến đó, KHÔNG đoán mò, KHÔNG đề xuất trước.
-
-BUOC 2 — DE XUAT SO BO: Nêu 1 hệ chính + tối đa 1 phương án thay thế. KHÔNG liệt kê dài.
-
-BUOC 3 — CANH BAO KY THUAT: Nêu rõ điểm cần test trước khi vào lô (màu, độ bóng, bám dính, thời gian khô, điều kiện ẩm/nhiệt tại xưởng).
-
-BUOC 4 — CHUYEN DOI: Kết thúc mỗi hội thoại bằng — "Gửi ảnh bề mặt hoặc yêu cầu cụ thể qua Zalo 0943 966 662 để kỹ sư Lotus chốt hệ ạ."
-
-== 7 LUAT KHONG DUOC VI PHAM ==
-1. KHONG bịa tên sản phẩm hoặc hệ sơn không có trong tri thức nội bộ của Lotus.
-2. KHONG kết luận quy trình cuối nếu thiếu bất kỳ biến nào trong 5 biến bắt buộc.
-3. KHONG nói "dùng được cho mọi trường hợp" hoặc "an toàn tuyệt đối".
-4. Hỏi về chứng nhận → nêu rõ chứng nhận Lotus đang có (EN71-3, ASTM F963, FDA, RoHS, Low VOCs) và cần đối chiếu thêm yêu cầu buyer cụ thể.
-5. Hỏi về ngoài trời → phân biệt rõ nội thất và ngoại thất, chủ động gợi thêm lớp Topcoat.
-6. Hỏi về độ cứng / kháng cồn / kháng hóa chất → ưu tiên phân nhánh sang hệ 2K trước.
-7. Mỗi lượt trả lời kết thúc bằng 1 câu hỏi dẫn dắt hoặc CTA Zalo phù hợp.
-
-== PHONG CACH PHAN HOI ==
-- Suc tich: hỏi ngắn → đáp ngắn (2-4 câu). Tối đa 8 dòng mỗi lượt.
-- KHONG chào hỏi máy móc. KHONG dùng ngôn ngữ quảng cáo sáo rỗng.
-- KHONG dùng **bold** markdown. Nhấn mạnh bằng CHU HOA hoặc xuống dòng.
-- BANG MAU: Gửi ảnh markdown ngay khi được hỏi, không nói "chưa gửi được ảnh".
-  Giả gỗ xi măng: ![Bảng màu xi măng](https://w.ladicdn.com/s1300x1600/5e3e73f71adefa2bf15bd42f/bang-mau-son-gia-go-lotus-2999-20251208134932-nwilo.png)
-  Giả gỗ trên sắt: ![Bảng màu sắt](https://w.ladicdn.com/s1300x950/5e3e73f71adefa2bf15bd42f/bang-mau-son-gia-go-tren-sat-lotus-20251227093233-pvhrl.png)
-  Sơn gỗ màu bệt: ![Bảng màu gỗ](https://w.ladicdn.com/s750x900/5e3e73f71adefa2bf15bd42f/bang-mau-son-go-lotus-83285p-20251209012759-qpvpg.png)
-- GIA 2K TRON BO: Luôn báo giá gộp sơn + đóng rắn. Tỷ lệ 10%: +79.920đ/kg | 15%: +119.880đ/kg | 20%: +159.840đ/kg.
-- CHOT SALE: Mã màu → Quy trình → Khối lượng → Tổng tiền → Thông tin giao hàng.
-${msgCount < 2 ? "TUYET DOI KHONG hỏi SĐT/Zalo trong 2 tin nhắn đầu." : "Có thể mời để lại SĐT/Zalo nếu cần tư vấn chuyên sâu hoặc báo giá lô hàng."}
-
-Tri thức sản phẩm Lotus (dùng làm cơ sở duy nhất để tư vấn):
-${kb}`;
-  const sendMessage = async (text) => {
-    const trimmed = text.trim();
-    if (!trimmed || loading) return;
-    const next = [...messages, {
-      role: "user",
-      content: trimmed
-    }];
-    setMessages(next);
-    setInput("");
-    if (textareaRef.current) textareaRef.current.style.height = "auto";
-    setLoading(true);
-    try {
-      const res = await fetch(SOL_API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          messages: [{
-            role: "system",
-            content: buildPrompt(messages.length)
-          }, ...next.slice(-10)]
-        })
-      });
-      const data = await res.json();
-      const reply = data.choices?.[0]?.message?.content ?? "Xin lỗi, hệ thống đang bận. Vui lòng thử lại!";
-      setMessages((prev) => [...prev, {
-        role: "assistant",
-        content: reply
-      }]);
-    } catch (err) {
-      console.error("[AI Sơn] API error:", err);
-      const msg = "Xin lỗi, AI Sơn đang bận một chút. Bạn thử lại nhé!";
-      setMessages((prev) => [...prev, {
-        role: "assistant",
-        content: msg
-      }]);
-    } finally {
-      setLoading(false);
-    }
-  };
-  const isEmpty = messages.length === 0;
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "hoi-sol", className: "bg-[#F5F0EA] py-16 sm:py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[820px] px-6 sm:px-10", children: [
-    isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-10 text-center", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display text-[2rem] font-light leading-[1.1] sm:text-[2.75rem]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "bg-gradient-to-r from-wood-800 via-wood-600 to-amber-500 bg-clip-text text-transparent", children: "Xin chào, tôi là AI sơn!" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-[1.3rem] font-light leading-[1.3] text-wood-400 sm:text-[1.75rem]", children: "Tôi có thể giúp ích gì cho bạn?" })
-    ] }),
-    !isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-5 flex items-center justify-between", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[12px] uppercase tracking-[0.2em] text-wood-500", children: "AI sơn — Trợ lý kỹ thuật Lotus" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => setMessages([]), className: "text-[12px] text-wood-400 transition-colors hover:text-wood-600", children: "Cuộc trò chuyện mới" })
-    ] }),
-    !isEmpty && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { ref: scrollContainerRef, className: "mb-6 max-h-[480px] space-y-5 overflow-y-auto scroll-smooth pr-1", children: [
-      messages.map((m, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `max-w-[80%] rounded-2xl px-4 py-3 text-[14px] leading-[1.75] sm:text-[15px] ${m.role === "user" ? "rounded-tr-none bg-wood-100 text-wood-900" : "rounded-tl-none bg-white text-wood-800 shadow-sm"}`, children: m.role === "assistant" ? /* @__PURE__ */ jsxRuntimeExports.jsx(BotMessage, { content: m.content }) : /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: m.content }) }) }, i)),
-      loading && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 justify-start", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-2xl rounded-tl-none bg-white px-4 py-3 shadow-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1", children: [0, 150, 300].map((d) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "h-1.5 w-1.5 animate-bounce rounded-full bg-wood-400", style: {
-        animationDelay: `${d}ms`
-      } }, d)) }) }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: messagesEndRef })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-end gap-2 rounded-2xl border border-wood-200/80 bg-white px-4 py-3 shadow-sm transition-shadow focus-within:border-wood-400 focus-within:shadow-md", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("input", { ref: fileInputRef, type: "file", accept: "image/*", className: "hidden" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { ref: textareaRef, value: input, rows: 1, placeholder: "Nhập câu hỏi về sơn gỗ...", className: "max-h-32 flex-1 resize-none bg-transparent text-[15px] leading-[1.6] text-wood-900 placeholder-wood-400 outline-none", onChange: (e) => {
-        setInput(e.target.value);
-        e.target.style.height = "auto";
-        e.target.style.height = e.target.scrollHeight + "px";
-      }, onCompositionStart: () => {
-        isComposing.current = true;
-      }, onCompositionEnd: (e) => {
-        isComposing.current = false;
-        setInput(e.target.value);
-      }, onKeyDown: (e) => {
-        if (e.key === "Enter" && !e.shiftKey && !isComposing.current) {
-          e.preventDefault();
-          sendMessage(input);
-        }
-      } }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex shrink-0 items-center gap-1", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => fileInputRef.current?.click(), "aria-label": "Gửi ảnh mẫu", className: "flex h-8 w-8 items-center justify-center rounded-full text-wood-400 transition-colors hover:bg-wood-100 hover:text-wood-700", title: "Gửi ảnh mẫu", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Camera, { className: "h-4 w-4", strokeWidth: 1.75 }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => sendMessage(input), disabled: !input.trim() || loading, className: "flex h-8 w-8 items-center justify-center rounded-full bg-wood-600/80 text-background transition-colors hover:bg-wood-700 disabled:cursor-not-allowed disabled:opacity-30", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "h-4 w-4", strokeWidth: 2 }) })
-      ] })
-    ] })
-  ] }) });
 }
 export {
   LotusLanding as component

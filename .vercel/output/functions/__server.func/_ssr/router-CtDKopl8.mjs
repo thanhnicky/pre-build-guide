@@ -614,7 +614,7 @@ function RootShell({ children }) {
         "script",
         {
           async: true,
-          src: "https://www.googletagmanager.com/gtag/js?id=G-WJJM4HV5LR"
+          src: "https://www.googletagmanager.com/gtag/js?id=G-1T2QZFYBDW"
         }
       ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -625,7 +625,7 @@ function RootShell({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-WJJM4HV5LR');
+              gtag('config', 'G-1T2QZFYBDW');
             `
           }
         }
@@ -772,7 +772,7 @@ async function getPostBySlug(slug) {
     { slug }
   );
 }
-const $$splitComponentImporter$1 = () => import("./index-r61dwe8Y.mjs");
+const $$splitComponentImporter$1 = () => import("./index-Bukt4Arj.mjs");
 const Route$1 = createFileRoute("/blog/")({
   loader: async () => {
     const posts = await getAllPosts();
@@ -782,7 +782,7 @@ const Route$1 = createFileRoute("/blog/")({
   },
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("../_slug-CcplVSP7.mjs");
+const $$splitComponentImporter = () => import("../_slug-ByfrRkzk.mjs");
 const Route = createFileRoute("/blog/$slug")({
   loader: async ({
     params

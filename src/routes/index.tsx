@@ -1621,6 +1621,20 @@ const ThankYouModal = ({
   const formattedPrice = formatPrice(packagePrice);
   const needsColorSelection = selectedPackage === "1kg" || (selectedPackage === "500g" && naturalFinish !== "solid" && naturalFinish !== "grain" && !(surface === "mdf" && location === "indoor"));
 
+  useEffect(() => {
+    if (isOpen && typeof window !== "undefined") {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "purchase",
+        transaction_id: customerName || "",
+        value: packagePrice || 0,
+        currency: "VND",
+        payment_method: "cod",
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (

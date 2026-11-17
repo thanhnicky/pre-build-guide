@@ -18,7 +18,7 @@ function StudioRedirect() {
         alignItems: "center",
         justifyContent: "center",
         background: "#FDFAF7",
-        fontFamily: "Be Vietnam Pro, sans-serif",
+        fontFamily: '"Source Serif 4", Georgia, serif',
         color: "#5C3D1E",
       }}
     >

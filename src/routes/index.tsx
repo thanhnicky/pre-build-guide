@@ -31,7 +31,6 @@ import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { StickyZalo } from "@/components/StickyZalo";
 
-import heroImg from "@/assets/son-go-lotus-hero-87.jpeg";
 import sanGoTruoc from "@/assets/san-go-truoc-khi-bao-duong.webp";
 import sanGoSau from "@/assets/san-go-truoc-sau-khi-son-bao-duong.webp";
 import kiemTraMau from "@/assets/kiem-tra-mau-thuc-te.webp";
@@ -106,7 +105,7 @@ const PARTNERS = [
 ];
 
 // ─── PHOTO CONSTANTS ── TODO: replace (placeholder) with actual Lotus photos ──
-const heroMainImage = heroImg; // (real) finished wood surface
+const heroMainImage = kysuHoTro; // engineer supporting early-stage wood coating
 const heroSampleImage = sanGoTruoc; // (real) sàn gỗ cũ trước khi sơn
 const heroSupportImage = sanGoSau; // (real) sàn gỗ đã được sơn Lotus
 const proofTestImage = kiemTraMau; // (real) kiểm tra màu sắc trước khi sản xuất
@@ -824,7 +823,7 @@ function Hero() {
           alt="Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus — vân rõ, màu đồng đều"
           className="h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-wood-900/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-wood-900/50 via-wood-900/25 to-wood-900/70" />
       </div>
 
       <div className="relative mx-auto flex min-h-[70vh] max-w-[1400px] flex-col justify-between px-6 pb-14 pt-28 text-wood-50 sm:px-10 sm:pb-16 lg:min-h-[78vh] lg:px-14 lg:pb-20">
@@ -832,9 +831,8 @@ function Hero() {
           {t("hero.subtitle")}
         </div>
 
-        <h1 className="font-display text-display sm:text-display-lg font-normal max-w-3xl">
-          <span className="block">{t("hero.title")}</span>
-          <span className="block">{t("hero.titleItalic")}</span>
+        <h1 className="font-display text-display sm:text-display-lg font-normal max-w-4xl text-balance">
+          {t("hero.title")} {t("hero.titleItalic")}
         </h1>
       </div>
     </section>

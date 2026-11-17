@@ -43,7 +43,7 @@ export function GallerySection() {
           <p className="mb-2 text-small font-semibold uppercase text-wood-500 tracking-label">
             Dự án thực tế
           </p>
-          <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-900">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-normal text-wood-900">
             Hình ảnh công trình đã thực hiện
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-wood-500">

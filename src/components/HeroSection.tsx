@@ -17,7 +17,7 @@ export function HeroSection() {
         <p className="mb-3 text-small font-medium uppercase text-wood-300 tracking-label">
           Chuyên gia sơn gỗ tự nhiên
         </p>
-        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-50">
+        <h1 className="font-display text-display sm:text-display-lg font-normal text-wood-50">
           Bảo vệ & tôn vinh
           <br />
           vẻ đẹp gỗ tự nhiên

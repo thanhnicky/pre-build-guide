@@ -259,9 +259,9 @@ function AudienceSection() {
             <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("audience.label")}
             </div>
-            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8 text-wood-900">
               <span className="block">{t("audience.title")}</span>
-              <span className="block font-normal text-wood-700">{t("audience.titleItalic")}</span>
+              <span className="block">{t("audience.titleItalic")}</span>
             </h2>
           </div>
           <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
@@ -292,7 +292,7 @@ function AudienceSection() {
 
                 {/* Title + 1-line lead */}
                 <div>
-                  <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{a.title}</h3>
+                  <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">{a.title}</h3>
                   <p className="mt-3 text-body text-wood-700 sm:text-lead">{a.lead}</p>
                 </div>
 
@@ -385,9 +385,9 @@ function TechCollaborationSection() {
             <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("tech.label")}
             </div>
-            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8 text-wood-900">
               <span className="block">{t("tech.title")}</span>
-              <span className="block font-normal text-wood-700">{t("tech.titleItalic")}</span>
+              <span className="block">{t("tech.titleItalic")}</span>
             </h2>
           </div>
           <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
@@ -405,7 +405,7 @@ function TechCollaborationSection() {
               <div className="text-display font-normal text-wood-300 lg:text-display">{s.n}</div>
               <div className="flex items-start gap-3 -mt-2">
                 <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
-                <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{s.title}</h3>
+                <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">{s.title}</h3>
               </div>
               <p className="text-body text-wood-700">{s.body}</p>
             </div>
@@ -431,7 +431,7 @@ function TechCollaborationSection() {
                     </div>
                     <div className="flex items-start gap-3 -mt-2">
                       <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
-                      <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">
+                      <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">
                         {s.title}
                       </h3>
                     </div>
@@ -701,9 +701,9 @@ function CertificationsSection() {
             <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("certifications.label")}
             </div>
-            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8 text-wood-900">
               <span className="block">{t("certifications.title")}</span>
-              <span className="block font-normal text-wood-700">
+              <span className="block">
                 {t("certifications.titleItalic")}
               </span>
             </h2>
@@ -786,9 +786,9 @@ function WhyWaterSection() {
         <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
           {t("whyWater.label")}
         </div>
-        <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 max-w-3xl text-wood-900">
+        <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8 max-w-3xl text-wood-900">
           <span className="block">{t("whyWater.title")}</span>
-          <span className="block font-normal text-wood-700">{t("whyWater.titleItalic")}</span>
+          <span className="block">{t("whyWater.titleItalic")}</span>
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
@@ -798,7 +798,7 @@ function WhyWaterSection() {
               className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7"
             >
               <div className="text-display font-normal text-wood-300 lg:text-display">{c.n}</div>
-              <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{c.heading}</h3>
+              <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">{c.heading}</h3>
               <p className="text-body-sm text-wood-700 sm:text-body">{c.body}</p>
               <p className="mt-auto border-t border-wood-200 pt-4 text-body-sm font-semibold text-wood-900 sm:text-body">
                 → {c.punch}
@@ -816,80 +816,26 @@ function WhyWaterSection() {
    ============================================================ */
 function Hero() {
   const { t } = useTranslation();
-  const trust = ["TDS / MSDS", "EN71-3", "ASTM F963", "FDA", "RoHS"];
   return (
-    <section className="relative bg-[oklch(0.97_0.015_82)]">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 pt-12 pb-10 sm:px-10 sm:pt-20 sm:pb-14 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-16">
-        {/* Left — typography */}
-        <div className="lg:col-span-5 lg:pt-12">
-          <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
-            {t("hero.subtitle")}
-          </div>
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={heroMainImage}
+          alt="Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus — vân rõ, màu đồng đều"
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-wood-900/60" />
+      </div>
 
-          <h1 className="font-display text-display sm:text-display-lg font-bold mt-6 text-wood-900 sm:mt-7">
-            <span className="block">{t("hero.title")}</span>
-            <span className="block font-normal text-wood-700">{t("hero.titleItalic")}</span>
-          </h1>
-
-          <p className="mt-6 max-w-md text-lead text-wood-700 sm:mt-5 sm:text-lead">
-            {t("hero.description")}
-          </p>
-
-          {/* Trust strip */}
-          <div className="mt-6 block">
-            <div className="text-micro font-medium uppercase tracking-label text-wood-500 sm:text-caption">
-              {t("hero.trustLabel")}
-            </div>
-            <ul className="mt-2.5 flex flex-wrap gap-1.5">
-              {trust.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-10 flex flex-col items-start gap-3 sm:mt-8">
-            <a
-              href={ZALO}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-700 px-6 py-3.5 text-caption font-semibold uppercase tracking-label text-wood-50 shadow-md shadow-wood-700/10 transition-all hover:bg-wood-600 hover:shadow-lg sm:w-auto sm:text-caption whitespace-nowrap"
-            >
-              <Camera className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
-              {t("hero.ctaButton")}
-              <ArrowUpRight className="h-3 w-3 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </a>
-            <a
-              href="tel:0943966662"
-              className="text-body-sm font-medium text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-body"
-            >
-              {t("hero.ctaPhone")}{" "}
-              <span className="underline underline-offset-4">0943 966 662</span>
-            </a>
-          </div>
+      <div className="relative mx-auto flex min-h-[70vh] max-w-[1400px] flex-col justify-between px-6 pb-14 pt-28 text-wood-50 sm:px-10 sm:pb-16 lg:min-h-[78vh] lg:px-14 lg:pb-20">
+        <div className="text-caption uppercase tracking-label text-wood-300 sm:text-small">
+          {t("hero.subtitle")}
         </div>
 
-        {/* Right — image collage (1 main + 2 small) */}
-        {/* TODO: replace heroMainImage, heroSampleImage, heroSupportImage with actual Lotus photos */}
-        <div className="lg:col-span-7">
-          {/* Main image */}
-          <div className="relative overflow-hidden rounded-sm bg-wood-200/40 aspect-[16/10] sm:aspect-[4/3]">
-            <img
-              src={heroMainImage}
-              alt="Bề mặt gỗ hoàn thiện bằng sơn hệ nước Lotus — vân rõ, màu đồng đều"
-              className="h-full w-full object-cover object-center"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-4 pb-3 pt-10">
-              <p className="text-micro font-medium text-wood-50">
-                Bề mặt hoàn thiện giữ vân, đồng đều màu
-              </p>
-            </div>
-          </div>
-        </div>
+        <h1 className="font-display text-display sm:text-display-lg font-normal max-w-3xl">
+          <span className="block">{t("hero.title")}</span>
+          <span className="block">{t("hero.titleItalic")}</span>
+        </h1>
       </div>
     </section>
   );
@@ -1400,7 +1346,7 @@ const SampleRequestModal = ({
               <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
                 Hệ sơn Lotus đề xuất
               </div>
-              <h3 className="text-h3 sm:text-h3-lg font-semibold mt-2 text-wood-900">
+              <h3 className="text-h3 sm:text-h3-lg font-normal mt-2 text-wood-900">
                 {coatingSystem.title}
               </h3>
             </div>
@@ -1665,7 +1611,7 @@ const SampleRequestModal = ({
             >
               <X className="h-5 w-5" />
             </button>
-            <h3 className="text-h3 sm:text-h3-lg font-semibold mb-4 text-wood-900">
+            <h3 className="text-h3 sm:text-h3-lg font-normal mb-4 text-wood-900">
               Bảng màu đầy đủ
             </h3>
             <div className="overflow-hidden rounded-lg">
@@ -1793,7 +1739,7 @@ const ThankYouModal = ({
               />
             </svg>
           </div>
-          <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">
+          <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">
             Đã nhận được yêu cầu
           </h3>
         </div>
@@ -2063,9 +2009,9 @@ function FinishFinder({
               <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
                 TƯ VẤN NHANH CHỌN HỆ SƠN
               </div>
-              <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-6 text-wood-900">
+              <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-6 text-wood-900">
                 <span className="block">Chọn đúng hệ sơn</span>
-                <span className="block font-normal text-wood-700">chỉ trong vài bước</span>
+                <span className="block">chỉ trong vài bước</span>
               </h2>
             </div>
             <p className="text-body text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
@@ -2095,7 +2041,7 @@ function FinishFinder({
                   {/* Step 1 */}
                   <div ref={step1Ref} className="relative transition-all duration-500 ease-out">
                     <StepLabel n="Bước 1" text="Bề mặt thi công" />
-                    <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                    <h3 className="text-h3 sm:text-h3-lg font-normal mt-3 text-wood-900">
                       Anh/chị thi công trên bề mặt nào?
                     </h3>
                     <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -2130,7 +2076,7 @@ function FinishFinder({
                     }`}
                   >
                     <StepLabel n="Bước 2" text="Môi trường sử dụng" />
-                    <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                    <h3 className="text-h3 sm:text-h3-lg font-normal mt-3 text-wood-900">
                       Sản phẩm dùng trong môi trường nào?
                     </h3>
                     <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -2161,7 +2107,7 @@ function FinishFinder({
                       }`}
                     >
                       <StepLabel n="Bước 3" text="Kiểu hoàn thiện" />
-                      <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                      <h3 className="text-h3 sm:text-h3-lg font-normal mt-3 text-wood-900">
                         Anh/chị muốn hoàn thiện kiểu nào?
                       </h3>
                       <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -2250,7 +2196,7 @@ function FinishFinder({
                         <div className="text-small uppercase tracking-label text-wood-700 sm:text-small">
                           Hệ đề xuất sơ bộ
                         </div>
-                        <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                        <h3 className="text-h3 sm:text-h3-lg font-normal mt-3 text-wood-900">
                           {coatingSystem.title}
                         </h3>
                         <p className="mt-2 text-body-sm text-wood-700 sm:text-body-sm">
@@ -2603,7 +2549,7 @@ function FinishFinder({
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
               <div className="w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">
+                  <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">
                     Bảng màu đầy đủ
                   </h3>
                   <button
@@ -2749,9 +2695,9 @@ function ProductsSection() {
             <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("products.label")}
             </div>
-            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-6 text-wood-900">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-6 text-wood-900">
               <span className="block">{t("products.title")}</span>
-              <span className="block font-normal text-wood-700">{t("products.titleItalic")}</span>
+              <span className="block">{t("products.titleItalic")}</span>
             </h2>
           </div>
           <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
@@ -2779,7 +2725,7 @@ function ProductsSection() {
                   <div className="text-micro font-medium uppercase tracking-label text-wood-500">
                     {t("products.group")} {index + 1}
                   </div>
-                  <h3 className="text-h3 sm:text-h3-lg font-semibold mt-2 text-wood-900">
+                  <h3 className="text-h3 sm:text-h3-lg font-normal mt-2 text-wood-900">
                     {t(group.title)}
                   </h3>
                 </div>
@@ -2835,7 +2781,7 @@ function ProductsSection() {
                   <div className="text-micro font-medium uppercase tracking-label text-wood-700 sm:text-caption">
                     {t("products.group")} {index + 1}
                   </div>
-                  <h3 className="text-h3 sm:text-h3-lg font-semibold mt-1 text-wood-900">
+                  <h3 className="text-h3 sm:text-h3-lg font-normal mt-1 text-wood-900">
                     {t(group.title)}
                   </h3>
                 </div>
@@ -2940,9 +2886,9 @@ function Lookbook() {
           <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
             {t("lookbook.label")}
           </div>
-          <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8 text-wood-900">
             <span className="block">{t("lookbook.title")}</span>
-            <span className="block font-normal text-wood-700">{t("lookbook.titleItalic")}</span>
+            <span className="block">{t("lookbook.titleItalic")}</span>
           </h2>
           <p className="mt-6 max-w-2xl text-body text-wood-700 sm:text-lead">
             {t("lookbook.description")}
@@ -2968,7 +2914,7 @@ function Lookbook() {
                 <span className="inline-block rounded-full bg-wood-700/10 px-2.5 py-0.5 text-micro font-medium uppercase tracking-label text-wood-700">
                   {t(p.tag)}
                 </span>
-                <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{p.name}</h3>
+                <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">{p.name}</h3>
                 <p className="text-caption text-wood-700 sm:text-body-sm lg:text-body">
                   {t(p.type)}
                 </p>
@@ -3000,7 +2946,7 @@ function Lookbook() {
                 <span className="inline-block rounded-full bg-wood-700/10 px-2 py-0.5 text-micro font-medium uppercase tracking-label text-wood-700">
                   {t(p.tag)}
                 </span>
-                <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{p.name}</h3>
+                <h3 className="text-h3 sm:text-h3-lg font-normal text-wood-900">{p.name}</h3>
                 <p className="text-caption text-wood-700 sm:text-small">{t(p.type)}</p>
                 <p className="mt-1 text-micro text-wood-500">{p.note}</p>
               </div>
@@ -3029,9 +2975,9 @@ function ConsultBlock() {
             <div className="text-caption uppercase tracking-label text-wood-300 sm:text-small">
               {t("consult.label")}
             </div>
-            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8">
               <span className="block">{t("consult.title")}</span>
-              <span className="block font-normal text-wood-300">{t("consult.titleItalic")}</span>
+              <span className="block">{t("consult.titleItalic")}</span>
             </h2>
             <p className="mt-7 max-w-md text-lead text-wood-300 sm:text-lead">
               {t("consult.description")}
@@ -3138,9 +3084,9 @@ function FAQ() {
             <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("faq.label")}
             </div>
-            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-8 text-wood-900">
               <span className="block">{t("faq.title")}</span>
-              <span className="block font-normal text-wood-700">{t("faq.titleItalic")}</span>
+              <span className="block">{t("faq.titleItalic")}</span>
             </h2>
           </div>
 

@@ -33,7 +33,7 @@ export function WhyUsSection() {
           <p className="mb-2 text-small font-semibold uppercase text-wood-500 tracking-label">
             Tại sao chọn chúng tôi
           </p>
-          <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-900">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-normal text-wood-900">
             Uy tín từ chất lượng & tận tâm
           </h2>
         </div>
@@ -44,7 +44,7 @@ export function WhyUsSection() {
               <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-wood-100 text-wood-700">
                 <r.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-h3 sm:text-h3-lg font-semibold mb-2 text-wood-900">{r.title}</h3>
+              <h3 className="text-h3 sm:text-h3-lg font-normal mb-2 text-wood-900">{r.title}</h3>
               <p className="text-small text-wood-500">{r.description}</p>
             </div>
           ))}

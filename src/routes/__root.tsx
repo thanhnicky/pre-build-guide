@@ -15,10 +15,10 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-900">
+        <h1 className="font-display text-display sm:text-display-lg font-normal text-wood-900">
           404
         </h1>
-        <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-4 text-wood-900">
+        <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-4 text-wood-900">
           Page not found
         </h2>
         <p className="mt-2 text-small text-wood-500">
@@ -44,7 +44,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-900">
+        <h1 className="font-display text-display sm:text-display-lg font-normal text-wood-900">
           This page didn't load
         </h1>
         <p className="mt-2 text-small text-wood-500">

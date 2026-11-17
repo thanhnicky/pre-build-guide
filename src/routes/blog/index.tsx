@@ -42,9 +42,9 @@ function BlogListPage() {
           <div className="text-caption font-medium uppercase tracking-label text-wood-700">
             Kiến thức & Kỹ thuật
           </div>
-          <h1 className="font-display text-display sm:text-display-lg font-bold mt-5 text-wood-900">
+          <h1 className="font-display text-display sm:text-display-lg font-normal mt-5 text-wood-900">
             Bài viết từ
-            <span className="block font-normal text-wood-700"> kỹ sư Lotus.</span>
+            <span className="block"> kỹ sư Lotus.</span>
           </h1>
           <p className="mt-5 text-lead text-wood-700">
             Kỹ thuật sơn gỗ, tiêu chuẩn xuất khẩu và kinh nghiệm thực tế từ xưởng.
@@ -112,7 +112,7 @@ function PostCard({ post }: { post: Post }) {
           </div>
         )}
 
-        <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-900 group-hover:text-wood-700 transition-colors">
+        <h2 className="font-display text-h2 sm:text-h2-lg font-normal text-wood-900 group-hover:text-wood-700 transition-colors">
           {post.title}
         </h2>
 

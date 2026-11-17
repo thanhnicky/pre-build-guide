@@ -33,7 +33,7 @@ export function ServicesSection() {
           <p className="mb-2 text-small font-semibold uppercase text-wood-500 tracking-label">
             Dịch vụ
           </p>
-          <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-900">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-normal text-wood-900">
             Giải pháp toàn diện cho mọi loại gỗ
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-wood-500">
@@ -51,7 +51,7 @@ export function ServicesSection() {
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-wood-100 text-wood-700 transition-colors group-hover:bg-wood-600 group-hover:text-wood-50">
                 <s.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-h3 sm:text-h3-lg font-semibold mb-2 text-wood-900">{s.title}</h3>
+              <h3 className="text-h3 sm:text-h3-lg font-normal mb-2 text-wood-900">{s.title}</h3>
               <p className="text-small text-wood-500">{s.description}</p>
             </div>
           ))}

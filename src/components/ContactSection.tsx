@@ -4,7 +4,7 @@ export function ContactSection() {
   return (
     <section id="lien-he" className="bg-wood-800 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 text-center">
-        <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-50">
+        <h2 className="font-display text-h2 sm:text-h2-lg font-normal text-wood-50">
           Sẵn sàng tư vấn miễn phí
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-wood-300">

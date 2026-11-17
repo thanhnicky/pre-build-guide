@@ -43,12 +43,12 @@ function formatDate(iso: string) {
 const portableTextComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-12 text-wood-900">
+      <h2 className="font-display text-h2 sm:text-h2-lg font-normal mt-12 text-wood-900">
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-h3 sm:text-h3-lg font-semibold mt-8 text-wood-900">{children}</h3>
+      <h3 className="text-h3 sm:text-h3-lg font-normal mt-8 text-wood-900">{children}</h3>
     ),
     normal: ({ children }: any) => <p className="mt-5 text-lead text-wood-900">{children}</p>,
     blockquote: ({ children }: any) => (
@@ -128,7 +128,7 @@ function BlogPostPage() {
         )}
 
         {/* Title */}
-        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-900">
+        <h1 className="font-display text-display sm:text-display-lg font-normal text-wood-900">
           {post.title}
         </h1>
 

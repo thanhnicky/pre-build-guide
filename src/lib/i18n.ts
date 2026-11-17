@@ -3,7 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 const vi = {
   hero: {
-    subtitle: "Sơn Gỗ Hệ Nước",
+    subtitle: "Sơn Gỗ Hệ Nước Lotus",
     title: "Sơn gỗ hệ nước cho",
     titleItalic: "xưởng nội thất công trình và nội thất xuất khẩu.",
     description:

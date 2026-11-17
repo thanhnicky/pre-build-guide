@@ -15,15 +15,19 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-900">
+          404
+        </h1>
+        <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-4 text-wood-900">
+          Page not found
+        </h2>
+        <p className="mt-2 text-small text-wood-500">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-small font-medium text-wood-50 transition-colors hover:bg-primary/90"
           >
             Go home
           </Link>
@@ -40,10 +44,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-900">
           This page didn't load
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-small text-wood-500">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -52,13 +56,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-small font-medium text-wood-50 transition-colors hover:bg-primary/90"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-small font-medium text-wood-900 transition-colors hover:bg-accent"
           >
             Go home
           </a>
@@ -79,7 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA. Tư vấn miễn phí: 0943 966 662.",
       },
-      { name: "keywords", content: "sơn gỗ hệ nước, sơn gỗ nội thất, sơn gỗ ngoại thất, sơn gỗ xuất khẩu, sơn gỗ dự án cao cấp, Lotus wood paint, water-based wood finish, wood coating for export" },
+      {
+        name: "keywords",
+        content:
+          "sơn gỗ hệ nước, sơn gỗ nội thất, sơn gỗ ngoại thất, sơn gỗ xuất khẩu, sơn gỗ dự án cao cấp, Lotus wood paint, water-based wood finish, wood coating for export",
+      },
       { name: "author", content: "Sơn Gỗ Lotus" },
       { name: "robots", content: "index, follow" },
       { name: "googlebot", content: "index, follow" },
@@ -97,10 +105,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "vi_VN" },
       { property: "og:site_name", content: "Sơn Gỗ Lotus" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Lotus - Sơn Gỗ Hệ Nước | Hoàn Thiện Gỗ Cho Dự Án Cao Cấp & Xuất Khẩu" },
-      { name: "twitter:description", content: "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png" },
+      {
+        name: "twitter:title",
+        content: "Lotus - Sơn Gỗ Hệ Nước | Hoàn Thiện Gỗ Cho Dự Án Cao Cấp & Xuất Khẩu",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Sơn gỗ hệ nước Lotus chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png",
+      },
       { name: "twitter:image:alt", content: "Sơn Gỗ Lotus - Sơn gỗ hệ nước chuyên nghiệp" },
       { name: "geo.region", content: "VN-SG" },
       { name: "geo.placename", content: "Ho Chi Minh City" },
@@ -129,24 +152,25 @@ function RootShell({ children }: { children: React.ReactNode }) {
     {
       "@context": "https://schema.org",
       "@type": ["Organization", "LocalBusiness"],
-      "name": "Sơn Gỗ Lotus",
-      "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật",
-      "url": "https://www.sonlotus.vn",
-      "telephone": "+84-943-966-662",
-      "address": {
+      name: "Sơn Gỗ Lotus",
+      description:
+        "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật",
+      url: "https://www.sonlotus.vn",
+      telephone: "+84-943-966-662",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm",
-        "addressLocality": "Huyện Hóc Môn",
-        "addressRegion": "Thành phố Hồ Chí Minh",
-        "addressCountry": "VN"
+        streetAddress: "99/5 Đường XTT26-1, Ấp 2, Xã Bà Điểm",
+        addressLocality: "Huyện Hóc Môn",
+        addressRegion: "Thành phố Hồ Chí Minh",
+        addressCountry: "VN",
       },
-      "geo": {
+      geo: {
         "@type": "GeoCoordinates",
-        "latitude": 10.8544175,
-        "longitude": 106.5774582
+        latitude: 10.8544175,
+        longitude: 106.5774582,
       },
-      "hasMap": "https://maps.app.goo.gl/JZ9NvsifM5T1PfcA9",
-      "sameAs": [
+      hasMap: "https://maps.app.goo.gl/JZ9NvsifM5T1PfcA9",
+      sameAs: [
         "https://sonlotus.vn",
         "https://www.sonlotus.vn",
         "https://songo.com.vn",
@@ -155,115 +179,116 @@ function RootShell({ children }: { children: React.ReactNode }) {
         "https://www.sonlotus.com",
         "https://jades.vn",
         "https://www.jades.vn",
-        "https://zalo.me/0943966662"
+        "https://zalo.me/0943966662",
       ],
-      "contactPoint": {
+      contactPoint: {
         "@type": "ContactPoint",
-        "telephone": "+84-943-966-662",
-        "contactType": "customer service",
-        "availableLanguage": ["Vietnamese", "English"]
-      }
+        telephone: "+84-943-966-662",
+        contactType: "customer service",
+        availableLanguage: ["Vietnamese", "English"],
+      },
     },
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "Lotus Wood Paint - Sơn Gỗ Hệ Nước",
-      "description": "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA.",
-      "brand": {
+      name: "Lotus Wood Paint - Sơn Gỗ Hệ Nước",
+      description:
+        "Sơn gỗ hệ nước chuyên nghiệp cho xưởng nội thất công trình và xuất khẩu Mỹ, EU, Nhật. Hỗ trợ kỹ thuật 1-1, hồ sơ TDS/MSDS, chứng nhận EN71-3, ASTM F963, FDA.",
+      brand: {
         "@type": "Brand",
-        "name": "Lotus Wood Paint"
+        name: "Lotus Wood Paint",
       },
-      "image": [
+      image: [
         "https://www.songo.com.vn/lotus-hero.webp",
-        "https://www.songo.com.vn/son-phun-lotus-web.webp"
+        "https://www.songo.com.vn/son-phun-lotus-web.webp",
       ],
-      "category": "Sơn gỗ hệ nước",
-      "offers": {
+      category: "Sơn gỗ hệ nước",
+      offers: {
         "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "VND",
-        "availability": "https://schema.org/InStock",
-        "seller": {
+        price: "0",
+        priceCurrency: "VND",
+        availability: "https://schema.org/InStock",
+        seller: {
           "@type": "Organization",
-          "name": "Lotus Wood Paint"
-        }
+          name: "Lotus Wood Paint",
+        },
       },
-      "aggregateRating": {
+      aggregateRating: {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "200"
-      }
+        ratingValue: "4.8",
+        reviewCount: "200",
+      },
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
+      mainEntity: [
         {
           "@type": "Question",
-          "name": "Hệ sơn nước khác PU ở điểm gì thực sự quan trọng với xưởng?",
-          "acceptedAnswer": {
+          name: "Hệ sơn nước khác PU ở điểm gì thực sự quan trọng với xưởng?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Mùi thấp hơn, không cần pha dung môi, và đáp ứng tiêu chuẩn xuất khẩu mà PU gốc dung môi không qua được — đó là ba lý do xưởng chuyển hệ."
-          }
+            text: "Mùi thấp hơn, không cần pha dung môi, và đáp ứng tiêu chuẩn xuất khẩu mà PU gốc dung môi không qua được — đó là ba lý do xưởng chuyển hệ.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Chuyển sang hệ sơn nước có phức tạp không?",
-          "acceptedAnswer": {
+          name: "Chuyển sang hệ sơn nước có phức tạp không?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Không. Kỹ sư Lotus vào xưởng lần đầu — chỉnh tỷ lệ pha, súng phun, xử lý lỗi bề mặt tại chỗ. Xưởng không phải tự dò một mình."
-          }
+            text: "Không. Kỹ sư Lotus vào xưởng lần đầu — chỉnh tỷ lệ pha, súng phun, xử lý lỗi bề mặt tại chỗ. Xưởng không phải tự dò một mình.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Hồ sơ kỹ thuật sơn gỗ Lotus cung cấp được gì cho buyer xuất khẩu?",
-          "acceptedAnswer": {
+          name: "Hồ sơ kỹ thuật sơn gỗ Lotus cung cấp được gì cho buyer xuất khẩu?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "TDS, MSDS song ngữ Anh–Việt, cùng các chứng nhận EN71-3, ASTM F963, FDA, RoHS — đủ cho hầu hết yêu cầu xuất khẩu Mỹ, EU, Nhật."
-          }
+            text: "TDS, MSDS song ngữ Anh–Việt, cùng các chứng nhận EN71-3, ASTM F963, FDA, RoHS — đủ cho hầu hết yêu cầu xuất khẩu Mỹ, EU, Nhật.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Xưởng nội thất công trình dùng sơn Lotus có lợi ích gì?",
-          "acceptedAnswer": {
+          name: "Xưởng nội thất công trình dùng sơn Lotus có lợi ích gì?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Đồng màu giữa các lô sản xuất, hồ sơ kỹ thuật phục vụ nghiệm thu dự án, VOC thấp và mùi nhẹ phù hợp hạng mục bàn giao sớm."
-          }
+            text: "Đồng màu giữa các lô sản xuất, hồ sơ kỹ thuật phục vụ nghiệm thu dự án, VOC thấp và mùi nhẹ phù hợp hạng mục bàn giao sớm.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Thời gian khô của sơn gỗ hệ nước Lotus là bao lâu?",
-          "acceptedAnswer": {
+          name: "Thời gian khô của sơn gỗ hệ nước Lotus là bao lâu?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ — thông số cụ thể theo từng hệ trong TDS."
-          }
+            text: "Khô bề mặt 30–60 phút, đóng gói an toàn sau 12–24 giờ — thông số cụ thể theo từng hệ trong TDS.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Sơn gỗ Lotus có mẫu thử trước khi đặt hàng lớn không?",
-          "acceptedAnswer": {
+          name: "Sơn gỗ Lotus có mẫu thử trước khi đặt hàng lớn không?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô."
-          }
+            text: "Có. Lotus cung cấp mẫu thử và bảng màu để xưởng đối chiếu thực tế trước khi vào lô.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Sơn gỗ hệ nước Lotus dùng được với súng phun HVLP không?",
-          "acceptedAnswer": {
+          name: "Sơn gỗ hệ nước Lotus dùng được với súng phun HVLP không?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Được. Kỹ sư Lotus tư vấn tỷ lệ pha và áp suất cụ thể cho từng loại súng HVLP và air-assisted."
-          }
+            text: "Được. Kỹ sư Lotus tư vấn tỷ lệ pha và áp suất cụ thể cho từng loại súng HVLP và air-assisted.",
+          },
         },
         {
           "@type": "Question",
-          "name": "Làm thế nào để bắt đầu tư vấn sơn gỗ với Lotus?",
-          "acceptedAnswer": {
+          name: "Làm thế nào để bắt đầu tư vấn sơn gỗ với Lotus?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Gửi ảnh bề mặt qua Zalo 0943 966 662. Kỹ sư đọc ảnh, hỏi thêm nếu cần, đề xuất hệ và gửi hồ sơ kỹ thuật trong ngày."
-          }
-        }
-      ]
-    }
+            text: "Gửi ảnh bề mặt qua Zalo 0943 966 662. Kỹ sư đọc ảnh, hỏi thêm nếu cần, đề xuất hệ và gửi hồ sơ kỹ thuật trong ngày.",
+          },
+        },
+      ],
+    },
   ];
 
   return (
@@ -316,11 +341,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             src="https://www.googletagmanager.com/ns.html?id=GTM-T5PGMZ8D"
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
         {children}
-        <div id="google_translate_element" style={{ position: "absolute", top: "-9999px", left: "-9999px", opacity: 0, pointerEvents: "none", width: "1px", height: "1px", overflow: "hidden" }} />
+        <div
+          id="google_translate_element"
+          style={{
+            position: "absolute",
+            top: "-9999px",
+            left: "-9999px",
+            opacity: 0,
+            pointerEvents: "none",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+          }}
+        />
         <Scripts />
       </body>
     </html>

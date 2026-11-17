@@ -11,7 +11,17 @@ function StudioRedirect() {
   }, []);
 
   return (
-    <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#FDFAF7", fontFamily: "Inter, sans-serif", color: "#5C3D1E" }}>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#FDFAF7",
+        fontFamily: "Be Vietnam Pro, sans-serif",
+        color: "#5C3D1E",
+      }}
+    >
       Đang chuyển hướng đến Studio...
     </div>
   );

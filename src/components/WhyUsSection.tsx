@@ -10,8 +10,7 @@ const reasons = [
   {
     icon: Clock,
     title: "Thi công đúng hẹn",
-    description:
-      "Cam kết tiến độ rõ ràng, hoàn thành đúng thời gian đã thỏa thuận với khách hàng.",
+    description: "Cam kết tiến độ rõ ràng, hoàn thành đúng thời gian đã thỏa thuận với khách hàng.",
   },
   {
     icon: Award,
@@ -22,8 +21,7 @@ const reasons = [
   {
     icon: HandHeart,
     title: "Bảo hành dài hạn",
-    description:
-      "Hỗ trợ bảo hành bề mặt sơn, tư vấn cách bảo dưỡng để gỗ luôn đẹp theo năm tháng.",
+    description: "Hỗ trợ bảo hành bề mặt sơn, tư vấn cách bảo dưỡng để gỗ luôn đẹp theo năm tháng.",
   },
 ];
 
@@ -32,10 +30,10 @@ export function WhyUsSection() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-14 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-wood-500">
+          <p className="mb-2 text-small font-semibold uppercase text-wood-500 tracking-label">
             Tại sao chọn chúng tôi
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-wood-900 sm:text-4xl">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-900">
             Uy tín từ chất lượng & tận tâm
           </h2>
         </div>
@@ -43,15 +41,11 @@ export function WhyUsSection() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((r) => (
             <div key={r.title} className="text-center">
-              <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-wood-100 text-wood-600">
+              <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-wood-100 text-wood-700">
                 <r.icon className="h-6 w-6" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-wood-800">
-                {r.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {r.description}
-              </p>
+              <h3 className="text-h3 sm:text-h3-lg font-semibold mb-2 text-wood-900">{r.title}</h3>
+              <p className="text-small text-wood-500">{r.description}</p>
             </div>
           ))}
         </div>

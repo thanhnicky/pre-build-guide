@@ -37,8 +37,8 @@ export function StickyMobileCTA({ reducedDominance = false }: StickyMobileCTAPro
     >
       <button
         onClick={handleScrollToSelector}
-        className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-wood-300 bg-background text-sm font-semibold text-wood-800 transition-colors hover:bg-wood-100 ${
-          reducedDominance ? "px-3 py-2 text-xs" : "px-4 py-3"
+        className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-wood-300 bg-background text-small font-semibold text-wood-900 transition-colors hover:bg-wood-100 ${
+          reducedDominance ? "px-3 py-2 text-micro" : "px-4 py-3"
         }`}
       >
         <Layers className="h-4 w-4" />

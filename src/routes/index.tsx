@@ -1,7 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { ArrowUpRight, ShieldCheck, Leaf, CheckCircle, Wind, ChevronLeft, ChevronRight, ChevronDown, Factory, Ship, Camera, FileText, FlaskConical, Wrench, Truck, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  ShieldCheck,
+  Leaf,
+  CheckCircle,
+  Wind,
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  Factory,
+  Ship,
+  Camera,
+  FileText,
+  FlaskConical,
+  Wrench,
+  Truck,
+  X,
+} from "lucide-react";
 import emailjs from "@emailjs/browser";
 import {
   Accordion,
@@ -89,20 +106,20 @@ const PARTNERS = [
 ];
 
 // ─── PHOTO CONSTANTS ── TODO: replace (placeholder) with actual Lotus photos ──
-const heroMainImage      = heroImg;           // (real) finished wood surface
-const heroSampleImage    = sanGoTruoc;        // (real) sàn gỗ cũ trước khi sơn
-const heroSupportImage   = sanGoSau;          // (real) sàn gỗ đã được sơn Lotus
-const proofTestImage     = kiemTraMau;        // (real) kiểm tra màu sắc trước khi sản xuất
-const proofEngineerImage = kysuHoTro;         // (real) kỹ sư Lotus hỗ trợ kỹ thuật
-const proofFinishedImage = dongHanh;          // (real) đồng hành cùng nhà máy sản xuất
-const audienceFactoryImage  = congTrinhSonGo;    // (real) công trình sơn gỗ ngoại trời Lotus
-const audienceExportImage   = nhaMayDonHang;     // (real) nhà máy đơn hàng xuất khẩu
-const whyWaterVisual1    = heroWood;          // (placeholder) → workshop / surface shot
-const whyWaterVisual2    = procPhun;          // (placeholder) → spray technique
-const techStep3Image     = thuMauTruocLo;     // (real) thử mẫu trước khi vào lô
-const techStep4Image     = hoTroKyThuat;      // (real) hỗ trợ kỹ thuật tại xưởng
-const techStep5Image     = cungUngTienDo;     // (real) cung ứng theo dõi tiến độ
-const ctaSupportImage    = sonAnToanXK;       // (real) sơn an toàn nội thất xuất khẩu
+const heroMainImage = heroImg; // (real) finished wood surface
+const heroSampleImage = sanGoTruoc; // (real) sàn gỗ cũ trước khi sơn
+const heroSupportImage = sanGoSau; // (real) sàn gỗ đã được sơn Lotus
+const proofTestImage = kiemTraMau; // (real) kiểm tra màu sắc trước khi sản xuất
+const proofEngineerImage = kysuHoTro; // (real) kỹ sư Lotus hỗ trợ kỹ thuật
+const proofFinishedImage = dongHanh; // (real) đồng hành cùng nhà máy sản xuất
+const audienceFactoryImage = congTrinhSonGo; // (real) công trình sơn gỗ ngoại trời Lotus
+const audienceExportImage = nhaMayDonHang; // (real) nhà máy đơn hàng xuất khẩu
+const whyWaterVisual1 = heroWood; // (placeholder) → workshop / surface shot
+const whyWaterVisual2 = procPhun; // (placeholder) → spray technique
+const techStep3Image = thuMauTruocLo; // (real) thử mẫu trước khi vào lô
+const techStep4Image = hoTroKyThuat; // (real) hỗ trợ kỹ thuật tại xưởng
+const techStep5Image = cungUngTienDo; // (real) cung ứng theo dõi tiến độ
+const ctaSupportImage = sonAnToanXK; // (real) sơn an toàn nội thất xuất khẩu
 
 export const Route = createFileRoute("/")({
   component: LotusLanding,
@@ -121,51 +138,51 @@ export const Route = createFileRoute("/")({
         innerHTML: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": [
+          mainEntity: [
             {
               "@type": "Question",
-              "name": "Sơn gỗ hệ nước Lotus có ưu điểm gì so với sơn PU?",
-              "acceptedAnswer": {
+              name: "Sơn gỗ hệ nước Lotus có ưu điểm gì so với sơn PU?",
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": "Sơn gỗ hệ nước Lotus có ưu điểm: VOCs thấp, mùi nhẹ, an toàn cho sức khỏe, không cần pha dung môi nhiều, vận hành gọn hơn, phù hợp xưởng kín, có hồ sơ kỹ thuật TDS/MSDS đầy đủ, đáp ứng tiêu chuẩn xuất khẩu Mỹ, EU, Nhật."
-              }
+                text: "Sơn gỗ hệ nước Lotus có ưu điểm: VOCs thấp, mùi nhẹ, an toàn cho sức khỏe, không cần pha dung môi nhiều, vận hành gọn hơn, phù hợp xưởng kín, có hồ sơ kỹ thuật TDS/MSDS đầy đủ, đáp ứng tiêu chuẩn xuất khẩu Mỹ, EU, Nhật.",
+              },
             },
             {
               "@type": "Question",
-              "name": "Lotus có hỗ trợ kỹ thuật khi chuyển sang hệ nước không?",
-              "acceptedAnswer": {
+              name: "Lotus có hỗ trợ kỹ thuật khi chuyển sang hệ nước không?",
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": "Có, kỹ sư Lotus hỗ trợ trực tiếp tại xưởng từ lần chạy đầu tiên: hỗ trợ tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt, và theo dõi độ ổn định giữa các đợt giao hàng."
-              }
+                text: "Có, kỹ sư Lotus hỗ trợ trực tiếp tại xưởng từ lần chạy đầu tiên: hỗ trợ tỷ lệ pha, chỉnh súng phun, xử lý lỗi bề mặt, và theo dõi độ ổn định giữa các đợt giao hàng.",
+              },
             },
             {
               "@type": "Question",
-              "name": "Sơn gỗ Lotus có đạt chứng nhận quốc tế không?",
-              "acceptedAnswer": {
+              name: "Sơn gỗ Lotus có đạt chứng nhận quốc tế không?",
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": "Có, sơn gỗ Lotus đáp ứng nhiều chứng nhận quốc tế: EN71-3 (an toàn đồ chơi trẻ em), ASTM F963 (tiêu chuẩn Hoa Kỳ), FDA (tiếp xúc gián tiếp thực phẩm), RoHS (giới hạn chất độc hại), Low VOCs."
-              }
+                text: "Có, sơn gỗ Lotus đáp ứng nhiều chứng nhận quốc tế: EN71-3 (an toàn đồ chơi trẻ em), ASTM F963 (tiêu chuẩn Hoa Kỳ), FDA (tiếp xúc gián tiếp thực phẩm), RoHS (giới hạn chất độc hại), Low VOCs.",
+              },
             },
             {
               "@type": "Question",
-              "name": "Lotus phù hợp với loại hình xưởng nào?",
-              "acceptedAnswer": {
+              name: "Lotus phù hợp với loại hình xưởng nào?",
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": "Lotus phù hợp với 2 loại hình chính: Xưởng nội thất công trình (thi công căn hộ, khách sạn, văn phòng cao cấp) và Nhà máy/đơn hàng xuất khẩu (sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản)."
-              }
+                text: "Lotus phù hợp với 2 loại hình chính: Xưởng nội thất công trình (thi công căn hộ, khách sạn, văn phòng cao cấp) và Nhà máy/đơn hàng xuất khẩu (sản xuất đồ gỗ xuất khẩu sang Mỹ, EU, Nhật Bản).",
+              },
             },
             {
               "@type": "Question",
-              "name": "Cách nhận tư vấn hệ sơn phù hợp từ Lotus?",
-              "acceptedAnswer": {
+              name: "Cách nhận tư vấn hệ sơn phù hợp từ Lotus?",
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": "Gửi ảnh bề mặt, loại gỗ, môi trường sử dụng và yêu cầu hoàn thiện qua Zalo 0943 966 662. Kỹ sư Lotus sẽ đề xuất hệ phù hợp và gửi kèm hồ sơ kỹ thuật TDS/MSDS khi cần."
-              }
-            }
-          ]
-        })
-      }
-    ]
+                text: "Gửi ảnh bề mặt, loại gỗ, môi trường sử dụng và yêu cầu hoàn thiện qua Zalo 0943 966 662. Kỹ sư Lotus sẽ đề xuất hệ phù hợp và gửi kèm hồ sơ kỹ thuật TDS/MSDS khi cần.",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
 });
 
@@ -239,17 +256,15 @@ function AudienceSection() {
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+            <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("audience.label")}
             </div>
-            <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
               <span className="block">{t("audience.title")}</span>
-              <span className="block italic font-normal text-wood-700">
-                {t("audience.titleItalic")}
-              </span>
+              <span className="block font-normal text-wood-700">{t("audience.titleItalic")}</span>
             </h2>
           </div>
-          <p className="text-[17px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]">
+          <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
             {t("audience.description")}
           </p>
         </div>
@@ -262,45 +277,49 @@ function AudienceSection() {
             >
               {/* Context image — TODO: swap a.image for real audience photo */}
               <div className="relative aspect-[16/7] overflow-hidden bg-wood-200/30">
-                <img src={a.image} alt={a.title} loading="lazy" className="h-full w-full object-cover object-center" />
+                <img
+                  src={a.image}
+                  alt={a.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-center"
+                />
               </div>
               <div className="flex flex-col gap-6 p-7 sm:p-9">
-              {/* Header */}
-              <div className="flex items-center gap-3">
-                <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
-              </div>
+                {/* Header */}
+                <div className="flex items-center gap-3">
+                  <a.icon className="h-6 w-6 text-wood-700" strokeWidth={1.5} />
+                </div>
 
-              {/* Title + 1-line lead */}
-              <div>
-                <h3 className="font-display text-[1.5rem] font-medium leading-[1.2] text-wood-900 sm:text-[1.7rem]">
-                  {a.title}
-                </h3>
-                <p className="mt-3 text-[16px] leading-[1.6] text-wood-700/85 sm:text-[17px]">
-                  {a.lead}
-                </p>
-              </div>
+                {/* Title + 1-line lead */}
+                <div>
+                  <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{a.title}</h3>
+                  <p className="mt-3 text-body text-wood-700 sm:text-lead">{a.lead}</p>
+                </div>
 
-              {/* 3 scannable bullets */}
-              <ul className="space-y-2.5 border-t border-wood-300/40 pt-5">
-                {a.bullets.map((b) => (
-                  <li key={b} className="flex gap-3 text-[16px] leading-[1.6] text-wood-800">
-                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-600" strokeWidth={1.75} />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* 3 scannable bullets */}
+                <ul className="space-y-2.5 border-t border-wood-300/40 pt-5">
+                  {a.bullets.map((b) => (
+                    <li key={b} className="flex gap-3 text-body text-wood-900">
+                      <CheckCircle
+                        className="mt-0.5 h-4 w-4 shrink-0 text-wood-700"
+                        strokeWidth={1.75}
+                      />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              {/* Compact tag row */}
-              <div className="mt-auto flex flex-wrap gap-2 pt-2">
-                {a.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="font-display rounded-full bg-wood-700 px-2.5 py-1 text-[12px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[13px]"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+                {/* Compact tag row */}
+                <div className="mt-auto flex flex-wrap gap-2 pt-2">
+                  {a.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full bg-wood-700 px-2.5 py-1 text-micro font-medium uppercase tracking-label text-wood-50 sm:text-caption"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -316,20 +335,43 @@ function AudienceSection() {
 function TechCollaborationSection() {
   const { t } = useTranslation();
   const steps = [
-    { icon: Camera,      n: "01", title: t("tech.step1.title"), body: t("tech.step1.body"), image: "", imageCaption: "" },
-    { icon: FileText,    n: "02", title: t("tech.step2.title"), body: t("tech.step2.body"), image: "", imageCaption: "" },
     {
-      icon: FlaskConical, n: "03", title: t("tech.step3.title"), body: t("tech.step3.body"),
+      icon: Camera,
+      n: "01",
+      title: t("tech.step1.title"),
+      body: t("tech.step1.body"),
+      image: "",
+      imageCaption: "",
+    },
+    {
+      icon: FileText,
+      n: "02",
+      title: t("tech.step2.title"),
+      body: t("tech.step2.body"),
+      image: "",
+      imageCaption: "",
+    },
+    {
+      icon: FlaskConical,
+      n: "03",
+      title: t("tech.step3.title"),
+      body: t("tech.step3.body"),
       image: techStep3Image, // TODO: replace with actual sample-board / color-test photo
       imageCaption: "Bảng mẫu test màu thực tế trước khi vào lô",
     },
     {
-      icon: Wrench, n: "04", title: t("tech.step4.title"), body: t("tech.step4.body"),
+      icon: Wrench,
+      n: "04",
+      title: t("tech.step4.title"),
+      body: t("tech.step4.body"),
       image: techStep4Image, // TODO: replace with actual engineer directing spray at workshop
       imageCaption: "Kỹ sư chỉnh hệ — hướng dẫn phun tại xưởng",
     },
     {
-      icon: Truck, n: "05", title: t("tech.step5.title"), body: t("tech.step5.body"),
+      icon: Truck,
+      n: "05",
+      title: t("tech.step5.title"),
+      body: t("tech.step5.body"),
       image: techStep5Image, // TODO: replace with actual paint supply / warehouse photo
       imageCaption: "Cung ứng đúng tiến độ sản xuất",
     },
@@ -340,17 +382,15 @@ function TechCollaborationSection() {
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+            <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("tech.label")}
             </div>
-            <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
               <span className="block">{t("tech.title")}</span>
-              <span className="block italic font-normal text-wood-700">
-                {t("tech.titleItalic")}
-              </span>
+              <span className="block font-normal text-wood-700">{t("tech.titleItalic")}</span>
             </h2>
           </div>
-          <p className="text-[17px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]">
+          <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
             {t("tech.description")}
           </p>
         </div>
@@ -358,13 +398,16 @@ function TechCollaborationSection() {
         {/* Steps 01 & 02 — text-only cards */}
         <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2">
           {steps.slice(0, 2).map((s) => (
-            <div key={s.n} className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6">
-              <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">{s.n}</div>
+            <div
+              key={s.n}
+              className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-6"
+            >
+              <div className="text-display font-normal text-wood-300 lg:text-display">{s.n}</div>
               <div className="flex items-start gap-3 -mt-2">
                 <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
-                <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]">{s.title}</h3>
+                <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{s.title}</h3>
               </div>
-              <p className="text-[16px] leading-[1.65] text-wood-700/85">{s.body}</p>
+              <p className="text-body text-wood-700">{s.body}</p>
             </div>
           ))}
         </div>
@@ -375,20 +418,36 @@ function TechCollaborationSection() {
           {steps.slice(2).map((s, idx) => {
             const textLeft = idx % 2 === 0;
             return (
-              <div key={s.n} className="overflow-hidden rounded-lg border border-wood-200/60 bg-background">
+              <div
+                key={s.n}
+                className="overflow-hidden rounded-lg border border-wood-200/60 bg-background"
+              >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className={`flex flex-col gap-4 p-7 sm:p-9 ${textLeft ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">{s.n}</div>
+                  <div
+                    className={`flex flex-col gap-4 p-7 sm:p-9 ${textLeft ? "lg:order-1" : "lg:order-2"}`}
+                  >
+                    <div className="text-display font-normal text-wood-300 lg:text-display">
+                      {s.n}
+                    </div>
                     <div className="flex items-start gap-3 -mt-2">
                       <s.icon className="h-5 w-5 shrink-0 text-wood-700 mt-0.5" strokeWidth={1.5} />
-                      <h3 className="font-display text-[16px] font-semibold leading-[1.3] text-wood-900 sm:text-[17px]">{s.title}</h3>
+                      <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">
+                        {s.title}
+                      </h3>
                     </div>
-                    <p className="text-[16px] leading-[1.65] text-wood-700/85">{s.body}</p>
+                    <p className="text-body text-wood-700">{s.body}</p>
                   </div>
-                  <div className={`relative aspect-[4/3] overflow-hidden bg-wood-200/30 ${textLeft ? "lg:order-2" : "lg:order-1"}`}>
-                    <img src={s.image} alt={s.imageCaption} loading="lazy" className="h-full w-full object-cover object-center" />
+                  <div
+                    className={`relative aspect-[4/3] overflow-hidden bg-wood-200/30 ${textLeft ? "lg:order-2" : "lg:order-1"}`}
+                  >
+                    <img
+                      src={s.image}
+                      alt={s.imageCaption}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-center"
+                    />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/45 to-transparent px-4 pb-3 pt-10">
-                      <p className="text-[11px] font-medium tracking-wide text-white/90">{s.imageCaption}</p>
+                      <p className="text-micro font-medium text-wood-50">{s.imageCaption}</p>
                     </div>
                   </div>
                 </div>
@@ -396,7 +455,6 @@ function TechCollaborationSection() {
             );
           })}
         </div>
-
       </div>
     </section>
   );
@@ -433,7 +491,7 @@ function PartnersSection() {
   return (
     <section className="bg-[#F5F0EA] py-10">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14 text-center">
-        <p className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+        <p className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
           {t("partners.label")}
         </p>
 
@@ -442,7 +500,7 @@ function PartnersSection() {
             type="button"
             onClick={() => scrollBy(-1)}
             aria-label="Cuộn trái"
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 sm:-translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-wood-50 shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10"
           >
             <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
@@ -459,7 +517,7 @@ function PartnersSection() {
                 title={p.alt}
               >
                 {failed[p.alt] ? (
-                  <span className="text-[12px] font-medium text-wood-600 text-center leading-tight sm:text-[13px]">
+                  <span className="text-micro font-medium text-wood-700 text-center sm:text-caption">
                     {p.alt}
                   </span>
                 ) : (
@@ -480,13 +538,13 @@ function PartnersSection() {
             type="button"
             onClick={() => scrollBy(1)}
             aria-label="Cuộn phải"
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-[#F5F0EA] shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 sm:translate-x-3 flex h-8 w-8 items-center justify-center rounded-full bg-wood-700/50 text-wood-50 shadow-sm transition-colors hover:bg-wood-700/70 sm:h-10 sm:w-10"
           >
             <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
         </div>
 
-        <p className="mx-auto mt-10 max-w-2xl text-[17px] leading-[1.75] text-wood-700/85 sm:text-[18px]">
+        <p className="mx-auto mt-10 max-w-2xl text-lead text-wood-700 sm:text-lead">
           {t("partners.description")}
         </p>
 
@@ -532,7 +590,9 @@ function ProofGallery() {
                 />
               </div>
               <div className="border-t border-wood-200/50 px-4 py-3">
-                <p className="font-display text-[13px] font-medium text-wood-700 sm:text-[14px]">{item.caption}</p>
+                <p className="text-caption font-medium text-wood-700 sm:text-small">
+                  {item.caption}
+                </p>
               </div>
             </div>
           ))}
@@ -560,15 +620,15 @@ function TrustBar() {
             <div key={i} className="flex h-full flex-col justify-center">
               {s.k ? (
                 <>
-                  <div className="font-display text-[2.25rem] font-semibold text-wood-900 sm:text-[2.75rem]">
+                  <div className="text-display font-semibold text-wood-900 sm:text-display">
                     {s.k}
                   </div>
-                  <div className="mt-2 font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]">
+                  <div className="mt-2 text-small font-medium uppercase tracking-label text-wood-500 sm:text-body-sm">
                     {s.v}
                   </div>
                 </>
               ) : (
-                <div className="font-display text-[14px] font-medium uppercase tracking-[0.16em] text-wood-500 sm:text-[15px]">
+                <div className="text-small font-medium uppercase tracking-label text-wood-500 sm:text-body-sm">
                   {s.v}
                 </div>
               )}
@@ -638,15 +698,17 @@ function CertificationsSection() {
         {/* Heading row */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+            <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("certifications.label")}
             </div>
-            <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
               <span className="block">{t("certifications.title")}</span>
-              <span className="block italic font-normal text-wood-700">{t("certifications.titleItalic")}</span>
+              <span className="block font-normal text-wood-700">
+                {t("certifications.titleItalic")}
+              </span>
             </h2>
           </div>
-          <p className="text-[17px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]">
+          <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
             {t("certifications.description")}
           </p>
         </div>
@@ -656,7 +718,7 @@ function CertificationsSection() {
           {badges.map((b) => (
             <li
               key={`pill-${b.code}`}
-              className="font-display rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-wood-800 sm:text-[14px]"
+              className="rounded-full border border-wood-300/70 bg-[#F5F0EA] px-3.5 py-1.5 text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
             >
               {b.code}
             </li>
@@ -672,20 +734,15 @@ function CertificationsSection() {
             >
               <b.icon className="mt-0.5 h-5 w-5 shrink-0 text-wood-700" strokeWidth={1.5} />
               <div className="flex-1">
-                <div className="font-display text-[16px] font-semibold leading-tight text-wood-900 sm:text-[17px]">
-                  {b.code}
-                </div>
-                <div className="mt-1 text-[15px] leading-[1.5] text-wood-600 sm:text-[16px]">
-                  {b.name}
-                </div>
-                <div className="font-display mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-[#F5F0EA] sm:text-[12px]">
+                <div className="text-body font-semibold text-wood-900 sm:text-lead">{b.code}</div>
+                <div className="mt-1 text-body-sm text-wood-700 sm:text-body">{b.name}</div>
+                <div className="mt-2.5 inline-block rounded-full bg-wood-700 px-2 py-0.5 text-micro font-medium uppercase tracking-label text-wood-50 sm:text-micro">
                   {b.tag}
                 </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -723,18 +780,15 @@ function WhyWaterSection() {
     },
   ];
 
-
   return (
     <section className="bg-[#F5F0EA] py-16 sm:py-20">
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+        <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
           {t("whyWater.label")}
         </div>
-        <h2 className="font-display mt-8 max-w-3xl text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
+        <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 max-w-3xl text-wood-900">
           <span className="block">{t("whyWater.title")}</span>
-          <span className="block italic font-normal text-wood-700">
-            {t("whyWater.titleItalic")}
-          </span>
+          <span className="block font-normal text-wood-700">{t("whyWater.titleItalic")}</span>
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
@@ -743,16 +797,15 @@ function WhyWaterSection() {
               key={c.heading}
               className="flex flex-col gap-4 rounded-lg border border-wood-200/60 bg-background p-7"
             >
-              <div className="font-display text-[2.5rem] font-light leading-none text-wood-200 lg:text-[3rem]">{c.n}</div>
-              <h3 className="font-display text-[18px] font-medium leading-[1.25] text-wood-900">{c.heading}</h3>
-              <p className="text-[15px] leading-[1.65] text-wood-700/85 sm:text-[16px]">{c.body}</p>
-              <p className="font-display mt-auto border-t border-wood-200 pt-4 text-[15px] font-semibold tracking-[0.08em] text-wood-900 sm:text-[16px]">
+              <div className="text-display font-normal text-wood-300 lg:text-display">{c.n}</div>
+              <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{c.heading}</h3>
+              <p className="text-body-sm text-wood-700 sm:text-body">{c.body}</p>
+              <p className="mt-auto border-t border-wood-200 pt-4 text-body-sm font-semibold text-wood-900 sm:text-body">
                 → {c.punch}
               </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -769,31 +822,29 @@ function Hero() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 pt-12 pb-10 sm:px-10 sm:pt-20 sm:pb-14 lg:grid-cols-12 lg:gap-16 lg:px-14 lg:pt-24 lg:pb-16">
         {/* Left — typography */}
         <div className="lg:col-span-5 lg:pt-12">
-          <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+          <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
             {t("hero.subtitle")}
           </div>
 
-          <h1 className="font-display mt-6 text-[2.25rem] font-light leading-[1.08] text-wood-900 sm:mt-7 sm:text-[3rem] lg:text-[3.5rem]">
+          <h1 className="font-display text-display sm:text-display-lg font-bold mt-6 text-wood-900 sm:mt-7">
             <span className="block">{t("hero.title")}</span>
-            <span className="block italic font-normal text-wood-700">
-              {t("hero.titleItalic")}
-            </span>
+            <span className="block font-normal text-wood-700">{t("hero.titleItalic")}</span>
           </h1>
 
-          <p className="mt-6 max-w-md text-[17px] leading-[1.7] text-wood-700/85 sm:mt-5 sm:text-[18px]">
+          <p className="mt-6 max-w-md text-lead text-wood-700 sm:mt-5 sm:text-lead">
             {t("hero.description")}
           </p>
 
           {/* Trust strip */}
           <div className="mt-6 block">
-            <div className="font-display text-[12px] font-medium uppercase tracking-[0.2em] text-wood-500 sm:text-[13px]">
+            <div className="text-micro font-medium uppercase tracking-label text-wood-500 sm:text-caption">
               {t("hero.trustLabel")}
             </div>
             <ul className="mt-2.5 flex flex-wrap gap-1.5">
               {trust.map((t) => (
                 <li
                   key={t}
-                  className="font-display rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-800 sm:text-[14px]"
+                  className="rounded-full border border-wood-300/70 bg-background/60 px-2.5 py-1 text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
                 >
                   {t}
                 </li>
@@ -806,7 +857,7 @@ function Hero() {
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-700 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-background shadow-md shadow-wood-700/10 transition-all hover:bg-wood-600 hover:shadow-lg sm:w-auto sm:text-[13px] whitespace-nowrap"
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-wood-700 px-6 py-3.5 text-caption font-semibold uppercase tracking-label text-wood-50 shadow-md shadow-wood-700/10 transition-all hover:bg-wood-600 hover:shadow-lg sm:w-auto sm:text-caption whitespace-nowrap"
             >
               <Camera className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
               {t("hero.ctaButton")}
@@ -814,9 +865,10 @@ function Hero() {
             </a>
             <a
               href="tel:0943966662"
-              className="text-[15px] font-medium tracking-wide text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[16px]"
+              className="text-body-sm font-medium text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-body"
             >
-              {t("hero.ctaPhone")} <span className="underline underline-offset-4">0943 966 662</span>
+              {t("hero.ctaPhone")}{" "}
+              <span className="underline underline-offset-4">0943 966 662</span>
             </a>
           </div>
         </div>
@@ -832,13 +884,13 @@ function Hero() {
               className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-4 pb-3 pt-10">
-              <p className="text-[11px] font-medium tracking-wide text-white/90">Bề mặt hoàn thiện giữ vân, đồng đều màu</p>
+              <p className="text-micro font-medium text-wood-50">
+                Bề mặt hoàn thiện giữ vân, đồng đều màu
+              </p>
             </div>
           </div>
-
         </div>
       </div>
-
     </section>
   );
 }
@@ -858,7 +910,7 @@ type FinishResult = {
   spec: string;
   products: string[];
   image: string;
-}
+};
 
 // New data structure for coating systems
 type CoatingMethod = "lau" | "phun" | "single";
@@ -924,7 +976,11 @@ function resolveCoatingSystem(
       ],
       methodLau: {
         process: t("finishFinder.system1.methodLau.process"),
-        representativeProducts: ["Lotus wood stain", "Lotus sanding sealer", "Lotus acrylic lacquer IN"],
+        representativeProducts: [
+          "Lotus wood stain",
+          "Lotus sanding sealer",
+          "Lotus acrylic lacquer IN",
+        ],
         image: sonLauWeb,
         notes: t("finishFinder.system1.methodLau.notes"),
         fullChartImage: paletteLau,
@@ -986,7 +1042,11 @@ function resolveCoatingSystem(
       ],
       methodLau: {
         process: t("finishFinder.system3.methodLau.process"),
-        representativeProducts: ["Lotus wood stain", "Lotus sanding sealer", "Lotus acrylic lacquer EX"],
+        representativeProducts: [
+          "Lotus wood stain",
+          "Lotus sanding sealer",
+          "Lotus acrylic lacquer EX",
+        ],
         image: sonLauWeb,
         notes: t("finishFinder.system3.methodLau.notes"),
         fullChartImage: paletteLau,
@@ -1164,7 +1224,7 @@ const SampleRequestModal = ({
   onSubmit,
   surface,
   location,
-  naturalFinish
+  naturalFinish,
 }: {
   isOpen: boolean;
   onClose: () => void;
@@ -1195,16 +1255,27 @@ const SampleRequestModal = ({
   const sampleItems = getSampleItems(coatingSystem.title, selectedMethod);
   const samplePrice = getSamplePrice(coatingSystem.title, selectedMethod);
   const formattedPrice = formatPrice(samplePrice);
-  
+
   // Calculate price based on selected package
-  const packagePrice = selectedPackage === "500g" ? (surface === "mdf" && location === "indoor" ? 169000 : 199000) : samplePrice;
+  const packagePrice =
+    selectedPackage === "500g"
+      ? surface === "mdf" && location === "indoor"
+        ? 169000
+        : 199000
+      : samplePrice;
   const formattedPackagePrice = formatPrice(packagePrice);
   const totalWeight = sampleItems.length; // 1kg per product
-  
-  // Determine if color selection is needed
-  const needsColorSelection = selectedPackage === "1kg" || (selectedPackage === "500g" && naturalFinish !== "solid" && naturalFinish !== "grain" && !(surface === "mdf" && location === "indoor"));
 
-  const colorChartImage = activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
+  // Determine if color selection is needed
+  const needsColorSelection =
+    selectedPackage === "1kg" ||
+    (selectedPackage === "500g" &&
+      naturalFinish !== "solid" &&
+      naturalFinish !== "grain" &&
+      !(surface === "mdf" && location === "indoor"));
+
+  const colorChartImage =
+    activeMethod?.fullChartImage || coatingSystem.singleMethod?.fullChartImage;
 
   const handleImageDoubleClick = () => {
     if (zoom === 1) {
@@ -1265,13 +1336,20 @@ const SampleRequestModal = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
-    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
-    const location = (form.elements.namedItem('location') as HTMLInputElement).value;
-    const colorCode = needsColorSelection ? (form.elements.namedItem('colorCode') as HTMLInputElement).value : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn" : "Màu trắng (mặc định)");
-    const surfaceTypeInput = form.elements.namedItem('surfaceType') as HTMLInputElement;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
+    const location = (form.elements.namedItem("location") as HTMLInputElement).value;
+    const colorCode = needsColorSelection
+      ? (form.elements.namedItem("colorCode") as HTMLInputElement).value
+      : selectedPackage === "500g" &&
+          (naturalFinish === "solid" ||
+            naturalFinish === "grain" ||
+            (surface === "mdf" && location === "indoor"))
+        ? "Màu do Lotus chọn sẵn"
+        : "Màu trắng (mặc định)";
+    const surfaceTypeInput = form.elements.namedItem("surfaceType") as HTMLInputElement;
     const surfaceType = surfaceTypeInput ? surfaceTypeInput.value : "Không áp dụng";
-    const notes = (form.elements.namedItem('notes') as HTMLTextAreaElement).value;
+    const notes = (form.elements.namedItem("notes") as HTMLTextAreaElement).value;
     const samplePrice = packagePrice;
 
     // Gửi dữ liệu đến Google Apps Script Web App
@@ -1291,18 +1369,21 @@ const SampleRequestModal = ({
         notes: notes,
       };
 
-      await fetch("https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyv7gIgwksqqalJhhqqUp8KUGCM9r0LEu6LtRd8wuGE86lmFHQGXZGJp8gHWNzBaC_T/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderData),
         },
-        body: JSON.stringify(orderData),
-      });
+      );
 
-      console.log('Data sent successfully to Google Sheet');
+      console.log("Data sent successfully to Google Sheet");
     } catch (error) {
-      console.error('Failed to send data to Google Sheet:', error);
+      console.error("Failed to send data to Google Sheet:", error);
     }
 
     onSubmit(name, location);
@@ -1316,10 +1397,10 @@ const SampleRequestModal = ({
           {/* Header */}
           <div className="mb-6 flex items-start justify-between">
             <div>
-              <div className="font-display text-[13px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
+              <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
                 Hệ sơn Lotus đề xuất
               </div>
-              <h3 className="font-display mt-2 text-[1.4rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
+              <h3 className="text-h3 sm:text-h3-lg font-semibold mt-2 text-wood-900">
                 {coatingSystem.title}
               </h3>
             </div>
@@ -1327,15 +1408,23 @@ const SampleRequestModal = ({
               type="button"
               onClick={onClose}
               aria-label="Đóng"
-              className="rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors"
+              className="rounded-full p-2 text-wood-500 hover:bg-wood-100 hover:text-wood-700 transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
           </div>
 
           {/* Description before form */}
-          <p className="mb-6 text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
-            Anh/chị đang đặt bộ mẫu {selectedPackage} theo hệ đã chọn. {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn để test vân gỗ." : "Mặc định màu trắng để tập trung test đúng hệ.")}
+          <p className="mb-6 text-small text-wood-700 sm:text-body-sm">
+            Anh/chị đang đặt bộ mẫu {selectedPackage} theo hệ đã chọn.{" "}
+            {needsColorSelection
+              ? "Chọn màu theo yêu cầu."
+              : selectedPackage === "500g" &&
+                  (naturalFinish === "solid" ||
+                    naturalFinish === "grain" ||
+                    (surface === "mdf" && location === "indoor"))
+                ? "Màu do Lotus chọn sẵn để test vân gỗ."
+                : "Mặc định màu trắng để tập trung test đúng hệ."}
           </p>
 
           {/* Form */}
@@ -1343,33 +1432,40 @@ const SampleRequestModal = ({
             {/* Auto-fill fields - không cho sửa */}
             <div className="space-y-4 rounded-lg bg-wood-50/50 p-4">
               <div>
-                <label className="block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                <label className="block text-caption font-medium uppercase tracking-label text-wood-700 sm:text-small">
                   Quy trình gợi ý
                 </label>
-                <div className="mt-1 text-[15px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                  {processText}
-                </div>
+                <div className="mt-1 text-body-sm text-wood-900 sm:text-body">{processText}</div>
               </div>
               <div>
-                <label className="block text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
+                <label className="block text-caption font-medium uppercase tracking-label text-wood-700 sm:text-small">
                   Chi tiết sản phẩm trong bộ mẫu
                 </label>
                 <div className="mt-2 space-y-2">
                   {sampleItems.map((item, index) => (
-                    <div key={index} className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
+                    <div
+                      key={index}
+                      className="flex justify-between text-small text-wood-900 sm:text-body-sm"
+                    >
                       <span>{item.name}</span>
-                      {selectedPackage === '1kg' && <span className="font-medium">{formatPrice(item.price)}</span>}
+                      {selectedPackage === "1kg" && (
+                        <span className="font-medium">{formatPrice(item.price)}</span>
+                      )}
                     </div>
                   ))}
-                  {selectedPackage === '1kg' && (
-                    <div className="mt-3 pt-2 border-t border-wood-200 space-y-1.5 text-[13px] leading-[1.4] text-wood-600 sm:text-[14px]">
+                  {selectedPackage === "1kg" && (
+                    <div className="mt-3 pt-2 border-t border-wood-200 space-y-1.5 text-caption text-wood-700 sm:text-small">
                       <div className="flex justify-between">
                         <span>Đơn giá:</span>
-                        <span className="font-medium text-wood-900">{formattedPrice} / 1kg / mỗi loại</span>
+                        <span className="font-medium text-wood-900">
+                          {formattedPrice} / 1kg / mỗi loại
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span>Quy trình gợi ý:</span>
-                        <span className="font-medium text-wood-900">{sampleItems.length} sản phẩm</span>
+                        <span className="font-medium text-wood-900">
+                          {sampleItems.length} sản phẩm
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span>Tổng dung tích:</span>
@@ -1383,24 +1479,35 @@ const SampleRequestModal = ({
 
             {/* Price block */}
             <div className="rounded-lg border-2 border-wood-900 bg-wood-50 p-4">
-              <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-700 sm:text-[14px]">
+              <div className="text-caption font-medium uppercase tracking-label text-wood-700 sm:text-small">
                 GIÁ BỘ MẪU {selectedPackage.toUpperCase()} MỖI LOẠI
               </div>
-              <div className="mt-3 text-[2.2rem] font-bold leading-none text-wood-900 sm:text-[2.5rem]">
+              <div className="mt-3 text-display font-bold text-wood-900 sm:text-display">
                 {formattedPackagePrice}
               </div>
-              <p className="mt-2 text-[12px] leading-[1.4] text-wood-600 sm:text-[13px]">
-                {needsColorSelection ? "Chọn màu theo yêu cầu." : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn." : "Mặc định màu trắng.")}
+              <p className="mt-2 text-micro text-wood-700 sm:text-caption">
+                {needsColorSelection
+                  ? "Chọn màu theo yêu cầu."
+                  : selectedPackage === "500g" &&
+                      (naturalFinish === "solid" ||
+                        naturalFinish === "grain" ||
+                        (surface === "mdf" && location === "indoor"))
+                    ? "Màu do Lotus chọn sẵn."
+                    : "Mặc định màu trắng."}
               </p>
-              <p className="mt-1.5 text-[12px] leading-[1.4] text-wood-500 sm:text-[13px]">
-                Toàn bộ {formattedPackagePrice} hoàn vào đơn hàng đầu tiên từ {selectedPackage === "500g" ? "2kg" : "5kg"} trở lên.
+              <p className="mt-1.5 text-micro text-wood-500 sm:text-caption">
+                Toàn bộ {formattedPackagePrice} hoàn vào đơn hàng đầu tiên từ{" "}
+                {selectedPackage === "500g" ? "2kg" : "5kg"} trở lên.
               </p>
             </div>
 
             {/* User input fields */}
             <div className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                <label
+                  htmlFor="name"
+                  className="block text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
+                >
                   Họ tên / Tên xưởng <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -1408,11 +1515,14 @@ const SampleRequestModal = ({
                   id="name"
                   required
                   placeholder="Nhập họ tên hoặc tên xưởng"
-                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-body-sm text-wood-900 placeholder:text-wood-500 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-body"
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                <label
+                  htmlFor="phone"
+                  className="block text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
+                >
                   Số điện thoại / Zalo <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -1420,11 +1530,14 @@ const SampleRequestModal = ({
                   id="phone"
                   required
                   placeholder="Nhập số điện thoại hoặc Zalo"
-                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-body-sm text-wood-900 placeholder:text-wood-500 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-body"
                 />
               </div>
               <div>
-                <label htmlFor="location" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                <label
+                  htmlFor="location"
+                  className="block text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
+                >
                   Địa chỉ nhận hàng <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -1432,35 +1545,45 @@ const SampleRequestModal = ({
                   id="location"
                   required
                   placeholder="Ví dụ: TP.HCM, Bình Dương, Hà Nội..."
-                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-body-sm text-wood-900 placeholder:text-wood-500 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-body"
                 />
               </div>
               {needsColorSelection && (
                 <div>
-                  <label htmlFor="colorCode" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  <label
+                    htmlFor="colorCode"
+                    className="block text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
+                  >
                     Mã màu <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     id="colorCode"
                     required
-                    placeholder={selectedMethod === "lau" ? "Nhập mã màu (ví dụ: LRS 009)" : "Nhập mã màu (ví dụ: LWPI 018)"}
-                    className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                    placeholder={
+                      selectedMethod === "lau"
+                        ? "Nhập mã màu (ví dụ: LRS 009)"
+                        : "Nhập mã màu (ví dụ: LWPI 018)"
+                    }
+                    className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-body-sm text-wood-900 placeholder:text-wood-500 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-body"
                   />
                   {colorChartImage && (
                     <button
                       type="button"
                       onClick={() => setShowColorChart(true)}
-                      className="mt-1.5 text-[13px] text-wood-700 underline hover:text-wood-900 sm:text-[14px]"
+                      className="mt-1.5 text-caption text-wood-700 underline hover:text-wood-900 sm:text-small"
                     >
                       Xem bảng màu đầy đủ
                     </button>
                   )}
                 </div>
               )}
-              {!(selectedPackage === "500g" && (naturalFinish === "solid" || (surface === "mdf" && location === "indoor"))) && (
+              {!(
+                selectedPackage === "500g" &&
+                (naturalFinish === "solid" || (surface === "mdf" && location === "indoor"))
+              ) && (
                 <div>
-                  <label className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                  <label className="block text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small">
                     ĐỘ BÓNG MONG MUỐN <span className="text-red-500">*</span>
                   </label>
                   <div className="mt-2 space-y-2">
@@ -1472,7 +1595,7 @@ const SampleRequestModal = ({
                         required
                         className="h-4 w-4 text-wood-900 border-wood-300 focus:ring-wood-900"
                       />
-                      <span className="text-[15px] text-wood-900 sm:text-[16px]">Bóng</span>
+                      <span className="text-body-sm text-wood-900 sm:text-body">Bóng</span>
                     </label>
                     <label className="flex items-center gap-3 cursor-pointer">
                       <input
@@ -1481,7 +1604,7 @@ const SampleRequestModal = ({
                         value="Bóng 50%"
                         className="h-4 w-4 text-wood-900 border-wood-300 focus:ring-wood-900"
                       />
-                      <span className="text-[15px] text-wood-900 sm:text-[16px]">Bóng 50%</span>
+                      <span className="text-body-sm text-wood-900 sm:text-body">Bóng 50%</span>
                     </label>
                     <label className="flex items-center gap-3 cursor-pointer">
                       <input
@@ -1490,35 +1613,39 @@ const SampleRequestModal = ({
                         value="Mờ"
                         className="h-4 w-4 text-wood-900 border-wood-300 focus:ring-wood-900"
                       />
-                      <span className="text-[15px] text-wood-900 sm:text-[16px]">Mờ</span>
+                      <span className="text-body-sm text-wood-900 sm:text-body">Mờ</span>
                     </label>
                   </div>
                 </div>
               )}
               <div>
-                <label htmlFor="notes" className="block text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 sm:text-[14px]">
+                <label
+                  htmlFor="notes"
+                  className="block text-caption font-semibold uppercase tracking-label text-wood-900 sm:text-small"
+                >
                   Ghi chú thêm
                 </label>
                 <textarea
                   id="notes"
                   rows={3}
                   placeholder="Thông tin thêm (nếu có)"
-                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-[15px] text-wood-900 placeholder:text-wood-400 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-[16px]"
+                  className="mt-1 w-full rounded-md border border-wood-300 bg-background px-3 py-2.5 text-body-sm text-wood-900 placeholder:text-wood-500 focus:border-wood-900 focus:outline-none focus:ring-2 focus:ring-wood-900/20 sm:text-body"
                 />
               </div>
             </div>
 
             {/* Informative text */}
             <div className="rounded-lg bg-wood-50/50 p-4">
-              <p className="text-[14px] leading-[1.6] text-wood-700 sm:text-[15px]">
-                Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết thanh toán. Không gửi tin nhắn quảng cáo hàng loạt.
+              <p className="text-small text-wood-700 sm:text-body-sm">
+                Lotus dùng thông tin này để xác nhận đơn mẫu thử, khu vực giao hàng và chi tiết
+                thanh toán. Không gửi tin nhắn quảng cáo hàng loạt.
               </p>
             </div>
 
             {/* Submit button */}
             <button
               type="submit"
-              className="w-full rounded-md bg-wood-900 px-4 py-3 text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+              className="w-full rounded-md bg-wood-900 px-4 py-3 text-body-sm font-semibold text-wood-50 transition-colors hover:bg-wood-800 sm:text-body"
             >
               Gửi đơn đặt mẫu
             </button>
@@ -1534,11 +1661,11 @@ const SampleRequestModal = ({
               type="button"
               onClick={() => setShowColorChart(false)}
               aria-label="Đóng bảng màu"
-              className="absolute right-4 top-4 rounded-full p-2 text-wood-400 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10"
+              className="absolute right-4 top-4 rounded-full p-2 text-wood-500 hover:bg-wood-100 hover:text-wood-700 transition-colors z-10"
             >
               <X className="h-5 w-5" />
             </button>
-            <h3 className="mb-4 font-display text-[1.2rem] font-semibold text-wood-900 sm:text-[1.4rem]">
+            <h3 className="text-h3 sm:text-h3-lg font-semibold mb-4 text-wood-900">
               Bảng màu đầy đủ
             </h3>
             <div className="overflow-hidden rounded-lg">
@@ -1548,11 +1675,11 @@ const SampleRequestModal = ({
                 className="w-full rounded-lg cursor-pointer touch-pan-x touch-pan-y"
                 style={{
                   transform: `translate3d(${position.x}px, ${position.y}px, 0) scale(${zoom})`,
-                  transformOrigin: 'center center',
-                  transition: isDragging ? 'none' : 'transform 0.2s ease-out',
-                  cursor: zoom > 1 ? (isDragging ? 'grabbing' : 'grab') : 'pointer',
-                  willChange: isDragging ? 'transform' : 'auto',
-                  touchAction: 'none',
+                  transformOrigin: "center center",
+                  transition: isDragging ? "none" : "transform 0.2s ease-out",
+                  cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "pointer",
+                  willChange: isDragging ? "transform" : "auto",
+                  touchAction: "none",
                 }}
                 onDoubleClick={handleImageDoubleClick}
                 onTouchStart={handleTouchStart}
@@ -1564,7 +1691,7 @@ const SampleRequestModal = ({
                 onMouseLeave={handleMouseUp}
               />
             </div>
-            <p className="mt-2 text-center text-[12px] text-wood-500 sm:text-[13px]">
+            <p className="mt-2 text-center text-micro text-wood-500 sm:text-caption">
               Nhấn đúp để zoom, giữ và kéo để di chuyển ảnh
             </p>
             <div className="mt-4 flex gap-3">
@@ -1573,14 +1700,14 @@ const SampleRequestModal = ({
                 download="bang-mau-lotus.jpg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+                className="flex-1 rounded-md bg-wood-900 px-4 py-3 text-center text-body-sm font-semibold text-wood-50 transition-colors hover:bg-wood-800 sm:text-body"
               >
                 Tải ảnh về
               </a>
               <button
                 type="button"
                 onClick={() => setShowColorChart(false)}
-                className="flex-1 rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]"
+                className="flex-1 rounded-md border border-wood-200 px-4 py-3 text-center text-body-sm font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-body"
               >
                 Đóng
               </button>
@@ -1602,7 +1729,7 @@ const ThankYouModal = ({
   customerAddress,
   surface,
   location,
-  naturalFinish
+  naturalFinish,
 }: {
   isOpen: boolean;
   onClose: () => void;
@@ -1617,9 +1744,19 @@ const ThankYouModal = ({
 }) => {
   // Calculate price based on selected package
   const samplePrice = coatingSystem ? getSamplePrice(coatingSystem.title, selectedMethod) : 414000;
-  const packagePrice = selectedPackage === "500g" ? (surface === "mdf" && location === "indoor" ? 169000 : 199000) : samplePrice;
+  const packagePrice =
+    selectedPackage === "500g"
+      ? surface === "mdf" && location === "indoor"
+        ? 169000
+        : 199000
+      : samplePrice;
   const formattedPrice = formatPrice(packagePrice);
-  const needsColorSelection = selectedPackage === "1kg" || (selectedPackage === "500g" && naturalFinish !== "solid" && naturalFinish !== "grain" && !(surface === "mdf" && location === "indoor"));
+  const needsColorSelection =
+    selectedPackage === "1kg" ||
+    (selectedPackage === "500g" &&
+      naturalFinish !== "solid" &&
+      naturalFinish !== "grain" &&
+      !(surface === "mdf" && location === "indoor"));
 
   useEffect(() => {
     if (isOpen && typeof window !== "undefined") {
@@ -1642,43 +1779,63 @@ const ThankYouModal = ({
       <div className="w-full max-w-lg rounded-xl bg-background p-6 shadow-xl sm:p-8 max-h-[90vh] overflow-y-auto">
         <div className="mb-6 text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-            <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <svg
+              className="h-8 w-8 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
             </svg>
           </div>
-          <h3 className="font-display text-[1.4rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.6rem]">
+          <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">
             Đã nhận được yêu cầu
           </h3>
         </div>
 
-        <p className="mb-6 text-center text-[15px] leading-[1.6] text-wood-700 sm:text-[16px]">
-          Lotus đã nhận được yêu cầu đặt mẫu thử của anh/chị <span className="font-semibold text-wood-900">{customerName}</span>.
+        <p className="mb-6 text-center text-body-sm text-wood-700 sm:text-body">
+          Lotus đã nhận được yêu cầu đặt mẫu thử của anh/chị{" "}
+          <span className="font-semibold text-wood-900">{customerName}</span>.
         </p>
 
         <div className="mb-6 space-y-3 rounded-lg bg-wood-50/50 p-4">
-          <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
-            <span className="text-wood-600">Hệ sơn:</span>
+          <div className="flex justify-between text-small text-wood-900 sm:text-body-sm">
+            <span className="text-wood-700">Hệ sơn:</span>
             <span className="font-medium">{coatingSystem?.title}</span>
           </div>
-          <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
-            <span className="text-wood-600">Gói mẫu (mỗi loại):</span>
+          <div className="flex justify-between text-small text-wood-900 sm:text-body-sm">
+            <span className="text-wood-700">Gói mẫu (mỗi loại):</span>
             <span className="font-medium">Bộ mẫu {selectedPackage}</span>
           </div>
-          <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
-            <span className="text-wood-600">Giá:</span>
+          <div className="flex justify-between text-small text-wood-900 sm:text-body-sm">
+            <span className="text-wood-700">Giá:</span>
             <span className="font-medium">{formattedPrice}</span>
           </div>
-          <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
-            <span className="text-wood-600">Màu:</span>
-            <span className="font-medium">{needsColorSelection ? "Chọn màu theo yêu cầu" : (selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn" : "Màu trắng (mặc định)")}</span>
+          <div className="flex justify-between text-small text-wood-900 sm:text-body-sm">
+            <span className="text-wood-700">Màu:</span>
+            <span className="font-medium">
+              {needsColorSelection
+                ? "Chọn màu theo yêu cầu"
+                : selectedPackage === "500g" &&
+                    (naturalFinish === "solid" ||
+                      naturalFinish === "grain" ||
+                      (surface === "mdf" && location === "indoor"))
+                  ? "Màu do Lotus chọn sẵn"
+                  : "Màu trắng (mặc định)"}
+            </span>
           </div>
-          <div className="flex justify-between text-[14px] leading-[1.5] text-wood-800 sm:text-[15px]">
-            <span className="text-wood-600">Địa chỉ:</span>
+          <div className="flex justify-between text-small text-wood-900 sm:text-body-sm">
+            <span className="text-wood-700">Địa chỉ:</span>
             <span className="font-medium">{customerAddress}</span>
           </div>
         </div>
 
-        <p className="mb-6 text-center text-[14px] leading-[1.6] text-wood-600 sm:text-[15px]">
+        <p className="mb-6 text-center text-small text-wood-700 sm:text-body-sm">
           Sơn Lotus sẽ liên hệ trong 24h để xác nhận
         </p>
 
@@ -1687,14 +1844,14 @@ const ThankYouModal = ({
             href={ZALO}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full rounded-md bg-wood-900 px-4 py-3 text-center text-[15px] font-semibold text-background transition-colors hover:bg-wood-800 sm:text-[16px]"
+            className="block w-full rounded-md bg-wood-900 px-4 py-3 text-center text-body-sm font-semibold text-wood-50 transition-colors hover:bg-wood-800 sm:text-body"
           >
             Liên hệ Zalo để được hỗ trợ sớm nhất
           </a>
           <button
             type="button"
             onClick={onClose}
-            className="block w-full rounded-md border border-wood-200 px-4 py-3 text-center text-[15px] font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-[16px]"
+            className="block w-full rounded-md border border-wood-200 px-4 py-3 text-center text-body-sm font-medium text-wood-700 transition-colors hover:bg-wood-50 sm:text-body"
           >
             Đóng
           </button>
@@ -1704,7 +1861,11 @@ const ThankYouModal = ({
   );
 };
 
-function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacting: boolean) => void }) {
+function FinishFinder({
+  onInteractionChange,
+}: {
+  onInteractionChange: (interacting: boolean) => void;
+}) {
   const { t } = useTranslation();
   const [surface, setSurface] = useState<Surface | null>(null);
   const [location, setLocation] = useState<Location | null>(null);
@@ -1727,14 +1888,14 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
   const needsFinishStep = surface === "natural";
   const ready =
-    surface !== null &&
-    location !== null &&
-    (!needsFinishStep || naturalFinish !== null);
+    surface !== null && location !== null && (!needsFinishStep || naturalFinish !== null);
 
   const coatingSystem = ready ? resolveCoatingSystem(surface!, location!, naturalFinish, t) : null;
 
   // Calculate 1kg price dynamically based on coating system
-  const samplePrice1kg = coatingSystem ? getSamplePrice(coatingSystem.title, selectedMethod) : 414000;
+  const samplePrice1kg = coatingSystem
+    ? getSamplePrice(coatingSystem.title, selectedMethod)
+    : 414000;
   const formattedPrice1kg = formatPrice(samplePrice1kg);
 
   const reset = () => {
@@ -1744,20 +1905,20 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
     setIsInteracting(false);
     onInteractionChange(false);
     // Scroll back to step 1 on reset
-    if (step1Ref.current && typeof window !== 'undefined' && window.innerWidth < 768) {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (step1Ref.current && typeof window !== "undefined" && window.innerWidth < 768) {
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       step1Ref.current.scrollIntoView({
-        behavior: prefersReducedMotion ? 'auto' : 'smooth',
-        block: 'start',
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start",
       });
     }
   };
 
   // Smooth scroll to next step on mobile after selection
   useEffect(() => {
-    if (typeof window === 'undefined' || window.innerWidth >= 768) return;
+    if (typeof window === "undefined" || window.innerWidth >= 768) return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) return;
 
     const scrollToElement = (element: HTMLElement | null, offset = 80) => {
@@ -1769,7 +1930,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
         const targetPosition = elementRect.top + window.pageYOffset - offset;
         window.scrollTo({
           top: targetPosition,
-          behavior: 'smooth',
+          behavior: "smooth",
         });
       }
     };
@@ -1811,9 +1972,9 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
 
   // Entrance animation on viewport entry
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       setIsVisible(true);
       return;
@@ -1826,7 +1987,7 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" },
     );
 
     if (sectionRef.current) {
@@ -1844,9 +2005,9 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
   }, [coatingSystem?.title]);
 
   const StepLabel = ({ n, text }: { n: string; text: string }) => (
-    <div className="font-display text-[13px] uppercase tracking-[0.28em] text-wood-500 sm:text-[14px]">
-      <span className="font-display text-[15px] tracking-normal text-wood-400 sm:text-[16px]">{n}</span>
-      <span className="mx-2.5 text-wood-300">·</span>
+    <div className="text-caption uppercase tracking-label text-wood-500 sm:text-small">
+      <span className="text-body-sm text-wood-500 sm:text-body">{n}</span>
+      <span className="mx-2.5 text-wood-500">·</span>
       {text}
     </div>
   );
@@ -1866,19 +2027,19 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`group flex w-full items-center justify-between gap-4 border px-5 py-4 text-left text-[14px] leading-[1.4] transition-colors sm:px-6 sm:py-5 sm:text-[15px] ${
+      className={`group flex w-full items-center justify-between gap-4 border px-5 py-4 text-left text-small transition-colors sm:px-6 sm:py-5 sm:text-body-sm ${
         disabled
-          ? "border-wood-200 bg-wood-50 text-wood-400 cursor-not-allowed"
+          ? "border-wood-200 bg-wood-50 text-wood-500 cursor-not-allowed"
           : active
-            ? "border-wood-900 bg-wood-900 text-background"
-            : "border-wood-200 bg-background text-wood-800 hover:border-wood-700 hover:text-wood-900"
+            ? "border-wood-900 bg-wood-900 text-wood-50"
+            : "border-wood-200 bg-background text-wood-900 hover:border-wood-700 hover:text-wood-900"
       }`}
       aria-pressed={active}
     >
       <span>{children}</span>
       <span
-        className={`text-[19px] leading-none transition-transform ${
-          active ? "text-background" : "text-wood-400 group-hover:translate-x-0.5"
+        className={`text-lead transition-transform ${
+          active ? "text-wood-50" : "text-wood-500 group-hover:translate-x-0.5"
         }`}
       >
         →
@@ -1895,553 +2056,600 @@ function FinishFinder({ onInteractionChange }: { onInteractionChange: (interacti
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-      <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
-        {/* Section opener */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
-              TƯ VẤN NHANH CHỌN HỆ SƠN
+        <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
+          {/* Section opener */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
+                TƯ VẤN NHANH CHỌN HỆ SƠN
+              </div>
+              <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-6 text-wood-900">
+                <span className="block">Chọn đúng hệ sơn</span>
+                <span className="block font-normal text-wood-700">chỉ trong vài bước</span>
+              </h2>
             </div>
-            <h2 className="font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.75rem]">
-              <span className="block">Chọn đúng hệ sơn</span>
-              <span className="block italic font-normal text-wood-700">chỉ trong vài bước</span>
-            </h2>
+            <p className="text-body text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
+              Chọn bề mặt, môi trường sử dụng và kiểu hoàn thiện. Lotus sẽ gợi ý hệ phù hợp để
+              anh/chị test mẫu trước khi vào lô.
+            </p>
           </div>
-          <p className="text-[16px] leading-[1.7] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[17px]">
-            Chọn bề mặt, môi trường sử dụng và kiểu hoàn thiện. Lotus sẽ gợi ý hệ phù hợp để anh/chị test mẫu trước khi vào lô.
-          </p>
-        </div>
 
-        {/* Finder card */}
-        <div className="mt-12 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12">
-            {/* Steps */}
-            <div className="lg:col-span-7 lg:border-r lg:border-wood-200">
-              <div className="space-y-8 p-6 sm:p-10 lg:p-12">
-                {/* Progress indicator */}
-                <div className="pb-6 border-b border-wood-200/50">
-                  <div className="h-1.5 w-full bg-wood-200 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-wood-600 transition-all duration-500 ease-out"
-                      style={{ width: `${ready ? "100" : location ? "66.67" : surface ? "33.33" : "0"}%` }}
-                    />
+          {/* Finder card */}
+          <div className="mt-12 border border-wood-200 bg-[#FAF7F2] shadow-sm sm:mt-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              {/* Steps */}
+              <div className="lg:col-span-7 lg:border-r lg:border-wood-200">
+                <div className="space-y-8 p-6 sm:p-10 lg:p-12">
+                  {/* Progress indicator */}
+                  <div className="pb-6 border-b border-wood-200/50">
+                    <div className="h-1.5 w-full bg-wood-200 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-wood-600 transition-all duration-500 ease-out"
+                        style={{
+                          width: `${ready ? "100" : location ? "66.67" : surface ? "33.33" : "0"}%`,
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
 
-                {/* Step 1 */}
-                <div ref={step1Ref} className="relative transition-all duration-500 ease-out">
-                  <StepLabel n="Bước 1" text="Bề mặt thi công" />
-                  <h3 className="font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]">
-                    Anh/chị thi công trên bề mặt nào?
-                  </h3>
-                  <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <Choice
-                      active={surface === "natural"}
-                      onClick={() => {
-                        setSurface("natural");
-                        setNaturalFinish(null);
-                      }}
-                    >
-                      Gỗ tự nhiên
-                    </Choice>
-                    <Choice
-                      active={surface === "mdf"}
-                      onClick={() => {
-                        setSurface("mdf");
-                        setNaturalFinish(null);
-                      }}
-                    >
-                      MDF / Cốt gỗ công nghiệp
-                    </Choice>
-                  </div>
-                </div>
-
-                {/* Step 2 */}
-                <div
-                  ref={step2Ref}
-                  className={`transition-all duration-500 ease-out ${
-                    surface ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"
-                  }`}
-                >
-                  <StepLabel n="Bước 2" text="Môi trường sử dụng" />
-                  <h3 className="font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]">
-                    Sản phẩm dùng trong môi trường nào?
-                  </h3>
-                  <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <Choice
-                      active={location === "indoor"}
-                      onClick={() => surface && setLocation("indoor")}
-                    >
-                      Trong nhà (Nội thất)
-                    </Choice>
-                    <Choice
-                      active={location === "outdoor"}
-                      onClick={() => surface !== "mdf" && setLocation("outdoor")}
-                      disabled={surface === "mdf"}
-                    >
-                      Ngoài trời
-                    </Choice>
-                  </div>
-                </div>
-
-                {/* Step 3 — chỉ hiện cho gỗ tự nhiên */}
-                {needsFinishStep && (
-                  <div
-                    ref={step3Ref}
-                    className={`transition-all duration-500 ease-out ${
-                      location ? "opacity-100 translate-y-0" : "pointer-events-none opacity-40 translate-y-4"
-                    }`}
-                  >
-                    <StepLabel n="Bước 3" text="Kiểu hoàn thiện" />
-                    <h3 className="font-display mt-3 text-[1.25rem] font-medium leading-[1.3] text-wood-900 sm:text-[1.4rem]">
-                      Anh/chị muốn hoàn thiện kiểu nào?
+                  {/* Step 1 */}
+                  <div ref={step1Ref} className="relative transition-all duration-500 ease-out">
+                    <StepLabel n="Bước 1" text="Bề mặt thi công" />
+                    <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                      Anh/chị thi công trên bề mặt nào?
                     </h3>
                     <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                       <Choice
-                        active={naturalFinish === "grain"}
-                        onClick={() => location && setNaturalFinish("grain")}
+                        active={surface === "natural"}
+                        onClick={() => {
+                          setSurface("natural");
+                          setNaturalFinish(null);
+                        }}
                       >
-                        Giữ vân gỗ
+                        Gỗ tự nhiên
                       </Choice>
                       <Choice
-                        active={naturalFinish === "solid"}
-                        onClick={() => location && setNaturalFinish("solid")}
+                        active={surface === "mdf"}
+                        onClick={() => {
+                          setSurface("mdf");
+                          setNaturalFinish(null);
+                        }}
                       >
-                        Phủ màu bệt
+                        MDF / Cốt gỗ công nghiệp
                       </Choice>
                     </div>
                   </div>
-                )}
 
-                {ready && (
-                  <button
-                    type="button"
-                    onClick={reset}
-                    className="font-display text-[12px] uppercase tracking-[0.18em] text-wood-600 transition-colors hover:text-wood-900"
+                  {/* Step 2 */}
+                  <div
+                    ref={step2Ref}
+                    className={`transition-all duration-500 ease-out ${
+                      surface
+                        ? "opacity-100 translate-y-0"
+                        : "pointer-events-none opacity-40 translate-y-4"
+                    }`}
                   >
-                    ← Làm lại từ đầu
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Result */}
-            <div ref={resultRef} className="lg:col-span-5">
-              {!coatingSystem ? (
-                <div className="flex h-full min-h-[320px] items-center justify-center p-10 text-center">
-                  <p className="max-w-[260px] text-[14px] leading-[1.7] text-wood-600">
-                    Hoàn thành 3 bước bên trái để nhận hệ đề xuất phù hợp.
-                  </p>
-                </div>
-              ) : (
-                <article className="flex h-full flex-col transition-all duration-500 ease-out">
-
-                  {/* Dual method tabs */}
-                  {coatingSystem.methodType === "dual" && (
-                    <div className="flex border-b border-wood-200 bg-wood-50/50">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedMethod("lau")}
-                        className={`font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${
-                          selectedMethod === "lau"
-                            ? "border-b-2 border-wood-900 text-wood-900"
-                            : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"
-                        }`}
+                    <StepLabel n="Bước 2" text="Môi trường sử dụng" />
+                    <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                      Sản phẩm dùng trong môi trường nào?
+                    </h3>
+                    <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <Choice
+                        active={location === "indoor"}
+                        onClick={() => surface && setLocation("indoor")}
                       >
-                        Lau
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedMethod("phun")}
-                        className={`font-display flex-1 px-4 py-3 text-[13px] font-medium uppercase tracking-[0.14em] transition-colors sm:text-[14px] ${
-                          selectedMethod === "phun"
-                            ? "border-b-2 border-wood-900 text-wood-900"
-                            : "border-b-2 border-transparent text-wood-600 hover:text-wood-800"
-                        }`}
+                        Trong nhà (Nội thất)
+                      </Choice>
+                      <Choice
+                        active={location === "outdoor"}
+                        onClick={() => surface !== "mdf" && setLocation("outdoor")}
+                        disabled={surface === "mdf"}
                       >
-                        Phun
-                      </button>
+                        Ngoài trời
+                      </Choice>
+                    </div>
+                  </div>
+
+                  {/* Step 3 — chỉ hiện cho gỗ tự nhiên */}
+                  {needsFinishStep && (
+                    <div
+                      ref={step3Ref}
+                      className={`transition-all duration-500 ease-out ${
+                        location
+                          ? "opacity-100 translate-y-0"
+                          : "pointer-events-none opacity-40 translate-y-4"
+                      }`}
+                    >
+                      <StepLabel n="Bước 3" text="Kiểu hoàn thiện" />
+                      <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                        Anh/chị muốn hoàn thiện kiểu nào?
+                      </h3>
+                      <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        <Choice
+                          active={naturalFinish === "grain"}
+                          onClick={() => location && setNaturalFinish("grain")}
+                        >
+                          Giữ vân gỗ
+                        </Choice>
+                        <Choice
+                          active={naturalFinish === "solid"}
+                          onClick={() => location && setNaturalFinish("solid")}
+                        >
+                          Phủ màu bệt
+                        </Choice>
+                      </div>
                     </div>
                   )}
 
-                  <div className="relative aspect-[5/4] overflow-hidden bg-wood-200/40">
+                  {ready && (
+                    <button
+                      type="button"
+                      onClick={reset}
+                      className="text-micro uppercase tracking-label text-wood-700 transition-colors hover:text-wood-900"
+                    >
+                      ← Làm lại từ đầu
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {/* Result */}
+              <div ref={resultRef} className="lg:col-span-5">
+                {!coatingSystem ? (
+                  <div className="flex h-full min-h-[320px] items-center justify-center p-10 text-center">
+                    <p className="max-w-[260px] text-small text-wood-700">
+                      Hoàn thành 3 bước bên trái để nhận hệ đề xuất phù hợp.
+                    </p>
+                  </div>
+                ) : (
+                  <article className="flex h-full flex-col transition-all duration-500 ease-out">
+                    {/* Dual method tabs */}
+                    {coatingSystem.methodType === "dual" && (
+                      <div className="flex border-b border-wood-200 bg-wood-50/50">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedMethod("lau")}
+                          className={`flex-1 px-4 py-3 text-caption font-medium uppercase tracking-label transition-colors sm:text-small ${
+                            selectedMethod === "lau"
+                              ? "border-b-2 border-wood-900 text-wood-900"
+                              : "border-b-2 border-transparent text-wood-700 hover:text-wood-900"
+                          }`}
+                        >
+                          Lau
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedMethod("phun")}
+                          className={`flex-1 px-4 py-3 text-caption font-medium uppercase tracking-label transition-colors sm:text-small ${
+                            selectedMethod === "phun"
+                              ? "border-b-2 border-wood-900 text-wood-900"
+                              : "border-b-2 border-transparent text-wood-700 hover:text-wood-900"
+                          }`}
+                        >
+                          Phun
+                        </button>
+                      </div>
+                    )}
+
+                    <div className="relative aspect-[5/4] overflow-hidden bg-wood-200/40">
+                      <img
+                        src={
+                          coatingSystem.methodType === "dual"
+                            ? selectedMethod === "lau"
+                              ? coatingSystem.methodLau?.image
+                              : coatingSystem.methodPhun?.image
+                            : coatingSystem.singleMethod?.image
+                        }
+                        alt={`${coatingSystem.title} - ${coatingSystem.suitableFor}`}
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+
+                    <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
+                      <div>
+                        <div className="text-small uppercase tracking-label text-wood-700 sm:text-small">
+                          Hệ đề xuất sơ bộ
+                        </div>
+                        <h3 className="text-h3 sm:text-h3-lg font-semibold mt-3 text-wood-900">
+                          {coatingSystem.title}
+                        </h3>
+                        <p className="mt-2 text-body-sm text-wood-700 sm:text-body-sm">
+                          Đây là cấu hình gợi ý để anh/chị rút ngắn thời gian chọn hệ trước khi test
+                          mẫu thực tế.
+                        </p>
+                      </div>
+
+                      <dl className="divide-y divide-wood-200 border-t border-wood-200">
+                        <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                          <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                            Phù hợp với
+                          </dt>
+                          <dd className="text-body text-wood-900 sm:text-body">
+                            {coatingSystem.suitableFor}
+                          </dd>
+                        </div>
+
+                        {/* Show method-specific content */}
+                        {coatingSystem.methodType === "dual" &&
+                          selectedMethod === "lau" &&
+                          coatingSystem.methodLau && (
+                            <>
+                              <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                                <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                                  Quy trình (Lau)
+                                </dt>
+                                <dd className="text-body text-wood-900 sm:text-body">
+                                  {coatingSystem.methodLau.process}
+                                </dd>
+                              </div>
+                              <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                                <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                                  Sản phẩm (Lau)
+                                </dt>
+                                <dd className="text-body text-wood-900 sm:text-body">
+                                  {coatingSystem.methodLau.representativeProducts.join(" · ")}
+                                </dd>
+                              </div>
+                            </>
+                          )}
+
+                        {coatingSystem.methodType === "dual" &&
+                          selectedMethod === "phun" &&
+                          coatingSystem.methodPhun && (
+                            <>
+                              <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                                <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                                  Quy trình (Phun)
+                                </dt>
+                                <dd className="text-body text-wood-900 sm:text-body">
+                                  {coatingSystem.methodPhun.process}
+                                </dd>
+                              </div>
+                              <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                                <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                                  Sản phẩm (Phun)
+                                </dt>
+                                <dd className="text-body text-wood-900 sm:text-body">
+                                  {coatingSystem.methodPhun.representativeProducts.join(" · ")}
+                                </dd>
+                              </div>
+                            </>
+                          )}
+
+                        {coatingSystem.methodType === "single" && coatingSystem.singleMethod && (
+                          <>
+                            <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                              <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                                Quy trình
+                              </dt>
+                              <dd className="text-body text-wood-900 sm:text-body">
+                                {coatingSystem.singleMethod.process}
+                              </dd>
+                            </div>
+                            <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
+                              <dt className="text-small font-medium uppercase tracking-label text-wood-500 sm:pt-0.5 sm:text-small">
+                                Sản phẩm
+                              </dt>
+                              <dd className="text-body text-wood-900 sm:text-body">
+                                {coatingSystem.singleMethod.representativeProducts.join(" · ")}
+                              </dd>
+                            </div>
+                          </>
+                        )}
+                      </dl>
+
+                      {/* Transition copy trước pricing */}
+                      <div className="mt-8 mb-6 rounded-lg border-l-4 border-wood-400 bg-wood-100/40 p-5">
+                        <p className="text-body-sm text-wood-900 sm:text-body-sm">
+                          Hệ trên được gợi ý theo nhu cầu anh/chị vừa chọn.
+                        </p>
+                        <p className="mt-2 text-body-sm text-wood-900 sm:text-body-sm">
+                          Để chốt đúng màu và kiểm tra quy trình thi công thực tế, bước tiếp theo là
+                          test mẫu.
+                        </p>
+                      </div>
+
+                      {/* Pricing block với selector row + detail panel */}
+                      <div className="mt-6">
+                        {/* Heading */}
+                        <div className="text-caption font-medium uppercase tracking-label text-wood-700 sm:text-small">
+                          Chọn gói mẫu
+                        </div>
+                        <p className="mt-2 text-small text-wood-700 sm:text-body-sm">
+                          Thử trước — quyết định sau.
+                        </p>
+                        <p className="mt-1 text-micro text-wood-500 sm:text-micro">
+                          Dung tích tính riêng cho từng sản phẩm trong quy trình.
+                        </p>
+
+                        {/* Tầng 1: Selector row */}
+                        <div className="mt-5 grid grid-cols-2 gap-3">
+                          <button
+                            type="button"
+                            onClick={() => setSelectedPackage("500g")}
+                            className={`relative flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${
+                              selectedPackage === "500g"
+                                ? "border-wood-900 bg-wood-50/60"
+                                : "border-wood-200/50 bg-background hover:border-wood-400"
+                            }`}
+                          >
+                            <div className="text-micro font-medium uppercase tracking-label text-wood-500 sm:text-micro">
+                              500g
+                            </div>
+                            <div className="mt-0.5 text-body font-semibold text-wood-900 sm:text-lead">
+                              {surface === "mdf" && location === "indoor"
+                                ? "169.000 đ"
+                                : "199.000 đ"}
+                            </div>
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => setSelectedPackage("1kg")}
+                            className={`flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${
+                              selectedPackage === "1kg"
+                                ? "border-wood-900 bg-wood-50/60"
+                                : "border-wood-200/50 bg-background hover:border-wood-400"
+                            }`}
+                          >
+                            <div className="text-micro font-medium uppercase tracking-label text-wood-500 sm:text-micro">
+                              1kg
+                            </div>
+                            <div className="mt-0.5 text-body font-semibold text-wood-900 sm:text-lead">
+                              {formattedPrice1kg}
+                            </div>
+                          </button>
+                        </div>
+
+                        {/* Helper text động - dung tích theo package */}
+                        <p className="mt-2 text-micro text-wood-500 sm:text-micro">
+                          {selectedPackage === "500g"
+                            ? "500g cho mỗi sản phẩm trong quy trình được đề xuất."
+                            : "1kg cho mỗi sản phẩm trong quy trình được đề xuất."}
+                        </p>
+
+                        {/* Tầng 2: Detail panel động 2 cột */}
+                        <div className="mt-5 rounded-md border border-wood-200/50 bg-wood-50/20 p-5">
+                          {selectedPackage === "500g" && (
+                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
+                              <div className="space-y-3">
+                                <h4 className="text-body font-semibold text-wood-900">
+                                  Bộ mẫu 500g
+                                </h4>
+                                <p className="text-caption text-wood-700 sm:text-small">
+                                  Kiểm tra độ bám, độ phủ và cách sơn chạy — trước khi ra quyết
+                                  định.
+                                </p>
+                                <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-micro text-wood-700 sm:text-micro">
+                                  <div className="h-1 w-1 rounded-full bg-wood-400" />
+                                  <span>
+                                    {selectedPackage === "500g" &&
+                                    (naturalFinish === "solid" ||
+                                      naturalFinish === "grain" ||
+                                      (surface === "mdf" && location === "indoor"))
+                                      ? "Màu do Lotus chọn sẵn — giao ngay"
+                                      : "Chọn màu theo yêu cầu"}
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="flex flex-col items-end justify-between space-y-3 sm:space-y-4">
+                                <div className="text-h3 font-semibold text-wood-900 sm:text-h3">
+                                  {surface === "mdf" && location === "indoor"
+                                    ? "169.000 đ"
+                                    : "199.000 đ"}
+                                </div>
+                                <div className="flex w-full flex-col gap-2 sm:w-auto">
+                                  <button
+                                    type="button"
+                                    onClick={() => setShowSampleForm(true)}
+                                    className="w-full rounded-md bg-wood-900 px-4 py-2 text-caption font-medium text-wood-50 transition-colors hover:bg-wood-800 sm:text-small"
+                                  >
+                                    Đặt bộ mẫu 500g →
+                                  </button>
+                                  <a
+                                    href={ZALO}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-micro font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-caption"
+                                  >
+                                    <svg
+                                      className="h-3.5 w-3.5"
+                                      fill="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z" />
+                                    </svg>
+                                    Hỏi nhanh qua Zalo
+                                  </a>
+                                </div>
+                                <p className="mt-2.5 mx-auto w-full text-center text-micro text-wood-500 sm:text-caption">
+                                  ✓ Hoàn tiền mẫu vào đơn hàng đầu tiên
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          {selectedPackage === "1kg" && (
+                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
+                              <div className="space-y-3">
+                                <h4 className="text-body font-semibold text-wood-900">
+                                  Bộ mẫu 1kg
+                                </h4>
+                                <p className="text-caption text-wood-700 sm:text-small">
+                                  Xác nhận đúng màu trước khi đặt lô. Chọn từ bảng màu hoặc báo mã
+                                  màu riêng.
+                                </p>
+                                <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-micro text-wood-700 sm:text-micro">
+                                  <div className="h-1 w-1 rounded-full bg-wood-600" />
+                                  <span>Chọn màu theo yêu cầu</span>
+                                </div>
+                              </div>
+                              <div className="flex flex-col items-end justify-between space-y-3 sm:space-y-4">
+                                <div className="text-h3 font-semibold text-wood-900 sm:text-h3">
+                                  {formattedPrice1kg}
+                                </div>
+                                <div className="flex w-full flex-col gap-2 sm:w-auto">
+                                  <button
+                                    type="button"
+                                    onClick={() => setShowSampleForm(true)}
+                                    className="w-full rounded-md bg-wood-900 px-4 py-2 text-caption font-medium text-wood-50 transition-colors hover:bg-wood-800 sm:text-small"
+                                  >
+                                    Đặt bộ mẫu 1kg — chọn màu →
+                                  </button>
+                                  <a
+                                    href={ZALO}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-micro font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-caption"
+                                  >
+                                    <svg
+                                      className="h-3.5 w-3.5"
+                                      fill="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z" />
+                                    </svg>
+                                    Hỏi nhanh qua Zalo
+                                  </a>
+                                </div>
+                                <p className="mt-2.5 mx-auto w-full text-center text-micro text-wood-500 sm:text-caption">
+                                  ✓ Hoàn tiền mẫu vào đơn hàng đầu tiên
+                                </p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Color reference section */}
+                        {(() => {
+                          const currentMethod =
+                            coatingSystem.methodType === "dual"
+                              ? selectedMethod === "lau"
+                                ? coatingSystem.methodLau
+                                : coatingSystem.methodPhun
+                              : coatingSystem.singleMethod;
+                          const methodColors = currentMethod?.colors;
+                          const displayColors = methodColors || coatingSystem.colors;
+
+                          if (!displayColors || displayColors.length === 0) return null;
+
+                          return (
+                            <div className="mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
+                              <div className="mb-3 flex items-center justify-between">
+                                <div className="text-caption font-medium uppercase tracking-label text-wood-700 sm:text-small">
+                                  Bảng màu tham khảo
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => setShowFullColorChart(true)}
+                                  className="text-micro font-medium text-wood-700 underline hover:text-wood-900 sm:text-caption"
+                                >
+                                  Xem bảng màu đầy đủ
+                                </button>
+                              </div>
+                              <div className="grid grid-cols-5 gap-2">
+                                {displayColors.slice(0, 5).map((color) => (
+                                  <div key={color.code} className="flex flex-col items-center">
+                                    {color.image ? (
+                                      <img
+                                        src={color.image}
+                                        alt={color.name}
+                                        className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover"
+                                        title={color.name}
+                                      />
+                                    ) : (
+                                      <div
+                                        className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
+                                        style={{ backgroundColor: color.hex }}
+                                        title={color.name}
+                                      />
+                                    )}
+                                    <span className="mt-1 text-micro text-wood-700 sm:text-micro">
+                                      {color.code}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                              <p className="mt-3 text-micro text-wood-500 sm:text-caption">
+                                Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối
+                                chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
+                              </p>
+                            </div>
+                          );
+                        })()}
+                      </div>
+                    </div>
+                  </article>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Full color chart modal */}
+      {showFullColorChart &&
+        coatingSystem &&
+        (() => {
+          const currentMethod =
+            coatingSystem.methodType === "dual"
+              ? selectedMethod === "lau"
+                ? coatingSystem.methodLau
+                : coatingSystem.methodPhun
+              : coatingSystem.singleMethod;
+          const fullChartImage = currentMethod?.fullChartImage;
+
+          return (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+              <div className="w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">
+                    Bảng màu đầy đủ
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setShowFullColorChart(false)}
+                    aria-label="Đóng bảng màu"
+                    className="rounded-full p-2 text-wood-700 hover:bg-wood-200/50"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                {fullChartImage && (
+                  <div className="mb-4">
                     <img
-                      src={
-                        coatingSystem.methodType === "dual"
-                          ? selectedMethod === "lau"
-                            ? coatingSystem.methodLau?.image
-                            : coatingSystem.methodPhun?.image
-                          : coatingSystem.singleMethod?.image
-                      }
-                      alt={`${coatingSystem.title} - ${coatingSystem.suitableFor}`}
-                      className="h-full w-full object-cover object-center"
+                      src={fullChartImage}
+                      alt={`Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`}
+                      className="w-full rounded-lg border border-wood-200/60 shadow-sm"
                     />
                   </div>
-
-                  <div className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
-                    <div>
-                      <div className="font-display text-[14px] uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
-                        Hệ đề xuất sơ bộ
-                      </div>
-                      <h3 className="font-display mt-3 text-[1.5rem] font-light leading-[1.25] text-wood-900 sm:text-[1.6rem]">
-                        {coatingSystem.title}
-                      </h3>
-                      <p className="mt-2 text-[15px] leading-[1.6] text-wood-600 sm:text-[15px]">
-                        Đây là cấu hình gợi ý để anh/chị rút ngắn thời gian chọn hệ trước khi test mẫu thực tế.
-                      </p>
-                    </div>
-
-                    <dl className="divide-y divide-wood-200 border-t border-wood-200">
-                      <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                        <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                          Phù hợp với
-                        </dt>
-                        <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                          {coatingSystem.suitableFor}
-                        </dd>
-                      </div>
-
-                      {/* Show method-specific content */}
-                      {coatingSystem.methodType === "dual" && selectedMethod === "lau" && coatingSystem.methodLau && (
-                        <>
-                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                              Quy trình (Lau)
-                            </dt>
-                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                              {coatingSystem.methodLau.process}
-                            </dd>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                              Sản phẩm (Lau)
-                            </dt>
-                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                              {coatingSystem.methodLau.representativeProducts.join(" · ")}
-                            </dd>
-                          </div>
-                        </>
-                      )}
-
-                      {coatingSystem.methodType === "dual" && selectedMethod === "phun" && coatingSystem.methodPhun && (
-                        <>
-                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                              Quy trình (Phun)
-                            </dt>
-                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                              {coatingSystem.methodPhun.process}
-                            </dd>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                              Sản phẩm (Phun)
-                            </dt>
-                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                              {coatingSystem.methodPhun.representativeProducts.join(" · ")}
-                            </dd>
-                          </div>
-                        </>
-                      )}
-
-                      {coatingSystem.methodType === "single" && coatingSystem.singleMethod && (
-                        <>
-                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                              Quy trình
-                            </dt>
-                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                              {coatingSystem.singleMethod.process}
-                            </dd>
-                          </div>
-                          <div className="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[120px_1fr] sm:gap-4">
-                            <dt className="font-display text-[14px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:pt-0.5 sm:text-[14px]">
-                              Sản phẩm
-                            </dt>
-                            <dd className="text-[16px] leading-[1.55] text-wood-800 sm:text-[16px]">
-                              {coatingSystem.singleMethod.representativeProducts.join(" · ")}
-                            </dd>
-                          </div>
-                        </>
-                      )}
-                    </dl>
-
-                    {/* Transition copy trước pricing */}
-                    <div className="mt-8 mb-6 rounded-lg border-l-4 border-wood-400 bg-wood-100/40 p-5">
-                      <p className="text-[15px] leading-[1.6] text-wood-800 sm:text-[15px]">
-                        Hệ trên được gợi ý theo nhu cầu anh/chị vừa chọn.
-                      </p>
-                      <p className="mt-2 text-[15px] leading-[1.6] text-wood-800 sm:text-[15px]">
-                        Để chốt đúng màu và kiểm tra quy trình thi công thực tế, bước tiếp theo là test mẫu.
-                      </p>
-                    </div>
-
-                    {/* Pricing block với selector row + detail panel */}
-                    <div className="mt-6">
-                      {/* Heading */}
-                      <div className="font-display text-[13px] font-medium uppercase tracking-[0.22em] text-wood-600 sm:text-[14px]">
-                        Chọn gói mẫu
-                      </div>
-                      <p className="mt-2 text-[14px] leading-[1.5] text-wood-700 sm:text-[15px]">
-                        Thử trước — quyết định sau.
-                      </p>
-                      <p className="mt-1 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
-                        Dung tích tính riêng cho từng sản phẩm trong quy trình.
-                      </p>
-
-                      {/* Tầng 1: Selector row */}
-                      <div className="mt-5 grid grid-cols-2 gap-3">
-                        <button
-                          type="button"
-                          onClick={() => setSelectedPackage("500g")}
-                          className={`relative flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${
-                            selectedPackage === "500g"
-                              ? "border-wood-900 bg-wood-50/60"
-                              : "border-wood-200/50 bg-background hover:border-wood-400"
-                          }`}
-                        >
-                          <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-wood-500 sm:text-[11px]">
-                            500g
-                          </div>
-                          <div className="mt-0.5 text-[1rem] font-semibold leading-none text-wood-900 sm:text-[1.05rem]">
-                            {surface === "mdf" && location === "indoor" ? "169.000 đ" : "199.000 đ"}
-                          </div>
-                        </button>
-
-                        <button
-                          type="button"
-                          onClick={() => setSelectedPackage("1kg")}
-                          className={`flex flex-col items-center rounded-md border px-3 py-2 text-center transition-all ${
-                            selectedPackage === "1kg"
-                              ? "border-wood-900 bg-wood-50/60"
-                              : "border-wood-200/50 bg-background hover:border-wood-400"
-                          }`}
-                        >
-                          <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-wood-500 sm:text-[11px]">
-                            1kg
-                          </div>
-                          <div className="mt-0.5 text-[1rem] font-semibold leading-none text-wood-900 sm:text-[1.05rem]">
-                            {formattedPrice1kg}
-                          </div>
-                        </button>
-                      </div>
-
-                      {/* Helper text động - dung tích theo package */}
-                      <p className="mt-2 text-[11px] leading-[1.4] text-wood-500 sm:text-[12px]">
-                        {selectedPackage === "500g" ? "500g cho mỗi sản phẩm trong quy trình được đề xuất." : "1kg cho mỗi sản phẩm trong quy trình được đề xuất."}
-                      </p>
-
-                      {/* Tầng 2: Detail panel động 2 cột */}
-                      <div className="mt-5 rounded-md border border-wood-200/50 bg-wood-50/20 p-5">
-                        {selectedPackage === "500g" && (
-                          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
-                            <div className="space-y-3">
-                              <h4 className="font-display text-[1rem] font-medium text-wood-900 sm:text-[1.05rem]">
-                                Bộ mẫu 500g
-                              </h4>
-                              <p className="text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]">
-                                Kiểm tra độ bám, độ phủ và cách sơn chạy — trước khi ra quyết định.
-                              </p>
-                              <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]">
-                                <div className="h-1 w-1 rounded-full bg-wood-400" />
-                                <span>{selectedPackage === "500g" && (naturalFinish === "solid" || naturalFinish === "grain" || (surface === "mdf" && location === "indoor")) ? "Màu do Lotus chọn sẵn — giao ngay" : "Chọn màu theo yêu cầu"}</span>
-                              </div>
-                            </div>
-                            <div className="flex flex-col items-end justify-between space-y-3 sm:space-y-4">
-                              <div className="text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]">
-                                {surface === "mdf" && location === "indoor" ? "169.000 đ" : "199.000 đ"}
-                              </div>
-                              <div className="flex w-full flex-col gap-2 sm:w-auto">
-                                <button
-                                  type="button"
-                                  onClick={() => setShowSampleForm(true)}
-                                  className="w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]"
-                                >
-                                  Đặt bộ mẫu 500g →
-                                </button>
-                                <a
-                                  href={ZALO}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-[12px] font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[13px]"
-                                >
-                                  <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
-                                  </svg>
-                                  Hỏi nhanh qua Zalo
-                                </a>
-                              </div>
-                              <p className="mt-2.5 mx-auto w-full text-center text-[12px] text-wood-500 sm:text-[13px]">
-                                ✓ Hoàn tiền mẫu vào đơn hàng đầu tiên
-                              </p>
-                            </div>
-                          </div>
-                        )}
-
-                        {selectedPackage === "1kg" && (
-                          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
-                            <div className="space-y-3">
-                              <h4 className="font-display text-[1rem] font-medium text-wood-900 sm:text-[1.05rem]">
-                                Bộ mẫu 1kg
-                              </h4>
-                              <p className="text-[13px] leading-[1.5] text-wood-700 sm:text-[14px]">
-                                Xác nhận đúng màu trước khi đặt lô. Chọn từ bảng màu hoặc báo mã màu riêng.
-                              </p>
-                              <div className="inline-flex items-center gap-1.5 rounded-full bg-wood-200/40 px-2.5 py-1 text-[11px] text-wood-600 sm:text-[12px]">
-                                <div className="h-1 w-1 rounded-full bg-wood-600" />
-                                <span>Chọn màu theo yêu cầu</span>
-                              </div>
-                            </div>
-                            <div className="flex flex-col items-end justify-between space-y-3 sm:space-y-4">
-                              <div className="text-[1.35rem] font-semibold leading-none text-wood-900 sm:text-[1.4rem]">
-                                {formattedPrice1kg}
-                              </div>
-                              <div className="flex w-full flex-col gap-2 sm:w-auto">
-                                <button
-                                  type="button"
-                                  onClick={() => setShowSampleForm(true)}
-                                  className="w-full rounded-md bg-wood-900 px-4 py-2 text-[13px] font-medium text-background transition-colors hover:bg-wood-800 sm:text-[14px]"
-                                >
-                                  Đặt bộ mẫu 1kg — chọn màu →
-                                </button>
-                                <a
-                                  href={ZALO}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-wood-200 px-4 py-2 text-center text-[12px] font-medium text-wood-700 transition-colors hover:border-wood-300 hover:bg-wood-50 sm:text-[13px]"
-                                >
-                                  <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2v-2zm0-10h2v8h-2V7z"/>
-                                  </svg>
-                                  Hỏi nhanh qua Zalo
-                                </a>
-                              </div>
-                              <p className="mt-2.5 mx-auto w-full text-center text-[12px] text-wood-500 sm:text-[13px]">
-                                ✓ Hoàn tiền mẫu vào đơn hàng đầu tiên
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Color reference section */}
-                      {(() => {
-                        const currentMethod = coatingSystem.methodType === "dual"
-                          ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun
-                          : coatingSystem.singleMethod;
-                        const methodColors = currentMethod?.colors;
-                        const displayColors = methodColors || coatingSystem.colors;
-
-                        if (!displayColors || displayColors.length === 0) return null;
-
-                        return (
-                          <div className="mt-4 rounded-lg border border-wood-200/60 bg-wood-50/30 p-4">
-                            <div className="mb-3 flex items-center justify-between">
-                              <div className="text-[13px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[14px]">
-                                Bảng màu tham khảo
-                              </div>
-                              <button
-                                type="button"
-                                onClick={() => setShowFullColorChart(true)}
-                                className="text-[12px] font-medium text-wood-700 underline hover:text-wood-900 sm:text-[13px]"
-                              >
-                                Xem bảng màu đầy đủ
-                              </button>
-                            </div>
-                            <div className="grid grid-cols-5 gap-2">
-                              {displayColors.slice(0, 5).map((color) => (
-                                <div key={color.code} className="flex flex-col items-center">
-                                  {color.image ? (
-                                    <img
-                                      src={color.image}
-                                      alt={color.name}
-                                      className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm object-cover"
-                                      title={color.name}
-                                    />
-                                  ) : (
-                                    <div
-                                      className="h-10 w-10 rounded-full border border-wood-300/50 shadow-sm"
-                                      style={{ backgroundColor: color.hex }}
-                                      title={color.name}
-                                    />
-                                  )}
-                                  <span className="mt-1 text-[11px] text-wood-600 sm:text-[12px]">{color.code}</span>
-                                </div>
-                              ))}
-                            </div>
-                            <p className="mt-3 text-[12px] leading-[1.5] text-wood-500 italic sm:text-[13px]">
-                              Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
-                            </p>
-                          </div>
-                        );
-                      })()}
-                    </div>
-                  </div>
-                </article>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Full color chart modal */}
-    {showFullColorChart && coatingSystem && (() => {
-      const currentMethod = coatingSystem.methodType === "dual"
-        ? selectedMethod === "lau" ? coatingSystem.methodLau : coatingSystem.methodPhun
-        : coatingSystem.singleMethod;
-      const fullChartImage = currentMethod?.fullChartImage;
-
-      return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="w-full max-w-2xl rounded-xl bg-[#F5F0EA] p-6 shadow-2xl max-h-[90vh] overflow-y-auto sm:rounded-2xl sm:p-8">
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-display text-[1.3rem] font-semibold text-wood-900">
-                Bảng màu đầy đủ
-              </h3>
-              <button
-                type="button"
-                onClick={() => setShowFullColorChart(false)}
-                aria-label="Đóng bảng màu"
-                className="rounded-full p-2 text-wood-600 hover:bg-wood-200/50"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-            {fullChartImage && (
-              <div className="mb-4">
-                <img
-                  src={fullChartImage}
-                  alt={`Bảng màu ${coatingSystem.colorType === "grain" ? "giữ vân" : "màu bệt"} - ${selectedMethod}`}
-                  className="w-full rounded-lg border border-wood-200/60 shadow-sm"
-                />
+                )}
+                <p className="mb-4 text-caption text-wood-500 sm:text-small">
+                  Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu
+                  gốc hoặc mẫu thực tế trước khi chốt.
+                </p>
+                <div className="flex gap-3">
+                  {fullChartImage && (
+                    <a
+                      href={fullChartImage}
+                      download={`lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`}
+                      className="flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-caption font-semibold uppercase tracking-label text-wood-900 transition-colors hover:bg-wood-900/5 sm:text-small"
+                    >
+                      Tải xuống
+                    </a>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setShowFullColorChart(false)}
+                    className="flex-1 rounded-lg bg-wood-900 py-3 text-caption font-semibold uppercase tracking-label text-wood-50 transition-colors hover:bg-wood-800 sm:text-small"
+                  >
+                    Đóng
+                  </button>
+                </div>
               </div>
-            )}
-            <p className="mb-4 text-[13px] leading-[1.5] text-wood-500 italic sm:text-[14px]">
-              Màu hiển thị trên màn hình chỉ mang tính tham khảo. Vui lòng đối chiếu bảng màu gốc hoặc mẫu thực tế trước khi chốt.
-            </p>
-            <div className="flex gap-3">
-              {fullChartImage && (
-                <a
-                  href={fullChartImage}
-                  download={`lotus-color-chart-${coatingSystem.colorType}-${selectedMethod}.png`}
-                  className="flex-1 rounded-lg border border-wood-900 bg-transparent py-3 text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-wood-900 transition-colors hover:bg-wood-900/5 sm:text-[14px]"
-                >
-                  Tải xuống
-                </a>
-              )}
-              <button
-                type="button"
-                onClick={() => setShowFullColorChart(false)}
-                className="flex-1 rounded-lg bg-wood-900 py-3 text-[13px] font-semibold uppercase tracking-[0.14em] text-[#F5F0EA] transition-colors hover:bg-wood-800 sm:text-[14px]"
-              >
-                Đóng
-              </button>
             </div>
-          </div>
-        </div>
-      );
-    })()}
+          );
+        })()}
 
       {/* Modal form đặt mẫu thử */}
       <SampleRequestModal
@@ -2520,7 +2728,11 @@ const PRODUCT_GROUPS = [
     title: "products.group6.title",
     description: "products.group6.description",
     usage: "products.group6.usage",
-    products: ["Lotus Acrylic Lacquer EX 2K", "Lotus Wood Paint IN 2K", "Lotus Wood Stain Finish 2K"],
+    products: [
+      "Lotus Acrylic Lacquer EX 2K",
+      "Lotus Wood Paint IN 2K",
+      "Lotus Wood Stain Finish 2K",
+    ],
     image: heSon2K,
   },
 ];
@@ -2534,17 +2746,15 @@ function ProductsSection() {
       <div className="mx-auto max-w-[1280px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+            <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("products.label")}
             </div>
-            <h2 className="font-display mt-6 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-[2.5rem]">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-6 text-wood-900">
               <span className="block">{t("products.title")}</span>
-              <span className="block italic font-normal text-wood-700">
-                {t("products.titleItalic")}
-              </span>
+              <span className="block font-normal text-wood-700">{t("products.titleItalic")}</span>
             </h2>
           </div>
-          <p className="text-[17px] leading-[1.75] text-wood-700/85 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-[18px]">
+          <p className="text-lead text-wood-700 lg:col-span-4 lg:col-start-9 lg:pt-6 sm:text-lead">
             {t("products.description")}
           </p>
         </div>
@@ -2566,32 +2776,30 @@ function ProductsSection() {
               </div>
               <div className="flex flex-col gap-5 p-6">
                 <div>
-                  <div className="font-display text-[11px] font-medium uppercase tracking-[0.22em] text-wood-400">
+                  <div className="text-micro font-medium uppercase tracking-label text-wood-500">
                     {t("products.group")} {index + 1}
                   </div>
-                  <h3 className="font-display mt-2 text-[19px] font-semibold leading-[1.2] tracking-[-0.01em] text-wood-900">
+                  <h3 className="text-h3 sm:text-h3-lg font-semibold mt-2 text-wood-900">
                     {t(group.title)}
                   </h3>
                 </div>
-                <p className="text-[14px] leading-[1.7] text-wood-600/90 sm:text-[15px]">
+                <p className="text-small text-wood-700 sm:text-body-sm">
                   {t(group.description)}
                 </p>
                 <div className="space-y-4 border-t border-wood-200/50 pt-4">
                   <div>
-                    <div className="font-display text-[10px] font-medium uppercase tracking-[0.22em] text-wood-400">
+                    <div className="text-micro font-medium uppercase tracking-label text-wood-500">
                       {t("products.usage")}
                     </div>
-                    <p className="mt-1.5 text-[14px] leading-[1.6] text-wood-600">
-                      {t(group.usage)}
-                    </p>
+                    <p className="mt-1.5 text-small text-wood-700">{t(group.usage)}</p>
                   </div>
                   <div>
-                    <div className="font-display text-[10px] font-medium uppercase tracking-[0.22em] text-wood-400">
+                    <div className="text-micro font-medium uppercase tracking-label text-wood-500">
                       {t("products.repProducts")}
                     </div>
                     <div className="mt-2 space-y-1.5">
                       {group.products.map((product, pIndex) => (
-                        <div key={pIndex} className="font-display text-[14px] italic text-wood-800">
+                        <div key={pIndex} className="text-small text-wood-900">
                           {product}
                         </div>
                       ))}
@@ -2624,40 +2832,41 @@ function ProductsSection() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col">
-                  <div className="font-display text-[12px] font-medium uppercase tracking-[0.14em] text-wood-600 sm:text-[13px]">
+                  <div className="text-micro font-medium uppercase tracking-label text-wood-700 sm:text-caption">
                     {t("products.group")} {index + 1}
                   </div>
-                  <h3 className="font-display mt-1 text-[17px] font-semibold leading-[1.3] text-wood-900">
+                  <h3 className="text-h3 sm:text-h3-lg font-semibold mt-1 text-wood-900">
                     {t(group.title)}
                   </h3>
                 </div>
                 <ChevronDown
-                  className={`mt-1 h-5 w-5 shrink-0 text-wood-600 transition-transform ${
+                  className={`mt-1 h-5 w-5 shrink-0 text-wood-700 transition-transform ${
                     expandedGroup === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
               {expandedGroup === index && (
                 <div className="border-t border-wood-200 p-4">
-                  <p className="text-[16px] leading-[1.6] text-wood-700/90 sm:text-[17px]">
-                    {t(group.description)}
-                  </p>
+                  <p className="text-body text-wood-700 sm:text-lead">{t(group.description)}</p>
                   <div className="mt-4 space-y-3">
                     <div>
-                      <div className="text-[12px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:text-[13px]">
+                      <div className="text-micro font-medium uppercase tracking-label text-wood-500 sm:text-caption">
                         {t("products.usage")}
                       </div>
-                      <p className="mt-1 text-[15px] leading-[1.5] text-wood-600 sm:text-[16px]">
+                      <p className="mt-1 text-body-sm text-wood-700 sm:text-body">
                         {t(group.usage)}
                       </p>
                     </div>
                     <div>
-                      <div className="text-[12px] font-medium uppercase tracking-[0.14em] text-wood-500 sm:text-[13px]">
+                      <div className="text-micro font-medium uppercase tracking-label text-wood-500 sm:text-caption">
                         {t("products.repProducts")}
                       </div>
                       <div className="mt-2 space-y-1">
                         {group.products.map((product, pIndex) => (
-                          <div key={pIndex} className="text-[15px] font-medium text-wood-800 sm:text-[16px]">
+                          <div
+                            key={pIndex}
+                            className="text-body-sm font-medium text-wood-900 sm:text-body"
+                          >
                             {product}
                           </div>
                         ))}
@@ -2725,22 +2934,17 @@ const PROJECTS = [
 function Lookbook() {
   const { t } = useTranslation();
   return (
-    <section
-      id="cong-trinh"
-      className="bg-[oklch(0.96_0.018_82)] py-14 sm:py-20 lg:py-24"
-    >
+    <section id="cong-trinh" className="bg-[oklch(0.96_0.018_82)] py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14">
         <div className="max-w-3xl">
-          <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+          <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
             {t("lookbook.label")}
           </div>
-          <h2 className="font-display mt-8 text-[2.1rem] font-light leading-[1.1] text-wood-900 sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
             <span className="block">{t("lookbook.title")}</span>
-            <span className="block italic font-normal text-wood-700">
-              {t("lookbook.titleItalic")}
-            </span>
+            <span className="block font-normal text-wood-700">{t("lookbook.titleItalic")}</span>
           </h2>
-          <p className="font-display mt-6 max-w-2xl text-[16px] italic leading-[1.6] text-wood-700 sm:text-[17px]">
+          <p className="mt-6 max-w-2xl text-body text-wood-700 sm:text-lead">
             {t("lookbook.description")}
           </p>
         </div>
@@ -2761,15 +2965,16 @@ function Lookbook() {
                 />
               </div>
               <div className="flex flex-col gap-1.5 p-4 sm:gap-2 sm:p-6 lg:p-7">
-                <span className="inline-block rounded-full bg-wood-700/10 px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-[0.12em] text-wood-700">
+                <span className="inline-block rounded-full bg-wood-700/10 px-2.5 py-0.5 text-micro font-medium uppercase tracking-label text-wood-700">
                   {t(p.tag)}
                 </span>
-                <h3 className="font-display text-[17px] font-semibold leading-[1.25] text-wood-900 sm:text-[1.4rem]">
-                  {p.name}
-                </h3>
-                <p className="text-[13px] text-wood-600 sm:text-[15px] lg:text-[16px]">{t(p.type)}</p>
-                <p className="mt-1 text-[13px] leading-[1.5] text-wood-500 sm:text-[14px]">
-                  <span className="font-medium text-wood-700">Hệ sơn: </span>{p.note}
+                <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{p.name}</h3>
+                <p className="text-caption text-wood-700 sm:text-body-sm lg:text-body">
+                  {t(p.type)}
+                </p>
+                <p className="mt-1 text-caption text-wood-500 sm:text-small">
+                  <span className="font-medium text-wood-700">Hệ sơn: </span>
+                  {p.note}
                 </p>
               </div>
             </article>
@@ -2792,22 +2997,18 @@ function Lookbook() {
                 />
               </div>
               <div className="flex flex-col gap-1.5 p-4">
-                <span className="inline-block rounded-full bg-wood-700/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.12em] text-wood-700">
+                <span className="inline-block rounded-full bg-wood-700/10 px-2 py-0.5 text-micro font-medium uppercase tracking-label text-wood-700">
                   {t(p.tag)}
                 </span>
-                <h3 className="font-display text-[16px] font-semibold leading-[1.25] text-wood-900 sm:text-[17px]">
-                  {p.name}
-                </h3>
-                <p className="text-[13px] text-wood-600 sm:text-[14px]">{t(p.type)}</p>
-                <p className="mt-1 text-[12px] leading-[1.5] text-wood-500">{p.note}</p>
+                <h3 className="text-h3 sm:text-h3-lg font-semibold text-wood-900">{p.name}</h3>
+                <p className="text-caption text-wood-700 sm:text-small">{t(p.type)}</p>
+                <p className="mt-1 text-micro text-wood-500">{p.note}</p>
               </div>
-
             </article>
           ))}
         </div>
 
-
-        <p className="mx-auto mt-14 max-w-xl text-center text-[15px] leading-[1.65] text-wood-600 lg:mt-20 sm:text-[16px]">
+        <p className="mx-auto mt-14 max-w-xl text-center text-body-sm text-wood-700 lg:mt-20 sm:text-body">
           {t("lookbook.cta")}
         </p>
       </div>
@@ -2821,37 +3022,34 @@ function Lookbook() {
 function ConsultBlock() {
   const { t } = useTranslation();
   return (
-    <section className="bg-wood-900 py-14 text-background sm:py-20 lg:py-24">
+    <section className="bg-wood-900 py-14 text-wood-50 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-400 sm:text-[14px]">
+            <div className="text-caption uppercase tracking-label text-wood-300 sm:text-small">
               {t("consult.label")}
             </div>
-            <h2 className="font-display mt-8 text-[1.9rem] font-light leading-[1.06] sm:text-[2.4rem] lg:text-[3rem]">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8">
               <span className="block">{t("consult.title")}</span>
-              <span className="block italic font-normal text-wood-200">
-                {t("consult.titleItalic")}
-              </span>
+              <span className="block font-normal text-wood-300">{t("consult.titleItalic")}</span>
             </h2>
-            <p className="mt-7 max-w-md text-[17px] leading-[1.7] text-wood-300 sm:text-[18px]">
+            <p className="mt-7 max-w-md text-lead text-wood-300 sm:text-lead">
               {t("consult.description")}
             </p>
-            <ul className="mt-7 space-y-3 text-[16px] leading-[1.6] text-wood-300 sm:text-[17px]">
+            <ul className="mt-7 space-y-3 text-body text-wood-300 sm:text-lead">
               <li className="flex gap-3">
-                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-300" strokeWidth={1.75} />
                 <span>{t("consult.benefit1")}</span>
               </li>
               <li className="flex gap-3">
-                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-300" strokeWidth={1.75} />
                 <span>{t("consult.benefit2")}</span>
               </li>
               <li className="flex gap-3">
-                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-400" strokeWidth={1.75} />
+                <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-wood-300" strokeWidth={1.75} />
                 <span>{t("consult.benefit3")}</span>
               </li>
             </ul>
-
           </div>
 
           <div className="flex flex-col gap-5 lg:col-span-5 lg:justify-end lg:pb-2">
@@ -2864,17 +3062,17 @@ function ConsultBlock() {
                 className="h-full w-full object-cover object-center"
               />
             </div>
-            <p className="text-[15px] leading-[1.65] text-wood-300">
+            <p className="text-body-sm text-wood-300">
               Lotus không chỉ bán sơn mà đồng hành như một bộ phận kỹ thuật mở rộng của xưởng.
             </p>
-            <p className="text-[15px] leading-[1.65] text-wood-300">
+            <p className="text-body-sm text-wood-300">
               Từ mẫu thử đầu tiên đến lô hàng cuối, đội ngũ hỗ trợ để bề mặt ổn định hơn.
             </p>
             <a
               href={ZALO}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto sm:text-[14px] sm:tracking-[0.18em]"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-micro font-semibold uppercase tracking-label text-wood-900 shadow-sm transition-colors hover:bg-wood-200 sm:w-auto sm:text-small sm:tracking-label"
             >
               <Camera className="h-4 w-4" strokeWidth={1.75} />
               {t("consult.ctaButton")}
@@ -2882,12 +3080,14 @@ function ConsultBlock() {
             </a>
             <a
               href="tel:0943966662"
-              className="inline-flex items-center gap-2 text-[15px] tracking-wide text-wood-300 transition-colors hover:text-background sm:text-[16px]"
+              className="inline-flex items-center gap-2 text-body-sm text-wood-300 transition-colors hover:text-wood-50 sm:text-body"
             >
-              {t("consult.ctaPhone")} <span className="font-semibold text-background underline underline-offset-4">0943 966 662</span>
+              {t("consult.ctaPhone")}{" "}
+              <span className="font-semibold text-wood-50 underline underline-offset-4">
+                0943 966 662
+              </span>
             </a>
           </div>
-
         </div>
       </div>
     </section>
@@ -2928,7 +3128,6 @@ const FAQS = [
   },
 ];
 
-
 function FAQ() {
   const { t } = useTranslation();
   return (
@@ -2936,38 +3135,40 @@ function FAQ() {
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <div className="text-[13px] uppercase tracking-[0.32em] text-wood-600 sm:text-[14px]">
+            <div className="text-caption uppercase tracking-label text-wood-700 sm:text-small">
               {t("faq.label")}
             </div>
-            <h2 className="font-display mt-8 text-[2rem] font-light leading-[1.1] text-wood-900 sm:text-[2.25rem]">
+            <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-8 text-wood-900">
               <span className="block">{t("faq.title")}</span>
-              <span className="block italic font-normal text-wood-700">
-                {t("faq.titleItalic")}
-              </span>
+              <span className="block font-normal text-wood-700">{t("faq.titleItalic")}</span>
             </h2>
           </div>
 
           <div className="lg:col-span-8">
-            <Accordion type="single" collapsible className="divide-y divide-wood-200 border-t border-b border-wood-200">
+            <Accordion
+              type="single"
+              collapsible
+              className="divide-y divide-wood-200 border-t border-b border-wood-200"
+            >
               {FAQS.map((f, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`item-${i}`}
-                  className="border-0 group/faq"
-                >
-                  <AccordionTrigger className="py-6 text-left font-display text-lg font-normal text-wood-900 hover:no-underline hover:text-wood-700 sm:text-xl [&>svg]:hidden [&[data-state=open]_.faq-preview]:hidden [&[data-state=open]_.faq-icon-plus]:hidden [&:not([data-state=open])_.faq-icon-minus]:hidden">
+                <AccordionItem key={i} value={`item-${i}`} className="border-0 group/faq">
+                  <AccordionTrigger className="py-6 text-left text-lead font-normal text-wood-900 hover:no-underline hover:text-wood-700 sm:text-h3 [&>svg]:hidden [&[data-state=open]_.faq-preview]:hidden [&[data-state=open]_.faq-icon-plus]:hidden [&:not([data-state=open])_.faq-icon-minus]:hidden">
                     <span className="flex flex-1 flex-col gap-2 pr-6">
                       <span>{t(f.q)}</span>
-                      <span className="faq-preview line-clamp-1 text-[15px] font-sans font-normal text-wood-500 sm:text-[16px]">
+                      <span className="faq-preview line-clamp-1 text-body-sm font-normal text-wood-500 sm:text-body">
                         {t(f.a)}
                       </span>
                     </span>
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-wood-300 text-wood-700 transition-colors group-hover/faq:border-wood-700 group-hover/faq:text-wood-900">
-                      <span aria-hidden className="faq-icon-plus text-[15px] leading-none">+</span>
-                      <span aria-hidden className="faq-icon-minus text-[15px] leading-none">−</span>
+                      <span aria-hidden className="faq-icon-plus text-body-sm">
+                        +
+                      </span>
+                      <span aria-hidden className="faq-icon-minus text-body-sm">
+                        −
+                      </span>
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-7 pr-4 text-[16px] leading-[1.75] text-wood-700/85 sm:pr-12 sm:text-[17px]">
+                  <AccordionContent className="pb-7 pr-4 text-body text-wood-700 sm:pr-12 sm:text-lead">
                     {t(f.a)}
                   </AccordionContent>
                 </AccordionItem>

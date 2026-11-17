@@ -40,24 +40,21 @@ export function GallerySection() {
     <section id="du-an" className="bg-wood-50 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-14 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-wood-500">
+          <p className="mb-2 text-small font-semibold uppercase text-wood-500 tracking-label">
             Dự án thực tế
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-wood-900 sm:text-4xl">
+          <h2 className="font-display text-h2 sm:text-h2-lg font-bold text-wood-900">
             Hình ảnh công trình đã thực hiện
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            Mỗi dự án là một tác phẩm — thay thế bằng ảnh thực tế của bạn để
-            tăng sự tin tưởng từ khách hàng.
+          <p className="mx-auto mt-3 max-w-2xl text-wood-500">
+            Mỗi dự án là một tác phẩm — thay thế bằng ảnh thực tế của bạn để tăng sự tin tưởng từ
+            khách hàng.
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {images.map((img, i) => (
-            <div
-              key={i}
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl"
-            >
+            <div key={i} className="group relative aspect-[4/3] overflow-hidden rounded-xl">
               <img
                 src={img.src}
                 alt={img.alt}
@@ -68,7 +65,7 @@ export function GallerySection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-wood-900/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <span className="inline-block rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-wood-800 backdrop-blur-sm">
+                <span className="inline-block rounded-full bg-background/90 px-3 py-1 text-micro font-medium text-wood-900 backdrop-blur-sm">
                   {img.label}
                 </span>
               </div>

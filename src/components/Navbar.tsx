@@ -42,10 +42,10 @@ export function LanguageSelector() {
   const handleLanguageChange = (langCode: string) => {
     const cookieValue = langCode === "vi" ? "" : `/vi/${langCode}`;
     const domain = window.location.hostname;
-    
+
     // Set standard cookie for current path (works on localhost)
     document.cookie = `googtrans=${cookieValue}; path=/;`;
-    
+
     // Only set domain cookie if it's not localhost
     if (domain !== "localhost") {
       document.cookie = `googtrans=${cookieValue}; path=/; domain=${domain};`;
@@ -74,15 +74,15 @@ export function LanguageSelector() {
     <div ref={dropdownRef} className="relative notranslate">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 rounded-full border border-wood-200 bg-background/50 px-2.5 py-1.5 text-[13px] font-semibold text-wood-700 hover:bg-wood-50 transition-colors focus:outline-none"
+        className="flex items-center gap-1.5 rounded-full border border-wood-200 bg-background/50 px-2.5 py-1.5 text-caption font-semibold text-wood-700 hover:bg-wood-50 transition-colors focus:outline-none"
       >
         <Globe className="h-3.5 w-3.5 text-wood-500" />
-        <span className="text-[14px]">{currentLangObj.flag}</span>
-        <span className="hidden text-xs font-semibold uppercase tracking-wide text-wood-600 sm:inline">
+        <span className="text-small">{currentLangObj.flag}</span>
+        <span className="hidden text-micro font-semibold uppercase text-wood-700 sm:inline tracking-label">
           {currentLangObj.labelShort}
         </span>
         <ChevronDown
-          className={`h-3 w-3 text-wood-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-3 w-3 text-wood-500 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -92,13 +92,13 @@ export function LanguageSelector() {
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`flex w-full items-center gap-2.5 px-3 py-2 text-left text-xs sm:text-[13px] font-medium transition-colors ${
+              className={`flex w-full items-center gap-2.5 px-3 py-2 text-left text-micro sm:text-caption font-medium transition-colors ${
                 selected === lang.code
                   ? "bg-wood-50 font-semibold text-wood-900"
-                  : "text-wood-600 hover:bg-wood-50/70 hover:text-wood-900"
+                  : "text-wood-700 hover:bg-wood-50/70 hover:text-wood-900"
               }`}
             >
-              <span className="text-base">{lang.flag}</span>
+              <span className="text-body">{lang.flag}</span>
               <span>{lang.label}</span>
             </button>
           ))}
@@ -132,7 +132,7 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="relative text-[13px] tracking-[0.05em] text-wood-600 transition-colors hover:text-wood-900 after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-wood-700/60 after:transition-[width] after:duration-300 hover:after:w-full whitespace-nowrap sm:text-[14px]"
+              className="relative text-caption text-wood-700 transition-colors hover:text-wood-900 after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-wood-700/60 after:transition-[width] after:duration-300 hover:after:w-full whitespace-nowrap sm:text-small"
             >
               {link.label}
             </a>
@@ -143,7 +143,7 @@ export function Navbar() {
           <LanguageSelector />
           <a
             href="tel:0943966662"
-            className="text-[13px] tracking-[0.05em] text-wood-600 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-[14px]"
+            className="text-caption text-wood-700 transition-colors hover:text-wood-900 whitespace-nowrap sm:text-small"
           >
             0943 966 662
           </a>
@@ -151,10 +151,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3 md:hidden">
           <LanguageSelector />
-          <button
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? (
               <X className="h-5 w-5 text-wood-700" />
             ) : (
@@ -171,7 +168,7 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[15px] font-medium text-wood-700 transition-colors hover:text-wood-900"
+                className="text-body-sm font-medium text-wood-700 transition-colors hover:text-wood-900"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -180,7 +177,7 @@ export function Navbar() {
             <div className="mt-2 flex gap-2">
               <a
                 href="tel:0943966662"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-100 px-3 py-2 text-[15px] font-medium text-wood-700"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-100 px-3 py-2 text-body-sm font-medium text-wood-700"
               >
                 0943 966 662
               </a>
@@ -188,7 +185,7 @@ export function Navbar() {
                 href="https://zalo.me/0943966662"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-600 px-3 py-2 text-[15px] font-medium text-primary-foreground"
+                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-wood-600 px-3 py-2 text-body-sm font-medium text-wood-50"
               >
                 <MessageCircle className="h-3.5 w-3.5" />
                 Zalo

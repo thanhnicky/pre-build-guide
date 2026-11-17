@@ -43,39 +43,33 @@ function formatDate(iso: string) {
 const portableTextComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="font-display mt-12 text-[1.6rem] font-semibold leading-[1.25] text-wood-900 sm:text-[1.8rem]">
+      <h2 className="font-display text-h2 sm:text-h2-lg font-bold mt-12 text-wood-900">
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="font-display mt-8 text-[1.2rem] font-semibold leading-[1.3] text-wood-900">
-        {children}
-      </h3>
+      <h3 className="text-h3 sm:text-h3-lg font-semibold mt-8 text-wood-900">{children}</h3>
     ),
-    normal: ({ children }: any) => (
-      <p className="mt-5 text-[17px] leading-[1.8] text-wood-800">{children}</p>
-    ),
+    normal: ({ children }: any) => <p className="mt-5 text-lead text-wood-900">{children}</p>,
     blockquote: ({ children }: any) => (
-      <blockquote className="mt-6 border-l-4 border-wood-400 pl-5 text-[17px] italic leading-[1.8] text-wood-600">
+      <blockquote className="mt-6 border-l-4 border-wood-400 pl-5 text-lead text-wood-700">
         {children}
       </blockquote>
     ),
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="mt-5 space-y-2 pl-5 text-[17px] leading-[1.8] text-wood-800 list-disc">
-        {children}
-      </ul>
+      <ul className="mt-5 space-y-2 pl-5 text-lead text-wood-900 list-disc">{children}</ul>
     ),
     number: ({ children }: any) => (
-      <ol className="mt-5 space-y-2 pl-5 text-[17px] leading-[1.8] text-wood-800 list-decimal">
-        {children}
-      </ol>
+      <ol className="mt-5 space-y-2 pl-5 text-lead text-wood-900 list-decimal">{children}</ol>
     ),
   },
   marks: {
-    strong: ({ children }: any) => <strong className="font-semibold text-wood-900">{children}</strong>,
-    em: ({ children }: any) => <em className="italic">{children}</em>,
+    strong: ({ children }: any) => (
+      <strong className="font-semibold text-wood-900">{children}</strong>
+    ),
+    em: ({ children }: any) => <em className="not-italic">{children}</em>,
     link: ({ value, children }: any) => (
       <a
         href={value?.href}
@@ -95,9 +89,7 @@ const portableTextComponents = {
           alt={value.alt ?? ""}
           className="w-full object-cover"
         />
-        {value.alt && (
-          <p className="mt-2 text-center text-[13px] text-wood-400">{value.alt}</p>
-        )}
+        {value.alt && <p className="mt-2 text-center text-caption text-wood-500">{value.alt}</p>}
       </div>
     ),
   },
@@ -114,7 +106,7 @@ function BlogPostPage() {
         {/* Back */}
         <Link
           to="/blog"
-          className="mb-10 inline-flex items-center gap-2 text-[14px] text-wood-500 transition-colors hover:text-wood-900"
+          className="mb-10 inline-flex items-center gap-2 text-small text-wood-500 transition-colors hover:text-wood-900"
         >
           <ArrowLeft className="h-4 w-4" />
           Tất cả bài viết
@@ -126,7 +118,7 @@ function BlogPostPage() {
             {post.tags.map((tag: string) => (
               <span
                 key={tag}
-                className="flex items-center gap-1 rounded-full bg-wood-100 px-2.5 py-1 text-[12px] font-medium uppercase tracking-[0.1em] text-wood-600"
+                className="flex items-center gap-1 rounded-full bg-wood-100 px-2.5 py-1 text-micro font-medium uppercase tracking-label text-wood-700"
               >
                 <Tag className="h-3 w-3" />
                 {TAG_LABELS[tag] ?? tag}
@@ -136,19 +128,15 @@ function BlogPostPage() {
         )}
 
         {/* Title */}
-        <h1 className="font-display text-[2rem] font-semibold leading-[1.2] text-wood-900 sm:text-[2.5rem]">
+        <h1 className="font-display text-display sm:text-display-lg font-bold text-wood-900">
           {post.title}
         </h1>
 
         {/* Date + excerpt */}
         {post.publishedAt && (
-          <p className="mt-3 text-[14px] text-wood-400">{formatDate(post.publishedAt)}</p>
+          <p className="mt-3 text-small text-wood-500">{formatDate(post.publishedAt)}</p>
         )}
-        {post.excerpt && (
-          <p className="mt-5 text-[18px] leading-[1.75] text-wood-600 font-light">
-            {post.excerpt}
-          </p>
-        )}
+        {post.excerpt && <p className="mt-5 text-lead text-wood-700 font-normal">{post.excerpt}</p>}
 
         {/* Main image */}
         {post.mainImage && (
@@ -167,18 +155,16 @@ function BlogPostPage() {
         </article>
 
         {/* CTA */}
-        <div className="mt-16 rounded-xl bg-wood-900 p-8 text-background">
-          <p className="font-display text-[1.2rem] font-light">
-            Cần tư vấn kỹ thuật cụ thể cho xưởng?
-          </p>
-          <p className="mt-2 text-[15px] text-wood-300">
+        <div className="mt-16 rounded-xl bg-wood-900 p-8 text-wood-50">
+          <p className="text-lead font-normal">Cần tư vấn kỹ thuật cụ thể cho xưởng?</p>
+          <p className="mt-2 text-body-sm text-wood-300">
             Gửi ảnh bề mặt qua Zalo — kỹ sư phản hồi trong ngày.
           </p>
           <a
             href="https://zalo.me/0943966662"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-block rounded-full bg-background px-6 py-3 text-[15px] font-semibold text-wood-900 transition-opacity hover:opacity-80"
+            className="mt-5 inline-block rounded-full bg-background px-6 py-3 text-body-sm font-semibold text-wood-900 transition-opacity hover:opacity-80"
           >
             Zalo 0943 966 662
           </a>

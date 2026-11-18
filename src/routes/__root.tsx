@@ -116,13 +116,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png",
+        content: "https://www.songo.com.vn/og-image.jpg",
       },
       {
         name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e50de556-0af3-4d0d-90e5-7b5f368b7587/id-preview-c3622975--4ed31727-3ce5-4425-b32b-269e069c5f7c.lovable.app-1779202121364.png",
+        content: "https://www.songo.com.vn/og-image.jpg",
       },
       { name: "twitter:image:alt", content: "Sơn Gỗ Lotus - Sơn gỗ hệ nước chuyên nghiệp" },
       { name: "geo.region", content: "VN-SG" },
